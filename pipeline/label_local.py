@@ -21,38 +21,52 @@ DIMS = list(TAX["dimensions"])
 OLLAMA = "http://localhost:11434/api/chat"
 NAMES = {"topic": "subfields", "approach": "methods", "data": "data", "setting": "populations", "region": "languages"}
 
-def codebook():
-    lines = []
-    for d in DIMS:
-        dim = TAX["dimensions"][d]
-        lines.append(f"\n{d} ({dim['label']}: {dim['description']})")
-        for c, l in dim["labels"].items():
-            lines.append(f"  {c}: {l}")
-    return "\n".join(lines)
-
-SYSTEM = f"""You describe a university researcher's work for a website that helps PhD applicants in linguistics find advisors.
+SUMMARY_SYSTEM = """You describe a university researcher's work for a website that helps PhD applicants in linguistics find advisors.
 Use ONLY the profile text given. Do not use outside knowledge about the person. If the profile says little, say little.
 
 Return JSON with:
 - summary: ONE sentence, at most 200 characters, present tense, without the person's name, saying what they study and how.
   Example: "Studies tone and intonation in Bantu languages through fieldwork and acoustic analysis."
-- summary_zh: the same sentence in natural Chinese.
+- summary_zh: the same sentence in natural Chinese (use standard linguistics terms, e.g. 音系学, 句法学, 语义学, 社会语言学).
 - keywords: 5 to 10 specific lowercase terms from the profile (phenomena, languages, methods), e.g. "tone sandhi", "visual world paradigm", "quechua".
 - confidence: "high" if the profile describes their research in detail, "medium" if briefly, "low" if almost not at all.
-- labels: for each dimension below, 0 to 4 codes that the profile clearly supports. Mark primary=true only for their main emphasis
-  (at least one primary subfield). Leave a dimension empty rather than guess.
-  For "region" (languages): only languages the research is actually about; English only when English itself is studied.
-Codes:{codebook()}
 """
 
-def schema():
-    lab = lambda d: {"type": "array", "maxItems": 4, "items": {"type": "object", "required": ["code", "primary"],
-            "properties": {"code": {"type": "string", "enum": list(TAX["dimensions"][d]["labels"])}, "primary": {"type": "boolean"}}}}
-    return {"type": "object", "required": ["summary", "summary_zh", "keywords", "confidence", "labels"],
+def codebook(dims):
+    lines = []
+    for d in dims:
+        dim = TAX["dimensions"][d]
+        lines.append(f"\n{d} = {dim['label']}:")
+        for c, l in dim["labels"].items():
+            lines.append(f"  {c}: {l}")
+    return "\n".join(lines)
+
+LABEL_SYSTEM = f"""You tag a linguistics researcher's profile with codes from a fixed list, for a search website.
+Use ONLY what the profile, summary and keywords say. Choose the codes that clearly apply; most people get 1-3 per list.
+
+- topic: 1 to 4 subfields they work in. primary_topic: the single main one.
+- approach: methods they use. data: kinds of data they work with. setting: populations or settings they study (often none).
+- region: languages they study. Only languages actually named or clearly implied (e.g. "Quechua" -> R_AMERICAS_INDIGENOUS,
+  "Spanish" -> R_ROMANCE, "ASL" -> R_SIGN). R_ENGLISH only when English itself is studied. Leave empty if no language is named.
+
+Example: profile about "variation in Boston Spanish, sociophonetics, interviews with speakers"
+-> topic [T_SOCIOLING, T_PHONETICS], primary_topic T_SOCIOLING, approach [A_VARIATIONIST], data [D_SPOKEN_CORPORA, D_SPEECH_AUDIO],
+   setting [S_SPEECH_COMMUNITIES, S_BILINGUAL_HERITAGE], region [R_ROMANCE]
+Codes:{codebook(DIMS)}
+"""
+
+def summary_schema():
+    return {"type": "object", "required": ["summary", "summary_zh", "keywords", "confidence"],
             "properties": {"summary": {"type": "string"}, "summary_zh": {"type": "string"},
                            "keywords": {"type": "array", "items": {"type": "string"}},
-                           "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
-                           "labels": {"type": "object", "required": DIMS, "properties": {d: lab(d) for d in DIMS}}}}
+                           "confidence": {"type": "string", "enum": ["high", "medium", "low"]}}}
+
+def label_schema():
+    codes = lambda d: list(TAX["dimensions"][d]["labels"])
+    arr = lambda d, lo=0: {"type": "array", "minItems": lo, "maxItems": 4, "items": {"type": "string", "enum": codes(d)}}
+    props = {d: arr(d, 1 if d == "topic" else 0) for d in DIMS}
+    props["primary_topic"] = {"type": "string", "enum": codes("topic")}
+    return {"type": "object", "required": ["topic", "primary_topic"] + [d for d in DIMS if d != "topic"], "properties": props}
 
 def person_prompt(f):
     parts = [f"Name: {f['name']}", f"Title: {f.get('title') or f['rank']}", f"Department: {f.get('department','')}"]
@@ -72,27 +86,65 @@ def shorten(s, n=200):
     cut = s[:n]
     return (cut[: cut.rfind(" ")] if " " in cut else cut).rstrip(",;: ") + "."
 
-def call(model, f, timeout=300):
+def ask(model, system, user, schema, timeout=300):
     import requests
-    body = {"model": model, "stream": False, "format": schema(),
-            "options": {"temperature": 0.2, "num_ctx": 8192},
-            "messages": [{"role": "system", "content": SYSTEM}, {"role": "user", "content": person_prompt(f)}]}
+    body = {"model": model, "stream": False, "format": schema, "options": {"temperature": 0.1, "num_ctx": 8192},
+            "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]}
     r = requests.post(OLLAMA, json=body, timeout=timeout)
     r.raise_for_status()
     return json.loads(r.json()["message"]["content"])
 
+def call(model, f):
+    prof = person_prompt(f)
+    out = ask(model, SUMMARY_SYSTEM, prof, summary_schema())
+    lab_in = prof + f"\nSummary: {out.get('summary','')}\nKeywords: {', '.join(out.get('keywords') or [])}"
+    out["labels"] = ask(model, LABEL_SYSTEM, lab_in, label_schema())
+    return out
+
+# a language code is kept only when the profile names something from that group
+REGION_EVIDENCE = {
+    "R_ENGLISH": r"english|american (english|dialect)|aave|african american (vernacular )?english|southern us",
+    "R_ROMANCE": r"spanish|portuguese|french|italian|romanian|catalan|romance|latin american|hispanic|galician|occitan",
+    "R_GERMANIC": r"german|dutch|swedish|norwegian|danish|icelandic|yiddish|afrikaans|frisian|germanic|faroese",
+    "R_SLAVIC_E_EUROPE": r"russian|polish|czech|slovak|ukrainian|serbian|croatian|bosnian|bulgarian|slovene|slavic|baltic|lithuanian|latvian|georgian|armenian|hungarian|finnish|estonian|albanian|romani|caucas",
+    "R_CHINESE": r"chinese|mandarin|cantonese|sinitic|taiwanese|hokkien|wu |shanghainese",
+    "R_JAPANESE_KOREAN": r"japanese|korean",
+    "R_SE_ASIA_PACIFIC": r"austronesian|tagalog|filipino|indonesian|malay|javanese|thai|lao|vietnamese|khmer|burmese|tibet|hmong|maori|hawaiian|samoan|tongan|oceanic|papua|pacific|tai-kadai|austroasiatic|polynesian|micronesian|melanesian|new guinea|pahoturi|ende\b",
+    "R_SOUTH_ASIA": r"hindi|urdu|bengali|bangla|punjabi|marathi|gujarati|tamil|telugu|kannada|malayalam|nepali|sinhala|indo-aryan|dravidian|south asia",
+    "R_MIDDLE_EAST": r"arabic|hebrew|persian|farsi|turkish|kurdish|uzbek|kazakh|uyghur|turkic|semitic|aramaic|pashto|middle east|central asia",
+    "R_AFRICA": r"africa|bantu|swahili|yoruba|igbo|zulu|xhosa|isixhosa|hausa|amharic|wolof|akan|twi|ewe|somali|niger-congo|nilo|khoisan|berber|shona|kinyarwanda|luganda|chichewa|setswana|sesotho",
+    "R_AMERICAS_INDIGENOUS": r"indigenous|native american|quechua|aymara|maya|mayan|nahuatl|navajo|zapotec|mixtec|guarani|cherokee|ojibwe|lakota|inuit|yupik|salish|uto-aztecan|amazon|otomanguean|algonquian|athabaskan|iroquoian|k'iche|kaqchikel|tzotzil|mapudungun|american indian",
+    "R_SIGN": r"sign language|\basl\b|signers?|deaf",
+    "R_CROSSLING": r"cross-?linguistic|typolog|language universals|many languages|comparative",
+    "R_CLASSICAL": r"latin|ancient greek|classical|sanskrit|old chinese|old english|old norse|hittite|indo-european|homeric|biblical|akkadian|egyptian|old irish|gothic",
+}
+
 def clean(out, f):
     srcs = ["department_profile"] + (["publications"] if f.get("works") else [])
+    lab = out.get("labels") or {}
+    evidence = " ".join([f.get("bio") or "", " ".join(f.get("research_areas") or []), " ".join(w["title"] for w in f.get("works") or []),
+                         " ".join(out.get("keywords") or []), out.get("summary") or ""]).lower()
+    primary = lab.get("primary_topic")
     labels = {}
     for d in DIMS:
         items, seen = [], set()
-        for it in (out.get("labels", {}).get(d) or []):
-            c = it.get("code")
-            if c in TAX["dimensions"][d]["labels"] and c not in seen:
-                seen.add(c); items.append({"code": c, "primary": bool(it.get("primary")), "sources": srcs})
+        for c in lab.get(d) or []:
+            if c not in TAX["dimensions"][d]["labels"] or c in seen:
+                continue
+            if d == "region" and not re.search(REGION_EVIDENCE.get(c, "."), evidence):
+                continue  # the model named a language group the profile never mentions
+            seen.add(c); items.append({"code": c, "primary": False, "sources": srcs})
         labels[d] = items[:4]
-    if labels["topic"] and not any(x["primary"] for x in labels["topic"]):
+    if primary in TAX["dimensions"]["topic"]["labels"]:
+        if not any(x["code"] == primary for x in labels["topic"]):
+            labels["topic"] = [{"code": primary, "primary": True, "sources": srcs}] + labels["topic"][:3]
+        for x in labels["topic"]:
+            x["primary"] = x["code"] == primary
+    elif labels["topic"]:
         labels["topic"][0]["primary"] = True
+    for d in DIMS:  # first item of the other dimensions counts as their main one
+        if d != "topic" and labels[d]:
+            labels[d][0]["primary"] = True
     kw = [k.strip().lower() for k in out.get("keywords") or [] if 1 < len(k.strip()) < 50][:10]
     return {"name": f["name"], "summary": shorten(out.get("summary")), "summary_zh": (out.get("summary_zh") or "").strip()[:120],
             "confidence": out.get("confidence") if out.get("confidence") in ("high", "medium", "low") else "low",
