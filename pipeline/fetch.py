@@ -22,6 +22,8 @@ CACHE.mkdir(parents=True, exist_ok=True)
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
 
+BOT_CHECK = re.compile(r"crowdsec|cf-challenge|Just a moment\.\.\.|Attention Required|captcha-delivery|Verify you are human", re.I)
+
 def cache_path(url, render):
     key = hashlib.sha1((("R:" if render else "S:") + url).encode()).hexdigest()
     return CACHE / f"{key}.html"
@@ -79,6 +81,8 @@ def get(url, render=False):
     if html is None:
         html = fetch_render(url)
         cp = cache_path(url, True)
+    if BOT_CHECK.search(html[:20000]):
+        raise RuntimeError("blocked by a bot check (try again with HEADED=1)")
     cp.write_text(html, encoding="utf-8")
     time.sleep(1.0)
     return html
