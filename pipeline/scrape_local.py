@@ -145,23 +145,33 @@ def next_pages(html, page_url, limit=12):
                 out.append(href)
     return list(dict.fromkeys(out))[:limit]
 
-DIR_WORDS = [("faculty", 5), ("people", 4), ("directory", 3), ("our team", 2), ("core faculty", 6), ("ladder faculty", 6)]
+DIR_WORDS = [("faculty", 5), ("people", 4), ("directory", 3), ("our team", 2), ("core faculty", 7), ("ladder faculty", 7),
+             ("regular faculty", 7), ("tenure", 6), ("professors", 4)]
+BAD_LINK = re.compile(r"news|event|emerit|student|staff|alumni|lecturer|affiliate|visitor|job|hiring|position|search|calendar|"
+                      r"colloquium|talk|award|story|stories|blog|giving|donate|login|course", re.I)
+
 def discover_directory(unit_url):
-    """Pick the most likely faculty-list link from a unit homepage."""
+    """Pick the most likely faculty-list link from a unit homepage (menus included)."""
+    from bs4 import BeautifulSoup
     html = fetch.get(unit_url)
-    s = soup_of(fetch.get(unit_url)) if html else None
+    s = BeautifulSoup(html, "lxml")
     best, score_best = None, 0
-    for a in (s.find_all("a", href=True) if s else []):
+    for a in s.find_all("a", href=True):
         t = a.get_text(" ", strip=True).lower()
         href = urljoin(unit_url, a["href"]).split("#")[0]
         if not href.startswith("http") or not same_site(href, unit_url) or len(t) > 40:
             continue
-        sc = sum(w for k, w in DIR_WORDS if k in t) + sum(1 for k in ("faculty", "people") if k in href.lower())
-        if any(x in t for x in ("emerit", "student", "staff", "alumni", "lecturer", "affiliate")):
-            sc -= 5
+        path = urlparse(href).path.lower()
+        sc = sum(w for k, w in DIR_WORDS if k in t) + sum(2 for k in ("faculty", "people", "directory") if k in path)
+        if BAD_LINK.search(t) or BAD_LINK.search(path) or "?" in href and "faculty" not in href.lower():
+            sc -= 8
+        # stay inside the unit's own site section when the homepage is a sub-path (e.g. /linguistics/)
+        base_path = urlparse(unit_url).path.rstrip("/")
+        if base_path and not path.startswith(base_path):
+            sc -= 3
         if sc > score_best:
             best, score_best = href, sc
-    return best
+    return best if score_best >= 4 else None
 
 # ---------- profiles ----------
 LANG_WORDS = re.compile(r"\b(linguist\w*|language|languages|speech|phonet\w*|phonolog\w*|syntax|syntactic|semantic\w*|pragmatic\w*|"
@@ -254,10 +264,8 @@ def scrape_university(p, dir_only=False):
                 rank, title = classify_title(ctx)
                 if rank == "EXCLUDED":
                     row["excluded_titles"] += 1; continue
-                if dir_only:
-                    if rank: row["tenure_line"] += 1
-                    else: row["no_title"] += 1
-                    continue
+                if dir_only and rank:
+                    row["tenure_line"] += 1; continue
                 try:
                     ph = fetch.get(url)
                 except Exception as e:
@@ -268,6 +276,8 @@ def scrape_university(p, dir_only=False):
                     if rank in (None, "EXCLUDED"):
                         row["no_title" if rank is None else "excluded_titles"] += 1; continue
                 row["tenure_line"] += 1
+                if dir_only:
+                    continue
                 if (u.get("field", "LING") != "LING" or u.get("filter_language")) and not about_language(text, u.get("field", "LING")):
                     row["not_language"] += 1; continue
                 site, scholar = profile_links(ph, url)

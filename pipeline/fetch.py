@@ -19,8 +19,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / "data" / "cache"
 CACHE.mkdir(parents=True, exist_ok=True)
-UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-      "(KHTML, like Gecko) Chrome/124.0 Safari/537.36 LingPhDExplorer/0.1 (academic directory research)")
+UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
 
 def cache_path(url, render):
     key = hashlib.sha1((("R:" if render else "S:") + url).encode()).hexdigest()
