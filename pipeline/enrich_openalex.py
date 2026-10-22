@@ -11,7 +11,7 @@ only when it is unambiguous and their recent work is about language. It then sto
 matching vectors and the labeller reads them; they are never published on the site. Responses are cached in
 data/cache/openalex/.
 """
-import argparse, hashlib, json, re, sys, time, unicodedata
+import argparse, hashlib, json, os, re, sys, time, unicodedata
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -27,16 +27,27 @@ def get(path, params):
     cp = CACHE / f"{key}.json"
     if cp.exists():
         return json.loads(cp.read_text())
-    for attempt in range(4):
-        r = requests.get(API + path, params=params, timeout=30, headers={"User-Agent": "LingPhDExplorer/0.1"})
+    q = dict(params)
+    if os.environ.get("OPENALEX_API_KEY"):  # free key from openalex.org raises the daily allowance
+        q["api_key"] = os.environ["OPENALEX_API_KEY"]
+    if os.environ.get("OPENALEX_MAILTO"):
+        q["mailto"] = os.environ["OPENALEX_MAILTO"]
+    for attempt in range(6):
+        r = requests.get(API + path, params=q, timeout=30, headers={"User-Agent": "LingPhDExplorer/0.1"})
         if r.status_code == 429:
-            time.sleep(2 + 3 * attempt); continue
+            wait = float(r.headers.get("Retry-After") or 0) or 5 * 2 ** attempt  # 5, 10, 20, 40, 80, 160 s
+            if attempt == 5 or wait > 600:
+                raise RateLimited(r.text[:200])
+            print(f"    OpenAlex says slow down; waiting {wait:.0f}s"); time.sleep(wait); continue
         r.raise_for_status()
         CACHE.mkdir(parents=True, exist_ok=True)
         cp.write_text(r.text)
-        time.sleep(0.12)
+        time.sleep(0.25)
         return r.json()
-    raise RuntimeError("OpenAlex rate limit")
+    raise RateLimited("still limited")
+
+class RateLimited(Exception):
+    pass
 
 def norm(s):
     return re.sub(r"[^a-z ]", "", unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()).strip()
@@ -100,20 +111,25 @@ def main():
             print(f"{d['slug']}: institution lookup failed ({e})"); continue
         n = 0
         for f in d["faculty"]:
-            if "works" in f and not a.refresh:
+            if "works" in f and not a.refresh and not (f["works"] == [] and f.get("works_status") != "checked"):
                 n += bool(f["works"]); continue
             tot += 1
             try:
                 au = find_author(f["name"], inst)
                 works = recent_works(au["id"].rsplit("/", 1)[-1]) if au else []
+            except RateLimited as e:
+                json.dump(d, open(fp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+                sys.exit(f"\nOpenAlex's limit is used up for now ({e}). Everything so far is saved; run this again later "
+                         "(or tomorrow) and it continues where it stopped. A free API key from openalex.org raises the "
+                         "limit: export OPENALEX_API_KEY=...")
             except Exception as e:
-                print(f"  {f['name']}: {e}"); works = []
+                print(f"  {f['name']}: {e}"); continue  # leave unset so the next run tries again
             # wrong-person guard: in a non-linguistics unit, or with an odd record, most titles should be about language
             if works:
                 lang = sum(1 for w in works if LANG_WORDS.search(w["title"] + " " + w["abstract"]))
                 if lang < max(2, 0.25 * len(works)):
                     works = []
-            f["works"] = works
+            f["works"] = works; f["works_status"] = "checked"
             if works:
                 found += 1; n += 1
         json.dump(d, open(fp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
