@@ -22,7 +22,8 @@ CACHE.mkdir(parents=True, exist_ok=True)
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
 
-BOT_CHECK = re.compile(r"crowdsec|cf-challenge|Just a moment\.\.\.|Attention Required|captcha-delivery|Verify you are human", re.I)
+BOT_CHECK = re.compile(r"crowdsec|cf-challenge|Just a moment\.\.\.|Attention Required|captcha-delivery|Verify you are human|"
+                       r"errors\.edgesuite\.net|<title>Access Denied</title>|Request unsuccessful\. Incapsula", re.I)
 
 def cache_path(url, render):
     key = hashlib.sha1((("R:" if render else "S:") + url).encode()).hexdigest()
@@ -40,8 +41,9 @@ def fetch_render(url, wait_ms=2500):
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
         # HEADED=1 opens a visible browser window, which gets past some bot checks (e.g. CrowdSec)
-        b = p.chromium.launch(headless=os.environ.get("HEADED") != "1")
-        ctx = b.new_context(user_agent=UA, viewport={"width": 1366, "height": 900})
+        b = p.chromium.launch(headless=os.environ.get("HEADED") != "1", args=["--disable-blink-features=AutomationControlled"])
+        ctx = b.new_context(user_agent=UA, viewport={"width": 1366, "height": 900}, locale="en-US")
+        ctx.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
         page = ctx.new_page()
         page.goto(url, wait_until="domcontentloaded", timeout=60000)
         try:

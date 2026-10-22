@@ -65,7 +65,8 @@
     "phd_program_url": null,
     "directory_url": "https://linguistics.fas.harvard.edu/people/faculty",
     "include": true,
-    "reason": ""
+    "reason": "",
+    "render": true
    },
    {
     "name": "Department of Slavic Languages and Literatures",
@@ -75,8 +76,8 @@
     "phd_program_name": "PhD in Slavic Languages and Literatures (linguistics track)",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },
@@ -537,8 +538,8 @@
     "phd_program_name": "PhD via Computer Science / Electrical and Computer Engineering",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },
@@ -567,7 +568,8 @@
     "phd_program_url": null,
     "directory_url": null,
     "include": true,
-    "reason": ""
+    "reason": "",
+    "render": true
    },
    {
     "name": "Department of Hearing and Speech Sciences",
@@ -577,8 +579,8 @@
     "phd_program_name": "PhD in Hearing and Speech Sciences",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    },
    {
     "name": "Second Language Acquisition program",
@@ -669,7 +671,8 @@
     "phd_program_url": null,
     "directory_url": null,
     "include": true,
-    "reason": ""
+    "reason": "",
+    "render": true
    }
   ]
  },
@@ -708,8 +711,8 @@
     "phd_program_name": "PhD in Speech-Language-Hearing Sciences",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },
@@ -1048,8 +1051,8 @@
     "phd_program_name": "PhD in Speech, Language, and Hearing Sciences",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },
@@ -1396,9 +1399,10 @@
     "unit_url": "https://www.cla.purdue.edu/academic/sis/p/linguistics/",
     "phd_program_name": "PhD in Linguistics",
     "phd_program_url": null,
-    "directory_url": null,
+    "directory_url": "https://cla.purdue.edu/academic/sis/directory/index.html",
     "include": true,
-    "reason": ""
+    "reason": "",
+    "filter_language": true
    },
    {
     "name": "Department of Speech, Language, and Hearing Sciences",
@@ -1408,8 +1412,8 @@
     "phd_program_name": "PhD in Speech, Language, and Hearing Sciences",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },
@@ -1438,7 +1442,8 @@
     "phd_program_url": null,
     "directory_url": "https://langsci.wisc.edu/faculty-academic-staff/",
     "include": true,
-    "reason": ""
+    "reason": "",
+    "render": true
    },
    {
     "name": "Department of Communication Sciences and Disorders",
@@ -1448,8 +1453,8 @@
     "phd_program_name": "PhD in Communication Sciences and Disorders",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },
@@ -1488,8 +1493,8 @@
     "phd_program_name": "PhD in Hispanic and Lusophone Literatures, Cultures and Linguistics",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    },
    {
     "name": "Department of Speech-Language-Hearing Sciences",
@@ -1521,15 +1526,16 @@
   ],
   "units": [
    {
-    "name": "Department of Linguistics",
+    "name": "Linguistics (Department of Languages, Literatures and Cultures)",
     "field": "LING",
     "school": null,
-    "unit_url": "https://linguistics.uiowa.edu/",
+    "unit_url": "https://lllc.uiowa.edu/academic-areas/linguistics",
     "phd_program_name": "PhD in Linguistics",
     "phd_program_url": null,
     "directory_url": null,
     "include": true,
-    "reason": "Check that the Linguistics PhD still admits"
+    "reason": "Linguistics now sits in the Department of Languages, Literatures and Cultures; check the PhD still admits",
+    "filter_language": true
    },
    {
     "name": "Department of Communication Sciences and Disorders",
@@ -1539,8 +1545,8 @@
     "phd_program_name": "PhD in Speech and Hearing Science",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },
@@ -1579,8 +1585,8 @@
     "phd_program_name": "PhD in Child Language",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },
@@ -1619,8 +1625,8 @@
     "phd_program_name": "PhD in Iberian and Latin American Languages and Cultures (linguistics)",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    },
    {
     "name": "Department of Speech, Language, and Hearing Sciences",
@@ -1630,8 +1636,8 @@
     "phd_program_name": "PhD in Communication Sciences and Disorders",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },
@@ -1687,7 +1693,7 @@
     "unit_url": "https://www.uta.edu/academics/schools-colleges/liberal-arts/departments/linguistics",
     "phd_program_name": "PhD in Linguistics",
     "phd_program_url": null,
-    "directory_url": null,
+    "directory_url": "https://uta.edu/academics/schools-colleges/liberal-arts/departments/linguistics/about/people/faculty",
     "include": true,
     "reason": ""
    }
@@ -1739,8 +1745,8 @@
     "phd_program_name": "PhD in Speech, Language, and Hearing Sciences",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },
@@ -1777,7 +1783,7 @@
  {
   "slug": "northern-arizona-university",
   "university": "Northern Arizona University",
-  "offers_linguistics_phd": true,
+  "offers_linguistics_phd": false,
   "city": "Flagstaff",
   "state": "AZ",
   "latitude": 35.1894,
@@ -1796,8 +1802,8 @@
     "phd_program_name": "PhD in Applied Linguistics",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },
@@ -1824,7 +1830,7 @@
     "unit_url": "https://ling.unm.edu/",
     "phd_program_name": "PhD in Linguistics",
     "phd_program_url": null,
-    "directory_url": null,
+    "directory_url": "https://ling.unm.edu/about/people/faculty/index.html",
     "include": true,
     "reason": ""
    }
@@ -1890,10 +1896,10 @@
     "name": "Department of Linguistics",
     "field": "LING",
     "school": null,
-    "unit_url": "https://linguistics.utah.edu/",
+    "unit_url": "https://ling.utah.edu/",
     "phd_program_name": "PhD in Linguistics",
     "phd_program_url": null,
-    "directory_url": null,
+    "directory_url": "https://ling.utah.edu/about/faculty-and-staff.php",
     "include": true,
     "reason": ""
    }
@@ -2003,8 +2009,8 @@
     "phd_program_name": "PhD in Second Language Acquisition",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    },
    {
     "name": "Department of East Asian Languages and Literatures",
@@ -2014,8 +2020,8 @@
     "phd_program_name": "PhD in East Asian Languages and Literatures (linguistics)",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },
@@ -2102,7 +2108,8 @@
     "phd_program_url": null,
     "directory_url": null,
     "include": true,
-    "reason": ""
+    "reason": "",
+    "render": true
    }
   ]
  },
@@ -2136,7 +2143,7 @@
  {
   "slug": "texas-aandm-university",
   "university": "Texas A&M University",
-  "offers_linguistics_phd": true,
+  "offers_linguistics_phd": false,
   "city": "College Station",
   "state": "TX",
   "latitude": 30.6187,
@@ -2155,8 +2162,8 @@
     "phd_program_name": "PhD in Hispanic Studies (Hispanic linguistics)",
     "phd_program_url": null,
     "directory_url": null,
-    "include": true,
-    "reason": ""
+    "include": false,
+    "reason": "Add later: faculty page needs manual setup"
    }
   ]
  },

@@ -36,9 +36,23 @@ NOT_TENURE = re.compile(r"emerit|lecturer|instructor|adjunct|visiting|clinical|o
                         r"postdoc|post-doc|retired|collegiate|"
                         r"extension|\bvisitor\b|part-time", re.I)
 # lines that mark someone as not faculty at all (no "professor" in them)
-NOT_FACULTY = re.compile(r"\b(lecturer|instructor|emerit\w*|postdoc\w*|post-doctoral|graduate student|ph\.?d\.? (student|candidate)|"
+NOT_FACULTY = re.compile(r"\b(lecturer|instructor|emerit\w*|postdoc\w*|post-doctoral|graduate student|doctoral (student|candidate)|"
+                         r"ph\.?d\.? (student|candidate)|m\.?a\.? student|undergraduate|graduate (teaching|research) assistant|"
                          r"staff|coordinator|manager|administrator|advisor|specialist|research (scientist|associate)|fellow)\b", re.I)
 RANK_RE = re.compile(r"\b(assistant|associate|full|distinguished|university|regents'?|endowed|chair(ed)?)?\s*professor\b", re.I)
+
+SENTENCE_RANK = re.compile(r"\b(?:is|serves as|was appointed|joined [^.]{0,60} as) (?:an? |the )?((?:assistant|associate|full) )?professor\b([^.]{0,80})", re.I)
+
+def rank_from_sentence(text):
+    """'X is Associate Professor of Linguistics' in running text; skips 'professor emeritus' and similar."""
+    m = SENTENCE_RANK.search(text[:4000])
+    if not m:
+        return None, None
+    tail = m.group(0)
+    if NOT_TENURE.search(tail):
+        return "EXCLUDED", tail
+    lvl = (m.group(1) or "").strip().lower()
+    return {"assistant": "Assistant Professor", "associate": "Associate Professor"}.get(lvl, "Professor"), tail.strip()
 
 def classify_title(text):
     """Return (rank, title_line) for the first professor-like line in text, or (None, None)."""
@@ -69,7 +83,9 @@ planning look to get new your my explore apply visit give office hours history m
 graduate undergraduate minor major degree degrees requirements funding admissions handbook forms policies jobs opportunities
 working papers journal journals newsletter community chair committee committees areas group groups project projects
 york abu dhabi buenos aires los angeles tel aviv washington dc shanghai paris london madrid florence berlin accra prague sydney
-north south east west american african asian european east-asian""".split())
+north south east west american african asian european east-asian
+see bio biography professor associate assistant lecturer instructor chair director dean emeritus emerita adjunct visiting
+senior junior distinguished regents endowed fellow coordinator advisor manager administrator student candidate""".split())
 NAME_TOKEN = re.compile(r"^(?:[A-ZÀ-ÖØ-Þ][\w'’.\-À-ÿ]*|[A-Z]\.|de|da|del|della|der|van|von|le|la|du|di|dos|bin|al-\w+|y)$")
 
 def clean_name(text):
@@ -138,7 +154,7 @@ def person_cards(html, page_url):
             continue
         seen.add(key); cands.append((a, name, url))
     for h in root.find_all(["h2", "h3", "h4", "h5", "strong", "b"]):
-        if h.find("a") or h.find_parent("a"):
+        if h.find("a"):
             continue
         text = h.get_text(" ", strip=True)
         if not looks_like_name(text):
@@ -146,7 +162,9 @@ def person_cards(html, page_url):
         name = clean_name(text); key = re.sub(r"[^a-z]", "", name.lower())
         if key in seen:
             continue
-        seen.add(key); cands.append((h, name, None))
+        card = h.find_parent("a", href=True)  # the whole card is one link
+        url = urljoin(page_url, card["href"]).split("#")[0] if card else None
+        seen.add(key); cands.append((card or h, name, url if url and url.startswith("http") else None))
     # how many candidates sit under each element: a block "belongs" to one person when it holds only theirs
     from collections import Counter
     under = Counter()
@@ -162,6 +180,12 @@ def person_cards(html, page_url):
             if len(t) > 1500:
                 break
             ctx = t
+        if not url:  # a name without a link: use a "bio / profile / more" link inside the same card, if any
+            for x in (node.find_all("a", href=True) if hasattr(node, "find_all") else []):
+                h = urljoin(page_url, x["href"]).split("#")[0]
+                if h.startswith("http") and h.rstrip("/") != page_url.rstrip("/") and same_site(h, page_url) and (
+                        re.search(r"\b(bio|profile|more|read|view|details?|website)\b", x.get_text(" ", strip=True), re.I) or name_in_url(name, h)):
+                    url = h; break
         found.append((name, url or page_url, ctx[:1500]))
     return found
 
@@ -181,7 +205,7 @@ def next_pages(html, page_url, limit=25):
 DIR_WORDS = [("faculty", 5), ("people", 4), ("directory", 3), ("our team", 2), ("core faculty", 7), ("ladder faculty", 7),
              ("regular faculty", 7), ("tenure", 6), ("professors", 4)]
 BAD_LINK = re.compile(r"news|event|emerit|student|staff|alumni|lecturer|affiliate|visitor|job|hiring|position|search|calendar|"
-                      r"colloquium|talk|award|story|stories|blog|giving|donate|login|course", re.I)
+                      r"colloquium|talk|award|story|stories|blog|giving|donate|login|course|adjunct|part-time|graduate-students", re.I)
 
 def discover_directory(unit_url):
     """Pick the most likely faculty-list link from a unit homepage (menus included)."""
@@ -286,8 +310,10 @@ def scrape_university(p, dir_only=False):
             for nxt in next_pages(html, d):
                 if nxt not in pages:
                     pages.append(nxt); cards += person_cards(fetch.get(nxt), nxt)
-            if len(cards) < 3:  # maybe a JS-built list: try rendering
-                html = fetch.get(d, render=True); cards = person_cards(html, d)
+            if u.get("render") or len(cards) < 5:  # maybe a JS-built list: try rendering
+                rcards = person_cards(fetch.get(d, render=True), d)
+                if len(rcards) > len(cards):
+                    cards = rcards
             row["candidates"] = len(cards)
             depts.append({"name": u["name"], "school": u.get("school"), "directory_url": d,
                           "phd_program_url": u.get("phd_program_url"), "phd_program_name": u.get("phd_program_name")})
@@ -310,8 +336,10 @@ def scrape_university(p, dir_only=False):
                     text = profile_text(ph, url)
                     if len(text) < 200:
                         text = ctx + "\n" + text
-                if not rank:  # title not on the list page: read it from the top of the profile
+                if not rank:  # title not on the list page: read it from the top of the profile, then from its sentences
                     rank, title = classify_title(text[:1500])
+                    if rank is None:
+                        rank, title = rank_from_sentence(text)
                     if rank in (None, "EXCLUDED"):
                         row["no_title" if rank is None else "excluded_titles"] += 1; continue
                 row["tenure_line"] += 1
