@@ -37,7 +37,8 @@ def fetch_static(url):
 def fetch_render(url, wait_ms=2500):
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
-        b = p.chromium.launch(headless=True)
+        # HEADED=1 opens a visible browser window, which gets past some bot checks (e.g. CrowdSec)
+        b = p.chromium.launch(headless=os.environ.get("HEADED") != "1")
         ctx = b.new_context(user_agent=UA, viewport={"width": 1366, "height": 900})
         page = ctx.new_page()
         page.goto(url, wait_until="domcontentloaded", timeout=60000)
@@ -45,7 +46,7 @@ def fetch_render(url, wait_ms=2500):
             page.wait_for_load_state("networkidle", timeout=15000)
         except Exception:
             pass
-        page.wait_for_timeout(wait_ms)
+        page.wait_for_timeout(wait_ms if os.environ.get("HEADED") != "1" else 8000)
         # scroll to trigger lazy content
         for _ in range(6):
             page.mouse.wheel(0, 2000)

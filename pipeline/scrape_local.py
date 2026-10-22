@@ -32,7 +32,8 @@ REPORT = ROOT / "data" / "cache" / "scrape_report.csv"
 # titles that are not tenure-line even when they contain "professor"
 NOT_TENURE = re.compile(r"emerit|lecturer|instructor|adjunct|visiting|clinical|of (the )?practice|professional practice|"
                         r"teaching (assistant |associate )?professor|professor of teaching|of instruction|in residence|"
-                        r"research (assistant |associate )?professor|affiliate|courtesy|postdoc|post-doc|retired|collegiate|"
+                        r"research (assistant |associate )?professor|affiliate|courtesy professor|^\(?by courtesy|professor[^,]*\(by courtesy\)|"
+                        r"postdoc|post-doc|retired|collegiate|"
                         r"extension|\bvisitor\b|part-time", re.I)
 # lines that mark someone as not faculty at all (no "professor" in them)
 NOT_FACULTY = re.compile(r"\b(lecturer|instructor|emerit\w*|postdoc\w*|post-doctoral|graduate student|ph\.?d\.? (student|candidate)|"
@@ -62,7 +63,13 @@ NOT_NAME = set("""faculty people staff directory home about contact news events 
 department departments school college university more read view profile profiles email website site page pages menu search
 login apply give support courses course students student alumni emeriti emeritus lecturers affiliated core all and of the for
 in at our team labs lab center centre institute linguistics language languages science sciences studies phd ma ba
-skip main content navigation calendar resources publications overview learn next previous back top cv pdf map""".split())
+skip main content navigation calendar resources publications overview learn next previous back top cv pdf map
+linguistic fieldwork series track colloquium seminar workshop gateway abroad career careers tutoring involved credit transfer
+planning look to get new your my explore apply visit give office hours history mission giving events diversity inclusion
+graduate undergraduate minor major degree degrees requirements funding admissions handbook forms policies jobs opportunities
+working papers journal journals newsletter community chair committee committees areas group groups project projects
+york abu dhabi buenos aires los angeles tel aviv washington dc shanghai paris london madrid florence berlin accra prague sydney
+north south east west american african asian european east-asian""".split())
 NAME_TOKEN = re.compile(r"^(?:[A-ZÀ-ÖØ-Þ][\w'’.\-À-ÿ]*|[A-Z]\.|de|da|del|della|der|van|von|le|la|du|di|dos|bin|al-\w+|y)$")
 
 def clean_name(text):
@@ -99,40 +106,66 @@ def same_site(a, b):
     base = lambda h: ".".join(h.split(".")[-2:])
     return base(ha) == base(hb)
 
+PROFILE_PATH = re.compile(r"/(people|person|faculty|profile|profiles|directory|staff|bio|our-people|user|team)\b|/~|/[a-z]+-[a-z]+/?$", re.I)
+
+def name_in_url(name, url):
+    import unicodedata
+    path = unicodedata.normalize("NFKD", urlparse(url).path + urlparse(url).netloc).encode("ascii", "ignore").decode().lower()
+    toks = [re.sub(r"[^a-z]", "", unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode().lower()) for t in name.split()]
+    return any(len(t) >= 3 and t[:5] in path for t in (toks[0], toks[-1]))
+
 def person_cards(html, page_url):
-    """Find (name, profile_url, context_text) for each person link on a directory page."""
+    """Find (name, profile_url, context_text) for each person on a directory page.
+    A person is a link whose text is a name, or (for directories without profile pages) a heading whose text is a name;
+    the context is the largest surrounding block that holds no other person."""
     s = soup_of(html)
-    found, seen = [], set()
-    for a in s.find_all("a", href=True):
+    root = s.find("main") or s.find(attrs={"role": "main"}) or s.body or s
+    cands, seen = [], set()
+    for a in root.find_all("a", href=True):
         text = a.get_text(" ", strip=True) or a.get("title", "") or a.get("aria-label", "")
-        text = re.sub(r"^(read more about|view profile( of| for)?|profile (of|for)|more about)\s+", "", text, flags=re.I)
+        text = re.sub(r"^(read more about|view profile( of| for)?|profile (of|for)|more about|visit)\s+", "", text, flags=re.I)
         if not looks_like_name(text):
             continue
         url = urljoin(page_url, a["href"]).split("#")[0]
-        if not url.startswith("http") or not same_site(url, page_url) or url.rstrip("/") == page_url.rstrip("/"):
+        if not url.startswith("http") or url.rstrip("/") == page_url.rstrip("/"):
             continue
         name = clean_name(text)
+        # a profile link names the person or looks like a profile path; external links only when they name the person
+        if not (name_in_url(name, url) or (same_site(url, page_url) and PROFILE_PATH.search(urlparse(url).path))):
+            continue
         key = re.sub(r"[^a-z]", "", name.lower())
         if key in seen:
             continue
-        # smallest ancestor that holds this person's details but not another person's link
-        ctx, node = a.get_text(" ", strip=True), a
-        for _ in range(6):
+        seen.add(key); cands.append((a, name, url))
+    for h in root.find_all(["h2", "h3", "h4", "h5", "strong", "b"]):
+        if h.find("a") or h.find_parent("a"):
+            continue
+        text = h.get_text(" ", strip=True)
+        if not looks_like_name(text):
+            continue
+        name = clean_name(text); key = re.sub(r"[^a-z]", "", name.lower())
+        if key in seen:
+            continue
+        seen.add(key); cands.append((h, name, None))
+    # how many candidates sit under each element: a block "belongs" to one person when it holds only theirs
+    from collections import Counter
+    under = Counter()
+    for el, _, _ in cands:
+        for anc in el.parents:
+            under[id(anc)] += 1
+    found = []
+    for el, name, url in cands:
+        ctx, node = el.get_text(" ", strip=True), el
+        while node.parent is not None and node.parent.name not in ("body", "html", "[document]") and under[id(node.parent)] == 1:
             node = node.parent
-            if node is None or node.name in ("body", "html"):
+            t = node.get_text("\n", strip=True)
+            if len(t) > 1500:
                 break
-            others = {urljoin(page_url, x["href"]).split("#")[0] for x in node.find_all("a", href=True)
-                      if looks_like_name(x.get_text(" ", strip=True))} - {url}
-            if others:
-                break
-            ctx = node.get_text("\n", strip=True)
-            if len(ctx) > 1200:
-                break
-        seen.add(key)
-        found.append((name, url, ctx[:1200]))
+            ctx = t
+        found.append((name, url or page_url, ctx[:1500]))
     return found
 
-def next_pages(html, page_url, limit=12):
+def next_pages(html, page_url, limit=25):
     s = soup_of(html)
     out = []
     for a in s.find_all("a", href=True):
@@ -163,7 +196,8 @@ def discover_directory(unit_url):
             continue
         path = urlparse(href).path.lower()
         sc = sum(w for k, w in DIR_WORDS if k in t) + sum(2 for k in ("faculty", "people", "directory") if k in path)
-        if BAD_LINK.search(t) or BAD_LINK.search(path) or "?" in href and "faculty" not in href.lower():
+        bad = BAD_LINK.search(re.sub(r"(faculty|people)\W+(and|&)\W+(academic\W+)?staff", "faculty", t)) or BAD_LINK.search(path.replace("academic-staff", ""))
+        if bad or "?" in href and "faculty" not in href.lower():
             sc -= 8
         # stay inside the unit's own site section when the homepage is a sub-path (e.g. /linguistics/)
         base_path = urlparse(unit_url).path.rstrip("/")
@@ -201,7 +235,7 @@ def profile_text(html, url):
         text = main.get_text("\n", strip=True)
     return re.sub(r"\n{3,}", "\n\n", text or "").strip()
 
-AREAS_HEAD = re.compile(r"^\s*(research (interests|areas|focus)|areas of (interest|research|expertise)|specializations?|expertise|interests)\s*:?\s*(.*)$", re.I)
+AREAS_HEAD = re.compile(r"^\s*(research and teaching|research (interests|areas|focus)|areas of (interest|research|expertise)|specializations?|expertise|interests)\s*:?\s*(.*)$", re.I)
 def research_areas(text):
     """Items after a 'Research interests' heading: the rest of that line, or the short lines (a list) below it."""
     lines = text.split("\n")
@@ -266,11 +300,16 @@ def scrape_university(p, dir_only=False):
                     row["excluded_titles"] += 1; continue
                 if dir_only and rank:
                     row["tenure_line"] += 1; continue
-                try:
-                    ph = fetch.get(url)
-                except Exception as e:
-                    row["note"] += f" profile failed: {name};"; continue
-                text = profile_text(ph, url)
+                if url == d or url in pages:  # no profile page: the directory card is all there is
+                    ph, text = None, ctx
+                else:
+                    try:
+                        ph = fetch.get(url)
+                    except Exception as e:
+                        row["note"] += f" profile failed: {name};"; continue
+                    text = profile_text(ph, url)
+                    if len(text) < 200:
+                        text = ctx + "\n" + text
                 if not rank:  # title not on the list page: read it from the top of the profile
                     rank, title = classify_title(text[:1500])
                     if rank in (None, "EXCLUDED"):
@@ -280,11 +319,11 @@ def scrape_university(p, dir_only=False):
                     continue
                 if (u.get("field", "LING") != "LING" or u.get("filter_language")) and not about_language(text, u.get("field", "LING")):
                     row["not_language"] += 1; continue
-                site, scholar = profile_links(ph, url)
+                site, scholar = profile_links(ph, url) if ph else (None, None)
                 seen.add(key)
                 faculty.append({"name": name, "title": title, "rank": rank, "department": u["name"], "unit": u["name"],
                                 "profile_url": url, "personal_url": site, "google_scholar_url": scholar,
-                                "research_areas": research_areas(text), "bio": text[:6000]})
+                                "research_areas": research_areas(text) or research_areas(ctx), "bio": text[:6000]})
                 row["kept"] += 1
             n = row["tenure_line"] if dir_only else row["kept"]
             if n < 3 or (row["no_title"] > max(3, row["tenure_line"])):
@@ -305,11 +344,18 @@ def main():
     ap.add_argument("--only", help="comma-separated slugs or slug prefixes")
     ap.add_argument("--dir-only", action="store_true", help="only find directories and count tenure-line people")
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--recheck", action="store_true", help="only universities marked CHECK in the last report")
     a = ap.parse_args()
     programs = [p for p in json.load(open(ROOT / "data" / "programs.json", encoding="utf-8")) if any(u.get("include") for u in p["units"])]
     if a.only:
         keys = a.only.split(",")
         programs = [p for p in programs if any(p["slug"].startswith(k) for k in keys)]
+    old = []
+    if REPORT.exists():
+        old = list(csv.DictReader(open(REPORT, encoding="utf-8")))
+    if a.recheck:
+        bad = {r["slug"] for r in old if r.get("status") == "CHECK"}
+        programs = [p for p in programs if p["slug"] in bad]
     print(f"{len(programs)} universities, {sum(1 for p in programs for u in p['units'] if u.get('include'))} units"
           f"{' (directories only)' if a.dir_only else ''}")
     rows, t0 = [], time.time()
@@ -325,6 +371,8 @@ def main():
             n = sum(x.get("kept" if not a.dir_only else "tenure_line", 0) or 0 for x in r)
             flag = " CHECK" if any(x.get("status") == "CHECK" for x in r) else ""
             print(f"[{i:2d}/{len(programs)}] {p['slug']:45s} {n:3d} people{flag}  ({int(time.time()-t0)}s)")
+    done = {p["slug"] for p in programs}
+    rows = [r for r in old if r["slug"] not in done] + rows
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     cols = ["slug", "unit", "field", "status", "candidates", "tenure_line", "excluded_titles", "no_title", "not_language", "kept", "directory", "note"]
     with open(REPORT, "w", newline="", encoding="utf-8") as fh:
