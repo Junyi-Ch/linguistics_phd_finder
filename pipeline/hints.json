@@ -1,0 +1,250 @@
+{
+ "note": "Query detectors for suggested-filter chips. Read by src/lib/match.ts and pipeline/eval/harness.py. Patterns are case-insensitive and must be valid in both JavaScript and Python regex.",
+ "detect": [
+  [
+   "region",
+   "R_CHINESE",
+   "\\b(chinese|mandarin|cantonese|putonghua|sinitic|min nan|hokkien|wu chinese|shanghainese|hakka)\\b"
+  ],
+  [
+   "region",
+   "R_JAPANESE_KOREAN",
+   "\\b(japanese|korean|ryukyuan|ainu)\\b"
+  ],
+  [
+   "region",
+   "R_SE_ASIA_PACIFIC",
+   "\\b(austronesian|tagalog|filipino|indonesian|malay|vietnamese|thai|khmer|burmese|tibetan|tai-kadai|hmong|polynesian|oceanic|hawaiian|maori|pacific)\\b"
+  ],
+  [
+   "region",
+   "R_SOUTH_ASIA",
+   "\\b(hindi|urdu|bengali|bangla|tamil|telugu|kannada|malayalam|marathi|punjabi|nepali|sinhala|dravidian|indo-aryan|south asia\\w*)\\b"
+  ],
+  [
+   "region",
+   "R_MIDDLE_EAST",
+   "\\b(arabic|hebrew|persian|farsi|turkish|kurdish|semitic|amharic|uzbek|kazakh|turkic|middle east\\w*)\\b"
+  ],
+  [
+   "region",
+   "R_AFRICA",
+   "\\b(african languages?|bantu|swahili|yoruba|igbo|hausa|zulu|xhosa|wolof|akan|twi|niger-congo|nilo-saharan|africa)\\b"
+  ],
+  [
+   "region",
+   "R_AMERICAS_INDIGENOUS",
+   "\\b(indigenous languages?|native american|first nations|mayan|quechua|nahuatl|navajo|cherokee|lakota|ojibwe|zapotec|mixtec|guarani|aymara|algonquian|athabaskan|salish|uto-aztecan)\\b"
+  ],
+  [
+   "region",
+   "R_SIGN",
+   "\\b(sign languages?|asl|signers?|signing|deaf)\\b"
+  ],
+  [
+   "region",
+   "R_ROMANCE",
+   "\\b(spanish|portuguese|french|italian|romanian|catalan|romance languages?|latinx?)\\b"
+  ],
+  [
+   "region",
+   "R_GERMANIC",
+   "\\b(german|dutch|swedish|norwegian|danish|icelandic|yiddish|afrikaans|germanic)\\b"
+  ],
+  [
+   "region",
+   "R_SLAVIC_E_EUROPE",
+   "\\b(russian|ukrainian|polish|czech|serbian|croatian|bulgarian|slavic|baltic|lithuanian|latvian|georgian|armenian|hungarian|finnish|estonian)\\b"
+  ],
+  [
+   "region",
+   "R_ENGLISH",
+   "\\b(english|aave|african american (vernacular )?english|world englishes|southern american english)\\b"
+  ],
+  [
+   "region",
+   "R_CLASSICAL",
+   "\\b(latin|ancient greek|sanskrit|old chinese|classical chinese|old english|biblical hebrew|akkadian|hittite|proto-indo-european|pie)\\b"
+  ],
+  [
+   "region",
+   "R_CROSSLING",
+   "\\b(cross-?linguistic\\w*|typolog\\w*|many languages|language sample)\\b"
+  ],
+  [
+   "approach",
+   "A_ML_LLM",
+   "\\b(machine learning|neural networks?|deep learning|large language models?|llms?|transformers?|gpt|bert|language models?)\\b"
+  ],
+  [
+   "approach",
+   "A_COMP_MODELING",
+   "\\b(computational model\\w*|bayesian|information[- ]theor\\w*|surprisal|cognitive model\\w*|probabilistic model\\w*|learnability)\\b"
+  ],
+  [
+   "approach",
+   "A_CORPUS",
+   "\\b(corpus|corpora|text analysis|frequency data)\\b"
+  ],
+  [
+   "approach",
+   "A_EYE_TRACKING",
+   "\\b(eye[- ]?tracking|visual world|eye movements?)\\b"
+  ],
+  [
+   "approach",
+   "A_NEURO",
+   "\\b(eeg|erps?|meg|fmri|neuroimaging|electrophysiolog\\w*|brain imaging|n400|p600)\\b"
+  ],
+  [
+   "approach",
+   "A_INSTRUMENTAL_PHON",
+   "\\b(acoustic analysis|acoustics?|ultrasound|articulograph\\w*|ema|praat|formants?|spectrograms?)\\b"
+  ],
+  [
+   "approach",
+   "A_EXPERIMENTAL",
+   "\\b(experiments?|experimental|reaction times?|priming|self-paced reading|lexical decision|perception study|psycholinguistic experiments?)\\b"
+  ],
+  [
+   "approach",
+   "A_FIELDWORK",
+   "\\b(fieldwork|field work|elicitation|field methods|language consultants?)\\b"
+  ],
+  [
+   "approach",
+   "A_ETHNOGRAPHY",
+   "\\b(ethnograph\\w*|qualitative|participant observation|interviews?)\\b"
+  ],
+  [
+   "approach",
+   "A_VARIATIONIST",
+   "\\b(variationist|sociophonetic\\w*|mixed[- ]effects|regression|language variation)\\b"
+  ],
+  [
+   "approach",
+   "A_FORMAL",
+   "\\b(formal (semantics|syntax|theory|analysis)|generative|minimalis[mt]|optimality theory|hpsg|lfg|categorial grammar|type theory|lambda calculus|dynamic semantics)\\b"
+  ],
+  [
+   "approach",
+   "A_COMPARATIVE_HISTORICAL",
+   "\\b(comparative method|reconstruction|philolog\\w*|manuscripts?|archival)\\b"
+  ],
+  [
+   "approach",
+   "A_DEVELOPMENTAL",
+   "\\b(longitudinal|developmental|infants?|toddlers?)\\b"
+  ],
+  [
+   "approach",
+   "A_CLINICAL_CLASSROOM",
+   "\\b(intervention|classroom|clinical|therapy|treatment study)\\b"
+  ],
+  [
+   "topic",
+   "T_COMPUTATIONAL",
+   "\\b(computational linguistics|nlp|natural language processing|speech recognition|asr|machine translation|language technology|parsing|tokeniz\\w*|language models?|llms?)\\b"
+  ],
+  [
+   "topic",
+   "T_PHONETICS",
+   "\\b(phonetic\\w*|(speech|tone|vowel|consonant|accent) perception|speech production|acoustic\\w*|articulat\\w*|vowels?|consonants?|voice quality)\\b"
+  ],
+  [
+   "topic",
+   "T_PHONOLOGY",
+   "\\b(phonolog\\w*|prosod\\w*|intonation|tones?|tonal|stress|syllables?|metrical|harmony)\\b"
+  ],
+  [
+   "topic",
+   "T_MORPHOLOGY",
+   "\\b(morpholog\\w*|inflection\\w*|derivation\\w*|word formation|compounding|lexicon|lexical)\\b"
+  ],
+  [
+   "topic",
+   "T_SYNTAX",
+   "\\b(syntax|syntactic|argument structure|word order|clause structure|agreement|movement|ellipsis|relative clauses?|islands?)\\b"
+  ],
+  [
+   "topic",
+   "T_SEMANTICS",
+   "\\b(semantic\\w*|meaning|quantifiers?|tense|aspect|modality|negation|plurals?|degree|vagueness|compositional\\w*)\\b"
+  ],
+  [
+   "topic",
+   "T_PRAGMATICS",
+   "\\b(pragmatic\\w*|implicature\\w*|presupposition\\w*|information structure|focus|politeness|speech acts?|scalar)\\b"
+  ],
+  [
+   "topic",
+   "T_PSYCHOLING",
+   "\\b(psycholinguistic\\w*|sentence processing|language processing|comprehension|word recognition|production planning|prediction in language)\\b"
+  ],
+  [
+   "topic",
+   "T_NEUROLING",
+   "\\b(neurolinguistic\\w*|aphasia|dyslexia|language disorders?|developmental language disorder|dld|brain)\\b"
+  ],
+  [
+   "topic",
+   "T_L1_ACQUISITION",
+   "\\b(language acquisition|child language|first language|l1 acquisition|language development|word learning|infant)\\b"
+  ],
+  [
+   "topic",
+   "T_L2_BILINGUALISM",
+   "\\b(second language|sla|l2|bilingual\\w*|multilingual\\w*|heritage (language|speakers?)|language learners?)\\b"
+  ],
+  [
+   "topic",
+   "T_APPLIED_PEDAGOGY",
+   "\\b(applied linguistics|language teaching|language education|tesol|esl|efl|language assessment|language testing|literacy|writing instruction|curriculum)\\b"
+  ],
+  [
+   "topic",
+   "T_SOCIOLING",
+   "\\b(sociolinguistic\\w*|dialects?|variation|language change in progress|accents?|language attitudes?|language and identity|language policy|language planning|gender and language)\\b"
+  ],
+  [
+   "topic",
+   "T_LING_ANTHRO",
+   "\\b(linguistic anthropology|language ideolog\\w*|language socialization|indexicality|semiotic\\w*|language and culture)\\b"
+  ],
+  [
+   "topic",
+   "T_DISCOURSE_INTERACTION",
+   "\\b(discourse|conversation analysis|interaction\\w*|turn-taking|narratives?|critical discourse analysis)\\b"
+  ],
+  [
+   "topic",
+   "T_HISTORICAL",
+   "\\b(historical linguistics|language change|sound change|grammaticali[sz]ation|etymolog\\w*|diachronic|proto-\\w+)\\b"
+  ],
+  [
+   "topic",
+   "T_TYPOLOGY",
+   "\\b(typolog\\w*|universals?|cross-?linguistic\\w*)\\b"
+  ],
+  [
+   "topic",
+   "T_DOCUMENTATION",
+   "\\b(documentation|endangered|revitali[sz]ation|language description|reference grammar|under-?documented|minority languages?)\\b"
+  ],
+  [
+   "topic",
+   "T_CONTACT_CREOLES",
+   "\\b(language contact|creoles?|pidgins?|code-?switching|borrowing|loanwords?|translanguaging)\\b"
+  ],
+  [
+   "topic",
+   "T_SIGN_GESTURE",
+   "\\b(sign languages?|asl|gestures?|multimodal\\w*|co-speech)\\b"
+  ],
+  [
+   "topic",
+   "T_COGNITION_PHILOSOPHY",
+   "\\b(language and (thought|cognition)|linguistic relativity|language evolution|evolution of language|philosophy of language|embodi\\w*)\\b"
+  ]
+ ]
+}

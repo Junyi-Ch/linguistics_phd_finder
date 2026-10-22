@@ -1,0 +1,719 @@
+[
+ {
+  "university": "Massachusetts Institute of Technology",
+  "slug": "massachusetts-institute-of-technology",
+  "guide_units": [
+   "Department of Linguistics and Philosophy"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Brain and Cognitive Sciences (language)",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "Harvard University",
+  "slug": "harvard-university",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Slavic Languages and Literatures (linguistics)",
+    "field": "LANG"
+   }
+  ]
+ },
+ {
+  "university": "Yale University",
+  "slug": "yale-university",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Stanford University",
+  "slug": "stanford-university",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Stanford NLP Group (Computer Science)",
+    "field": "COMP"
+   }
+  ]
+ },
+ {
+  "university": "University of California, Berkeley",
+  "slug": "university-of-california-berkeley",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of California, Los Angeles",
+  "slug": "university-of-california-los-angeles",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Applied Linguistics",
+    "field": "APPLIED"
+   }
+  ]
+ },
+ {
+  "university": "University of California, San Diego",
+  "slug": "university-of-california-san-diego",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Cognitive Science (language)",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "University of California, Santa Cruz",
+  "slug": "university-of-california-santa-cruz",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of California, Santa Barbara",
+  "slug": "university-of-california-santa-barbara",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of California, Davis",
+  "slug": "university-of-california-davis",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of California, Irvine",
+  "slug": "university-of-california-irvine",
+  "guide_units": [
+   "Department of Language Science"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of Southern California",
+  "slug": "university-of-southern-california",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of Chicago",
+  "slug": "university-of-chicago",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Northwestern University",
+  "slug": "northwestern-university",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Roxelyn and Richard Pepper Department of Communication Sciences and Disorders",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "University of Pennsylvania",
+  "slug": "university-of-pennsylvania",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Johns Hopkins University",
+  "slug": "johns-hopkins-university",
+  "guide_units": [
+   "Department of Cognitive Science (linguistics)"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Center for Language and Speech Processing",
+    "field": "COMP"
+   }
+  ]
+ },
+ {
+  "university": "University of Maryland, College Park",
+  "slug": "university-of-maryland-college-park",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Hearing and Speech Sciences",
+    "field": "SPEECH"
+   },
+   {
+    "name": "Second Language Acquisition program",
+    "field": "APPLIED"
+   }
+  ]
+ },
+ {
+  "university": "Georgetown University",
+  "slug": "georgetown-university",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Spanish and Portuguese (Hispanic linguistics)",
+    "field": "LANG"
+   },
+   {
+    "name": "Department of Arabic and Islamic Studies (Arabic linguistics)",
+    "field": "LANG"
+   }
+  ]
+ },
+ {
+  "university": "New York University",
+  "slug": "new-york-university",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "City University of New York Graduate Center",
+  "slug": "city-university-of-new-york-graduate-center",
+  "guide_units": [
+   "Linguistics Program"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Speech-Language-Hearing Sciences Program",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "Stony Brook University",
+  "slug": "stony-brook-university",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University at Buffalo, SUNY",
+  "slug": "university-at-buffalo-suny",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Rutgers University–New Brunswick",
+  "slug": "rutgers-universitynew-brunswick",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Cornell University",
+  "slug": "cornell-university",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of Rochester",
+  "slug": "university-of-rochester",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Brain and Cognitive Sciences (language)",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "Brown University",
+  "slug": "brown-university",
+  "guide_units": [
+   "Department of Cognitive and Psychological Sciences (linguistics)"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Boston University",
+  "slug": "boston-university",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Princeton University",
+  "slug": "princeton-university",
+  "guide_units": [
+   "Program in Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Carnegie Mellon University",
+  "slug": "carnegie-mellon-university",
+  "guide_units": [],
+  "adjacent_hints": [
+   {
+    "name": "Language Technologies Institute",
+    "field": "COMP"
+   }
+  ]
+ },
+ {
+  "university": "University of Massachusetts Amherst",
+  "slug": "university-of-massachusetts-amherst",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of Connecticut",
+  "slug": "university-of-connecticut",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Speech, Language, and Hearing Sciences",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "University of Delaware",
+  "slug": "university-of-delaware",
+  "guide_units": [
+   "Department of Linguistics and Cognitive Science"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of Pittsburgh",
+  "slug": "university-of-pittsburgh",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Pennsylvania State University",
+  "slug": "pennsylvania-state-university",
+  "guide_units": [],
+  "adjacent_hints": [
+   {
+    "name": "Department of Applied Linguistics",
+    "field": "APPLIED"
+   },
+   {
+    "name": "Department of Spanish, Italian, and Portuguese (Hispanic linguistics)",
+    "field": "LANG"
+   }
+  ]
+ },
+ {
+  "university": "Ohio State University",
+  "slug": "ohio-state-university",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of East Asian Languages and Literatures (linguistics)",
+    "field": "LANG"
+   },
+   {
+    "name": "Department of Slavic and East European Languages and Cultures (linguistics)",
+    "field": "LANG"
+   }
+  ]
+ },
+ {
+  "university": "University of Michigan",
+  "slug": "university-of-michigan",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Michigan State University",
+  "slug": "michigan-state-university",
+  "guide_units": [
+   "Department of Linguistics, Languages, and Cultures"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Second Language Studies PhD Program",
+    "field": "APPLIED"
+   }
+  ]
+ },
+ {
+  "university": "Indiana University Bloomington",
+  "slug": "indiana-university-bloomington",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Spanish and Portuguese (Hispanic linguistics)",
+    "field": "LANG"
+   },
+   {
+    "name": "Department of Speech, Language and Hearing Sciences",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "University of Illinois Urbana-Champaign",
+  "slug": "university-of-illinois-urbana-champaign",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Spanish and Portuguese (Spanish linguistics)",
+    "field": "LANG"
+   },
+   {
+    "name": "Department of Speech and Hearing Science",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "Purdue University",
+  "slug": "purdue-university",
+  "guide_units": [
+   "Linguistics Program"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Speech, Language, and Hearing Sciences",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "University of Wisconsin–Madison",
+  "slug": "university-of-wisconsinmadison",
+  "guide_units": [
+   "Department of Language Sciences"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Communication Sciences and Disorders",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "University of Minnesota, Twin Cities",
+  "slug": "university-of-minnesota-twin-cities",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Spanish and Portuguese Studies (Hispanic linguistics)",
+    "field": "LANG"
+   },
+   {
+    "name": "Department of Speech-Language-Hearing Sciences",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "University of Iowa",
+  "slug": "university-of-iowa",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Communication Sciences and Disorders",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "University of Kansas",
+  "slug": "university-of-kansas",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Child Language Doctoral Program",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "University of Texas at Austin",
+  "slug": "university-of-texas-at-austin",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Spanish and Portuguese (Iberian and Latin American linguistics)",
+    "field": "LANG"
+   },
+   {
+    "name": "Department of Speech, Language, and Hearing Sciences",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "Rice University",
+  "slug": "rice-university",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of Arizona",
+  "slug": "university-of-arizona",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Second Language Acquisition and Teaching (SLAT) Program",
+    "field": "APPLIED"
+   },
+   {
+    "name": "Department of Speech, Language, and Hearing Sciences",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "Arizona State University",
+  "slug": "arizona-state-university",
+  "guide_units": [
+   "Linguistics and Applied Linguistics PhD (Department of English)"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Northern Arizona University",
+  "slug": "northern-arizona-university",
+  "guide_units": [],
+  "adjacent_hints": [
+   {
+    "name": "Applied Linguistics PhD Program (Department of English)",
+    "field": "APPLIED"
+   }
+  ]
+ },
+ {
+  "university": "University of New Mexico",
+  "slug": "university-of-new-mexico",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of Colorado Boulder",
+  "slug": "university-of-colorado-boulder",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Speech, Language and Hearing Sciences",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "University of Utah",
+  "slug": "university-of-utah",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of Oregon",
+  "slug": "university-of-oregon",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of Washington",
+  "slug": "university-of-washington",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Speech and Hearing Sciences",
+    "field": "SPEECH"
+   }
+  ]
+ },
+ {
+  "university": "University of Hawaii at Manoa",
+  "slug": "university-of-hawaii-at-manoa",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": [
+   {
+    "name": "Department of Second Language Studies",
+    "field": "APPLIED"
+   },
+   {
+    "name": "Department of East Asian Languages and Literatures (linguistics)",
+    "field": "LANG"
+   }
+  ]
+ },
+ {
+  "university": "University of Georgia",
+  "slug": "university-of-georgia",
+  "guide_units": [
+   "Linguistics Program"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of Florida",
+  "slug": "university-of-florida",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "University of South Carolina",
+  "slug": "university-of-south-carolina",
+  "guide_units": [
+   "Linguistics Program"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Georgia State University",
+  "slug": "georgia-state-university",
+  "guide_units": [],
+  "adjacent_hints": [
+   {
+    "name": "Department of Applied Linguistics and ESL",
+    "field": "APPLIED"
+   }
+  ]
+ },
+ {
+  "university": "University of North Carolina at Chapel Hill",
+  "slug": "university-of-north-carolina-at-chapel-hill",
+  "guide_units": [],
+  "adjacent_hints": [
+   {
+    "name": "Department of Linguistics (no PhD; check)",
+    "field": "LING"
+   }
+  ]
+ },
+ {
+  "university": "Columbia University",
+  "slug": "columbia-university",
+  "guide_units": [],
+  "adjacent_hints": [
+   {
+    "name": "Teachers College, Applied Linguistics and TESOL",
+    "field": "APPLIED"
+   }
+  ]
+ },
+ {
+  "university": "Texas A&M University",
+  "slug": "texas-aandm-university",
+  "guide_units": [],
+  "adjacent_hints": [
+   {
+    "name": "Department of Hispanic Studies (Hispanic linguistics)",
+    "field": "LANG"
+   }
+  ]
+ },
+ {
+  "university": "University of Kentucky",
+  "slug": "university-of-kentucky",
+  "guide_units": [],
+  "adjacent_hints": [
+   {
+    "name": "Department of Linguistics (check for PhD)",
+    "field": "LING"
+   }
+  ]
+ },
+ {
+  "university": "University of Texas at Arlington",
+  "slug": "university-of-texas-at-arlington",
+  "guide_units": [
+   "Department of Linguistics and TESOL"
+  ],
+  "adjacent_hints": []
+ },
+ {
+  "university": "Duke University",
+  "slug": "duke-university",
+  "guide_units": [],
+  "adjacent_hints": [
+   {
+    "name": "Linguistics Program (check for PhD)",
+    "field": "LING"
+   }
+  ]
+ }
+]

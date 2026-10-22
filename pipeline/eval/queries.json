@@ -1,0 +1,205 @@
+{
+ "about": "Evaluation queries for the Linguistics matcher. 30 statement-style English queries, 6 short keyword queries, 4 Chinese queries. Written separately from pipeline/probes.json (calibration) so the test set is not tuned on. Relevance judgments go in judgments.json (graded 0-3, see RUBRIC.md).",
+ "queries": [
+  {
+   "id": "q01",
+   "kind": "sop",
+   "text": "I want to study the syntax of wh-questions and island effects in Mandarin Chinese, combining theoretical analysis with acceptability judgment experiments."
+  },
+  {
+   "id": "q02",
+   "kind": "sop",
+   "text": "My interest is in how listeners adapt to unfamiliar accents, using perceptual learning experiments and computational models of speech perception."
+  },
+  {
+   "id": "q03",
+   "kind": "sop",
+   "text": "I study the acoustics and phonology of tone sandhi in Southern Min and Wu Chinese dialects, based on fieldwork recordings."
+  },
+  {
+   "id": "q04",
+   "kind": "sop",
+   "text": "I am interested in the semantics of evidentiality and modality in Quechua, using field elicitation with native speakers."
+  },
+  {
+   "id": "q05",
+   "kind": "sop",
+   "text": "My research examines how heritage speakers of Korean in the United States use honorifics, combining sociolinguistic interviews and experimental tasks."
+  },
+  {
+   "id": "q06",
+   "kind": "sop",
+   "text": "I want to study how children learn verb meanings from syntactic context (syntactic bootstrapping), using preferential looking experiments with toddlers."
+  },
+  {
+   "id": "q07",
+   "kind": "sop",
+   "text": "I study the neural basis of reading and dyslexia in Chinese and English using EEG and fMRI."
+  },
+  {
+   "id": "q08",
+   "kind": "sop",
+   "text": "I am interested in using transformer language models to test theories of syntax, such as whether models learn hierarchical structure from child-directed speech."
+  },
+  {
+   "id": "q09",
+   "kind": "sop",
+   "text": "My research is on Arabic diglossia and code-switching between dialects and Modern Standard Arabic on social media."
+  },
+  {
+   "id": "q10",
+   "kind": "sop",
+   "text": "I want to document an endangered Austronesian language in Taiwan and work with the community on revitalization materials."
+  },
+  {
+   "id": "q11",
+   "kind": "sop",
+   "text": "I study vowel shifts and sound change in progress in California English, using sociophonetic analysis of a large interview corpus."
+  },
+  {
+   "id": "q12",
+   "kind": "sop",
+   "text": "My interest is in second language pronunciation: how adult Spanish learners of English acquire vowel contrasts and whether perceptual training helps."
+  },
+  {
+   "id": "q13",
+   "kind": "sop",
+   "text": "I study the pragmatics of politeness and indirect requests in Japanese workplace interaction, using conversation analysis."
+  },
+  {
+   "id": "q14",
+   "kind": "sop",
+   "text": "I want to work on morphological typology: the distribution of polysynthesis across the world's languages and its historical sources."
+  },
+  {
+   "id": "q15",
+   "kind": "sop",
+   "text": "My research is on speech production in children with developmental language disorder and how morphosyntactic deficits show up in narratives."
+  },
+  {
+   "id": "q16",
+   "kind": "sop",
+   "text": "I am interested in sign language phonology and the grammar of space in American Sign Language."
+  },
+  {
+   "id": "q17",
+   "kind": "sop",
+   "text": "I study language contact in the Andes between Spanish and Quechua, especially changes in word order and evidential marking in Andean Spanish."
+  },
+  {
+   "id": "q18",
+   "kind": "sop",
+   "text": "I want to build speech recognition for Indigenous languages of the Americas with very little data, using self-supervised speech models."
+  },
+  {
+   "id": "q19",
+   "kind": "sop",
+   "text": "My research uses eye-tracking during reading to study how readers predict upcoming words and how surprisal affects reading times."
+  },
+  {
+   "id": "q20",
+   "kind": "sop",
+   "text": "I am interested in formal semantics: the meaning of plurals, mass nouns and distributivity, and how they vary across languages."
+  },
+  {
+   "id": "q21",
+   "kind": "sop",
+   "text": "I study language ideologies about Mandarin and minority languages in China, and how language policy affects schools in ethnic minority regions."
+  },
+  {
+   "id": "q22",
+   "kind": "sop",
+   "text": "My research is on historical Chinese phonology and the reconstruction of Middle and Old Chinese."
+  },
+  {
+   "id": "q23",
+   "kind": "sop",
+   "text": "I want to study the prosody of focus and how intonation interacts with lexical tone in Cantonese, using production and perception experiments."
+  },
+  {
+   "id": "q24",
+   "kind": "sop",
+   "text": "I study bilingual language control and cross-language interference in Spanish-English bilinguals, using reaction time experiments and EEG."
+  },
+  {
+   "id": "q25",
+   "kind": "sop",
+   "text": "My research is in applied linguistics: writing development of international students in English for academic purposes, using learner corpora."
+  },
+  {
+   "id": "q26",
+   "kind": "sop",
+   "text": "I am interested in the phonetics of glottalization and voice quality, using laryngography and acoustic analysis."
+  },
+  {
+   "id": "q27",
+   "kind": "sop",
+   "text": "I study creole languages of West Africa and the Caribbean and whether creoles share structural features."
+  },
+  {
+   "id": "q28",
+   "kind": "sop",
+   "text": "I want to investigate how large language models handle pragmatic inference, such as implicature and presupposition, compared with humans."
+  },
+  {
+   "id": "q29",
+   "kind": "sop",
+   "text": "My research is on aphasia rehabilitation and how bilingual patients recover each of their languages after stroke."
+  },
+  {
+   "id": "q30",
+   "kind": "sop",
+   "text": "I study the role of gesture in child language development and how gesture predicts later vocabulary growth."
+  },
+  {
+   "id": "q31",
+   "kind": "short",
+   "text": "tone"
+  },
+  {
+   "id": "q32",
+   "kind": "short",
+   "text": "syntactic islands"
+  },
+  {
+   "id": "q33",
+   "kind": "short",
+   "text": "sociophonetics"
+  },
+  {
+   "id": "q34",
+   "kind": "short",
+   "text": "language documentation"
+  },
+  {
+   "id": "q35",
+   "kind": "short",
+   "text": "computational semantics"
+  },
+  {
+   "id": "q36",
+   "kind": "short",
+   "text": "heritage languages"
+  },
+  {
+   "id": "q37",
+   "kind": "zh",
+   "text": "我想研究汉语普通话的声调感知，比较母语者和二语学习者，用眼动和脑电实验。"
+  },
+  {
+   "id": "q38",
+   "kind": "zh",
+   "text": "我对汉语方言的语法和语言接触感兴趣，特别是粤语和普通话之间的语码转换。"
+  },
+  {
+   "id": "q39",
+   "kind": "zh",
+   "text": "研究儿童如何习得汉语的量词和句法结构，用纵向语料分析。"
+  },
+  {
+   "id": "q40",
+   "kind": "zh",
+   "text": "用大语言模型研究句法加工和惊异度，与人类阅读时间数据比较。"
+  }
+ ]
+}
