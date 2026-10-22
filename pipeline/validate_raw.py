@@ -3,7 +3,7 @@
 import json, re, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-RANKS = {"Professor", "Associate Professor", "Assistant Professor"}
+RANKS = {"Professor", "Associate Professor", "Assistant Professor", "Faculty"}  # Faculty: list shows no title
 
 def validate(path):
     d = json.load(open(path, encoding="utf-8"))

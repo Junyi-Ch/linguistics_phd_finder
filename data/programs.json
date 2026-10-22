@@ -669,7 +669,7 @@
     "unit_url": "https://linguistics.as.nyu.edu/",
     "phd_program_name": "PhD in Linguistics",
     "phd_program_url": null,
-    "directory_url": null,
+    "directory_url": "https://as.nyu.edu/departments/linguistics/people/faculty.html",
     "include": true,
     "reason": "",
     "render": true
@@ -1532,7 +1532,7 @@
     "unit_url": "https://lllc.uiowa.edu/academic-areas/linguistics",
     "phd_program_name": "PhD in Linguistics",
     "phd_program_url": null,
-    "directory_url": null,
+    "directory_url": "https://lllc.uiowa.edu/people/faculty/linguistics",
     "include": true,
     "reason": "Linguistics now sits in the Department of Languages, Literatures and Cultures; check the PhD still admits",
     "filter_language": true
@@ -1830,7 +1830,7 @@
     "unit_url": "https://ling.unm.edu/",
     "phd_program_name": "PhD in Linguistics",
     "phd_program_url": null,
-    "directory_url": "https://ling.unm.edu/about/people/faculty/index.html",
+    "directory_url": "https://ling.unm.edu/about/people/index.html",
     "include": true,
     "reason": ""
    }
@@ -2106,7 +2106,7 @@
     "unit_url": "https://sc.edu/study/colleges_schools/artsandsciences/linguistics/",
     "phd_program_name": "PhD in Linguistics",
     "phd_program_url": null,
-    "directory_url": null,
+    "directory_url": "https://sc.edu/study/colleges_schools/artsandsciences/linguistics/our_people/faculty_staff/index.php",
     "include": true,
     "reason": "",
     "render": true

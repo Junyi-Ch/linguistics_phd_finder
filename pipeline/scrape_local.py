@@ -85,11 +85,14 @@ working papers journal journals newsletter community chair committee committees 
 york abu dhabi buenos aires los angeles tel aviv washington dc shanghai paris london madrid florence berlin accra prague sydney
 north south east west american african asian european east-asian
 see bio biography professor associate assistant lecturer instructor chair director dean emeritus emerita adjunct visiting
-senior junior distinguished regents endowed fellow coordinator advisor manager administrator student candidate""".split())
+senior junior distinguished regents endowed fellow coordinator advisor manager administrator student candidate
+teaching fellows related links useful quick resource resources faq faqs update""".split())
 NAME_TOKEN = re.compile(r"^(?:[A-ZÀ-ÖØ-Þ][\w'’.\-À-ÿ]*|[A-Z]\.|de|da|del|della|der|van|von|le|la|du|di|dos|bin|al-\w+|y)$")
 
 def clean_name(text):
     t = re.sub(r"\s+", " ", text or "").strip()
+    t = re.sub(r"^(dr|prof|professor|ms|mr|mrs|mx)\.?\s+", "", t, flags=re.I)
+    t = re.sub(r",\s*(ph\.?\s?d|m\.?a|m\.?s|ed\.?d|ma|ms)\b\.?.*$", "", t, flags=re.I)  # "Name, PhD, Ohio State"
     t = re.sub(r",?\s*(ph\.?\s?d\.?|m\.?a\.?|ed\.?d\.?|jr\.?|sr\.?)$", "", t, flags=re.I).strip(" ,")
     t = re.sub(r"\s*\(.*?\)\s*", " ", t).strip()
     if "," in t:  # "Last, First"
@@ -122,11 +125,13 @@ def same_site(a, b):
     base = lambda h: ".".join(h.split(".")[-2:])
     return base(ha) == base(hb)
 
-PROFILE_PATH = re.compile(r"/(people|person|faculty|profile|profiles|directory|staff|bio|our-people|user|team)\b|/~|/[a-z]+-[a-z]+/?$", re.I)
+PROFILE_PATH = re.compile(r"/(people|person|faculty|profile|profiles|directory|staff|bio|our-people|user|team|contact|experts?|scholars?)\b|/~|/[a-z]+-[a-z]+/?$", re.I)
+
+PROFILE_QUERY = re.compile(r"\b(uid|username|user|netid|person|profile|id|people)=", re.I)
 
 def name_in_url(name, url):
     import unicodedata
-    path = unicodedata.normalize("NFKD", urlparse(url).path + urlparse(url).netloc).encode("ascii", "ignore").decode().lower()
+    path = unicodedata.normalize("NFKD", urlparse(url).path + urlparse(url).netloc + "?" + urlparse(url).query).encode("ascii", "ignore").decode().lower()
     toks = [re.sub(r"[^a-z]", "", unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode().lower()) for t in name.split()]
     return any(len(t) >= 3 and t[:5] in path for t in (toks[0], toks[-1]))
 
@@ -147,13 +152,16 @@ def person_cards(html, page_url):
             continue
         name = clean_name(text)
         # a profile link names the person or looks like a profile path; external links only when they name the person
-        if not (name_in_url(name, url) or (same_site(url, page_url) and PROFILE_PATH.search(urlparse(url).path))):
+        if not (name_in_url(name, url) or (same_site(url, page_url) and (PROFILE_PATH.search(urlparse(url).path)
+                                                                       or PROFILE_QUERY.search(urlparse(url).query)
+                                                                       or re.search(r"profile|person|people|faculty", " ".join(a.get("class") or []), re.I)))):
             continue
         key = re.sub(r"[^a-z]", "", name.lower())
         if key in seen:
             continue
         seen.add(key); cands.append((a, name, url))
-    for h in root.find_all(["h2", "h3", "h4", "h5", "strong", "b"]):
+    named = root.find_all(class_=re.compile(r"(^|[-_ ])(p-name|name|profile-name|person-name|item-name|title-name)($|[-_ ])", re.I))
+    for h in root.find_all(["h2", "h3", "h4", "h5", "h6", "strong", "b"]) + named:
         if h.find("a"):
             continue
         text = h.get_text(" ", strip=True)
@@ -173,6 +181,7 @@ def person_cards(html, page_url):
             under[id(anc)] += 1
     found = []
     for el, name, url in cands:
+        section = section_of(el)
         ctx, node = el.get_text(" ", strip=True), el
         while node.parent is not None and node.parent.name not in ("body", "html", "[document]") and under[id(node.parent)] == 1:
             node = node.parent
@@ -186,18 +195,42 @@ def person_cards(html, page_url):
                 if h.startswith("http") and h.rstrip("/") != page_url.rstrip("/") and same_site(h, page_url) and (
                         re.search(r"\b(bio|profile|more|read|view|details?|website)\b", x.get_text(" ", strip=True), re.I) or name_in_url(name, h)):
                     url = h; break
-        found.append((name, url or page_url, ctx[:1500]))
+        found.append((name, url or page_url, ctx[:1500], section))
     return found
 
+SECTION_BAD = re.compile(r"emerit|retired|in memoriam|former|affiliat|courtesy|adjunct|lecturer|instructor|\bstaff\b|student|contributing|"
+                         r"postdoc|post-doc|visiting|non-tenure|\bntl\b|part-time|research scientist|alumni|administrat|clinical|"
+                         r"teaching faculty|professional|associated faculty|additional faculty|by courtesy|joint|secondary", re.I)
+SECTION_GOOD = re.compile(r"faculty|professors|core|tenure|ladder", re.I)
+
+def faculty_only_url(u):
+    u = re.sub(r"\W*(and\W*)?academic\W*staff", "", u.lower())
+    return bool(re.search(r"faculty|professor", u)) and not re.search(r"student|staff|people|directory", u)
+
+def section_of(el):
+    """Text of the nearest heading above a card that is not itself a person's name ('Emeritus Faculty', 'Core Faculty')."""
+    for n, h in enumerate(el.find_all_previous(["h1", "h2", "h3", "h4"])):
+        if n > 60:
+            break
+        t = re.sub(r"\s+", " ", h.get_text(" ", strip=True))
+        if t and len(t) < 80 and not looks_like_name(t) and not RANK_RE.search(t) and not re.search(r"ph\.?\s?d|^[\W\d]*$|filter|search", t, re.I):
+            if re.search(r"faculty.*(,|and|&).*(staff|student)", t, re.I):
+                return ""  # a whole-page title such as "Faculty, Staff and Students"
+            return re.sub(r"faculty\W+(and|&)\W+(academic\W+)?staff", "faculty", t, flags=re.I)
+    return ""
+
 def next_pages(html, page_url, limit=25):
-    s = soup_of(html)
+    from bs4 import BeautifulSoup
+    s = BeautifulSoup(html, "lxml")  # keep <nav>: pagers often live there
     out = []
     for a in s.find_all("a", href=True):
         t = a.get_text(" ", strip=True).lower()
         href = urljoin(page_url, a["href"]).split("#")[0]
         if not same_site(href, page_url) or href == page_url:
             continue
-        if t in ("next", "next ›", "›", "»", "next page", ">") or re.fullmatch(r"\d{1,2}", t):
+        t = re.sub(r"^(go to )?page\s*", "", t)
+        if "next" in (a.get("rel") or []) or t in ("next", "next ›", "›", "»", "next page", ">", "next page next ›") \
+                or t.startswith("next") or re.fullmatch(r"\d{1,2}", t):
             if re.search(r"(page[=/]\d+|[?&]p(g|age)?=\d+|/page/\d+)", href):
                 out.append(href)
     return list(dict.fromkeys(out))[:limit]
@@ -232,7 +265,7 @@ def discover_directory(unit_url):
     return best if score_best >= 4 else None
 
 # ---------- profiles ----------
-LANG_WORDS = re.compile(r"\b(linguist\w*|language|languages|speech|phonet\w*|phonolog\w*|syntax|syntactic|semantic\w*|pragmatic\w*|"
+LANG_WORDS = re.compile(r"\b(linguist\w*|language|languages|speech|spoken|talkers?|listeners?|words?|sentences?|phonem\w*|articulat\w*|stutter\w*|voice|verbal|narratives?|phonet\w*|phonolog\w*|syntax|syntactic|semantic\w*|pragmatic\w*|"
                         r"morpholog\w*|bilingual\w*|multilingual\w*|lexic\w*|grammar\w*|nlp|natural language|discourse|"
                         r"sociolinguist\w*|psycholinguist\w*|dialect\w*|sign language|aphasia|literacy|reading|second language|"
                         r"acquisition|prosod\w*|intonation|vowel\w*|translation|corpus|corpora|conversation)\b", re.I)
@@ -244,7 +277,7 @@ def about_language(text, field):
     """Adjacent units keep only people whose profile is about language."""
     if field == "COMP":
         return len(COMP_WORDS.findall(text)) >= 2
-    return len(LANG_WORDS.findall(text)) >= 3
+    return len(LANG_WORDS.findall(text)) >= (2 if field == "SPEECH" else 3)
 
 def profile_text(html, url):
     text = None
@@ -317,10 +350,12 @@ def scrape_university(p, dir_only=False):
             row["candidates"] = len(cards)
             depts.append({"name": u["name"], "school": u.get("school"), "directory_url": d,
                           "phd_program_url": u.get("phd_program_url"), "phd_program_name": u.get("phd_program_name")})
-            for name, url, ctx in cards:
+            for name, url, ctx, section in cards:
                 key = re.sub(r"[^a-z]", "", name.lower())
                 if key in seen:
                     continue
+                if SECTION_BAD.search(section) and not re.search(r"core|tenure|ladder", section, re.I):
+                    row["excluded_titles"] += 1; continue
                 rank, title = classify_title(ctx)
                 if rank == "EXCLUDED":
                     row["excluded_titles"] += 1; continue
@@ -340,12 +375,15 @@ def scrape_university(p, dir_only=False):
                     rank, title = classify_title(text[:1500])
                     if rank is None:
                         rank, title = rank_from_sentence(text)
+                    if rank is None and (SECTION_GOOD.search(section) or faculty_only_url(d)):
+                        rank, title = "Faculty", None  # a faculty list that prints no titles: keep, rank unknown
+                        row["no_title"] += 1
                     if rank in (None, "EXCLUDED"):
                         row["no_title" if rank is None else "excluded_titles"] += 1; continue
                 row["tenure_line"] += 1
                 if dir_only:
                     continue
-                if (u.get("field", "LING") != "LING" or u.get("filter_language")) and not about_language(text, u.get("field", "LING")):
+                if (u.get("field", "LING") != "LING" or u.get("filter_language")) and not about_language(ctx + "\n" + text, u.get("field", "LING")):
                     row["not_language"] += 1; continue
                 site, scholar = profile_links(ph, url) if ph else (None, None)
                 seen.add(key)
@@ -354,7 +392,7 @@ def scrape_university(p, dir_only=False):
                                 "research_areas": research_areas(text) or research_areas(ctx), "bio": text[:6000]})
                 row["kept"] += 1
             n = row["tenure_line"] if dir_only else row["kept"]
-            if n < 3 or (row["no_title"] > max(3, row["tenure_line"])):
+            if n < 3:
                 row["status"] = "CHECK"
                 row["note"] += f" few tenure-line people found ({n}); titles missing for {row['no_title']}"
         except Exception as e:

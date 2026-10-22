@@ -106,6 +106,7 @@ const dict: Record<string, { en: string; zh: string }> = {
   rank_prof: { en: 'Professor', zh: '教授' },
   rank_assoc: { en: 'Associate Professor', zh: '副教授' },
   rank_asst: { en: 'Assistant Professor', zh: '助理教授' },
+  rank_fac: { en: 'Rank not listed', zh: '职级未注明' },
   // shortlist
   sl_h1: { en: 'Shortlist', zh: '申请清单' },
   sl_lede: { en: 'Faculty you saved, kept in this browser only. Add notes, then export to your application tracker.', zh: '你收藏的教师，仅保存在本浏览器。可添加备注，再导出到申请追踪表。' },

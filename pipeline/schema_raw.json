@@ -88,7 +88,8 @@
             "enum": [
               "Professor",
               "Associate Professor",
-              "Assistant Professor"
+              "Assistant Professor",
+              "Faculty"
             ]
           },
           "department": {

@@ -42,5 +42,5 @@ export function dimLabel(tax: Taxonomy, dim: Dim, lang: string) {
   const d = tax.dimensions[dim];
   return lang === 'zh' ? d.label_zh : d.label;
 }
-export const RANK_ORDER: Record<string, number> = { 'Professor': 0, 'Associate Professor': 1, 'Assistant Professor': 2 };
+export const RANK_ORDER: Record<string, number> = { 'Professor': 0, 'Associate Professor': 1, 'Assistant Professor': 2, 'Faculty': 3 };
 export const esc = (s: string) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);

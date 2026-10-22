@@ -96,7 +96,7 @@ def main():
         labp = ROOT / "data" / "labels" / f"{slug}.json"
         labels = {norm_name(f["name"]): f for f in load_json(labp)["faculty"]} if labp.exists() else {}
         if not labp.exists(): print(f"!! no labels for {slug}")
-        seen, count, ranks = set(), 0, {"Professor": 0, "Associate Professor": 0, "Assistant Professor": 0}
+        seen, count, ranks = set(), 0, {"Professor": 0, "Associate Professor": 0, "Assistant Professor": 0, "Faculty": 0}
         sn = short_name(p["university"])
         # which unit (and so which field) each person sits in: raw "unit" if given, else match on department name
         inc_units = [u for u in p["units"] if u.get("include")]

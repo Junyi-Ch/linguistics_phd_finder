@@ -363,7 +363,8 @@
   "ranks": [
     "Professor",
     "Associate Professor",
-    "Assistant Professor"
+    "Assistant Professor",
+    "Faculty"
   ],
   "sources": [
     "department_profile",
