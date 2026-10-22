@@ -110,6 +110,8 @@ def looks_like_name(text):
         return False
     if any(w.lower().strip(".") in NOT_NAME for w in toks):
         return False
+    if any(re.search(r"-[a-z]+-|^[a-z]+-", w) for w in toks):  # "Needle-in-a-Haystack"
+        return False
     return all(NAME_TOKEN.match(w) for w in toks) and sum(1 for w in toks if w[0].isupper()) >= 2
 
 # ---------- page structure ----------
@@ -203,7 +205,7 @@ def person_cards(html, page_url):
 
 SECTION_BAD = re.compile(r"emerit|retired|in memoriam|former|affiliat|courtesy|adjunct|lecturer|instructor|\bstaff\b|student|contributing|"
                          r"postdoc|post-doc|visiting|non-tenure|\bntl\b|part-time|research scientist|alumni|administrat|clinical|"
-                         r"teaching faculty|professional|associated faculty|additional faculty|by courtesy|joint|secondary", re.I)
+                         r"teaching faculty|professional|associated faculty|additional faculty|by courtesy", re.I)
 SECTION_GOOD = re.compile(r"faculty|professors|core|tenure|ladder", re.I)
 
 def faculty_only_url(u):
@@ -397,7 +399,7 @@ def scrape_university(p, dir_only=False):
                 row["tenure_line"] += 1
                 if dir_only:
                     continue
-                if (u.get("field", "LING") != "LING" or u.get("filter_language")) and not about_language(ctx + "\n" + text, u.get("field", "LING")):
+                if (u.get("field", "LING") in ("COMP", "LANG", "SPEECH") or u.get("filter_language")) and not about_language(ctx + "\n" + text, u.get("field", "LING")):
                     row["not_language"] += 1; continue
                 site, scholar = profile_links(ph, url) if ph else (None, None)
                 seen.add(key)
