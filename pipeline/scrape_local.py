@@ -33,10 +33,10 @@ REPORT = ROOT / "data" / "cache" / "scrape_report.csv"
 NOT_TENURE = re.compile(r"emerit|lecturer|instructor|adjunct|visiting|clinical|of (the )?practice|professional practice|"
                         r"teaching (assistant |associate )?professor|professor of teaching|of instruction|in residence|"
                         r"research (assistant |associate )?professor|affiliate|courtesy professor|^\(?by courtesy|professor[^,]*\(by courtesy\)|"
-                        r"postdoc|post-doc|retired|collegiate|"
+                        r"postdoc|post-doc|retired|collegiate|preceptor|"
                         r"extension|\bvisitor\b|part-time", re.I)
 # lines that mark someone as not faculty at all (no "professor" in them)
-NOT_FACULTY = re.compile(r"\b(lecturer|instructor|emerit\w*|postdoc\w*|post-doctoral|graduate student|doctoral (student|candidate)|"
+NOT_FACULTY = re.compile(r"\b(lecturer|instructor|preceptor|emerit\w*|postdoc\w*|post-doctoral|graduate student|doctoral (student|candidate)|"
                          r"ph\.?d\.? (student|candidate)|m\.?a\.? student|undergraduate|graduate (teaching|research) assistant|"
                          r"staff|coordinator|manager|administrator|advisor|specialist|research (scientist|associate)|fellow)\b", re.I)
 RANK_RE = re.compile(r"\b(assistant|associate|full|distinguished|university|regents'?|endowed|chair(ed)?)?\s*professor\b", re.I)
@@ -116,8 +116,11 @@ def looks_like_name(text):
 def soup_of(html):
     from bs4 import BeautifulSoup
     s = BeautifulSoup(html, "lxml")
-    for t in s(["script", "style", "noscript", "svg", "iframe", "header", "footer", "nav"]):
+    for t in s(["script", "style", "noscript", "svg", "iframe", "nav"]):
         t.decompose()
+    for t in s(["header", "footer"]):  # site banner and footer, but not a card's own <header>
+        if not t.find_parent(["main", "article", "li"]) and not t.find_parent(class_=re.compile(r"card|views-row|person|profile|people", re.I)):
+            t.decompose()
     return s
 
 def same_site(a, b):
@@ -160,7 +163,7 @@ def person_cards(html, page_url):
         if key in seen:
             continue
         seen.add(key); cands.append((a, name, url))
-    named = root.find_all(class_=re.compile(r"(^|[-_ ])(p-name|name|profile-name|person-name|item-name|title-name)($|[-_ ])", re.I))
+    named = root.find_all(class_=re.compile(r"(^|[-_ ])(p-name|name|profile-name|person-name|item-name|title-name|card-title)($|[-_ ])", re.I))
     for h in root.find_all(["h2", "h3", "h4", "h5", "h6", "strong", "b"]) + named:
         if h.find("a"):
             continue
@@ -338,12 +341,19 @@ def scrape_university(p, dir_only=False):
                 row.update(status="CHECK", note="no directory found from unit homepage"); rows.append(row); continue
             row["directory"] = d
             pages, cards = [d], []
-            html = fetch.get(d)
-            cards += person_cards(html, d)
-            for nxt in next_pages(html, d):
-                if nxt not in pages:
-                    pages.append(nxt); cards += person_cards(fetch.get(nxt), nxt)
-            if u.get("render") or len(cards) < 5:  # maybe a JS-built list: try rendering
+            saved = sorted(f for g in u.get("saved_pages") or [] for f in ROOT.glob(g))
+            if u.get("saved_pages") and not saved:
+                raise RuntimeError("save the faculty page(s) from your browser as " + ", ".join(u["saved_pages"]))
+            if saved:  # sites that block scripts: the list pages saved by hand from a normal browser
+                for x in saved:
+                    cards += person_cards(x.read_text(encoding="utf-8", errors="ignore"), d)
+            else:
+                html = fetch.get(d)
+                cards += person_cards(html, d)
+                for nxt in next_pages(html, d):
+                    if nxt not in pages:
+                        pages.append(nxt); cards += person_cards(fetch.get(nxt), nxt)
+            if not saved and (u.get("render") or len(cards) < 5):  # maybe a JS-built list: try rendering
                 rcards = person_cards(fetch.get(d, render=True), d)
                 if len(rcards) > len(cards):
                     cards = rcards
@@ -357,20 +367,23 @@ def scrape_university(p, dir_only=False):
                 if SECTION_BAD.search(section) and not re.search(r"core|tenure|ladder", section, re.I):
                     row["excluded_titles"] += 1; continue
                 rank, title = classify_title(ctx)
+                if re.search(r"(^|\n)\s*(affiliated?|courtesy|associated) faculty", ctx, re.I):
+                    rank = "EXCLUDED"  # the list card itself says they are affiliated, whatever their home title
                 if rank == "EXCLUDED":
                     row["excluded_titles"] += 1; continue
                 if dir_only and rank:
                     row["tenure_line"] += 1; continue
-                if url == d or url in pages:  # no profile page: the directory card is all there is
+                if url == d or url in pages or u.get("cards_only"):  # no profile page: the directory card is all there is
                     ph, text = None, ctx
                 else:
                     try:
                         ph = fetch.get(url)
-                    except Exception as e:
-                        row["note"] += f" profile failed: {name};"; continue
-                    text = profile_text(ph, url)
-                    if len(text) < 200:
-                        text = ctx + "\n" + text
+                        text = profile_text(ph, url)
+                        if len(text) < 200:
+                            text = ctx + "\n" + text
+                    except Exception as e:  # blocked or offline: fall back to what the list says about them
+                        row["note"] += f" profile failed: {name};"
+                        ph, text = None, ctx
                 if not rank:  # title not on the list page: read it from the top of the profile, then from its sentences
                     rank, title = classify_title(text[:1500])
                     if rank is None:

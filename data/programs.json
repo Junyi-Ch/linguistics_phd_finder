@@ -66,7 +66,11 @@
     "directory_url": "https://linguistics.fas.harvard.edu/people/faculty",
     "include": true,
     "reason": "",
-    "render": true
+    "render": true,
+    "saved_pages": [
+     "data/manual/harvard-*.html"
+    ],
+    "cards_only": true
    },
    {
     "name": "Department of Slavic Languages and Literatures",
@@ -191,9 +195,13 @@
     "unit_url": "https://linguistics.ucla.edu/",
     "phd_program_name": "PhD in Linguistics",
     "phd_program_url": null,
-    "directory_url": "https://linguistics.ucla.edu/people/ladder-faculty/page/1",
+    "directory_url": "https://linguistics.ucla.edu/people/ladder-faculty/",
     "include": true,
-    "reason": ""
+    "reason": "",
+    "saved_pages": [
+     "data/manual/ucla-*.html"
+    ],
+    "cards_only": true
    },
    {
     "name": "Department of Applied Linguistics",
@@ -387,7 +395,7 @@
     "unit_url": "https://dornsife.usc.edu/ling/",
     "phd_program_name": "PhD in Linguistics",
     "phd_program_url": null,
-    "directory_url": "https://dornsife.usc.edu/ling/people/",
+    "directory_url": "https://dornsife.usc.edu/ling/people/faculty/",
     "include": true,
     "reason": ""
    }
