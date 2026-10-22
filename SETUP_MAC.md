@@ -6,8 +6,10 @@ Everything here runs on your own computer: free, and nothing goes through Claude
 
 ```bash
 cd ~/Desktop/linguistics_phd
-conda create -n ling python=3.11 -y
-conda activate ling
+python3 --version                      # needs 3.9 or newer; if macOS offers to install developer tools, accept
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
 pip install -r pipeline/requirements.txt
 python -m playwright install chromium
 ```
@@ -18,7 +20,7 @@ For the labels, install **Ollama** from https://ollama.com/download (open the ap
 ollama pull qwen2.5:7b
 ```
 
-Each later session starts with `cd ~/Desktop/linguistics_phd && conda activate ling`.
+Each later Terminal session starts with `cd ~/Desktop/linguistics_phd && source .venv/bin/activate`.
 
 ## 1. Find the faculty pages (about 10 minutes)
 
