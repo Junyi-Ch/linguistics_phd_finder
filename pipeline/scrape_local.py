@@ -86,7 +86,7 @@ york abu dhabi buenos aires los angeles tel aviv washington dc shanghai paris lo
 north south east west american african asian european east-asian
 see bio biography professor associate assistant lecturer instructor chair director dean emeritus emerita adjunct visiting
 senior junior distinguished regents endowed fellow coordinator advisor manager administrator student candidate
-teaching fellows related links useful quick resource resources faq faqs update""".split())
+teaching fellows related links useful quick resource resources faq faqs update accessibility statement privacy policy""".split())
 NAME_TOKEN = re.compile(r"^(?:[A-ZÀ-ÖØ-Þ][\w'’.\-À-ÿ]*|[A-Z]\.|de|da|del|della|der|van|von|le|la|du|di|dos|bin|al-\w+|y)$")
 
 def clean_name(text):
@@ -278,6 +278,7 @@ COMP_WORDS = re.compile(r"\b(natural language|nlp|computational linguistic\w*|li
 
 def about_language(text, field):
     """Adjacent units keep only people whose profile is about language."""
+    text = re.sub(r"cognitive,? linguistic,? (and|&) psychological sciences|\bCLPS\b", " ", text, flags=re.I)  # Brown's old department name
     if field == "COMP":
         return len(COMP_WORDS.findall(text)) >= 2
     return len(LANG_WORDS.findall(text)) >= (2 if field == "SPEECH" else 3)

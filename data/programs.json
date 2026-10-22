@@ -893,12 +893,21 @@
   "confidence": "medium",
   "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
   "guide_units": [
+   "Department of Linguistics",
    "Department of Cognitive and Psychological Sciences"
   ],
   "units": [
    {
-    "name": "Department of Cognitive and Psychological Sciences",
+    "name": "Department of Linguistics",
+    "school": "Faculty of Arts and Sciences",
     "field": "LING",
+    "include": true,
+    "unit_url": "https://linguistics.brown.edu/",
+    "directory_url": "https://linguistics.brown.edu/people"
+   },
+   {
+    "name": "Department of Cognitive and Psychological Sciences",
+    "field": "SPEECH",
     "school": null,
     "unit_url": "https://copsy.brown.edu/",
     "phd_program_name": "PhD in Cognitive Science (linguistics)",
@@ -1809,9 +1818,8 @@
     "unit_url": "https://nau.edu/english/programs/doctoral-degrees/phd-applied-linguistics",
     "phd_program_name": "PhD in Applied Linguistics",
     "phd_program_url": null,
-    "directory_url": null,
-    "include": false,
-    "reason": "Add later: faculty page needs manual setup"
+    "directory_url": "https://nau.edu/english/programs/doctoral-degrees/phd-applied-linguistics",
+    "include": true
    }
   ]
  },
