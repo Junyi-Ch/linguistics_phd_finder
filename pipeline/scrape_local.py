@@ -86,7 +86,9 @@ york abu dhabi buenos aires los angeles tel aviv washington dc shanghai paris lo
 north south east west american african asian european east-asian
 see bio biography professor associate assistant lecturer instructor chair director dean emeritus emerita adjunct visiting
 senior junior distinguished regents endowed fellow coordinator advisor manager administrator student candidate
-teaching fellows related links useful quick resource resources faq faqs update accessibility statement privacy policy""".split())
+teaching fellows related links useful quick resource resources faq faqs update accessibility statement privacy policy
+laboratory laboratories magazine hub social media results found interests clinical structure communities dialectology
+morphology syntax semantics phonology phonetics psycholinguistics pragmatics interface opportunity""".split())
 NAME_TOKEN = re.compile(r"^(?:[A-ZÀ-ÖØ-Þ][\w'’.\-À-ÿ]*|[A-Z]\.|de|da|del|della|der|van|von|le|la|du|di|dos|bin|al-\w+|y)$")
 
 def clean_name(text):
@@ -111,6 +113,8 @@ def looks_like_name(text):
     if any(w.lower().strip(".") in NOT_NAME for w in toks):
         return False
     if any(re.search(r"-[a-z]+-|^[a-z]+-", w) for w in toks):  # "Needle-in-a-Haystack"
+        return False
+    if len(toks[-1].strip(".")) <= 1:  # a cut-off name: "Edward A", "John D. E."
         return False
     return all(NAME_TOKEN.match(w) for w in toks) and sum(1 for w in toks if w[0].isupper()) >= 2
 
@@ -149,7 +153,12 @@ def person_cards(html, page_url):
     cands, seen = [], set()
     for a in root.find_all("a", href=True):
         text = a.get_text(" ", strip=True) or a.get("title", "") or a.get("aria-label", "")
-        text = re.sub(r"^(read more about|view profile( of| for)?|profile (of|for)|more about|visit)\s+", "", text, flags=re.I)
+        text = re.sub(r"^(read more about|continue reading|view profile( of| for)?|profile (of|for)|more about|visit)\s+", "", text, flags=re.I)
+        # the link's tooltip often has the clean full name: "Profile page for F. Sayako Earle, ..." / "Renee Dong profile page"
+        tip = a.get("title") or ""
+        m = re.search(r"profile(?: page)? (?:for|of)\s+([^,|]+)", tip, re.I) or re.search(r"^([^,|]+?)\s+profile page", tip, re.I)
+        if m and looks_like_name(m.group(1)):
+            text = m.group(1)
         if not looks_like_name(text):
             continue
         url = urljoin(page_url, a["href"]).split("#")[0]
@@ -334,7 +343,7 @@ def profile_links(html, url):
 
 # ---------- per university ----------
 def scrape_university(p, dir_only=False):
-    rows, faculty, depts, seen = [], [], [], set()
+    rows, faculty, depts, seen, seen_urls = [], [], [], set(), set()
     for u in p["units"]:
         if not u.get("include"):
             continue
@@ -393,8 +402,10 @@ def scrape_university(p, dir_only=False):
                     rank, title = classify_title(text[:1500])
                     if rank is None:
                         rank, title = rank_from_sentence(text)
-                    if rank is None and (SECTION_GOOD.search(section) or faculty_only_url(d)):
-                        rank, title = "Faculty", None  # a faculty list that prints no titles: keep, rank unknown
+                    real_page = url not in (d, *pages) and (name_in_url(name, url) or PROFILE_PATH.search(urlparse(url).path))
+                    contact = re.search(r"@|\(\d{3}\)|\d{3}[-.\s]\d{3}[-.]\d{4}|send email|e-?mail", ctx, re.I)
+                    if rank is None and (SECTION_GOOD.search(section) or faculty_only_url(d)) and (real_page or contact):
+                        rank, title = "Faculty", ""  # a faculty list that prints no titles: keep, rank unknown
                         row["no_title"] += 1
                     if rank in (None, "EXCLUDED"):
                         row["no_title" if rank is None else "excluded_titles"] += 1; continue
@@ -403,8 +414,12 @@ def scrape_university(p, dir_only=False):
                     continue
                 if (u.get("field", "LING") in ("COMP", "LANG", "SPEECH") or u.get("filter_language")) and not about_language(ctx + "\n" + text, u.get("field", "LING")):
                     row["not_language"] += 1; continue
+                if url not in (d, *pages) and url in seen_urls:  # same profile listed twice ("Joe" and "Joseph")
+                    continue
+                if any(k != key and (k.startswith(key) or key.startswith(k)) and min(len(k), len(key)) >= 8 for k in seen):
+                    continue  # "John D. E." next to "John D. E. Gabrieli"
                 site, scholar = profile_links(ph, url) if ph else (None, None)
-                seen.add(key)
+                seen.add(key); seen_urls.add(url)
                 faculty.append({"name": name, "title": title, "rank": rank, "department": u["name"], "unit": u["name"],
                                 "profile_url": url, "personal_url": site, "google_scholar_url": scholar,
                                 "research_areas": research_areas(text) or research_areas(ctx), "bio": text[:6000]})

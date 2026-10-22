@@ -20,7 +20,7 @@ def validate(path):
     for i, f in enumerate(d["faculty"]):
         tag = f"faculty[{i}] {f.get('name')!r}"
         for k in ["name", "title", "rank", "department", "profile_url"]:
-            if not f.get(k): errs.append(f"{tag}: missing {k}")
+            if not f.get(k) and not (k == "title" and f.get("rank") == "Faculty"): errs.append(f"{tag}: missing {k}")
         if f.get("rank") not in RANKS: errs.append(f"{tag}: rank must be one of {sorted(RANKS)}, got {f.get('rank')!r}")
         if f.get("profile_url") and not str(f["profile_url"]).startswith("http"): errs.append(f"{tag}: profile_url not absolute")
         key = re.sub(r"[^a-z]", "", (f.get("name") or "").lower())
