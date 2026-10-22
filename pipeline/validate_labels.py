@@ -35,7 +35,7 @@ def validate(path):
                 if it.get("code") not in allowed: errs.append(f"{tag}: unknown code {it.get('code')!r} in {dim}")
                 if not it.get("sources"): warns.append(f"{tag}: {dim}/{it.get('code')} has no sources")
         if labs.get("topic") and not any(x.get("primary") for x in labs["topic"]): warns.append(f"{tag}: no primary topic")
-        if not labs.get("topic"): errs.append(f"{tag}: no topic labels")
+        if not labs.get("topic"): (warns if f.get("confidence") == "low" else errs).append(f"{tag}: no topic labels")
         if len(f.get("keywords") or []) < 3: warns.append(f"{tag}: fewer than 3 keywords")
     if raw_names:
         missing = raw_names - seen

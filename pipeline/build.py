@@ -133,7 +133,10 @@ def main():
                 "scraped": raw.get("scraped_at"),
                 "fld": field_of(f),
             }
-            bios[fid] = (f.get("bio") or "")[:4000]
+            # profile text plus recent paper titles (OpenAlex, when matched): used only for the vectors, never published
+            works = [w["title"] for w in (f.get("works") or [])][:20]
+            bio = (f.get("bio") or "")
+            bios[fid] = ((bio[:800] if works else bio[:1500]) + ("\nRecent publications: " + "; ".join(works) + "." if works else "")).strip()
             faculty.append(rec); count += 1; ranks[f["rank"]] += 1
         # logo
         logo = None

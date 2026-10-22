@@ -1,5 +1,7 @@
 # Data workflows
 
+> The current pipeline runs locally without AI agents: `scrape_local.py` (steps 1–2), `enrich_openalex.py`, `label_local.py` (step 3, Ollama). See `SETUP_MAC.md`. The scope rules below still define who is included; the agent instructions are kept for manual fixes.
+
 Three agent workflows turn the seed list into site data. Each runs one agent per university, on the owner's machine (headless Chromium via `pipeline/fetch.py --render` is often needed), and writes one file per university. Run them in order; each output is validated before the next step.
 
 ```

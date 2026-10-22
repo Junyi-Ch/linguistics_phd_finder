@@ -1,0 +1,2298 @@
+[
+ {
+  "slug": "massachusetts-institute-of-technology",
+  "university": "Massachusetts Institute of Technology",
+  "offers_linguistics_phd": true,
+  "city": "Cambridge",
+  "state": "MA",
+  "latitude": 42.3601,
+  "longitude": -71.0942,
+  "domain": "mit.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics and Philosophy"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics and Philosophy",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.mit.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": "",
+    "filter_language": true
+   },
+   {
+    "name": "Department of Brain and Cognitive Sciences",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://bcs.mit.edu/",
+    "phd_program_name": "PhD in Brain and Cognitive Sciences",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "harvard-university",
+  "university": "Harvard University",
+  "offers_linguistics_phd": true,
+  "city": "Cambridge",
+  "state": "MA",
+  "latitude": 42.377,
+  "longitude": -71.1167,
+  "domain": "harvard.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.fas.harvard.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Slavic Languages and Literatures",
+    "field": "LANG",
+    "school": null,
+    "unit_url": "https://slavic.fas.harvard.edu/",
+    "phd_program_name": "PhD in Slavic Languages and Literatures (linguistics track)",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "yale-university",
+  "university": "Yale University",
+  "offers_linguistics_phd": true,
+  "city": "New Haven",
+  "state": "CT",
+  "latitude": 41.3163,
+  "longitude": -72.9223,
+  "domain": "yale.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://ling.yale.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "stanford-university",
+  "university": "Stanford University",
+  "offers_linguistics_phd": true,
+  "city": "Stanford",
+  "state": "CA",
+  "latitude": 37.4275,
+  "longitude": -122.1697,
+  "domain": "stanford.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.stanford.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-berkeley",
+  "university": "University of California, Berkeley",
+  "offers_linguistics_phd": true,
+  "city": "Berkeley",
+  "state": "CA",
+  "latitude": 37.8719,
+  "longitude": -122.2585,
+  "domain": "berkeley.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://lx.berkeley.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-los-angeles",
+  "university": "University of California, Los Angeles",
+  "offers_linguistics_phd": true,
+  "city": "Los Angeles",
+  "state": "CA",
+  "latitude": 34.0689,
+  "longitude": -118.4452,
+  "domain": "ucla.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.ucla.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": "https://linguistics.ucla.edu/people/ladder-faculty/page/1",
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Applied Linguistics",
+    "field": "APPLIED",
+    "school": null,
+    "unit_url": "https://appling.ucla.edu/",
+    "phd_program_name": "PhD in Applied Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-san-diego",
+  "university": "University of California, San Diego",
+  "offers_linguistics_phd": true,
+  "city": "La Jolla",
+  "state": "CA",
+  "latitude": 32.8801,
+  "longitude": -117.234,
+  "domain": "ucsd.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.ucsd.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Cognitive Science",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://cogsci.ucsd.edu/",
+    "phd_program_name": "PhD in Cognitive Science",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-santa-cruz",
+  "university": "University of California, Santa Cruz",
+  "offers_linguistics_phd": true,
+  "city": "Santa Cruz",
+  "state": "CA",
+  "latitude": 36.9914,
+  "longitude": -122.0609,
+  "domain": "ucsc.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.ucsc.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-santa-barbara",
+  "university": "University of California, Santa Barbara",
+  "offers_linguistics_phd": true,
+  "city": "Santa Barbara",
+  "state": "CA",
+  "latitude": 34.414,
+  "longitude": -119.8489,
+  "domain": "ucsb.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://www.linguistics.ucsb.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-davis",
+  "university": "University of California, Davis",
+  "offers_linguistics_phd": true,
+  "city": "Davis",
+  "state": "CA",
+  "latitude": 38.5382,
+  "longitude": -121.7617,
+  "domain": "ucdavis.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.ucdavis.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-irvine",
+  "university": "University of California, Irvine",
+  "offers_linguistics_phd": true,
+  "city": "Irvine",
+  "state": "CA",
+  "latitude": 33.6405,
+  "longitude": -117.8443,
+  "domain": "uci.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Language Science"
+  ],
+  "units": [
+   {
+    "name": "Department of Language Science",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://www.languagescience.uci.edu/",
+    "phd_program_name": "PhD in Language Science",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-southern-california",
+  "university": "University of Southern California",
+  "offers_linguistics_phd": true,
+  "city": "Los Angeles",
+  "state": "CA",
+  "latitude": 34.0224,
+  "longitude": -118.2851,
+  "domain": "usc.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://dornsife.usc.edu/linguistics/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-chicago",
+  "university": "University of Chicago",
+  "offers_linguistics_phd": true,
+  "city": "Chicago",
+  "state": "IL",
+  "latitude": 41.7886,
+  "longitude": -87.5987,
+  "domain": "uchicago.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.uchicago.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "northwestern-university",
+  "university": "Northwestern University",
+  "offers_linguistics_phd": true,
+  "city": "Evanston",
+  "state": "IL",
+  "latitude": 42.0565,
+  "longitude": -87.6753,
+  "domain": "northwestern.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.northwestern.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Roxelyn and Richard Pepper Department of Communication Sciences and Disorders",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://communication.northwestern.edu/departments/csd/",
+    "phd_program_name": "PhD in Communication Sciences and Disorders",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-pennsylvania",
+  "university": "University of Pennsylvania",
+  "offers_linguistics_phd": true,
+  "city": "Philadelphia",
+  "state": "PA",
+  "latitude": 39.9522,
+  "longitude": -75.1932,
+  "domain": "upenn.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://www.ling.upenn.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Educational Linguistics Division (Graduate School of Education)",
+    "field": "APPLIED",
+    "school": null,
+    "unit_url": "https://www.gse.upenn.edu/academics/programs/educational-linguistics",
+    "phd_program_name": "PhD in Educational Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "johns-hopkins-university",
+  "university": "Johns Hopkins University",
+  "offers_linguistics_phd": true,
+  "city": "Baltimore",
+  "state": "MD",
+  "latitude": 39.3299,
+  "longitude": -76.6205,
+  "domain": "jhu.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Cognitive Science"
+  ],
+  "units": [
+   {
+    "name": "Department of Cognitive Science",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://cogsci.jhu.edu/",
+    "phd_program_name": "PhD in Cognitive Science (language and linguistics)",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": "",
+    "filter_language": true
+   },
+   {
+    "name": "Center for Language and Speech Processing",
+    "field": "COMP",
+    "school": null,
+    "unit_url": "https://www.clsp.jhu.edu/",
+    "phd_program_name": "PhD via Computer Science / Electrical and Computer Engineering",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-maryland-college-park",
+  "university": "University of Maryland, College Park",
+  "offers_linguistics_phd": true,
+  "city": "College Park",
+  "state": "MD",
+  "latitude": 38.9869,
+  "longitude": -76.9426,
+  "domain": "umd.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.umd.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Hearing and Speech Sciences",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://hesp.umd.edu/",
+    "phd_program_name": "PhD in Hearing and Speech Sciences",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Second Language Acquisition program",
+    "field": "APPLIED",
+    "school": null,
+    "unit_url": "https://sla.umd.edu/",
+    "phd_program_name": "PhD in Second Language Acquisition",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": false,
+    "reason": "Check whether the SLA PhD still admits"
+   }
+  ]
+ },
+ {
+  "slug": "georgetown-university",
+  "university": "Georgetown University",
+  "offers_linguistics_phd": true,
+  "city": "Washington",
+  "state": "DC",
+  "latitude": 38.9076,
+  "longitude": -77.0723,
+  "domain": "georgetown.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.georgetown.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Spanish and Portuguese",
+    "field": "LANG",
+    "school": null,
+    "unit_url": "https://spanport.georgetown.edu/",
+    "phd_program_name": "PhD in Spanish and Portuguese Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Arabic and Islamic Studies",
+    "field": "LANG",
+    "school": null,
+    "unit_url": "https://arabic.georgetown.edu/",
+    "phd_program_name": "PhD in Arabic and Islamic Studies (Arabic linguistics)",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "new-york-university",
+  "university": "New York University",
+  "offers_linguistics_phd": true,
+  "city": "New York",
+  "state": "NY",
+  "latitude": 40.7295,
+  "longitude": -73.9965,
+  "domain": "nyu.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.as.nyu.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "city-university-of-new-york-graduate-center",
+  "university": "City University of New York Graduate Center",
+  "offers_linguistics_phd": true,
+  "city": "New York",
+  "state": "NY",
+  "latitude": 40.7486,
+  "longitude": -73.984,
+  "domain": "cuny.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Linguistics Program"
+  ],
+  "units": [
+   {
+    "name": "Linguistics Program",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://www.gc.cuny.edu/linguistics",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Speech-Language-Hearing Sciences Program",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://www.gc.cuny.edu/speech-language-hearing-sciences",
+    "phd_program_name": "PhD in Speech-Language-Hearing Sciences",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "stony-brook-university",
+  "university": "Stony Brook University",
+  "offers_linguistics_phd": true,
+  "city": "Stony Brook",
+  "state": "NY",
+  "latitude": 40.9126,
+  "longitude": -73.1234,
+  "domain": "stonybrook.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://www.stonybrook.edu/commcms/linguistics/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-at-buffalo-suny",
+  "university": "University at Buffalo, SUNY",
+  "offers_linguistics_phd": true,
+  "city": "Buffalo",
+  "state": "NY",
+  "latitude": 43.0008,
+  "longitude": -78.789,
+  "domain": "buffalo.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://arts-sciences.buffalo.edu/linguistics.html",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "rutgers-universitynew-brunswick",
+  "university": "Rutgers University–New Brunswick",
+  "offers_linguistics_phd": true,
+  "city": "New Brunswick",
+  "state": "NJ",
+  "latitude": 40.5008,
+  "longitude": -74.4474,
+  "domain": "rutgers.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.rutgers.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "cornell-university",
+  "university": "Cornell University",
+  "offers_linguistics_phd": true,
+  "city": "Ithaca",
+  "state": "NY",
+  "latitude": 42.4534,
+  "longitude": -76.4735,
+  "domain": "cornell.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://ling.cornell.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-rochester",
+  "university": "University of Rochester",
+  "offers_linguistics_phd": true,
+  "city": "Rochester",
+  "state": "NY",
+  "latitude": 43.1306,
+  "longitude": -77.626,
+  "domain": "rochester.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://www.sas.rochester.edu/lin/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Brain and Cognitive Sciences",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://www.sas.rochester.edu/bcs/",
+    "phd_program_name": "PhD in Brain and Cognitive Sciences",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "brown-university",
+  "university": "Brown University",
+  "offers_linguistics_phd": true,
+  "city": "Providence",
+  "state": "RI",
+  "latitude": 41.8268,
+  "longitude": -71.4025,
+  "domain": "brown.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Cognitive and Psychological Sciences"
+  ],
+  "units": [
+   {
+    "name": "Department of Cognitive and Psychological Sciences",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://cogsci.brown.edu/",
+    "phd_program_name": "PhD in Cognitive Science (linguistics)",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": "",
+    "filter_language": true
+   }
+  ]
+ },
+ {
+  "slug": "boston-university",
+  "university": "Boston University",
+  "offers_linguistics_phd": true,
+  "city": "Boston",
+  "state": "MA",
+  "latitude": 42.3505,
+  "longitude": -71.1054,
+  "domain": "bu.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://www.bu.edu/linguistics/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "tulane-university",
+  "university": "Tulane University",
+  "offers_linguistics_phd": true,
+  "city": "New Orleans",
+  "state": "LA",
+  "latitude": 29.94,
+  "longitude": -90.1207,
+  "domain": "tulane.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.tulane.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "carnegie-mellon-university",
+  "university": "Carnegie Mellon University",
+  "offers_linguistics_phd": true,
+  "city": "Pittsburgh",
+  "state": "PA",
+  "latitude": 40.4433,
+  "longitude": -79.9436,
+  "domain": "cmu.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [],
+  "units": [
+   {
+    "name": "Language Technologies Institute",
+    "field": "COMP",
+    "school": null,
+    "unit_url": "https://www.lti.cs.cmu.edu/",
+    "phd_program_name": "PhD in Language and Information Technologies",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-massachusetts-amherst",
+  "university": "University of Massachusetts Amherst",
+  "offers_linguistics_phd": true,
+  "city": "Amherst",
+  "state": "MA",
+  "latitude": 42.3868,
+  "longitude": -72.5301,
+  "domain": "umass.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://www.umass.edu/linguistics/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-connecticut",
+  "university": "University of Connecticut",
+  "offers_linguistics_phd": true,
+  "city": "Storrs",
+  "state": "CT",
+  "latitude": 41.8077,
+  "longitude": -72.254,
+  "domain": "uconn.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.uconn.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Speech, Language, and Hearing Sciences",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://slhs.uconn.edu/",
+    "phd_program_name": "PhD in Speech, Language, and Hearing Sciences",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-delaware",
+  "university": "University of Delaware",
+  "offers_linguistics_phd": true,
+  "city": "Newark",
+  "state": "DE",
+  "latitude": 39.678,
+  "longitude": -75.751,
+  "domain": "udel.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics and Cognitive Science"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics and Cognitive Science",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://www.udel.edu/academics/colleges/cas/units/departments/linguistics-cognitive-science/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": "",
+    "filter_language": true
+   }
+  ]
+ },
+ {
+  "slug": "university-of-pittsburgh",
+  "university": "University of Pittsburgh",
+  "offers_linguistics_phd": true,
+  "city": "Pittsburgh",
+  "state": "PA",
+  "latitude": 40.4444,
+  "longitude": -79.9532,
+  "domain": "pitt.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://www.linguistics.pitt.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "pennsylvania-state-university",
+  "university": "Pennsylvania State University",
+  "offers_linguistics_phd": true,
+  "city": "University Park",
+  "state": "PA",
+  "latitude": 40.7982,
+  "longitude": -77.8599,
+  "domain": "psu.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [],
+  "units": [
+   {
+    "name": "Department of Applied Linguistics",
+    "field": "APPLIED",
+    "school": null,
+    "unit_url": "https://aplng.la.psu.edu/",
+    "phd_program_name": "PhD in Applied Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Spanish, Italian, and Portuguese",
+    "field": "LANG",
+    "school": null,
+    "unit_url": "https://sip.la.psu.edu/",
+    "phd_program_name": "PhD in Spanish (Hispanic linguistics)",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "ohio-state-university",
+  "university": "Ohio State University",
+  "offers_linguistics_phd": true,
+  "city": "Columbus",
+  "state": "OH",
+  "latitude": 40.0067,
+  "longitude": -83.0305,
+  "domain": "osu.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.osu.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of East Asian Languages and Literatures",
+    "field": "LANG",
+    "school": null,
+    "unit_url": "https://deall.osu.edu/",
+    "phd_program_name": "PhD in East Asian Languages and Literatures (linguistics)",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Slavic and East European Languages and Cultures",
+    "field": "LANG",
+    "school": null,
+    "unit_url": "https://slavic.osu.edu/",
+    "phd_program_name": "PhD in Slavic and East European Languages and Cultures (linguistics)",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-michigan",
+  "university": "University of Michigan",
+  "offers_linguistics_phd": true,
+  "city": "Ann Arbor",
+  "state": "MI",
+  "latitude": 42.278,
+  "longitude": -83.7382,
+  "domain": "umich.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://lsa.umich.edu/linguistics",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "michigan-state-university",
+  "university": "Michigan State University",
+  "offers_linguistics_phd": true,
+  "city": "East Lansing",
+  "state": "MI",
+  "latitude": 42.7018,
+  "longitude": -84.4822,
+  "domain": "msu.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics, Languages, and Cultures"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics, Languages, and Cultures",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linglang.msu.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": "",
+    "filter_language": true
+   },
+   {
+    "name": "Second Language Studies Program",
+    "field": "APPLIED",
+    "school": null,
+    "unit_url": "https://sls.msu.edu/",
+    "phd_program_name": "PhD in Second Language Studies",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "indiana-university-bloomington",
+  "university": "Indiana University Bloomington",
+  "offers_linguistics_phd": true,
+  "city": "Bloomington",
+  "state": "IN",
+  "latitude": 39.1682,
+  "longitude": -86.523,
+  "domain": "iu.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.indiana.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Spanish and Portuguese",
+    "field": "LANG",
+    "school": null,
+    "unit_url": "https://spanport.indiana.edu/",
+    "phd_program_name": "PhD in Hispanic Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Speech, Language and Hearing Sciences",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://sphs.indiana.edu/",
+    "phd_program_name": "PhD in Speech and Hearing Sciences",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-illinois-urbana-champaign",
+  "university": "University of Illinois Urbana-Champaign",
+  "offers_linguistics_phd": true,
+  "city": "Urbana",
+  "state": "IL",
+  "latitude": 40.102,
+  "longitude": -88.2272,
+  "domain": "illinois.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.illinois.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Spanish and Portuguese",
+    "field": "LANG",
+    "school": null,
+    "unit_url": "https://spanport.illinois.edu/",
+    "phd_program_name": "PhD in Spanish (linguistics)",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Speech and Hearing Science",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://shs.illinois.edu/",
+    "phd_program_name": "PhD in Speech and Hearing Science",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "purdue-university",
+  "university": "Purdue University",
+  "offers_linguistics_phd": true,
+  "city": "West Lafayette",
+  "state": "IN",
+  "latitude": 40.4237,
+  "longitude": -86.9212,
+  "domain": "purdue.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Linguistics Program"
+  ],
+  "units": [
+   {
+    "name": "Linguistics Program",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://cla.purdue.edu/academic/linguistics/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Speech, Language, and Hearing Sciences",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://www.purdue.edu/hhs/slhs/",
+    "phd_program_name": "PhD in Speech, Language, and Hearing Sciences",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-wisconsinmadison",
+  "university": "University of Wisconsin–Madison",
+  "offers_linguistics_phd": true,
+  "city": "Madison",
+  "state": "WI",
+  "latitude": 43.0766,
+  "longitude": -89.4125,
+  "domain": "wisc.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Language Sciences"
+  ],
+  "units": [
+   {
+    "name": "Department of Language Sciences",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://langsci.wisc.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Communication Sciences and Disorders",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://csd.wisc.edu/",
+    "phd_program_name": "PhD in Communication Sciences and Disorders",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-minnesota-twin-cities",
+  "university": "University of Minnesota, Twin Cities",
+  "offers_linguistics_phd": true,
+  "city": "Minneapolis",
+  "state": "MN",
+  "latitude": 44.974,
+  "longitude": -93.2277,
+  "domain": "umn.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://cla.umn.edu/linguistics",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Spanish and Portuguese Studies",
+    "field": "LANG",
+    "school": null,
+    "unit_url": "https://cla.umn.edu/spanish-portuguese",
+    "phd_program_name": "PhD in Hispanic and Lusophone Literatures, Cultures and Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Speech-Language-Hearing Sciences",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://cla.umn.edu/slhs",
+    "phd_program_name": "PhD in Speech-Language-Hearing Sciences",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-iowa",
+  "university": "University of Iowa",
+  "offers_linguistics_phd": true,
+  "city": "Iowa City",
+  "state": "IA",
+  "latitude": 41.6627,
+  "longitude": -91.5375,
+  "domain": "uiowa.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.uiowa.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": "Check that the Linguistics PhD still admits"
+   },
+   {
+    "name": "Department of Communication Sciences and Disorders",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://csd.uiowa.edu/",
+    "phd_program_name": "PhD in Speech and Hearing Science",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-kansas",
+  "university": "University of Kansas",
+  "offers_linguistics_phd": true,
+  "city": "Lawrence",
+  "state": "KS",
+  "latitude": 38.9543,
+  "longitude": -95.2558,
+  "domain": "ku.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.ku.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Child Language Doctoral Program",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://childlanguage.ku.edu/",
+    "phd_program_name": "PhD in Child Language",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-texas-at-austin",
+  "university": "University of Texas at Austin",
+  "offers_linguistics_phd": true,
+  "city": "Austin",
+  "state": "TX",
+  "latitude": 30.2849,
+  "longitude": -97.7341,
+  "domain": "utexas.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://liberalarts.utexas.edu/linguistics/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Spanish and Portuguese",
+    "field": "LANG",
+    "school": null,
+    "unit_url": "https://liberalarts.utexas.edu/spanish-portuguese/",
+    "phd_program_name": "PhD in Iberian and Latin American Languages and Cultures (linguistics)",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Speech, Language, and Hearing Sciences",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://csd.utexas.edu/",
+    "phd_program_name": "PhD in Communication Sciences and Disorders",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "rice-university",
+  "university": "Rice University",
+  "offers_linguistics_phd": true,
+  "city": "Houston",
+  "state": "TX",
+  "latitude": 29.7174,
+  "longitude": -95.4018,
+  "domain": "rice.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.rice.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-texas-at-arlington",
+  "university": "University of Texas at Arlington",
+  "offers_linguistics_phd": true,
+  "city": "Arlington",
+  "state": "TX",
+  "latitude": 32.7299,
+  "longitude": -97.114,
+  "domain": "uta.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics and TESOL"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics and TESOL",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://www.uta.edu/academics/schools-colleges/liberal-arts/departments/linguistics-tesol",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-arizona",
+  "university": "University of Arizona",
+  "offers_linguistics_phd": true,
+  "city": "Tucson",
+  "state": "AZ",
+  "latitude": 32.2319,
+  "longitude": -110.9501,
+  "domain": "arizona.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.arizona.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Second Language Acquisition and Teaching Program",
+    "field": "APPLIED",
+    "school": null,
+    "unit_url": "https://slat.arizona.edu/",
+    "phd_program_name": "PhD in Second Language Acquisition and Teaching",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Speech, Language, and Hearing Sciences",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://slhs.arizona.edu/",
+    "phd_program_name": "PhD in Speech, Language, and Hearing Sciences",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "arizona-state-university",
+  "university": "Arizona State University",
+  "offers_linguistics_phd": true,
+  "city": "Tempe",
+  "state": "AZ",
+  "latitude": 33.4242,
+  "longitude": -111.9281,
+  "domain": "asu.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of English (Linguistics and Applied Linguistics)"
+  ],
+  "units": [
+   {
+    "name": "Department of English (Linguistics and Applied Linguistics)",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://english.asu.edu/",
+    "phd_program_name": "PhD in Linguistics and Applied Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": "",
+    "filter_language": true
+   }
+  ]
+ },
+ {
+  "slug": "northern-arizona-university",
+  "university": "Northern Arizona University",
+  "offers_linguistics_phd": true,
+  "city": "Flagstaff",
+  "state": "AZ",
+  "latitude": 35.1894,
+  "longitude": -111.6537,
+  "domain": "nau.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [],
+  "units": [
+   {
+    "name": "Department of English (Applied Linguistics)",
+    "field": "APPLIED",
+    "school": null,
+    "unit_url": "https://nau.edu/english/",
+    "phd_program_name": "PhD in Applied Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-new-mexico",
+  "university": "University of New Mexico",
+  "offers_linguistics_phd": true,
+  "city": "Albuquerque",
+  "state": "NM",
+  "latitude": 35.0844,
+  "longitude": -106.6198,
+  "domain": "unm.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.unm.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-colorado-boulder",
+  "university": "University of Colorado Boulder",
+  "offers_linguistics_phd": true,
+  "city": "Boulder",
+  "state": "CO",
+  "latitude": 40.0076,
+  "longitude": -105.2659,
+  "domain": "colorado.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://www.colorado.edu/linguistics/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Speech, Language and Hearing Sciences",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://www.colorado.edu/slhs/",
+    "phd_program_name": "PhD in Speech, Language and Hearing Sciences",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-utah",
+  "university": "University of Utah",
+  "offers_linguistics_phd": true,
+  "city": "Salt Lake City",
+  "state": "UT",
+  "latitude": 40.7649,
+  "longitude": -111.8421,
+  "domain": "utah.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.utah.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-oregon",
+  "university": "University of Oregon",
+  "offers_linguistics_phd": true,
+  "city": "Eugene",
+  "state": "OR",
+  "latitude": 44.0448,
+  "longitude": -123.0726,
+  "domain": "uoregon.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.uoregon.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-washington",
+  "university": "University of Washington",
+  "offers_linguistics_phd": true,
+  "city": "Seattle",
+  "state": "WA",
+  "latitude": 47.6553,
+  "longitude": -122.3035,
+  "domain": "uw.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.washington.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Speech and Hearing Sciences",
+    "field": "SPEECH",
+    "school": null,
+    "unit_url": "https://sphsc.washington.edu/",
+    "phd_program_name": "PhD in Speech and Hearing Sciences",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-hawaii-at-manoa",
+  "university": "University of Hawaii at Manoa",
+  "offers_linguistics_phd": true,
+  "city": "Honolulu",
+  "state": "HI",
+  "latitude": 21.2969,
+  "longitude": -157.8171,
+  "domain": "hawaii.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://ling.hawaii.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of Second Language Studies",
+    "field": "APPLIED",
+    "school": null,
+    "unit_url": "https://sls.hawaii.edu/",
+    "phd_program_name": "PhD in Second Language Acquisition",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   },
+   {
+    "name": "Department of East Asian Languages and Literatures",
+    "field": "LANG",
+    "school": null,
+    "unit_url": "https://eall.hawaii.edu/",
+    "phd_program_name": "PhD in East Asian Languages and Literatures (linguistics)",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-georgia",
+  "university": "University of Georgia",
+  "offers_linguistics_phd": true,
+  "city": "Athens",
+  "state": "GA",
+  "latitude": 33.948,
+  "longitude": -83.3773,
+  "domain": "uga.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Linguistics Program"
+  ],
+  "units": [
+   {
+    "name": "Linguistics Program",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.uga.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-florida",
+  "university": "University of Florida",
+  "offers_linguistics_phd": true,
+  "city": "Gainesville",
+  "state": "FL",
+  "latitude": 29.6436,
+  "longitude": -82.3549,
+  "domain": "ufl.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Department of Linguistics"
+  ],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://lin.ufl.edu/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-south-carolina",
+  "university": "University of South Carolina",
+  "offers_linguistics_phd": true,
+  "city": "Columbia",
+  "state": "SC",
+  "latitude": 33.9937,
+  "longitude": -81.0266,
+  "domain": "sc.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [
+   "Linguistics Program"
+  ],
+  "units": [
+   {
+    "name": "Linguistics Program",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://sc.edu/study/colleges_schools/artsandsciences/linguistics/",
+    "phd_program_name": "PhD in Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "georgia-state-university",
+  "university": "Georgia State University",
+  "offers_linguistics_phd": true,
+  "city": "Atlanta",
+  "state": "GA",
+  "latitude": 33.753,
+  "longitude": -84.3853,
+  "domain": "gsu.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [],
+  "units": [
+   {
+    "name": "Department of Applied Linguistics and ESL",
+    "field": "APPLIED",
+    "school": null,
+    "unit_url": "https://alesl.gsu.edu/",
+    "phd_program_name": "PhD in Applied Linguistics",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "texas-aandm-university",
+  "university": "Texas A&M University",
+  "offers_linguistics_phd": true,
+  "city": "College Station",
+  "state": "TX",
+  "latitude": 30.6187,
+  "longitude": -96.3387,
+  "domain": "tamu.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [],
+  "units": [
+   {
+    "name": "Department of Hispanic Studies",
+    "field": "LANG",
+    "school": null,
+    "unit_url": "https://hisp.tamu.edu/",
+    "phd_program_name": "PhD in Hispanic Studies (Hispanic linguistics)",
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": true,
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "slug": "princeton-university",
+  "university": "Princeton University",
+  "offers_linguistics_phd": false,
+  "city": "Princeton",
+  "state": "NJ",
+  "latitude": 40.3431,
+  "longitude": -74.6551,
+  "domain": "princeton.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [],
+  "units": [
+   {
+    "name": "Program in Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.princeton.edu/",
+    "phd_program_name": null,
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": false,
+    "reason": "Undergraduate program; no Linguistics PhD"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-north-carolina-at-chapel-hill",
+  "university": "University of North Carolina at Chapel Hill",
+  "offers_linguistics_phd": false,
+  "city": "Chapel Hill",
+  "state": "NC",
+  "latitude": 35.9049,
+  "longitude": -79.0469,
+  "domain": "unc.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.unc.edu/",
+    "phd_program_name": null,
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": false,
+    "reason": "No Linguistics PhD"
+   }
+  ]
+ },
+ {
+  "slug": "duke-university",
+  "university": "Duke University",
+  "offers_linguistics_phd": false,
+  "city": "Durham",
+  "state": "NC",
+  "latitude": 36.0014,
+  "longitude": -78.9382,
+  "domain": "duke.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [],
+  "units": [
+   {
+    "name": "Linguistics Program",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.duke.edu/",
+    "phd_program_name": null,
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": false,
+    "reason": "No Linguistics PhD"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-kentucky",
+  "university": "University of Kentucky",
+  "offers_linguistics_phd": false,
+  "city": "Lexington",
+  "state": "KY",
+  "latitude": 38.0317,
+  "longitude": -84.504,
+  "domain": "uky.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [],
+  "units": [
+   {
+    "name": "Department of Linguistics",
+    "field": "LING",
+    "school": null,
+    "unit_url": "https://linguistics.as.uky.edu/",
+    "phd_program_name": null,
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": false,
+    "reason": "No Linguistics PhD"
+   }
+  ]
+ },
+ {
+  "slug": "columbia-university",
+  "university": "Columbia University",
+  "offers_linguistics_phd": false,
+  "city": "New York",
+  "state": "NY",
+  "latitude": 40.8075,
+  "longitude": -73.9626,
+  "domain": "columbia.edu",
+  "logo_url": null,
+  "confidence": "medium",
+  "notes": "Units from the seed list; directories found automatically by pipeline/scrape_local.py unless directory_url is set.",
+  "guide_units": [],
+  "units": [
+   {
+    "name": "Teachers College, Applied Linguistics and TESOL",
+    "field": "APPLIED",
+    "school": null,
+    "unit_url": "https://www.tc.columbia.edu/arts-and-humanities/tesol-applied-linguistics/",
+    "phd_program_name": null,
+    "phd_program_url": null,
+    "directory_url": null,
+    "include": false,
+    "reason": "Doctorate is an Ed.D.; out of scope"
+   }
+  ]
+ }
+]

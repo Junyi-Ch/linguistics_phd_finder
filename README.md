@@ -34,6 +34,8 @@ docs/                PLAN.md, design-brief.md, DATA_REPORT.md
 
 ## Commands
 
+**Collecting the data runs on your own computer, step by step: see `SETUP_MAC.md`** (local scraping, OpenAlex publications, labels from a local Ollama model, then `build.py`).
+
 ```bash
 npm install && npm run dev        # local site at localhost:4321/linguistics_phd_finder/
 npm run build                     # static output in dist/
