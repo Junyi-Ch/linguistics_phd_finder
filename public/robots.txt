@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://junyu-jiang0508.github.io/linguistics_phd/sitemap-index.xml
+Sitemap: https://junyi-ch.github.io/linguistics_phd_finder/sitemap-index.xml

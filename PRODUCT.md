@@ -34,7 +34,7 @@ so those units are included and always labelled as such.
 ## Brand commitments
 - Honest about limits: every record shows its source and scrape date; labels are "interpretive, not exhaustive".
 - Calm, precise, data-forward; no marketing hype, no ranking worship (rankings are shown as one signal with year).
-- Owner: Junyu Jiang (junyuj.com). Attribution to the Political Science Program Explorer as inspiration.
+- Owner: Junyi Chen (apc003@ucsd.edu). Built on the Communication PhD Explorer by Junyu Jiang.
 
 ## Success
 An applicant pastes 150 words and within a minute has a shortlist of programs with named potential advisors and

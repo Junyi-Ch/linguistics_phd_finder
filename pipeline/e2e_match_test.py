@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-"""End-to-end check of the Match page in headless Chromium against a running preview (default http://localhost:4321/linguistics_phd/).
+"""End-to-end check of the Match page in headless Chromium against a running preview (default http://localhost:4321/linguistics_phd_finder/).
 Downloads the real bge-small model from the CDN/HF hub, runs a query, prints the top results and any console errors."""
 import sys, time, json, os, tempfile
 from playwright.sync_api import sync_playwright
-BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:4321/linguistics_phd/"
+BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:4321/linguistics_phd_finder/"
 QUERY = sys.argv[2] if len(sys.argv) > 2 else ("I study how misinformation about vaccines spreads in Chinese-language WeChat groups, combining computational text analysis "
          "of posts with survey experiments on corrections. I am also interested in trust in journalism and platform governance.")
 with sync_playwright() as p:

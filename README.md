@@ -2,9 +2,9 @@
 
 Find US Linguistics PhD programs, and the computational, applied, language-department and speech-science units around them, whose faculty match your research. Matching runs in the browser (Transformers.js + `snowflake-arctic-embed-m-v1.5`, BM25, a MiniLM re-ranker); the site is static and deployed to GitHub Pages.
 
-Live: https://junyu-jiang0508.github.io/linguistics_phd/ (after the first deploy)
+Live: https://junyi-ch.github.io/linguistics_phd_finder/ (after the first deploy)
 
-Sister site of the [Communication PhD Explorer](https://junyu-jiang0508.github.io/communication_phd/), and built from the same code.
+Built by Junyi Chen from the code of the [Communication PhD Explorer](https://junyu-jiang0508.github.io/communication_phd/) by Junyu Jiang.
 
 ## Layout
 
@@ -35,7 +35,7 @@ docs/                PLAN.md, design-brief.md, DATA_REPORT.md
 ## Commands
 
 ```bash
-npm install && npm run dev        # local site at localhost:4321/linguistics_phd/
+npm install && npm run dev        # local site at localhost:4321/linguistics_phd_finder/
 npm run build                     # static output in dist/
 
 # data pipeline (conda env "nlp": sentence-transformers, playwright, Pillow, bs4)
