@@ -210,6 +210,8 @@ SECTION_GOOD = re.compile(r"faculty|professors|core|tenure|ladder", re.I)
 
 def faculty_only_url(u):
     u = re.sub(r"\W*(and\W*)?academic\W*staff", "", u.lower())
+    if re.search(r"ladder|core-faculty|tenure", u):
+        return True
     return bool(re.search(r"faculty|professor", u)) and not re.search(r"student|staff|people|directory", u)
 
 def section_of(el):
