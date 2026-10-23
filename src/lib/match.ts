@@ -7,7 +7,7 @@ import { DIMS, labelText } from './data';
 import HINTS from '../../pipeline/hints.json';
 
 export type Hint = { dim: Dim; code: string; label: string; mode: 'off' | 'boost' | 'require' };
-export type Scored = { f: Faculty; sem: number; lex: number; boost: number; base: number; score: number; terms: string[]; labels: { dim: Dim; code: string }[]; moved?: number };
+export type Scored = { f: Faculty; sem: number; lex: number; boost: number; base: number; score: number; terms: string[]; labels: { dim: Dim; code: string }[]; facets?: string[]; moved?: number };
 export type Calibration = { lo: number; hi: number; scaleAtHi?: number };
 export type Manifest = {
   model: string; dimensions: number; quantizationScale: number; queryPrefix?: string; pooling?: string;
@@ -202,7 +202,20 @@ function zscores(a: Float32Array) {
   const sd = Math.sqrt(s / Math.max(1, a.length)) || 1;
   return a.map((v) => (v - m) / sd);
 }
-export type ScoreOpts = { lexWeight: number; threshold: number; ranks: Set<string>; fields?: Set<string>; manifest: Manifest };
+export type Facet = { text: string; cos: Float32Array };
+export type ScoreOpts = { lexWeight: number; threshold: number; ranks: Set<string>; fields?: Set<string>; manifest: Manifest; facets?: Facet[] };
+
+// A description that lists several interests ("revitalization, fieldwork, variation, pragmatics") is split into its parts.
+// One embedding of the whole list blurs into "a bit of everything", which favours generalists and buries people who are
+// strong on two or three of the interests. Each part is therefore also scored on its own, and a person's best parts count.
+export function splitFacets(text: string): string[] {
+  const parts = text
+    .split(/\n|;|•|·|\.\s+|,(?![^()]*\))|\band\/or\b/)
+    .map((x) => x.replace(/^\s*(and|or|also|as well as|i am interested in|i'm interested in|my interests (are|include)|interests?:)\s+/i, '').trim().replace(/[.:]+$/, ''))
+    .filter((x) => x.length >= 4 && tokenize(x).length >= 1);
+  const uniq = Array.from(new Set(parts.map((x) => x.toLowerCase()))).map((l) => parts.find((x) => x.toLowerCase() === l)!);
+  return uniq.length >= 3 ? uniq.slice(0, 10) : [];
+}
 export function score(list: Faculty[], ids: string[], cos: Float32Array, query: string, hints: Hint[], opts: ScoreOpts): Scored[] {
   const byId = new Map(list.map((f, i) => [f.id, i]));
   const dense = new Float32Array(list.length);
@@ -211,6 +224,26 @@ export function score(list: Faculty[], ids: string[], cos: Float32Array, query: 
   const zd = zscores(dense), zl = zscores(lexRaw);
   let maxLex = 1e-6; for (const v of lexRaw) if (v > maxLex) maxLex = v;
   const wl = opts.lexWeight, wd = 1 - wl, hw = opts.manifest.hints || {};
+  // whole-query score, then (for lists of interests) blended with each person's two best interest-level scores
+  let core = new Float32Array(list.length).map((_, i) => wd * zd[i] + wl * zl[i]);
+  const facetHits: string[][] = list.map(() => []);
+  const fs = opts.facets ?? [];
+  if (fs.length >= 3) {
+    const per = fs.map((fc) => {
+      const d = new Float32Array(list.length);
+      for (let r = 0; r < ids.length; r++) { const i = byId.get(ids[r]); if (i != null) d[i] = fc.cos[r]; }
+      const zdf = zscores(d), zlf = zscores(bm25(fc.text).scores);
+      return zdf.map((v, i) => wd * v + wl * zlf[i]);
+    });
+    const best2 = new Float32Array(list.length);
+    for (let i = 0; i < list.length; i++) {
+      const vals = per.map((a) => a[i]).sort((a, b) => b - a);
+      best2[i] = (vals[0] + vals[1]) / 2;
+      fs.forEach((fc, k) => { if (per[k][i] >= 1.8) facetHits[i].push(fc.text); });
+    }
+    const zb = zscores(best2), zc = zscores(core);
+    core = zscores(zc.map((v, i) => 0.45 * v + 0.55 * zb[i]));
+  }
   const out: Scored[] = [];
   for (let i = 0; i < list.length; i++) {
     const f = list[i];
@@ -223,10 +256,10 @@ export function score(list: Faculty[], ids: string[], cos: Float32Array, query: 
       else if (h.mode === 'require') ok = false;
     }
     if (!ok) continue;
-    const base = wd * zd[i] + wl * zl[i] + boost;
+    const base = core[i] + boost;
     const fit = rescale(base, opts.manifest.calibration);
     if (fit < opts.threshold) continue;
-    out.push({ f, sem: rescale(dense[i], opts.manifest.semCalibration), lex: lexRaw[i] / maxLex, boost, base, score: fit, terms: q.filter((t) => docs[i].tf.has(t)), labels });
+    out.push({ f, sem: rescale(dense[i], opts.manifest.semCalibration), lex: lexRaw[i] / maxLex, boost, base, score: fit, terms: q.filter((t) => docs[i].tf.has(t)), labels, facets: facetHits[i].slice(0, 4) });
   }
   out.sort((a, b) => b.base - a.base);
   return out;
@@ -234,7 +267,7 @@ export function score(list: Faculty[], ids: string[], cos: Float32Array, query: 
 const ceCache = new Map<string, number>(); // query + id -> cross-encoder logit (option changes reuse it)
 // Re-read the top k with the cross-encoder and blend its judgement with the first-pass order.
 // Fit values stay attached to positions (sorted), so the list stays monotonic.
-export async function rerank(rr: Reranker, query: string, scored: Scored[], rk: Manifest['rerank'], tax: Taxonomy): Promise<Scored[]> {
+export async function rerank(rr: Reranker, query: string, scored: Scored[], rk: Manifest['rerank'], tax: Taxonomy, mixOverride?: number): Promise<Scored[]> {
   const top = scored.slice(0, rk.k);
   if (top.length < 2) return scored;
   const key = (s: Scored) => query + '\u0001' + s.f.id;
@@ -247,7 +280,8 @@ export async function rerank(rr: Reranker, query: string, scored: Scored[], rk: 
   }
   const zc = zscores(Float32Array.from(top, (s) => ceCache.get(key(s))!));
   const prior = zscores(Float32Array.from(top, (_, i) => -Math.log1p(i)));
-  const order = top.map((s, i) => ({ s, i, v: rk.mix * zc[i] + (1 - rk.mix) * prior[i] })).sort((a, b) => b.v - a.v);
+  const mix = mixOverride ?? rk.mix;
+  const order = top.map((s, i) => ({ s, i, v: mix * zc[i] + (1 - mix) * prior[i] })).sort((a, b) => b.v - a.v);
   const fits = top.map((s) => s.score);
   return order.map((o, j): Scored => ({ ...o.s, score: fits[j], moved: o.i - j })).concat(scored.slice(rk.k));
 }

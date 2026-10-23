@@ -108,7 +108,7 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
   import tax from '../data/taxonomy.json';
   import { BASE, esc, withBase, labelText, passesRank, type Faculty, type Program, type Taxonomy } from '../lib/data';
   import { t, getLang } from '../lib/i18n';
-  import { indexFaculty, detectHints, loadIndex, loadModel, loadReranker, embed, semanticScores, score, rerank, programFit, hasCJK, translateToEnglish, type Hint, type Scored, type Manifest } from '../lib/match';
+  import { indexFaculty, splitFacets, detectHints, loadIndex, loadModel, loadReranker, embed, semanticScores, score, rerank, programFit, hasCJK, translateToEnglish, type Hint, type Scored, type Manifest, type Facet } from '../lib/match';
   import { personRow, bindSaveButtons, setupDrawer, scoreHtml, mark, chip } from '../lib/ui';
   const EXAMPLES = ["I study how Mandarin tone is processed during spoken word recognition, using eye-tracking in the visual world paradigm with native listeners and second language learners.", "My research is on the syntax and semantics of relative clauses and quantifier scope in an under-documented Mayan language, based on fieldwork and elicitation with native speakers.", "I am interested in sociophonetic variation and change in African American English in a Southern city, using sociolinguistic interviews and mixed-effects models of vowel formants.", "I want to use large language models as cognitive models of human sentence processing, comparing surprisal estimates with reading times and EEG responses.", "I study how bilingual children acquire Spanish and English morphology in heritage-language families, using longitudinal naturalistic recordings."];
 
@@ -149,7 +149,7 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
   });
   document.addEventListener('langchange', () => { hints = detectHints(q.value, T, getLang()).map((h) => ({ ...h, mode: hints.find((x) => x.code === h.code)?.mode ?? 'boost' })); renderHints(); if (last) render(); });
 
-  let cached: { query: string; english: string; via: 'browser' | 'model' | null; cos: Float32Array; ids: string[]; manifest: Manifest } | null = null;
+  let cached: { query: string; english: string; via: 'browser' | 'model' | null; cos: Float32Array; ids: string[]; manifest: Manifest; facets: Facet[] } | null = null;
   const progress = (label: string) => (p: { phase: string; pct: number }) => { loadbar.dataset.n = String(Math.min(6, Math.ceil(p.pct / 17))); statusText.textContent = p.phase === 'ready' ? t('match_ready') : `${label} ${p.pct}%`; };
   function showTranslation() {
     const box = $('#translated');
@@ -180,15 +180,17 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
         const pipe = await loadModel(manifest.model, progress(t('match_loading')));
         statusText.textContent = t('match_running'); loadbar.dataset.n = '6';
         const qv = await embed(pipe, manifest, english, keywords);
-        cached = { query: text, english, via, cos: semanticScores(qv, vec, manifest.dimensions, manifest.quantizationScale), ids, manifest };
+        const facets: Facet[] = [];
+        for (const part of splitFacets(english)) facets.push({ text: part, cos: semanticScores(await embed(pipe, manifest, part), vec, manifest.dimensions, manifest.quantizationScale) });
+        cached = { query: text, english, via, cos: semanticScores(qv, vec, manifest.dimensions, manifest.quantizationScale), ids, manifest, facets };
       }
       const ranks = new Set(Array.from(document.querySelectorAll<HTMLInputElement>('.rank:checked')).map((c) => c.value));
       const fields = new Set(Array.from(document.querySelectorAll<HTMLInputElement>('.fldc:checked')).map((c) => c.value));
-      let res = score(F, cached.ids, cached.cos, cached.english, hints, { lexWeight: Number(lex.value) / 100, threshold: Number(thr.value) / 100, ranks, fields, manifest: cached.manifest });
+      let res = score(F, cached.ids, cached.cos, cached.english, hints, { lexWeight: Number(lex.value) / 100, threshold: Number(thr.value) / 100, ranks, fields, manifest: cached.manifest, facets: cached.facets });
       try {
         statusText.textContent = t('match_rerank');
         const rr = await loadReranker(cached.manifest.rerank.model);
-        res = await rerank(rr, cached.english, res, cached.manifest.rerank, T);
+        res = await rerank(rr, cached.english, res, cached.manifest.rerank, T, cached.facets.length >= 3 ? 0.25 : undefined);
       } catch { /* the first-pass order still stands */ }
       if (seq !== runSeq) return;
       statusText.textContent = t('match_ready');
@@ -213,7 +215,8 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
   function why(s: Scored) {
     const lang = getLang();
     const parts: string[] = [];
-    if (s.labels.length) parts.push(`${t('matched_on')}: ${s.labels.map((l) => esc(labelText(T, l.dim, l.code, lang))).join(', ')}`);
+    if (s.facets?.length) parts.push(`${t('matched_on')}: ${s.facets.map(esc).join(', ')}`);
+    else if (s.labels.length) parts.push(`${t('matched_on')}: ${s.labels.map((l) => esc(labelText(T, l.dim, l.code, lang))).join(', ')}`);
     if ((s.moved ?? 0) > 0) parts.push(t('why_reread'));
     return parts.join(' · ');
   }
