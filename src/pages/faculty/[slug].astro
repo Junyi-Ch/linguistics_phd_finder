@@ -5,96 +5,123 @@ import programs from '../../data/programs.json';
 import tax from '../../data/taxonomy.json';
 import { REPO_URL } from '../../lib/site';
 import { relatedFor, coauthorsFor, openalexFor, familyFor } from '../../lib/network';
-import { DIMS, initials, type Faculty, type Program, type Taxonomy, avatar } from '../../lib/data';
+import { DIMS, type Faculty, type Program, type Taxonomy } from '../../lib/data';
 export function getStaticPaths() { return (faculty as Faculty[]).map((f) => ({ params: { slug: f.id }, props: { f } })); }
 const { f } = Astro.props as { f: Faculty };
 const base = import.meta.env.BASE_URL;
 const T = tax as unknown as Taxonomy;
 const p = (programs as Program[]).find((x) => x.slug === f.u);
-const rel = relatedFor(f.id).slice(0, 6);
+const rel = relatedFor(f.id).slice(0, 8);
 const co = coauthorsFor(f.id);
 const oa = openalexFor(f.id);
 const fam = familyFor(f.id);
+// main focus: the starred labels, subfield first
+const focus = DIMS.flatMap((d) => (f.labels[d] || []).filter((l) => l.p).map((l) => ({ d, c: l.c }))).slice(0, 5);
+const hasLabels = DIMS.some((d) => (f.labels[d] || []).length > 0);
+const treeN = fam ? fam.advisors.length + fam.students.length + fam.siblings.length : 0;
+const onSite = (a: any) => 'f' in a && a.f;
+const students = fam ? fam.students.slice().sort((a: any, b: any) => Number(!!onSite(b)) - Number(!!onSite(a))) : [];
+const tabs = [
+  rel.length ? { k: 'similar', i18n: 'related_h', label: 'Similar research', n: rel.length } : null,
+  treeN ? { k: 'tree', i18n: 'tree_h', label: 'Academic tree', n: treeN } : null,
+  co.length ? { k: 'coauthors', i18n: 'net_mode_co', label: 'Co-authors', n: co.length } : null,
+].filter(Boolean) as { k: string; i18n: string; label: string; n: number }[];
 const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correction: ' + f.name + ' (' + (p?.short || f.u) + ')')}&body=${encodeURIComponent('Page: ' + base + 'faculty/' + f.id + '/\n\nWhat is wrong:\n')}`;
 ---
 <Base title={f.name} description={`${f.name}, ${f.rank}, ${f.dept}, ${p?.name || ''}. ${f.summary}`}>
-  <p class="small"><a href={`${base}faculty/`} data-i18n="dir_h1">Faculty</a> › {p && <a href={`${base}programs/${p.slug}/`}>{p.name}</a>}</p>
-  <div class="identity" style="display:flex;gap:20px;align-items:flex-start;margin-top:14px">
-    <Fragment set:html={avatar(f as any, true)} />
-    <div>
-      <div class="small muted">{f.rank === "Faculty" ? "Rank not listed" : f.title}</div>
-      <h1 style="font-size:clamp(1.7rem,1.2rem+1.6vw,2.4rem)">{f.name}</h1>
-      <div class="muted" style="margin-top:6px">{p && <a href={`${base}programs/${p.slug}/`}>{p.name}</a>} · {f.dept}</div>
-      {fam?.phd && <div class="small muted" style="margin-top:6px"><span data-i18n="fam_phd">PhD:</span> {fam.phdProgram ? <a href={`${base}programs/${fam.phdProgram.slug}/`}>{fam.phd.inst}</a> : fam.phd.inst}{fam.phd.year ? `, ${fam.phd.year}` : ''}</div>}
-      <div class="toolbar" style="margin-top:12px">
-        <button type="button" class="btn save-btn" data-save={f.id} data-i18n="save">Save</button>
-        {f.profile && <a class="btn" href={f.profile} target="_blank" rel="noreferrer" data-i18n="profile">Department profile</a>}
-        {f.site && <a class="btn" href={f.site} target="_blank" rel="noreferrer" data-i18n="personal_site">Personal site</a>}
-        {oa && <a class="btn" href={`https://openalex.org/authors/${oa}`} target="_blank" rel="noreferrer" data-i18n="oa_link">Publications (OpenAlex)</a>}
-        {f.scholar && <a class="btn" href={f.scholar} target="_blank" rel="noreferrer" data-i18n="scholar">Google Scholar</a>}
+  <article class="person">
+    <p class="small crumbs"><a href={`${base}faculty/`} data-i18n="dir_h1">Faculty</a> › {p && <a href={`${base}programs/${p.slug}/`}>{p.short || p.name}</a>}</p>
+
+    <header class="p-head">
+      <h1>{f.name}</h1>
+      <p class="p-role">{f.rank === 'Faculty' ? <span data-i18n="rank_fac">Rank not listed</span> : f.title}</p>
+      <p class="p-where">{p && <a href={`${base}programs/${p.slug}/`}>{p.name}</a>}<span class="muted"> · {f.dept}</span></p>
+      {fam?.phd && <p class="p-phd muted"><span data-i18n="fam_phd">PhD:</span> {fam.phd.inst}{fam.phd.year ? `, ${fam.phd.year}` : ''}</p>}
+    </header>
+
+    {f.summary && <p class="p-summary"><span data-lang-only="en">{f.summary}</span><span data-lang-only="zh">{f.summary_zh || f.summary}</span></p>}
+
+    {focus.length > 0 && <div class="chips p-focus">{focus.map((x) => <span class="chip" data-dim={x.d}><span data-lang-only="en">{T.dimensions[x.d].labels_short[x.c]}</span><span data-lang-only="zh">{T.dimensions[x.d].labels_short_zh[x.c]}</span></span>)}</div>}
+
+    <div class="p-actions">
+      <button type="button" class="btn primary save-btn" data-save={f.id} data-i18n="save">Save</button>
+      {f.site && <a class="btn" href={f.site} target="_blank" rel="noreferrer" data-i18n="personal_site">Personal site</a>}
+      {f.profile && <a class="btn" href={f.profile} target="_blank" rel="noreferrer" data-i18n="profile">Department profile</a>}
+      {oa && <a class="btn" href={`https://openalex.org/authors/${oa}`} target="_blank" rel="noreferrer" data-i18n="oa_short">Publications</a>}
+      {f.scholar && <a class="btn" href={f.scholar} target="_blank" rel="noreferrer" data-i18n="scholar">Google Scholar</a>}
+    </div>
+
+    {tabs.length > 0 && <section class="p-conn" aria-label="Connections">
+      <div class="p-tabs" role="tablist">
+        {tabs.map((t, i) => <button type="button" role="tab" id={`tab-${t.k}`} aria-controls={`panel-${t.k}`} aria-selected={i === 0 ? 'true' : 'false'} data-tab={t.k}><span data-i18n={t.i18n}>{t.label}</span> <span class="n">{t.n}</span></button>)}
       </div>
-    </div>
-  </div>
-  <div class="fgrid">
-    <div>
-      {f.summary && <p class="lede" style="font-size:1.1rem"><span data-lang-only="en">{f.summary}</span><span data-lang-only="zh">{f.summary_zh || f.summary}</span></p>}
-      {f.areas.length > 0 && <section style="margin-top:22px"><h2 class="sec-h" data-i18n="research_areas">Research areas (from the department)</h2><div class="chips" style="margin-top:8px">{f.areas.map((a) => <span class="chip">{a}</span>)}</div></section>}
-      {rel.length > 0 && <section class="related">
-        <h2 class="sec-h" data-i18n="related_h">Similar research</h2>
-        <p class="small muted" data-i18n="related_lede">Faculty at any university whose research profile is closest to this one.</p>
-        <ul class="rel-list">{rel.map((r) => (
-          <li><a href={`${base}faculty/${r.f.id}/`}>{r.f.name}</a> <span class="muted">· {r.p?.short || r.f.u}</span>
-            {r.shared.length > 0 && <div class="small muted"><span data-i18n="related_both">Both:</span> {r.shared.slice(0, 3).map((c, k) => <>{k > 0 && ' · '}<span data-lang-only="en">{T.dimensions.topic.labels_short[c]}</span><span data-lang-only="zh">{T.dimensions.topic.labels_short_zh[c]}</span></>)}</div>}
-          </li>))}
-        </ul>
-        <p class="small" style="margin-top:10px"><a href={`${base}network/?p=${f.id}`} data-i18n="related_map">See on the network map</a> →</p>
-      </section>}
-      {fam && (fam.advisors.length + fam.students.length + fam.siblings.length) > 0 && <section class="related">
-        <h2 class="sec-h" data-i18n="tree_h">Academic tree</h2>
-        <p class="small muted" data-i18n="tree_lede">PhD advisors, PhD students, and faculty on this site who share an advisor. From Academic Family Tree, department profiles and Wikidata, so it may be incomplete.</p>
-        <div class="tree-grid">
-          {fam.advisors.length > 0 && <div><h3 class="tree-h" data-i18n="fam_advisor">PhD advisor</h3><ul class="tree-list">{fam.advisors.map((a) => <li>{'f' in a && a.f ? <><a href={`${base}faculty/${a.f.id}/`}>{a.f.name}</a> <span class="muted">· {a.p?.short || a.f.u}</span></> : <>{(a as any).name}{' '}<span class="small muted">· <span data-i18n="fam_not_listed">not on this site</span></span></>}</li>)}</ul></div>}
-          {fam.students.length > 0 && <div><h3 class="tree-h" data-i18n="tree_students">PhD students</h3><ul class="tree-list">{fam.students.slice().sort((a, b) => Number('f' in b && !!b.f) - Number('f' in a && !!a.f)).slice(0, 12).map((a) => <li>{'f' in a && a.f ? <><a href={`${base}faculty/${a.f.id}/`}>{a.f.name}</a> <span class="muted">· {a.p?.short || a.f.u}</span></> : <>{(a as any).name}{' '}<span class="small muted">· <span data-i18n="fam_not_listed">not on this site</span></span></>}</li>)}</ul>{fam.students.length > 12 && <p class="small muted" style="margin-top:6px"><span data-lang-only="en">and {fam.students.length - 12} more</span><span data-lang-only="zh">另有 {fam.students.length - 12} 位</span></p>}</div>}
-          {fam.siblings.length > 0 && <div><h3 class="tree-h" data-i18n="tree_siblings">Share an advisor</h3><ul class="tree-list">{fam.siblings.map((c) => <li><a href={`${base}faculty/${c.f.id}/`}>{c.f.name}</a> <span class="muted">· {c.p?.short || c.f.u}</span><div class="small muted"><span data-i18n="tree_via">Advisor:</span> {c.via}</div></li>)}</ul></div>}
+
+      {rel.length > 0 && <div class="p-panel" role="tabpanel" id="panel-similar" aria-labelledby="tab-similar" data-panel="similar">
+        <ul class="plist">{rel.map((r) => <li><a href={`${base}faculty/${r.f.id}/`}>{r.f.name}</a><span class="muted">{r.p?.short || r.f.u}</span></li>)}</ul>
+        <p class="small p-more"><a href={`${base}network/?p=${f.id}`} data-i18n="related_map">See on the network map</a> →</p>
+      </div>}
+
+      {treeN > 0 && fam && <div class="p-panel" role="tabpanel" id="panel-tree" aria-labelledby="tab-tree" data-panel="tree" hidden>
+        <div class="tree-cols">
+          {fam.advisors.length > 0 && <div><h2 class="tree-h" data-i18n="fam_advisor">PhD advisor</h2><ul class="plist one">{fam.advisors.map((a: any) => onSite(a) ? <li><a href={`${base}faculty/${a.f.id}/`}>{a.f.name}</a><span class="muted">{a.p?.short || a.f.u}</span></li> : <li><span class="off">{a.name}</span></li>)}</ul></div>}
+          {students.length > 0 && <div><h2 class="tree-h" data-i18n="tree_students">PhD students</h2><ul class="plist one">{students.slice(0, 10).map((a: any) => onSite(a) ? <li><a href={`${base}faculty/${a.f.id}/`}>{a.f.name}</a><span class="muted">{a.p?.short || a.f.u}</span></li> : <li><span class="off">{a.name}</span></li>)}</ul>{students.length > 10 && <p class="small muted" style="margin-top:6px"><span data-lang-only="en">and {students.length - 10} more</span><span data-lang-only="zh">另有 {students.length - 10} 位</span></p>}</div>}
+          {fam.siblings.length > 0 && <div><h2 class="tree-h" data-i18n="tree_siblings">Share an advisor</h2><ul class="plist one">{fam.siblings.map((c: any) => <li><a href={`${base}faculty/${c.f.id}/`}>{c.f.name}</a><span class="muted">{c.p?.short || c.f.u}</span></li>)}</ul></div>}
         </div>
-        <p class="small" style="margin-top:10px"><a href={`${base}network/?p=${f.id}&lines=adv`} data-i18n="tree_map">See the academic tree on the network map</a> →</p>
-      </section>}
-      {co.length > 0 && <section class="related">
-        <h2 class="sec-h" data-i18n="co_h">Has published with</h2>
-        <p class="small muted" data-i18n="co_lede">Faculty on this site who share papers with this person, from OpenAlex.</p>
-        <ul class="rel-list">{co.slice(0, 12).map((c) => (
-          <li><a href={`${base}faculty/${c.f.id}/`}>{c.f.name}</a> <span class="muted">· {c.p?.short || c.f.u}</span>
-            <div class="small muted"><span data-lang-only="en">{c.n} {c.n === 1 ? 'paper' : 'papers'}{c.y ? `, latest ${c.y}` : ''}</span><span data-lang-only="zh">{c.n} 篇合著{c.y ? `，最近 ${c.y}` : ''}</span></div>
-            {c.t && <div class="small muted co-title" title={c.t}>“{c.t}”</div>}
-          </li>))}
-        </ul>
-        {co.length > 12 && <p class="small muted" style="margin-top:8px"><span data-lang-only="en">and {co.length - 12} more</span><span data-lang-only="zh">另有 {co.length - 12} 位</span></p>}
-        <p class="small" style="margin-top:10px"><a href={`${base}network/?p=${f.id}&lines=co`} data-i18n="co_map">See co-authors on the network map</a> →</p>
-      </section>}
-    </div>
-    <aside class="panel" style="align-self:start">
-      <h2 class="sec-h" data-i18n="labels_title">Research labels</h2>
+        <p class="small muted p-note"><span data-i18n="tree_note">Names in grey are not on this site. From Academic Family Tree and Wikidata.</span> <a href={`${base}network/?p=${f.id}&lines=adv`} data-i18n="tree_map">See the academic tree on the network map</a> →</p>
+      </div>}
+
+      {co.length > 0 && <div class="p-panel" role="tabpanel" id="panel-coauthors" aria-labelledby="tab-coauthors" data-panel="coauthors" hidden>
+        <ul class="plist">{co.slice(0, 12).map((c) => <li><a href={`${base}faculty/${c.f.id}/`}>{c.f.name}</a><span class="muted">{c.p?.short || c.f.u} · <span data-lang-only="en">{c.n} {c.n === 1 ? 'paper' : 'papers'}</span><span data-lang-only="zh">{c.n} 篇</span></span></li>)}</ul>
+        <p class="small p-more"><a href={`${base}network/?p=${f.id}&lines=co`} data-i18n="co_map">See co-authors on the network map</a> →</p>
+      </div>}
+    </section>}
+
+    {(hasLabels || f.areas.length > 0) && <details class="p-more-info">
+      <summary data-i18n="all_labels">All research labels</summary>
       {DIMS.map((d) => (f.labels[d] || []).length > 0 && (
-        <div style="margin-top:12px"><div class="small" style="font-weight:600;margin-bottom:6px"><span data-lang-only="en">{T.dimensions[d].label}</span><span data-lang-only="zh">{T.dimensions[d].label_zh}</span></div>
-          <div class="chips">{(f.labels[d] || []).map((l) => <span class={`chip${l.p ? ' primary' : ''}`} data-dim={d} title={T.dimensions[d].labels[l.c]}><span data-lang-only="en">{T.dimensions[d].labels_short[l.c]}</span><span data-lang-only="zh">{T.dimensions[d].labels_short_zh[l.c]}</span>{l.p ? ' ★' : ''}</span>)}</div></div>
+        <div class="lab-row"><div class="lab-h"><span data-lang-only="en">{T.dimensions[d].label}</span><span data-lang-only="zh">{T.dimensions[d].label_zh}</span></div>
+          <div class="chips">{(f.labels[d] || []).map((l) => <span class="chip" data-dim={d} title={T.dimensions[d].labels[l.c]}><span data-lang-only="en">{T.dimensions[d].labels_short[l.c]}</span><span data-lang-only="zh">{T.dimensions[d].labels_short_zh[l.c]}</span></span>)}</div></div>
       ))}
-      <p class="small muted" style="margin-top:14px" data-i18n="labels_note">Labels are generated automatically from public profiles and may be incomplete. ★ marks a main focus.</p>
-      <p class="small" style="margin-top:12px"><a href={issue} target="_blank" rel="noreferrer" data-i18n="report">Report an error</a></p>
-    </aside>
-  </div>
+      {f.areas.length > 0 && <div class="lab-row"><div class="lab-h" data-i18n="research_areas">Research areas (from the department)</div><div class="chips">{f.areas.map((a) => <span class="chip">{a}</span>)}</div></div>}
+      <p class="small muted" style="margin-top:12px" data-i18n="labels_note2">Labels are generated automatically from public profiles and may be incomplete.</p>
+    </details>}
+
+    <p class="small p-report"><a href={issue} target="_blank" rel="noreferrer" data-i18n="report">Report an error</a></p>
+  </article>
+
   <style is:global>
-    .fgrid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; margin-top: 26px; align-items: start; }
-    @media (max-width: 860px) { .fgrid { grid-template-columns: 1fr; } }
-    .related { margin-top: 28px; }
-    .rel-list { list-style: none; margin: 10px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px 20px; }
-    .rel-list a { font-weight: 600; color: var(--ink); text-decoration: none; }
-    .rel-list a:hover { color: var(--action-text); }
-    .tree-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px 24px; margin-top: 12px; }
-    .tree-h { font-size: 0.8125rem; font-weight: 600; color: var(--ink-3); margin: 0 0 6px; }
-    .tree-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-    .tree-list a { font-weight: 600; color: var(--ink); text-decoration: none; }
-    .tree-list a:hover { color: var(--action-text); }
-    .co-title { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-style: italic; margin-top: 2px; }
+    .person { max-width: 820px; }
+    .crumbs { color: var(--ink-3); }
+    .p-head { margin-top: 18px; }
+    .p-head h1 { font-size: clamp(2rem, 1.4rem + 2vw, 2.9rem); line-height: 1.05; }
+    .p-role { margin-top: 10px; color: var(--ink-2); }
+    .p-where { margin-top: 2px; }
+    .p-phd { margin-top: 2px; font-size: 0.9rem; }
+    .p-summary { margin-top: 22px; font-size: 1.2rem; line-height: 1.5; color: var(--ink); max-width: 46ch; }
+    .p-focus { margin-top: 16px; }
+    .p-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .p-conn { margin-top: 40px; }
+    .p-tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--line); }
+    .p-tabs button { font: inherit; font-weight: 600; font-size: 0.95rem; color: var(--ink-3); background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 10px 14px; cursor: pointer; min-height: 44px; }
+    .p-tabs button:hover { color: var(--ink); }
+    .p-tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--action); }
+    .p-tabs .n { font-weight: 500; color: var(--ink-3); font-size: 0.85em; }
+    .p-panel { padding-top: 18px; }
+    .plist { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px 24px; }
+    .plist.one { grid-template-columns: 1fr; gap: 8px; }
+    .plist li { display: grid; gap: 1px; }
+    .plist a { font-weight: 600; color: var(--ink); text-decoration: none; }
+    .plist a:hover { color: var(--action-text); }
+    .plist .muted { font-size: 0.875rem; }
+    .plist .off { color: var(--ink-3); }
+    .tree-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px 28px; }
+    .tree-h { font-size: 0.8125rem; font-weight: 600; color: var(--ink-3); margin: 0 0 8px; }
+    .p-more, .p-note { margin-top: 16px; }
+    .p-more-info { margin-top: 36px; border-top: 1px solid var(--line); padding-top: 14px; }
+    .p-more-info summary { cursor: pointer; font-weight: 600; color: var(--ink-2); width: max-content; }
+    .lab-row { margin-top: 14px; }
+    .lab-h { font-size: 0.8125rem; font-weight: 600; color: var(--ink-3); margin-bottom: 6px; }
+    .p-report { margin-top: 28px; }
   </style>
   <script>
     import { bindSaveButtons } from '../../lib/ui';
@@ -102,5 +129,13 @@ const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correctio
     import { t } from '../../lib/i18n';
     document.querySelectorAll<HTMLButtonElement>('.save-btn').forEach((b) => { const on = has(b.dataset.save!); b.setAttribute('aria-pressed', String(on)); b.textContent = on ? t('saved') : t('save'); });
     bindSaveButtons(document);
+    const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.p-tabs [data-tab]'));
+    const show = (k: string) => {
+      if (!tabs.some((b) => b.dataset.tab === k)) return;
+      tabs.forEach((b) => b.setAttribute('aria-selected', String(b.dataset.tab === k)));
+      document.querySelectorAll<HTMLElement>('.p-panel').forEach((p) => { p.hidden = p.dataset.panel !== k; });
+    };
+    tabs.forEach((b) => b.addEventListener('click', () => { show(b.dataset.tab!); history.replaceState(null, '', '#' + b.dataset.tab); }));
+    const h = location.hash.slice(1); if (h) show(h);
   </script>
 </Base>

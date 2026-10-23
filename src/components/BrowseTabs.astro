@@ -5,8 +5,8 @@ import faculty from '../data/faculty.json';
 const { active } = Astro.props as { active: 'programs' | 'faculty' };
 const base = (import.meta.env.BASE_URL as string).replace(/\/+$/, '') + '/';
 const tabs = [
-  { k: 'programs', href: base + 'programs/', i18n: 'browse_programs', label: 'Programs', n: (programs as unknown[]).length },
   { k: 'faculty', href: base + 'faculty/', i18n: 'browse_faculty', label: 'Faculty', n: (faculty as unknown[]).length },
+  { k: 'programs', href: base + 'programs/', i18n: 'browse_programs', label: 'Programs', n: (programs as unknown[]).length },
 ];
 ---
 <h1 class="browse-tabs">

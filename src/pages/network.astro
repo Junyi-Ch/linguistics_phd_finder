@@ -314,7 +314,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     const nbHtml = p.k.map(([j, shared]) => {
       const q = N[j];
       const why = shared.length ? (zh ? '都做：' : 'Both: ') + shared.slice(0, 3).map(topicName).map(esc).join(' · ') : '';
-      return `<li><button type="button" data-i="${j}"><i style="background:${colorOf(q.g)}"></i><span class="nm">${esc(q.n)}</span><span class="sub">${esc(q.us)}${why ? ' · ' + why : ''}</span></button></li>`;
+      return `<li><button type="button" data-i="${j}"><i style="background:${colorOf(q.g)}"></i><span class="nm">${esc(q.n)}</span><span class="sub">${esc(q.us)}</span></button></li>`;
     }).join('');
     const coHtml = p.c.map(([j, n, y]) => {
       const q = N[j];
@@ -327,7 +327,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     const person = (x: number | string) => typeof x === 'number'
       ? `<li><button type="button" data-i="${x}"><i style="background:${colorOf(N[x].g)}"></i><span class="nm">${esc(N[x].n)}</span><span class="sub">${esc(N[x].us)}</span></button></li>`
       : `<li><span class="nb-off"><i></i><span class="nm">${esc(x)}</span><span class="sub">${esc(t('fam_not_listed'))}</span></span></li>`;
-    const sibHtml = p.sb.map(([j, via]) => `<li><button type="button" data-i="${j}"><i style="background:${colorOf(N[j].g)}"></i><span class="nm">${esc(N[j].n)}</span><span class="sub">${esc(N[j].us)} · ${esc(t('tree_via'))} ${esc(via)}</span></button></li>`).join('');
+    const sibHtml = p.sb.map(([j, via]) => `<li><button type="button" data-i="${j}"><i style="background:${colorOf(N[j].g)}"></i><span class="nm">${esc(N[j].n)}</span><span class="sub">${esc(N[j].us)}</span></button></li>`).join('');
     const famSec = !(p.av.length || p.st.length || p.sb.length) ? (mode === 'adv' ? `<div class="np-sub"><h3 class="sec-h">${esc(t('fam_h'))}</h3><p class="small muted" style="margin-top:6px">${esc(t('fam_none'))}</p></div>` : '') : (p.av.length || p.st.length || p.sb.length) ? `<div class="np-sub">${p.av.length ? `<h3 class="sec-h">${esc(t('fam_advisor'))}</h3><ol class="nb">${p.av.map(person).join('')}</ol>` : ''}${p.st.length ? `<h3 class="sec-h" style="margin-top:12px">${esc(t('tree_students'))}</h3><ol class="nb">${p.st.map(person).join('')}</ol>` : ''}${p.sb.length ? `<h3 class="sec-h" style="margin-top:12px">${esc(t('tree_siblings'))}</h3><ol class="nb">${sibHtml}</ol>` : ''}</div>` : '';
     const phdLine = p.ph ? `<div class="np-meta" style="margin-top:6px">${esc(t('fam_phd'))} ${esc(p.ph[0])}${p.ph[1] ? ', ' + p.ph[1] : ''}</div>` : '';
     const on = has(p.id);

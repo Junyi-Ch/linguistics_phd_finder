@@ -52,24 +52,50 @@ export function personRow(f: Faculty, p: Program | undefined, tax: Taxonomy, opt
 }
 export function drawerHtml(f: Faculty, p: Program | undefined, tax: Taxonomy) {
   const lang = getLang();
-  const groups = DIMS.map((d) => {
-    const items = f.labels[d] ?? [];
-    if (!items.length) return '';
-    return `<div class="section"><h3>${esc(lang === 'zh' ? tax.dimensions[d].label_zh : tax.dimensions[d].label)}</h3><div class="chips">${items.map((l) => chip(tax, d, l.c, l.p)).join('')}</div></div>`;
-  }).join('');
+  const focus = DIMS.flatMap((d) => (f.labels[d] ?? []).filter((l) => l.p).map((l) => chip(tax, d, l.c, false))).slice(0, 5).join('');
   const links = [
-    f.profile ? `<a class="btn sm" href="${esc(f.profile)}" target="_blank" rel="noreferrer">${t('profile')}</a>` : '',
     f.site ? `<a class="btn sm" href="${esc(f.site)}" target="_blank" rel="noreferrer">${t('personal_site')}</a>` : '',
-    f.scholar ? `<a class="btn sm" href="${esc(f.scholar)}" target="_blank" rel="noreferrer">${t('scholar')}</a>` : '',
+    f.profile ? `<a class="btn sm" href="${esc(f.profile)}" target="_blank" rel="noreferrer">${t('profile')}</a>` : '',
   ].join('');
   return `<button type="button" class="icon-btn close" aria-label="${t('close')}" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-  <div class="identity">${avatar(f, true)}<div><div class="small muted">${esc(f.rank === 'Faculty' ? t('rank_fac') : f.title)}</div><h2>${esc(f.name)}</h2><div class="muted" style="margin-top:4px">${p ? `<a href="${withBase('programs/' + p.slug + '/')}">${esc(p.name)}</a> · ` : ''}${esc(f.dept)}</div></div></div>
-  ${f.summary ? `<p class="sum" style="margin-top:16px;color:var(--ink-2)">${esc(lang === 'zh' && f.summary_zh ? f.summary_zh : f.summary)}</p>` : ''}
-  ${f.areas.length ? `<div class="section"><h3>${t('research_areas')}</h3><div class="chips">${f.areas.map((a) => `<span class="chip">${esc(a)}</span>`).join('')}</div></div>` : ''}
-  ${groups}
-  <p class="small muted" style="margin-top:14px">${t('labels_note')}</p>
-  <div class="section"><div class="links">${saveBtn(f.id)}${links}<a class="btn sm" href="${withBase('faculty/' + f.id + '/')}">${t('open_page')}</a></div></div>
+  <h2>${esc(f.name)}</h2>
+  <div class="muted" style="margin-top:4px">${esc(f.rank === 'Faculty' ? t('rank_fac') : f.title)}</div>
+  <div style="margin-top:2px">${p ? `<a href="${withBase('programs/' + p.slug + '/')}">${esc(p.name)}</a>` : ''}<span class="muted"> · ${esc(f.dept)}</span></div>
+  ${f.summary ? `<p class="sum" style="margin-top:16px;font-size:1.05rem">${esc(lang === 'zh' && f.summary_zh ? f.summary_zh : f.summary)}</p>` : ''}
+  ${focus ? `<div class="chips" style="margin-top:12px">${focus}</div>` : ''}
+  <div class="links" style="margin-top:18px">${saveBtn(f.id)}<a class="btn sm" href="${withBase('faculty/' + f.id + '/')}">${t('open_page')}</a>${links}</div>
+  <div class="d-conn" data-for="${esc(f.id)}">
+    <div class="d-tabs" role="tablist">
+      <button type="button" role="tab" data-dtab="similar" aria-selected="true">${t('related_h')}</button>
+      <button type="button" role="tab" data-dtab="tree" aria-selected="false">${t('tree_h')}</button>
+    </div>
+    <div class="d-panel" data-dpanel="similar"><p class="small muted">${t('net_loading')}</p></div>
+    <div class="d-panel" data-dpanel="tree" hidden></div>
+  </div>
 `;
+}
+
+// network data (similar research, academic tree) for the brief view, loaded once on first use
+let netPromise: Promise<any> | null = null;
+function loadNet() {
+  if (!netPromise) netPromise = fetch(withBase('network.json')).then((r) => r.json()).then((d) => { d.idx = new Map(d.nodes.map((n: any, i: number) => [n.id, i])); return d; }).catch((e) => { netPromise = null; throw e; });
+  return netPromise;
+}
+function fillConnections(drawer: HTMLElement, f: Faculty) {
+  const box = drawer.querySelector<HTMLElement>('.d-conn'); if (!box) return;
+  const person = (n: any) => `<li><button type="button" class="link-btn open-person" data-id="${esc(n.id)}">${esc(n.n)}</button><span class="muted">${esc(n.us)}</span></li>`;
+  const off = (name: string) => `<li><span class="off">${esc(name)}</span></li>`;
+  loadNet().then((d) => {
+    if (box.dataset.for !== f.id) return;
+    const i = d.idx.get(f.id); const node = i == null ? null : d.nodes[i];
+    const sim = node ? node.k.slice(0, 8).map(([j]: [number]) => person(d.nodes[j])).join('') : '';
+    box.querySelector<HTMLElement>('[data-dpanel="similar"]')!.innerHTML = sim ? `<ul class="dlist">${sim}</ul>` : `<p class="small muted">—</p>`;
+    const grp = (h: string, xs: any[]) => xs.length ? `<div class="d-grp"><h3>${esc(h)}</h3><ul class="dlist one">${xs.map((x) => typeof x === 'number' ? person(d.nodes[x]) : off(x)).join('')}</ul></div>` : '';
+    const st = node ? node.st.slice().sort((a: any, b: any) => Number(typeof b === 'number') - Number(typeof a === 'number')) : [];
+    const tree = node ? grp(t('fam_advisor'), node.av) + grp(t('tree_students'), st.slice(0, 8)) + grp(t('tree_siblings'), node.sb.map((x: any) => x[0])) : '';
+    const tp = box.querySelector<HTMLElement>('[data-dpanel="tree"]')!;
+    tp.innerHTML = tree ? `${tree}<p class="small" style="margin-top:12px"><a href="${withBase('faculty/' + f.id + '/#tree')}">${t('tree_full')}</a> →</p>` : `<p class="small muted">${t('fam_none')}</p>`;
+  }).catch(() => { box.querySelector<HTMLElement>('[data-dpanel="similar"]')!.innerHTML = `<p class="small muted">${t('net_error')}</p>`; });
 }
 export function setupDrawer(getPerson: (id: string) => { f: Faculty; p?: Program } | undefined, tax: Taxonomy) {
   let backdrop = document.querySelector<HTMLElement>('.drawer-backdrop');
@@ -88,12 +114,22 @@ export function setupDrawer(getPerson: (id: string) => { f: Faculty; p?: Program
     lastFocus = document.activeElement as HTMLElement;
     drawer!.setAttribute('aria-label', x.f.name);
     drawer!.innerHTML = drawerHtml(x.f, x.p, tax);
+    fillConnections(drawer!, x.f);
+    drawer!.scrollTop = 0;
     drawer!.dataset.open = 'true'; backdrop!.dataset.open = 'true'; document.body.style.overflow = 'hidden';
     bindSaveButtons(drawer!);
     drawer!.querySelector<HTMLElement>('[data-close]')?.focus();
   };
   backdrop.addEventListener('click', close);
-  drawer.addEventListener('click', (e) => { if ((e.target as HTMLElement).closest('[data-close]')) close(); });
+  drawer.addEventListener('click', (e) => {
+    const el = e.target as HTMLElement;
+    if (el.closest('[data-close]')) { close(); return; }
+    const tb = el.closest<HTMLButtonElement>('[data-dtab]');
+    if (tb) {
+      drawer!.querySelectorAll<HTMLElement>('[data-dtab]').forEach((b) => b.setAttribute('aria-selected', String(b === tb)));
+      drawer!.querySelectorAll<HTMLElement>('[data-dpanel]').forEach((p) => { p.hidden = p.dataset.dpanel !== tb.dataset.dtab; });
+    }
+  });
   document.addEventListener('keydown', (e) => {
     if (!isOpen()) return;
     if (e.key === 'Escape') { close(); return; }
