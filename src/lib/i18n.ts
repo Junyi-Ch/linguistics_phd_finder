@@ -90,7 +90,7 @@ const dict: Record<string, { en: string; zh: string }> = {
   // directory
   dir_h1: { en: 'Faculty', zh: '教师' },
   dir_lede: { en: 'Browse every faculty member, or narrow the list with the filters.', zh: '浏览全部教师，或用筛选缩小范围。' },
-  search_ph: { en: 'Search name, school, subfield or language', zh: '搜索姓名、学校、领域或语言' },
+  search_ph: { en: 'Search names, schools, topics', zh: '搜索姓名、学校、研究方向' },
   all_universities: { en: 'All universities', zh: '全部学校' },
   primary_only: { en: 'Main focus only (★)', zh: '只看主要方向（★）' },
   sort: { en: 'Sort', zh: '排序' },

@@ -23,7 +23,7 @@ const initialCount = t('showing', { a: first.length, b: F.length });
       <button type="button" class="btn dir-toggle" id="facet-toggle" aria-expanded="false"><span data-i18n="filters">Filters</span></button>
       <div class="facets-wrap" id="facets-wrap">
         <div class="stack">
-          <input type="search" class="input" id="search" data-i18n="search_ph" data-i18n-attr="placeholder" placeholder="Search names, universities, summaries, keywords" />
+          <input type="search" class="input" id="search" data-i18n="search_ph" data-i18n-attr="placeholder" placeholder="Search names, schools, topics" />
           <select class="select" id="univ"><option value="" data-i18n="all_universities">All universities</option></select>
           <div class="toolbar"><label class="check"><input type="checkbox" class="rank" value="Professor" checked><span data-i18n="rank_prof">Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Associate Professor" checked><span data-i18n="rank_assoc">Associate Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Assistant Professor" checked><span data-i18n="rank_asst">Assistant Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Faculty" checked><span data-i18n="rank_fac">Rank not listed</span></label></div>
           <div class="fld-checks"><span class="small muted" data-i18n="opt_field">Departments</span>{FIELDS.map((k) => <label class="check"><input type="checkbox" class="fldc" value={k} checked /><span data-i18n={`field_${k}`}>{FIELD_LABELS[k].en}</span></label>)}</div>
