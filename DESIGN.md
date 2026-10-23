@@ -5,14 +5,22 @@ signature: tilted pastel "stickers" in the hero, a pastel glyph tile for each pe
 a /transcription/ tag, `[S your query]` / `[NP you]` bracket labels, and results that hang off one tree line.
 Everything else stays calm and legible. Light by default, dark honoured.
 
+## Principles (from Figma's design basics)
+- **60-30-10 colour:** ~60% light neutral ground and white cards, ~30% dark ink, ~10% colour.
+- **One action colour** for primary actions (Find matches, links, fit scores). Selected states (current page,
+  checked filters, view switch) use neutral grey + ink so the main button stays the strongest element.
+- **Warm/cool pairing:** cool teal action + warm coral highlight, used sparingly ("your research", Saved).
+- **Hierarchy:** H1 max 48px, body 16px, lines ~60–70 characters; secondary text in muted ink.
+- **Contrast:** body text ≥ 4.5:1, large text ≥ 3:1.
+- **Progressive disclosure:** extra filters folded under "More filters"; methods live on the About page.
+- **Consistency:** pills for every button and chip; one radius scale; one shadow pair.
+
 ## Tokens (src/styles/global.css)
-- Ground `--bg #FAFAF7`, cards `--bg-2 #FFF`, insets `--bg-3`; ink `#1E2421` with two quieter steps; hairlines `--line #ECEAE3`.
-- Accent (deep teal green): `--action #11705E`, soft `--action-soft #DCEFE8`, text `--action-text #0E6152`.
-- Pastel pairs (ground / ink): lavender, peach, mint, butter, sky (`--p-*` / `--i-*`).
-  Lenses: subfield = butter, method = mint, data = sky, population = peach, language = lavender.
-- Radii 12 / 18 / 22px; pills (999px) for buttons, chips, nav. Shadows: soft, low.
-- Type: Geist (UI and headings, 700, tight tracking), Geist Mono (bracket labels, "We read this as" chips),
-  Noto Sans for IPA glyphs. Self-hosted through @fontsource packages. Chinese falls back to the system CJK stack.
+- Neutrals `--bg #FAF9F7`, cards `#FFF`; ink espresso `#2B1D1C`.
+- Action teal `--action #357070`; highlight coral `--accent-2 #D4562F`.
+- Solid decoration colours (`--s-*`): coral, teal, deep teal, cream, espresso — stickers and person tiles only.
+- Soft tints (`--p-*`/`--i-*`) for labels; lenses: subfield = cream, method = teal, data = espresso, population = coral, language = deep teal.
+- Type: Geist (UI and headings), Geist Mono (bracket labels), Noto Sans (IPA glyphs).
 
 ## Rules
 - No eyebrows or all-caps labels, no emoji, no gradients.
