@@ -18,8 +18,8 @@ Everything else stays calm and legible. Light by default, dark honoured.
 ## Tokens (src/styles/global.css)
 - Neutrals `--bg #FAFAF8`, cards `#FFF`; ink soft charcoal `#1F2326`.
 - Action teal `--action #2A7D7A`; highlight coral `--accent-2 #E05A33`.
-- Solid decoration colours (`--s-*`): coral, teal, deep teal, sand, aqua — stickers and person tiles only.
-- Soft tints (`--p-*`/`--i-*`) for labels; lenses: subfield = cream, method = teal, data = grey, population = coral, language = deep teal.
+- Solid decoration colours (`--s-*`): coral, teal, deep teal, gold, blue, sand, aqua — stickers and person tiles only.
+- Soft tints (`--p-*`/`--i-*`) for labels; lenses: subfield = gold, method = teal, data = sand, population = coral, language = blue.
 - Type: Geist (UI and headings), Geist Mono (bracket labels), Noto Sans (IPA glyphs).
 
 ## Rules

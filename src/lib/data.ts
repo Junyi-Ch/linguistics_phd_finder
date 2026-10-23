@@ -58,6 +58,6 @@ export function avatar(f: Faculty, lg = false) {
   const glyph = (top && GLYPH[top]) || initials(f.name);
   const h = hash(f.id || f.name);
   const rot = ((h % 13) - 6) + 'deg';
-  return `<span class="avatar${lg ? ' lg' : ''}" data-t="${(h % 5) + 1}" style="--av-rot:${rot}" aria-hidden="true">${esc(glyph)}</span>`;
+  return `<span class="avatar${lg ? ' lg' : ''}" data-t="${(h % 7) + 1}" style="--av-rot:${rot}" aria-hidden="true">${esc(glyph)}</span>`;
 }
 
