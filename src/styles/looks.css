@@ -1,0 +1,99 @@
+/* Design previews: three candidate looks, switched with the "Preview design" control (data-look on <html>).
+   Light mode only for now. */
+:root[data-look] { color-scheme: light; }
+
+/* ---------- 1 · Journal: serif, editorial, rules instead of boxes, one vermilion accent ---------- */
+:root[data-look="journal"] {
+  --bg: #ffffff; --bg-2: #ffffff; --bg-3: #f3f3f1; --bg-4: #e7e7e4; --line: #e2e2de; --line-2: #cfcfca;
+  --ink: #141414; --ink-2: #2f2f2f; --ink-3: #5f5f5f;
+  --action: #141414; --action-hover: #000000; --action-ink: #ffffff; --action-soft: #f1f1ef; --action-text: #b3301b;
+  --accent-2: #c8361f; --accent-2-soft: #fbe9e5; --accent-2-text: #a62b17;
+  --lens-topic: #2f2f2f; --lens-topic-bg: #f3f3f1; --lens-approach: #2f2f2f; --lens-approach-bg: #f3f3f1;
+  --lens-data: #2f2f2f; --lens-data-bg: #f3f3f1; --lens-setting: #2f2f2f; --lens-setting-bg: #f3f3f1;
+  --lens-region: #2f2f2f; --lens-region-bg: #f3f3f1;
+  --font-display: 'Newsreader Variable', 'Newsreader', Georgia, serif;
+  --radius: 6px; --radius-lg: 6px; --radius-xl: 8px;
+  --shadow: none; --shadow-sm: none;
+}
+:root[data-look="journal"] h1, :root[data-look="journal"] h2, :root[data-look="journal"] .row .name,
+:root[data-look="journal"] .browse-tabs, :root[data-look="journal"] .np-name, :root[data-look="journal"] .drawer h2,
+:root[data-look="journal"] .p-summary, :root[data-look="journal"] .prog .prog-title { font-family: 'Newsreader Variable', 'Newsreader', Georgia, serif; font-weight: 500; letter-spacing: -0.015em; }
+:root[data-look="journal"] .row .name { font-size: 1.35rem; font-weight: 600; }
+:root[data-look="journal"] .row .sum { font-family: 'Newsreader Variable', 'Newsreader', Georgia, serif; font-size: 1.08rem; }
+:root[data-look="journal"] .rows { gap: 0; }
+:root[data-look="journal"] .row { background: transparent; border: 0; border-top: 1px solid var(--line-2); border-radius: 0; padding-left: 0; padding-right: 0; }
+:root[data-look="journal"] .row:hover { box-shadow: none; }
+:root[data-look="journal"] .site-header { border-bottom: 1px solid var(--ink); }
+:root[data-look="journal"] .search-box { border-color: var(--ink); }
+:root[data-look="journal"] .search-box textarea { font-family: 'Newsreader Variable', 'Newsreader', Georgia, serif; font-size: 1.5rem; }
+:root[data-look="journal"] .chip { background: transparent; border: 1px solid var(--line-2); color: var(--ink-2); }
+:root[data-look="journal"] a { color: inherit; }
+:root[data-look="journal"] .tag-ipa { display: none; }
+
+/* ---------- 4 · Spectrogram (light): grotesk + mono, violet accent, spectrogram band ---------- */
+:root[data-look="spectro"] {
+  --bg: #fbfbfd; --bg-2: #ffffff; --bg-3: #f2f1f8; --bg-4: #e7e5f2; --line: #e7e6ef; --line-2: #d6d4e4;
+  --ink: #16151f; --ink-2: #3c3a50; --ink-3: #64627a;
+  --action: #5b3fd1; --action-hover: #4a30bb; --action-ink: #ffffff; --action-soft: #efeafc; --action-text: #4a2fb8;
+  --accent-2: #5b3fd1; --accent-2-soft: #efeafc; --accent-2-text: #4a2fb8;
+  --lens-topic: #4a2fb8; --lens-topic-bg: #efeafc; --lens-approach: #a3264f; --lens-approach-bg: #fdebf1;
+  --lens-data: #8f3f0e; --lens-data-bg: #fef1e6; --lens-setting: #1f5d86; --lens-setting-bg: #e8f4fb;
+  --lens-region: #3d6b1f; --lens-region-bg: #eff6e8;
+  --font-ui: 'Space Grotesk Variable', 'Space Grotesk', system-ui, sans-serif; --font-display: 'Space Grotesk Variable', 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --radius: 10px; --radius-lg: 14px; --radius-xl: 18px;
+}
+:root[data-look="spectro"] body { font-family: 'Space Grotesk Variable', 'Space Grotesk', system-ui, sans-serif; }
+:root[data-look="spectro"] .row .meta, :root[data-look="spectro"] .row .why, :root[data-look="spectro"] .sec-h { font-family: 'IBM Plex Mono', monospace; }
+
+/* ---------- 5 · Interlinear gloss: serif display, quiet sans text, green accent ---------- */
+:root[data-look="gloss"] {
+  --bg: #ffffff; --bg-2: #ffffff; --bg-3: #f3f5f9; --bg-4: #e8ecf3; --line: #e6e9f0; --line-2: #cfd5e2;
+  --ink: #1a2340; --ink-2: #2c3656; --ink-3: #5f6985;
+  --action: #12805c; --action-hover: #0e6a4c; --action-ink: #ffffff; --action-soft: #e9f5ef; --action-text: #0d5c42;
+  --accent-2: #12805c; --accent-2-soft: #e9f5ef; --accent-2-text: #0d5c42;
+  --lens-topic: #0d5c42; --lens-topic-bg: #e9f5ef; --lens-approach: #2b3f9a; --lens-approach-bg: #eef1fb;
+  --lens-data: #7a5208; --lens-data-bg: #fbf3e4; --lens-setting: #9a2f22; --lens-setting-bg: #fbecea;
+  --lens-region: #24548a; --lens-region-bg: #eaf3fb;
+  --font-display: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, serif;
+  --radius: 10px; --radius-lg: 14px; --radius-xl: 16px;
+  --shadow: none; --shadow-sm: none;
+}
+:root[data-look="gloss"] h1, :root[data-look="gloss"] h2, :root[data-look="gloss"] .row .name, :root[data-look="gloss"] .browse-tabs,
+:root[data-look="gloss"] .np-name, :root[data-look="gloss"] .drawer h2, :root[data-look="gloss"] .prog .prog-title { font-family: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, serif; font-weight: 600; letter-spacing: -0.01em; }
+:root[data-look="gloss"] .row .name { font-size: 1.3rem; }
+:root[data-look="gloss"] .rows { gap: 0; }
+:root[data-look="gloss"] .row { background: transparent; border: 0; border-top: 1px solid var(--line); border-radius: 0; padding-left: 0; padding-right: 0; }
+:root[data-look="gloss"] .row:hover { box-shadow: none; }
+:root[data-look="gloss"] .search-box textarea { font-family: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, serif; font-size: 1.4rem; }
+:root[data-look="gloss"] .tag-ipa { display: none; }
+
+/* ---------- hero swap on the Find matches page ---------- */
+.look-hero { display: none; }
+:root[data-look] .hero { display: none; }
+:root[data-look="journal"] .look-hero[data-for="journal"], :root[data-look="spectro"] .look-hero[data-for="spectro"], :root[data-look="gloss"] .look-hero[data-for="gloss"] { display: block; }
+.lh-journal { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 48px; padding: 36px 0 32px; border-bottom: 1px solid var(--line-2); margin-bottom: 28px; }
+.lh-journal .kicker { margin: 0 0 16px; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-2); font-weight: 600; font-family: var(--font-ui); }
+.lh-journal h1 { font-size: clamp(2.6rem, 1.6rem + 3.6vw, 4.6rem); line-height: 0.98; font-weight: 500; }
+.lh-journal h1 em { color: var(--accent-2); }
+.lh-journal .side { align-self: end; border-left: 1px solid var(--line-2); padding-left: 24px; font-family: 'Newsreader Variable', 'Newsreader', Georgia, serif; font-size: 1.25rem; line-height: 1.4; color: var(--ink-2); }
+.lh-spectro { display: grid; gap: 18px; padding: 28px 0 28px; }
+.lh-spectro .mono { font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; color: var(--ink-3); }
+.lh-spectro h1 { font-size: clamp(2.6rem, 1.6rem + 3.6vw, 4.4rem); line-height: 1; font-weight: 600; letter-spacing: -0.03em; max-width: 15ch; }
+.lh-spectro h1 span { color: var(--action); }
+.lh-spectro .band { background: var(--bg-2); border: 1px solid var(--line); border-radius: 14px; padding: 10px; }
+.lh-spectro .band svg { display: block; width: 100%; height: 120px; }
+.lh-gloss { padding: 40px 0 34px; }
+.lh-gloss .words { display: flex; flex-wrap: wrap; gap: 4px 28px; }
+.lh-gloss .w { display: grid; }
+.lh-gloss .w b { font-family: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, serif; font-size: clamp(2.2rem, 1.4rem + 2.8vw, 3.7rem); line-height: 1.1; font-weight: 600; }
+.lh-gloss .w i { font-style: normal; font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem; color: var(--ink-3); }
+.lh-gloss .w.hl b { color: var(--action); }
+.lh-gloss .tr { margin-top: 12px; font-family: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, serif; font-style: italic; font-size: 1.3rem; color: var(--ink-2); }
+@media (max-width: 760px) { .lh-journal { grid-template-columns: 1fr; gap: 16px; } .lh-journal .side { border-left: 0; padding-left: 0; } }
+
+/* ---------- the preview switcher ---------- */
+.look-switch { position: fixed; left: 16px; bottom: 16px; z-index: 70; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 6px; background: #141414; color: #ffffff; border-radius: 999px; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.4); font-family: system-ui, sans-serif; font-size: 13px; max-width: calc(100vw - 32px); }
+.look-switch span { padding: 0 8px 0 10px; opacity: 0.75; }
+.look-switch button { font: inherit; color: #ffffff; background: transparent; border: 0; border-radius: 999px; padding: 7px 12px; cursor: pointer; min-height: 32px; }
+.look-switch button[aria-pressed="true"] { background: #ffffff; color: #141414; font-weight: 600; }
