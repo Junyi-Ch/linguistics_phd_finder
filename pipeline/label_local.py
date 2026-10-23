@@ -135,6 +135,13 @@ def clean(out, f):
                 continue  # the model named a language group the profile never mentions
             seen.add(c); items.append({"code": c, "primary": False, "sources": srcs})
         labels[d] = items[:4]
+    # languages named in the summary or keywords that the model left out (e.g. "isiXhosa" -> African languages)
+    named = " ".join([out.get("summary") or ""] + list(out.get("keywords") or [])).lower()
+    for c, rx in REGION_EVIDENCE.items():
+        if c in ("R_CROSSLING", "R_ENGLISH") or len(labels["region"]) >= 4:
+            continue
+        if re.search(rx, named) and not any(x["code"] == c for x in labels["region"]):
+            labels["region"].append({"code": c, "primary": False, "sources": srcs})
     if primary in TAX["dimensions"]["topic"]["labels"]:
         if not any(x["code"] == primary for x in labels["topic"]):
             labels["topic"] = [{"code": primary, "primary": True, "sources": srcs}] + labels["topic"][:3]
