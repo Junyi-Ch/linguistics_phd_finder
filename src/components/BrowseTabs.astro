@@ -1,0 +1,25 @@
+---
+// One "Browse" section with two tabs: Programs and Faculty (the URLs stay /programs/ and /faculty/).
+import programs from '../data/programs.json';
+import faculty from '../data/faculty.json';
+const { active } = Astro.props as { active: 'programs' | 'faculty' };
+const base = (import.meta.env.BASE_URL as string).replace(/\/+$/, '') + '/';
+const tabs = [
+  { k: 'programs', href: base + 'programs/', i18n: 'browse_programs', label: 'Programs', n: (programs as unknown[]).length },
+  { k: 'faculty', href: base + 'faculty/', i18n: 'browse_faculty', label: 'Faculty', n: (faculty as unknown[]).length },
+];
+---
+<h1 class="browse-tabs">
+  {tabs.map((t) => (
+    <a href={t.href} aria-current={t.k === active ? 'page' : undefined}><span data-i18n={t.i18n}>{t.label}</span> <span class="n">{t.n}</span></a>
+  ))}
+</h1>
+<style>
+  .browse-tabs { display: flex; gap: 6px; align-items: baseline; flex-wrap: wrap; font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); margin: 0; }
+  .browse-tabs a { color: var(--ink-3); text-decoration: none; padding: 2px 14px 6px 0; border-bottom: 3px solid transparent; letter-spacing: -0.02em; }
+  .browse-tabs a + a { padding-left: 14px; border-left: 1px solid var(--line-2); }
+  .browse-tabs a:hover { color: var(--ink-2); }
+  .browse-tabs a[aria-current="page"] { color: var(--ink); }
+  .browse-tabs a[aria-current="page"] span:first-child { text-decoration: underline; text-decoration-color: var(--action); text-decoration-thickness: 3px; text-underline-offset: 8px; }
+  .browse-tabs .n { font-size: 0.45em; font-weight: 500; color: var(--ink-3); vertical-align: middle; font-family: var(--font-mono, ui-monospace); }
+</style>

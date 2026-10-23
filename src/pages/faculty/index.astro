@@ -6,6 +6,7 @@ import tax from '../../data/taxonomy.json';
 import { lastName, FIELDS, FIELD_LABELS, type Faculty, type Program, type Taxonomy } from '../../lib/data';
 import { personRow } from '../../lib/ui';
 import RankFilters from '../../components/RankFilters.astro';
+import BrowseTabs from '../../components/BrowseTabs.astro';
 import { t } from '../../lib/i18n';
 // The first page of the directory is rendered at build time, so the list shows before (or without) the script.
 const F = faculty as unknown as Faculty[];
@@ -16,7 +17,7 @@ const initialCount = t('showing', { a: first.length, b: F.length });
 ---
 <Base title="Faculty directory">
   <div class="page-head">
-    <div><h1 data-i18n="dir_h1">Faculty</h1><p class="lede" data-i18n="dir_lede">Browse every faculty member, or narrow the list with the filters.</p></div>
+    <div><BrowseTabs active="faculty" /><p class="lede" data-i18n="dir_lede">Browse every faculty member, or narrow the list with the filters.</p></div>
   </div>
   <div class="dir">
     <aside class="dir-side" id="dir-side">

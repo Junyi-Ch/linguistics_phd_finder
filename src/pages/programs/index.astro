@@ -1,10 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
 import RankFilters from '../../components/RankFilters.astro';
+import BrowseTabs from '../../components/BrowseTabs.astro';
 ---
 <Base title="Programs">
   <div class="page-head">
-    <div><h1 data-i18n="prog_h1">Programs</h1><p class="lede" data-i18n="prog_lede">Pick a university on the map or in the list to see its departments and faculty.</p></div>
+    <div><BrowseTabs active="programs" /><p class="lede" data-i18n="prog_lede">Pick a university on the map or in the list to see its departments and faculty.</p></div>
     <div class="seg" role="group"><button type="button" id="v-map" aria-pressed="true" data-i18n="map_view">Map</button><button type="button" id="v-list" aria-pressed="false" data-i18n="list_view">List</button></div>
   </div>
   <div class="prog-filters"><RankFilters /><span class="small muted" id="prog-count"></span></div>

@@ -6,31 +6,45 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
 ---
 <Base title="Faculty network" description="Browse linguistics faculty as a map: people whose research is similar sit close together.">
   <section class="net-head">
-    <p class="tag-ipa" aria-hidden="true">/ˈnɛtwɝk/</p>
     <h1 data-i18n="net_h1">Faculty network</h1>
-    <p class="lede" data-i18n="net_lede">Each dot is a faculty member. People whose research is similar sit close together and are linked. Click someone to see who works on related questions, at any university.</p>
+    <p class="lede" data-i18n="net_lede2">See how faculty across the 60 universities are connected. Choose a kind of connection, then click anyone on the map.</p>
   </section>
+
+  <div class="net-modes" id="net-mode" role="tablist" aria-label="Connections">
+    <button type="button" role="tab" data-m="sim" aria-selected="true">
+      <span class="nm-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.3 11l7.4-3.8M8.3 13l7.4 3.8"/></svg></span>
+      <span class="nm-t" data-i18n="net_mode_sim">Similar research</span>
+      <span class="nm-d" data-i18n="net_mode_sim_d">People whose research is most alike</span>
+    </button>
+    <button type="button" role="tab" data-m="co" aria-selected="false">
+      <span class="nm-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span>
+      <span class="nm-t" data-i18n="net_mode_co">Co-authors</span>
+      <span class="nm-d" id="co-desc" data-i18n="net_mode_co_d">Who has published papers together</span>
+    </button>
+    <button type="button" role="tab" data-m="adv" aria-selected="false">
+      <span class="nm-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5l-5 5M12 11.5l5 5"/></svg></span>
+      <span class="nm-t" data-i18n="net_mode_adv">Advisors &amp; students</span>
+      <span class="nm-d" data-i18n="net_mode_adv_d">PhD advisor and student, where known</span>
+    </button>
+  </div>
+  <p class="net-explain small" id="net-explain"></p>
 
   <div class="net-tools">
     <div class="net-find">
       <input class="input" id="net-q" type="search" list="net-names" autocomplete="off" placeholder="Find a person" data-i18n="net_find" data-i18n-attr="placeholder" aria-label="Find a person" />
       <datalist id="net-names"></datalist>
     </div>
-    <select class="input" id="net-u" aria-label="University">
-      <option value="" data-i18n="net_all_unis">All universities</option>
+    <select class="input" id="net-u" aria-label="Works at">
+      <option value="" data-i18n="net_all_unis2">Works at: any university</option>
       {progs.map((p) => <option value={p.slug}>{p.name}</option>)}
     </select>
     <select class="input" id="net-phd" aria-label="PhD from" hidden>
       <option value="" data-i18n="net_any_phd">PhD from: any school</option>
     </select>
-    <div class="seg" id="net-mode" role="group" aria-label="Lines show" hidden>
-      <button type="button" data-m="sim" aria-pressed="true" data-i18n="net_mode_sim">Similar research</button>
-      <button type="button" data-m="co" aria-pressed="false" data-i18n="net_mode_co">Co-authors</button>
-    </div>
     <span class="small muted" id="net-count"></span>
   </div>
   <div class="net-legend" id="net-legend" role="group" aria-label="Main subfield">
-    <span class="small muted" data-i18n="net_color">Colour = main subfield</span>
+    <span class="small muted" data-i18n="net_color2">Dot colour = main subfield (click to hide or show):</span>
     {GROUPS.map((g, i) => (
       <button type="button" class="lg" data-g={i} aria-pressed="true"><i style={`background:var(--g${i})`}></i><span data-lang-only="en">{g.en}</span><span data-lang-only="zh">{g.zh}</span></button>
     ))}
@@ -50,16 +64,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
       <p class="net-status small muted" id="net-status" data-i18n="net_loading">Loading the map…</p>
     </div>
     <aside class="panel net-panel" id="panel" aria-live="polite">
-      <div id="panel-empty">
-        <h2 class="sec-h" data-i18n="net_how_h">How to read the map</h2>
-        <ul class="net-howto">
-          <li data-i18n="net_how1">Click a dot to see that person and the eight researchers whose work is closest to theirs.</li>
-          <li data-i18n="net_how2">Drag to move, scroll or pinch to zoom. Pick a university to highlight its faculty.</li>
-          <li data-i18n="net_how4" id="how-co" hidden>Switch the lines to Co-authors to see who has published papers together (from OpenAlex). Dots stay where research similarity puts them.</li>
-          <li data-i18n="net_how5">Pick a school under “PhD from” to see where people trained. When a profile names a PhD advisor, a dashed line links advisor and student.</li>
-          <li data-i18n="net_how3">Distance shows research similarity, read from public profiles. It is not a list of collaborators.</li>
-        </ul>
-      </div>
+      <div id="panel-empty"></div>
       <div id="panel-person" hidden></div>
     </aside>
   </div>
@@ -74,7 +79,25 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   }
   :root[data-theme="dark"] { --g0: #3987e5; --g1: #d95926; --g2: #199e70; --g3: #c98500; --g4: #d55181; --g5: #008300; --g6: #9085e9; --g7: #e66767; --g8: #6b6b65; }
 
-  .net-head { display: grid; gap: 14px; justify-items: start; padding: 20px 0 22px; }
+  .net-head { display: grid; gap: 10px; justify-items: start; padding: 12px 0 20px; }
+  .net-modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .net-modes button { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 12px; row-gap: 2px; align-items: center; text-align: left; padding: 14px 16px; border: 1px solid var(--line); background: var(--bg-2); border-radius: var(--radius-lg); color: var(--ink); cursor: pointer; font: inherit; }
+  .net-modes button:hover { border-color: var(--line-2); }
+  .net-modes button[aria-selected="true"] { border-color: var(--action); box-shadow: inset 0 0 0 1px var(--action); background: var(--action-soft); }
+  .net-modes button[disabled] { opacity: 0.55; cursor: not-allowed; }
+  .net-modes .nm-ic { grid-row: 1 / 3; width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: var(--bg-3); color: var(--ink-2); }
+  .net-modes button[aria-selected="true"] .nm-ic { background: var(--action); color: #fff; }
+  .net-modes .nm-t { font-weight: 600; }
+  .net-modes .nm-d { font-size: 0.8125rem; color: var(--ink-3); }
+  .net-explain { margin: 12px 0 14px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+  .net-explain .key { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-3); }
+  .net-explain svg { flex: none; }
+  .pairs { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 2px; }
+  .pairs button { width: 100%; text-align: left; padding: 8px; border: 0; background: transparent; border-radius: 10px; color: var(--ink); cursor: pointer; font: inherit; font-size: 0.9rem; display: grid; gap: 2px; }
+  .pairs button:hover, .pairs button:focus-visible { background: var(--bg-3); }
+  .pairs .sub { font-size: 0.8125rem; color: var(--ink-3); }
+  .pairs .arrow { color: var(--ink-3); margin: 0 4px; }
+  @media (max-width: 700px) { .net-modes { grid-template-columns: 1fr; } .net-modes .nm-d { display: none; } .net-modes button { padding: 10px 12px; } }
   .net-head .lede { max-width: 62ch; }
   .net-tools { display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center; }
   .net-find { flex: 1 1 260px; max-width: 380px; }
@@ -86,7 +109,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   .nb-off .nm { font-weight: 600; font-size: 0.92rem; color: var(--ink-2); }
   .nb-off .sub { grid-column: 2; font-size: 0.8125rem; color: var(--ink-3); }
   #net-u { flex: 0 1 300px; min-width: 0; }
-  .net-legend { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 14px 0 16px; }
+  .net-legend { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 12px 0 14px; }
   .net-legend > .small { margin-right: 4px; }
   .net-legend .lg { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line); background: var(--bg-2); color: var(--ink-2); border-radius: 999px; padding: 5px 11px 5px 9px; font-size: 0.8125rem; min-height: 32px; cursor: pointer; }
   .net-legend .lg i { width: 10px; height: 10px; border-radius: 999px; flex: none; }
@@ -149,7 +172,10 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   const pPerson = document.getElementById('panel-person')!;
 
   let N: Node[] = [], E: [number, number][] = [], CO: [number, number, number][] = [];
-  let mode: 'sim' | 'co' = 'sim';
+  type Mode = 'sim' | 'co' | 'adv';
+  let mode: Mode = 'sim';
+  let ADV: [number, number][] = [];  // [advisor, student], both on the site
+  const inAdv = new Set<number>();
   let W = 0, H = 0, dpr = 1, scale = 1, tx = 0, ty = 0;
   let sel = -1, hover = -1, uni = '', phdSel = '';
   const groupOn = new Set<number>([-1, ...GROUPS.map((_, i) => i)]);
@@ -162,7 +188,8 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   }
   const colorOf = (g: number) => col[g < 0 ? 8 : g];
   const active = (i: number) => groupOn.has(N[i].g) && (!uni || N[i].u === uni) && (!phdSel || N[i].ph?.[0] === phdSel);
-  const neigh = () => (sel >= 0 ? new Set((mode === 'co' ? N[sel].c : N[sel].k).map((k) => k[0])) : new Set<number>());
+  const famOf = (i: number) => [...N[i].av, ...N[i].st].filter((x): x is number => typeof x === 'number');
+  const neigh = () => (sel < 0 ? new Set<number>() : new Set(mode === 'adv' ? famOf(sel) : (mode === 'co' ? N[sel].c : N[sel].k).map((k) => k[0])));
 
   function resize() {
     const r = stage.getBoundingClientRect();
@@ -204,6 +231,15 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     ctx.strokeText(text, x, y); ctx.fillStyle = C.ink; ctx.fillText(text, x, y);
   }
 
+  /** dashed line with an arrowhead, from (x1,y1) to (x2,y2), stopping short of the dot */
+  function arrow(x1: number, y1: number, x2: number, y2: number, color: string, w: number) {
+    const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1, ux = dx / L, uy = dy / L;
+    const ex = x2 - ux * 8, ey = y2 - uy * 8;
+    ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = w;
+    ctx.setLineDash([5, 4]); ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(ex, ey); ctx.stroke(); ctx.setLineDash([]);
+    ctx.beginPath(); ctx.moveTo(ex + ux * 2, ey + uy * 2); ctx.lineTo(ex - ux * 7 - uy * 4, ey - uy * 7 + ux * 4); ctx.lineTo(ex - ux * 7 + uy * 4, ey - uy * 7 - ux * 4); ctx.closePath(); ctx.fill();
+  }
+
   function draw() {
     if (!N.length) return;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -216,6 +252,9 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
       ctx.beginPath();
       for (const [a, b] of E) { if (!active(a) || !active(b)) continue; ctx.moveTo(X(a), Y(a)); ctx.lineTo(X(b), Y(b)); }
       ctx.stroke();
+    } else if (mode === 'adv') {
+      ctx.globalAlpha = sel >= 0 ? 0.25 : 0.9;
+      for (const [a, b] of ADV) { if (!active(a) || !active(b)) continue; arrow(X(a), Y(a), X(b), Y(b), C.ink3, 1.4); }
     } else {
       ctx.strokeStyle = C.ink3; ctx.globalAlpha = sel >= 0 ? 0.12 : 0.32;
       for (const [a, b, n] of CO) {
@@ -225,21 +264,19 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
       }
     }
     ctx.globalAlpha = 1;
-    if (sel >= 0) {
+    if (sel >= 0 && mode !== 'adv') {
       ctx.lineWidth = 1.5; ctx.strokeStyle = C.ink3; ctx.beginPath();
       for (const j of nb) { ctx.moveTo(X(sel), Y(sel)); ctx.lineTo(X(j), Y(j)); }
       ctx.stroke();
-      const fam = [...N[sel].av, ...N[sel].st].filter((x): x is number => typeof x === 'number');
-      if (fam.length) {
-        ctx.setLineDash([5, 4]); ctx.lineWidth = 1.8; ctx.strokeStyle = C.ink; ctx.beginPath();
-        for (const j of fam) { ctx.moveTo(X(sel), Y(sel)); ctx.lineTo(X(j), Y(j)); }
-        ctx.stroke(); ctx.setLineDash([]);
-      }
+    }
+    if (sel >= 0 && mode === 'adv') {
+      for (const j of N[sel].av) if (typeof j === 'number') arrow(X(j), Y(j), X(sel), Y(sel), C.ink, 2);
+      for (const j of N[sel].st) if (typeof j === 'number') arrow(X(sel), Y(sel), X(j), Y(j), C.ink, 2);
     }
     // dots
     const r = Math.max(2.4, Math.min(7, 2.6 * Math.sqrt(scale)));
     for (let i = 0; i < N.length; i++) {
-      const on = active(i), focus = sel < 0 || i === sel || nb.has(i);
+      const on = active(i), focus = sel < 0 ? (mode !== 'adv' || inAdv.has(i)) : (i === sel || nb.has(i));
       ctx.globalAlpha = !on ? 0.14 : focus ? 1 : 0.28;
       ctx.fillStyle = on ? colorOf(N[i].g) : C.ink3;
       const rr = i === sel ? r + 3 : nb.has(i) ? r + 1.5 : r;
@@ -251,6 +288,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     const named = new Set<number>();
     if (sel >= 0) { named.add(sel); nb.forEach((j) => named.add(j)); [...N[sel].av, ...N[sel].st].forEach((x) => { if (typeof x === 'number') named.add(x); }); }
     if (uni || phdSel) N.forEach((p, i) => { if (active(i)) named.add(i); });
+    if (sel < 0 && mode === 'adv') inAdv.forEach((i) => { if (active(i)) named.add(i); });
     if (sel < 0 && scale > 3.2) N.forEach((_, i) => { if (active(i) && X(i) > -20 && X(i) < W + 20 && Y(i) > -20 && Y(i) < H + 20) named.add(i); });
     if (named.size <= 90) {
       ctx.textBaseline = 'middle';
@@ -270,7 +308,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   }
 
   function renderPanel() {
-    if (sel < 0) { pEmpty.hidden = false; pPerson.hidden = true; return; }
+    if (sel < 0) { renderEmpty(); pEmpty.hidden = false; pPerson.hidden = true; return; }
     const p = N[sel], zh = getLang() === 'zh';
     const rank = p.r === 'Faculty' ? t('rank_fac') : p.r;
     const nbHtml = p.k.map(([j, shared]) => {
@@ -289,7 +327,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     const person = (x: number | string) => typeof x === 'number'
       ? `<li><button type="button" data-i="${x}"><i style="background:${colorOf(N[x].g)}"></i><span class="nm">${esc(N[x].n)}</span><span class="sub">${esc(N[x].us)}</span></button></li>`
       : `<li><span class="nb-off"><i></i><span class="nm">${esc(x)}</span><span class="sub">${esc(t('fam_not_listed'))}</span></span></li>`;
-    const famSec = (p.av.length || p.st.length) ? `<div class="np-sub">${p.av.length ? `<h3 class="sec-h">${esc(t('fam_advisor'))}</h3><ol class="nb">${p.av.map(person).join('')}</ol>` : ''}${p.st.length ? `<h3 class="sec-h" style="margin-top:12px">${esc(t('fam_students'))}</h3><ol class="nb">${p.st.map(person).join('')}</ol>` : ''}</div>` : '';
+    const famSec = !(p.av.length || p.st.length) ? (mode === 'adv' ? `<div class="np-sub"><h3 class="sec-h">${esc(t('fam_h'))}</h3><p class="small muted" style="margin-top:6px">${esc(t('fam_none'))}</p></div>` : '') : (p.av.length || p.st.length) ? `<div class="np-sub">${p.av.length ? `<h3 class="sec-h">${esc(t('fam_advisor'))}</h3><ol class="nb">${p.av.map(person).join('')}</ol>` : ''}${p.st.length ? `<h3 class="sec-h" style="margin-top:12px">${esc(t('fam_students'))}</h3><ol class="nb">${p.st.map(person).join('')}</ol>` : ''}</div>` : '';
     const phdLine = p.ph ? `<div class="np-meta" style="margin-top:6px">${esc(t('fam_phd'))} ${esc(p.ph[0])}${p.ph[1] ? ', ' + p.ph[1] : ''}</div>` : '';
     const on = has(p.id);
     pPerson.innerHTML = `
@@ -300,10 +338,27 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
         <a class="btn" href="${base}faculty/${p.id}/">${esc(t('net_open'))}</a>
         <button type="button" class="btn save-btn" data-save="${p.id}" aria-pressed="${on}">${esc(on ? t('saved') : t('save'))}</button>
       </div>
-      ${famSec}${mode === 'co' ? coSec + simSec : simSec + coSec}`;
+      ${mode === 'adv' ? famSec + simSec + coSec : mode === 'co' ? coSec + famSec + simSec : simSec + famSec + coSec}`;
     pEmpty.hidden = true; pPerson.hidden = false;
     bindSaveButtons(pPerson);
   }
+
+  function renderEmpty() {
+    const zh = getLang() === 'zh';
+    let html = '';
+    if (mode === 'adv') {
+      const rows = ADV.filter(([a, b]) => active(a) && active(b)).map(([a, b]) => `<li><button type="button" data-i="${b}"><span><b>${esc(N[a].n)}</b><span class="arrow">→</span><b>${esc(N[b].n)}</b></span><span class="sub">${esc(N[a].us)} → ${esc(N[b].us)}</span></button></li>`).join('');
+      html = `<h2 class="sec-h">${esc(t('adv_pairs_h', { n: ADV.length }))}</h2><ul class="pairs">${rows}</ul><p class="small muted" style="margin-top:12px">${esc(t('adv_pairs_note'))}</p>`;
+    } else if (mode === 'co') {
+      const top = CO.filter(([a, b]) => active(a) && active(b)).slice().sort((x, y) => y[2] - x[2]).slice(0, 12);
+      const rows = top.map(([a, b, n]) => `<li><button type="button" data-i="${a}"><span><b>${esc(N[a].n)}</b> &amp; <b>${esc(N[b].n)}</b></span><span class="sub">${esc(N[a].us)} · ${esc(N[b].us)} · ${zh ? n + ' 篇合著' : n + ' papers'}</span></button></li>`).join('');
+      html = `<h2 class="sec-h">${esc(t('co_top_h'))}</h2><ul class="pairs">${rows}</ul>`;
+    } else {
+      html = `<h2 class="sec-h">${esc(t('net_how_h'))}</h2><ul class="net-howto"><li>${esc(t('net_how1'))}</li><li>${esc(t('net_how2'))}</li><li>${esc(t('net_how3'))}</li></ul>`;
+    }
+    pEmpty.innerHTML = html;
+  }
+  pEmpty.addEventListener('click', (e) => { const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-i]'); if (b) select(Number(b.dataset.i)); });
 
   function select(i: number, center = true) {
     sel = i; hover = -1; tip.hidden = true;
@@ -312,7 +367,8 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     if (i >= 0) u.searchParams.set('p', N[i].id); else u.searchParams.delete('p');
     history.replaceState(null, '', u);
     if (i >= 0 && center) {
-      const idx = [i, ...(mode === 'co' && N[i].c.length ? N[i].c : N[i].k).map((k) => k[0])];
+      const fam = famOf(i);
+      const idx = [i, ...(mode === 'adv' && fam.length ? fam : (mode === 'co' && N[i].c.length ? N[i].c : N[i].k).map((k) => k[0]))];
       fit(idx, true);
     } else draw();
   }
@@ -368,6 +424,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   function updateCount() { countEl.textContent = t('net_count', { n: visible(), m: N.length }); }
   function refilter() {
     if (sel >= 0 && !active(sel)) select(-1, false);
+    if (sel < 0) renderEmpty();
     updateCount();
     if (uni || phdSel) fit(N.map((_, i) => i).filter(active), true); else draw();
   }
@@ -379,14 +436,28 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     refilter();
   });
   const modeEl = document.getElementById('net-mode')!;
-  function setMode(m: 'sim' | 'co') {
-    mode = m;
-    modeEl.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.m === m)));
-    const u = new URL(location.href); if (m === 'co') u.searchParams.set('lines', 'co'); else u.searchParams.delete('lines'); history.replaceState(null, '', u);
-    renderPanel();
-    if (sel >= 0) select(sel); else draw();
+  const explainEl = document.getElementById('net-explain')!;
+  const solid = '<svg width="26" height="8" aria-hidden="true"><path d="M1 4h24" stroke="currentColor" stroke-width="1.6"/></svg>';
+  const thick = '<svg width="26" height="8" aria-hidden="true"><path d="M1 4h24" stroke="currentColor" stroke-width="3"/></svg>';
+  const dashed = '<svg width="30" height="10" aria-hidden="true"><path d="M1 5h20" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M21 1l7 4-7 4z" fill="currentColor"/></svg>';
+  function explain() {
+    const key = (svg: string, k: string) => `<span class="key">${svg}${esc(t(k))}</span>`;
+    explainEl.innerHTML = mode === 'adv'
+      ? `<span>${esc(t('net_exp_adv'))}</span>${key(dashed, 'net_key_adv')}`
+      : mode === 'co'
+      ? `<span>${esc(t('net_exp_co'))}</span>${key(solid, 'net_key_co1')}${key(thick, 'net_key_co2')}`
+      : `<span>${esc(t('net_exp_sim'))}</span>${key(solid, 'net_key_sim')}`;
   }
-  modeEl.addEventListener('click', (e) => { const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-m]'); if (b) setMode(b.dataset.m as 'sim' | 'co'); });
+  function setMode(m: Mode, refit = true) {
+    mode = m;
+    modeEl.querySelectorAll('button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.m === m)));
+    const u = new URL(location.href); if (m !== 'sim') u.searchParams.set('lines', m); else u.searchParams.delete('lines'); history.replaceState(null, '', u);
+    explain(); renderPanel();
+    if (sel >= 0) select(sel);
+    else if (refit && m === 'adv' && inAdv.size) fit([...inAdv].filter(active), true);
+    else draw();
+  }
+  modeEl.addEventListener('click', (e) => { const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-m]'); if (b && !b.disabled) setMode(b.dataset.m as Mode); });
   const phdEl = document.getElementById('net-phd') as HTMLSelectElement;
   phdEl.addEventListener('change', () => { phdSel = phdEl.value; if (!phdSel && !uni) fit(undefined, true); refilter(); });
   uSel.addEventListener('change', () => { uni = uSel.value; if (!uni) fit(undefined, true); refilter(); });
@@ -403,7 +474,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
 
   document.addEventListener('themechange', () => requestAnimationFrame(() => { readColors(); draw(); }));
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { readColors(); draw(); });
-  document.addEventListener('langchange', () => { renderPanel(); updateCount(); });
+  document.addEventListener('langchange', () => { renderPanel(); updateCount(); explain(); });
   new ResizeObserver(() => resize()).observe(stage);
 
   fetch(base + 'network.json').then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); }).then((d) => {
@@ -417,8 +488,12 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     }
     const wantPhd = new URLSearchParams(location.search).get('phd');
     if (wantPhd && phdCount.has(wantPhd)) { phdEl.value = wantPhd; phdSel = wantPhd; }
-    if (CO.length) { modeEl.hidden = false; document.getElementById('how-co')!.hidden = false; if (new URLSearchParams(location.search).get('lines') === 'co') setMode('co'); }
-    readColors(); resize(); fit();
+    N.forEach((p, i) => p.av.forEach((a) => { if (typeof a === 'number') { ADV.push([a, i]); inAdv.add(a); inAdv.add(i); } }));
+    if (!CO.length) { const cb = modeEl.querySelector<HTMLButtonElement>('[data-m="co"]')!; cb.disabled = true; document.getElementById('co-desc')!.textContent = t('net_mode_co_soon'); }
+    const lines = new URLSearchParams(location.search).get('lines');
+    explain();
+    if (lines === 'adv' || (lines === 'co' && CO.length)) setMode(lines as Mode, false);
+    readColors(); resize(); fit(phdSel ? N.map((_, i) => i).filter(active) : undefined); renderPanel();
     status.hidden = true;
     const dl = document.getElementById('net-names')!;
     dl.innerHTML = N.map((p) => `<option value="${esc(p.n + ' · ' + p.us)}"></option>`).join('');
