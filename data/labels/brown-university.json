@@ -1,0 +1,823 @@
+{
+ "slug": "brown-university",
+ "labeled_at": "2026-10-22",
+ "faculty": [
+  {
+   "name": "Scott AnderBois",
+   "summary": "Studies Indigenous languages in Latin America, focusing on pragmatics and semantics through community-engaged language documentation.",
+   "summary_zh": "研究拉丁美洲土著语言的语用学和语义学，通过参与式语言记录方法进行研究。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PRAGMATICS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_FIELDWORK",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "R_CLASSICAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "indigenous languages",
+    "latin america",
+    "pragmatics",
+    "semantics",
+    "community-engaged",
+    "a'ingae",
+    "cofán"
+   ]
+  },
+  {
+   "name": "Uriel Cohen Priva",
+   "summary": "Studies phonology and phonetics with information-theoretic approaches, focusing on language change and variation.",
+   "summary_zh": "研究音系学和语音学，采用信息论方法，关注语言变化和变异。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_LING_ANTHRO",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "phonology",
+    "phonetics",
+    "information-theoretic linguistics",
+    "language change",
+    "language variation"
+   ]
+  },
+  {
+   "name": "Pauline Jacobson",
+   "summary": "Studies semantics, syntax, and pragmatics through compositional semantics, lexical semantics, and categorial grammar.",
+   "summary_zh": "研究语义学（组合语义学和词汇语义学）、句法学和语用学，通过范畴化语义学的方法。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PRAGMATICS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "semantics",
+    "compositional semantics",
+    "lexical semantics",
+    "categorial grammar",
+    "syntax",
+    "pragmatics",
+    "neg raising",
+    "ellipsis"
+   ]
+  },
+  {
+   "name": "Paja Faudree",
+   "summary": "Studies language and medicine, indigenous cultures, and drug use in Latin America through linguistic anthropology.",
+   "summary_zh": "研究语言与医学、原住民文化以及拉丁美洲的药物使用通过语言人类学。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_LING_ANTHRO",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_DISCOURSE_INTERACTION",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "R_ROMANCE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "R_CLASSICAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "linguistic anthropology",
+    "indigeneity",
+    "latin america",
+    "drugs",
+    "medicine",
+    "music",
+    "political economy"
+   ]
+  },
+  {
+   "name": "Roman Feiman",
+   "summary": "Studies language acquisition and processing through cognitive development and semantics.",
+   "summary_zh": "研究语言获得和加工，通过认知发展和语义学。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_DEVELOPMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CHILDREN",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "language acquisition",
+    "language processing",
+    "cognitive development",
+    "semantics",
+    "negation",
+    "international adoption",
+    "number knowledge",
+    "mutual exclusivity",
+    "prosody",
+    "negation"
+   ]
+  },
+  {
+   "name": "Masako Fidler",
+   "summary": "Studies sound symbolism in Czech and discourse analysis through corpus-assisted methods.",
+   "summary_zh": "研究捷克语中的拟声词及其在话语分析中的应用。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_DISCOURSE_INTERACTION",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_CORPUS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SLAVIC_E_EUROPE",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "sound symbolism",
+    "czech",
+    "discourse analysis",
+    "corpus-assisted",
+    "morphosyntax"
+   ]
+  },
+  {
+   "name": "Richard Kimberly Heck",
+   "summary": "Studies philosophy of language, mind, logic, and mathematics, focusing on compositionality, demonstratives, and sense.",
+   "summary_zh": "研究语言哲学、心灵哲学、逻辑哲学和数学哲学，关注组合性、指示词和意义。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "philosophy of language",
+    "philosophy of mind",
+    "philosophy of logic",
+    "philosophy of mathematics",
+    "compositionality",
+    "demonstratives",
+    "sense"
+   ]
+  },
+  {
+   "name": "Ellie Pavlick",
+   "summary": "Studies natural language processing and computational linguistics through representations and models in AI.",
+   "summary_zh": "研究自然语言处理和计算语言学中的表示和模型在人工智能中的应用。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_AI_SYSTEMS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "natural language processing",
+    "computational linguistics",
+    "semantics",
+    "pragmatics",
+    "llms",
+    "vision-language models",
+    "ai-assisted tasks",
+    "clinical artificial intelligence",
+    "transformers"
+   ]
+  },
+  {
+   "name": "Lio Wong",
+   "summary": "Studies language learning and use efficiency, subjective aspects of language, and cognitive processes through experiments and computational models.",
+   "summary_zh": "研究语言学习和使用效率、语言的主观方面以及认知过程，通过实验和计算模型进行探索。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_ML_LLM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_CLINICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "language learning",
+    "cognitive processes",
+    "computational models",
+    "emotions",
+    "fictional storytelling"
+   ]
+  }
+ ]
+}

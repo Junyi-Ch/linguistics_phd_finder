@@ -1,0 +1,2275 @@
+{
+ "slug": "city-university-of-new-york-graduate-center",
+ "labeled_at": "2026-10-22",
+ "faculty": [
+  {
+   "name": "Sam Al Khatib",
+   "summary": "Studies semantics through logical and linguistic analysis.",
+   "summary_zh": "研究语义学，通过逻辑和语言分析进行。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "semantics",
+    "philosophical logic",
+    "mind and language",
+    "vagueness",
+    "communication"
+   ]
+  },
+  {
+   "name": "Juliette Blevins",
+   "summary": "Studies phonology, phonetics, and historical linguistics, focusing on endangered languages and language change.",
+   "summary_zh": "研究音系学、音系学和历史语言学，专注于濒危语言和语言变化。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FIELDWORK",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_HISTORICAL_TEXTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SE_ASIA_PACIFIC",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_ROMANCE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "phonology",
+    "phonetics",
+    "historical linguistics",
+    "language change",
+    "endangered languages",
+    "austronesian languages",
+    "australian aboriginal languages",
+    "basque",
+    "sound patterns"
+   ]
+  },
+  {
+   "name": "Spencer Caplan",
+   "summary": "Studies language acquisition and processing using computational models, quantitative analysis, and experimental techniques.",
+   "summary_zh": "研究语言习得和处理，使用计算模型、定量分析和实验技术。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_DEAF_SIGNING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "language acquisition",
+    "language processing",
+    "computational linguistics",
+    "psycholinguistics",
+    "eye-tracking",
+    "phonology",
+    "natural language processing",
+    "quantitative methods",
+    "cognitive science"
+   ]
+  },
+  {
+   "name": "José Del Valle",
+   "summary": "Studies the politics of language representation in Spain, Latin America, and the USA through linguistic ideologies and glottopolitical theory.",
+   "summary_zh": "研究语言代表性的政治学在西班牙、拉丁美洲和美国的表现，通过语言意识形态和语际政治理论。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_LING_ANTHRO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_CLASSICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "语言代表性的政治学",
+    "语言意识形态",
+    "语际政治理论",
+    "西班牙",
+    "拉丁美洲",
+    "美国",
+    "语言和政治",
+    "语言和意识形态"
+   ]
+  },
+  {
+   "name": "Alberta Gatti",
+   "summary": "Studies language education and literacy development of heritage language learners through applied linguistics.",
+   "summary_zh": "研究语言教育和六teenth世纪西班牙文学中的世袭语言学习者的读写能力发展。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "applied linguistics",
+    "language education",
+    "literacy development",
+    "heritage language learners",
+    "sixteenth century spain"
+   ]
+  },
+  {
+   "name": "Kyle Gorman",
+   "summary": "Studies speech and language processing, including multilingual speech recognition and synthesis, and the cognitive foundations of language.",
+   "summary_zh": "研究语音和语言处理，包括多语言语音识别和合成，以及语言的认知基础。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONETICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_MORPHOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "speech recognition",
+    "language processing",
+    "finite-state methods",
+    "speech synthesis",
+    "multilingual",
+    "speech and language technology",
+    "phonology",
+    "morphology",
+    "computational linguistics"
+   ]
+  },
+  {
+   "name": "Jason Kandybowicz",
+   "summary": "Studies syntactic theory and the syntax-phonology interface through fieldwork on West African languages like Ikpana, Shupamem, and Nupe.",
+   "summary_zh": "研究句法学和音系学界面，通过田野调查研究西非语言如伊坎帕、舒帕膜和努佩语。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FIELDWORK",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AFRICA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "syntactic theory",
+    "syntax-phonology interface",
+    "field linguistics",
+    "west african languages",
+    "ikpana",
+    "shupamem",
+    "nupe"
+   ]
+  },
+  {
+   "name": "Stephen Neale",
+   "summary": "Studies problems in the philosophy of language and their intersections with linguistics, logic, metaphysics, and epistemology.",
+   "summary_zh": "研究语言哲学问题及其与语言学、逻辑学、形而上学和认识论的交叉领域。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "philosophy of language",
+    "linguistics",
+    "philosophical logic",
+    "metaphysics",
+    "epistemology",
+    "intention",
+    "interpretation",
+    "semantic composition",
+    "pragmatic inference",
+    "context"
+   ]
+  },
+  {
+   "name": "Valerie Shafer",
+   "summary": "Studies speech perception and processing in first and second language development using behavioral and neurophysiological methods.",
+   "summary_zh": "研究第一语言和第二语言发展中的语音感知和处理，使用行为和神经生理学方法。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_CHILDREN",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_ENGLISH",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "speech perception",
+    "speech processing",
+    "bilingualism",
+    "neurophysiology",
+    "language development",
+    "phonetic development",
+    "neural representation",
+    "behavioral methods",
+    "infant development",
+    "second language learning"
+   ]
+  },
+  {
+   "name": "Douglas H. Whalen",
+   "summary": "Studies speech perception and production, and endangered languages through behavioral and neural imaging.",
+   "summary_zh": "研究语音感知和产生以及濒危语言，通过行为和神经成像方法。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "speech perception",
+    "speech production",
+    "endangered languages",
+    "behavioral",
+    "neural imaging"
+   ]
+  },
+  {
+   "name": "Rebecca Levitan",
+   "summary": "Studies intonation and social signals in spoken language through analysis.",
+   "summary_zh": "研究语音中的音调和社会信号。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "intonation",
+    "social signals",
+    "discourse analysis",
+    "spoken language processing",
+    "speech"
+   ]
+  },
+  {
+   "name": "Jason Bishop",
+   "summary": "Studies speech prosody through phonetics and laboratory phonology.",
+   "summary_zh": "研究语音语调通过音系学和实验室音位学的方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PRAGMATICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_INSTRUMENTAL_PHON",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "speech prosody",
+    "phonetics",
+    "laboratory phonology",
+    "prosody",
+    "intonation"
+   ]
+  },
+  {
+   "name": "Christina Hagedorn",
+   "summary": "Studies articulatory phonology and laboratory phonology through acoustic analysis.",
+   "summary_zh": "研究发音生理学和实验室语音学，通过声学分析进行研究。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_INSTRUMENTAL_PHON",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_ARTICULATORY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "articulatory phonology",
+    "laboratory phonology",
+    "acoustic analysis",
+    "phonetics"
+   ]
+  },
+  {
+   "name": "Irina Sekerina",
+   "summary": "Studies bilingualism, heritage languages, and psycholinguistics using eye-tracking methods in Slavic languages.",
+   "summary_zh": "研究双语主义、母语语言和心理语言学，使用眼动追踪方法研究斯拉夫语言。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SLAVIC_E_EUROPE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_ENGLISH",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "bilingualism",
+    "heritage languages",
+    "psycholinguistics",
+    "eye-tracking",
+    "slavic languages",
+    "russian",
+    "bulgarian",
+    "sentence processing",
+    "eye movements",
+    "reading"
+   ]
+  },
+  {
+   "name": "Christina Tortora",
+   "summary": "Studies the syntax and morphology of Italian dialects, including Rhaeto-Romance varieties, through theoretical works and contributions from leading scholars.",
+   "summary_zh": "研究意大利方言（包括罗曼语族方言）的句法学和形态学，通过理论作品和顶尖学者的贡献进行探讨。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_MORPHOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "italian dialects",
+    "syntax",
+    "morphology",
+    "rhaeto-romance",
+    "paduan",
+    "sicilian",
+    "piedmontese",
+    "calabrian",
+    "clausal structure",
+    "pronominal syntax"
+   ]
+  },
+  {
+   "name": "Sarah Ita Levitan",
+   "summary": "Studies natural language processing and speech processing through computational methods.",
+   "summary_zh": "研究自然语言处理和语音处理，采用计算方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_CORPUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_ML_LLM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INSTITUTIONS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "natural language processing",
+    "speech processing",
+    "computational linguistics",
+    "dialogue",
+    "paralinguistics"
+   ]
+  },
+  {
+   "name": "Sandeep Prasada",
+   "summary": "Studies lexical and conceptual representation and development through behavioral studies and neuroimaging.",
+   "summary_zh": "研究词汇和概念表示及其发展，使用行为研究和神经成像技术。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CHILDREN",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "lexical development",
+    "conceptual representation",
+    "neuropsychology",
+    "erp",
+    "fmri",
+    "children",
+    "adults"
+   ]
+  },
+  {
+   "name": "Virginia Valian",
+   "summary": "Studies first and second language acquisition and gender equity through experimental, observational, and computational research.",
+   "summary_zh": "研究第一和第二语言习得及性别平等，通过实验、观察和计算方法进行研究。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FIELDWORK",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "first language acquisition",
+    "second language acquisition",
+    "gender equity",
+    "experimental research",
+    "observational research",
+    "computational research"
+   ]
+  },
+  {
+   "name": "Elena Filatova",
+   "summary": "Studies computational linguistics, text mining, and natural language processing through computer science research.",
+   "summary_zh": "研究计算语言学、文本挖掘和自然语言处理。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "computational linguistics",
+    "text mining",
+    "natural language processing",
+    "computer science",
+    "linguistics"
+   ]
+  },
+  {
+   "name": "Bill Haddican",
+   "summary": "Studies New York City English through corpus linguistics.",
+   "summary_zh": "研究纽约城市英语通过语料库语言学。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_CORPUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "new york city english",
+    "corpus linguistics",
+    "cuny",
+    "ciryg21"
+   ]
+  },
+  {
+   "name": "Daniel Kaufman",
+   "summary": "Studies morphology, syntax, and phonology through language documentation.",
+   "summary_zh": "研究形态学、句法学和音系学，通过语言记录进行研究。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_MORPHOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FIELDWORK",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_FIELD_ARCHIVES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_HISTORICAL_TEXTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "morphology",
+    "syntax",
+    "phonology",
+    "language documentation",
+    "linguistics"
+   ]
+  },
+  {
+   "name": "Miki Makihara",
+   "summary": "Studies communication and society through ethnography and discourse analysis, focusing on multilingualism and language revitalization in Polynesia and Latin America.",
+   "summary_zh": "研究交际与社会，通过民族志和话语分析，关注波利尼西亚和拉丁美洲的多语言主义和语言复兴。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_LING_ANTHRO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_DISCOURSE_INTERACTION",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SE_ASIA_PACIFIC",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_CLASSICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "communication",
+    "society",
+    "ethnography",
+    "discourse analysis",
+    "multilingualism",
+    "language revitalization",
+    "polynesia",
+    "latin america"
+   ]
+  },
+  {
+   "name": "Michael Newman",
+   "summary": "Studies New York City English through sociolinguistic and variationist methods, examining social meanings and linguistic diversity.",
+   "summary_zh": "研究纽约市英语的社会语用学和变体方法，探讨社会意义和语言多样性。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_VARIATIONIST",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "new york city english",
+    "sociolinguistics",
+    "variationist",
+    "language attitudes",
+    "literacy theory",
+    "dialectology",
+    "social meanings",
+    "diversity"
+   ]
+  },
+  {
+   "name": "Alla Rozovskaya",
+   "summary": "Studies natural language processing and computational linguistics using machine learning.",
+   "summary_zh": "研究自然语言处理和计算语言学，使用机器学习方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ML_LLM",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "natural language processing",
+    "computational linguistics",
+    "machine learning"
+   ]
+  },
+  {
+   "name": "Joseph C Davis",
+   "summary": "Studies communication in discourse and grammar of Italian and English through linguistic theory and methodology.",
+   "summary_zh": "研究话语中的交流、意大利语和英语的语法以及语言学理论和方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_DISCOURSE_INTERACTION",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_ENGLISH",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "communication",
+    "discourse",
+    "italian grammar",
+    "english grammar",
+    "linguistic theory",
+    "methodology"
+   ]
+  },
+  {
+   "name": "Nancy Stern",
+   "summary": "Studies media coverage of Palestine/Israel through linguistic analysis.",
+   "summary_zh": "研究巴勒斯坦/以色列媒体报道的语言学分析。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "media coverage",
+    "palestine/israel",
+    "linguistic analysis",
+    "bilingualism",
+    "functionalist linguistics"
+   ]
+  },
+  {
+   "name": "Matthew Garley",
+   "summary": "Studies sociolinguistics, corpus linguistics, language contact, and historical linguistics, focusing on youth culture and hip hop.",
+   "summary_zh": "研究社会语言学、语料库语言学、语言接触和历史语言学，重点关注青年文化和嘻哈文化。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_CONTACT_CREOLES",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_CORPUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "sociolinguistics",
+    "corpus linguistics",
+    "language contact",
+    "historical linguistics",
+    "hip hop",
+    "youth culture"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,666 @@
+{
+ "slug": "university-of-michigan",
+ "labeled_at": "2026-10-22",
+ "faculty": [
+  {
+   "name": "Natasha Abner",
+   "summary": "Studies semantics, syntax, and psycholinguistics through fieldwork and sign language research.",
+   "summary_zh": "研究语义学、句法学和心理语言学，通过田野工作和手语研究进行。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FIELDWORK",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_ARTICULATORY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_DEAF_SIGNING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SIGN",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "semantics",
+    "syntax",
+    "psycholinguistics",
+    "fieldwork",
+    "sign language"
+   ]
+  },
+  {
+   "name": "Steven Abney",
+   "summary": "Studies computational linguistics, focusing on parsing, semi-supervised learning, and language documentation.",
+   "summary_zh": "研究计算语言学，特别是解析和半监督学习，以及语言记录。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_DOCUMENTATION",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "computational linguistics",
+    "parsing",
+    "semi-supervised learning",
+    "language documentation",
+    "semantics"
+   ]
+  },
+  {
+   "name": "Laura Aull",
+   "summary": "Studies phonology and phonetics of African languages through corpus analysis and fieldwork.",
+   "summary_zh": "研究非洲语言的音系学和音位学，通过语料库分析和田野调查进行。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_CORPUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FIELDWORK",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AFRICA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "phonology",
+    "phonetics",
+    "african languages",
+    "corpus analysis",
+    "fieldwork"
+   ]
+  },
+  {
+   "name": "William Baxter",
+   "summary": "Studies the historical development of Chinese language and its dialects through linguistic reconstruction and methodology.",
+   "summary_zh": "研究汉语及其方言的历史发展，通过语言重建和方法论进行研究。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_HISTORICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_HISTORICAL_TEXTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": [
+     {
+      "code": "R_CHINESE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "historical linguistics",
+    "chinese language",
+    "dialects",
+    "linguistic reconstruction",
+    "methodology",
+    "early chinese",
+    "loanwords"
+   ]
+  },
+  {
+   "name": "Julie Boland",
+   "summary": "Studies word recognition, syntactic processing, and semantic processing in language comprehension through psycholinguistic methods.",
+   "summary_zh": "研究词汇识别、句法处理和语义处理在语言理解中的交互作用，采用心理语言学方法。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "word recognition",
+    "syntactic processing",
+    "semantic processing",
+    "psycholinguistics",
+    "bilinguals",
+    "grammatical variation",
+    "executive function",
+    "sentence comprehension",
+    "grammatical representation",
+    "bilinguals"
+   ]
+  },
+  {
+   "name": "Jonathan Brennan",
+   "summary": "Studies the mental structures and computations used in language comprehension through EEG, MEG, and fMRI.",
+   "summary_zh": "研究语言理解中的心理结构和计算过程，使用EEG、MEG和fMRI进行神经成像。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_NEUROLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_NEURO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_NEURAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_CHILDREN",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "language comprehension",
+    "neurolinguistics",
+    "psycholinguistics",
+    "syntax-semantics interface",
+    "eeg",
+    "meg",
+    "fmri",
+    "naturalistic techniques",
+    "autism spectrum disorder"
+   ]
+  },
+  {
+   "name": "Huteng Dai",
+   "summary": "Studies phonetics and phonology using computational methods.",
+   "summary_zh": "研究音系学和音法学，使用计算方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "phonetics",
+    "phonology",
+    "computational linguistics",
+    "python",
+    "programming"
+   ]
+  },
+  {
+   "name": "San Duanmu",
+   "summary": "Studies phonology and the interaction between phonology and morphosyntax through feature theory, syllable theory, and metrical theory.",
+   "summary_zh": "研究音系学及其与形态句法的交互，包括特征理论、音节理论和音步理论。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONETICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "phonology",
+    "morphosyntax",
+    "feature theory",
+    "syllable theory",
+    "metrical theory",
+    "tones"
+   ]
+  }
+ ]
+}

@@ -16,6 +16,11 @@ from pathlib import Path
 from datetime import date
 
 ROOT = Path(__file__).resolve().parents[1]
+# evidence that a person's own research is about language (checked on the label summary + keywords)
+LANG_RESEARCH = re.compile(r"lingu|languag|speech|spoken|phonet|phonolog|morpholog|syntax|syntactic|semantic|pragmatic|grammar|"
+                           r"lexic|\bwords?\b|sentence|bilingual|multilingual|acquisition|literacy|\bl2\b|\besl\b|tesol|"
+                           r"discourse|conversation|dialect|accent|sign language|\bsign\b|translat|\bnlp\b|dialog|prosod|intonation|"
+                           r"vowel|consonant|aphasia|stutter|verbal|communication disorder|vocal|voice (disorder|science|production)|spelling|dyslexi|\breading\b|writing system", re.I)
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/124.0 Safari/537.36 LingPhDExplorer/0.1")
 # Matching setup, chosen on the judged evaluation set in pipeline/eval (see pipeline/eval/README.md).
@@ -109,12 +114,19 @@ def main():
                 for un, fld in unit_field.items():
                     if k and (k in un or un in k): return fld
             return default_field
+        filtered_units = {norm_name(u["name"]) for u in inc_units
+                          if (u.get("field") or "LING") in ("COMP", "LANG", "SPEECH") or u.get("filter_language")}
         for f in raw["faculty"]:
             key = norm_name(f["name"])
             if key in seen or f.get("rank") not in ranks: continue
+            lab = labels.get(key)
+            # adjacent units: drop people whose own summary shows no language research (literature, hearing-only, ...)
+            if lab and norm_name(f.get("unit") or f.get("department")) in filtered_units and \
+                    not LANG_RESEARCH.search(" ".join([lab.get("summary") or ""] + list(lab.get("keywords") or [])).lower()):
+                stats.setdefault("dropped_not_language", []).append(f"{slug}: {f['name']}")
+                continue
             seen.add(key)
             fid = slugify(f"{sn}-{f['name']}")
-            lab = labels.get(key)
             if lab: stats["with_labels"] += 1
             lab_out = {}
             for dim in tax["dimensions"]:
@@ -216,6 +228,10 @@ def main():
     json.dump(programs_out, open(out_dir / "programs.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     json.dump(faculty, open(out_dir / "faculty.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     json.dump(tax, open(out_dir / "taxonomy.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+    dropped = stats.pop("dropped_not_language", [])
+    if dropped:
+        print(f"Left out {len(dropped)} people in adjacent units whose research is not about language:")
+        for x in dropped: print("   ", x)
     stats["built"] = date.today().isoformat()
     json.dump(stats, open(out_dir / "meta.json", "w"), indent=1)
     print(json.dumps(stats, indent=1))

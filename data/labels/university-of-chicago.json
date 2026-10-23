@@ -1,0 +1,1620 @@
+{
+ "slug": "university-of-chicago",
+ "labeled_at": "2026-10-22",
+ "faculty": [
+  {
+   "name": "Matt Andersen",
+   "summary": "Studies sign language pedagogy, Deaf aesthetics, and technology integration in Deaf education.",
+   "summary_zh": "研究手语教学、聋人美学和技术在聋人教育中的整合。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SIGN_GESTURE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_DEAF_SIGNING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SIGN",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "sign language pedagogy",
+    "deaf aesthetics",
+    "technology integration",
+    "deaf education",
+    "asl",
+    "deaf queer experience"
+   ]
+  },
+  {
+   "name": "Karlos Arregi",
+   "summary": "Studies syntax and morphology, their interfaces with phonology and semantics, using Basque, Spanish, and Washo as data sources.",
+   "summary_zh": "研究句法学和形态学及其与音系学和语义学的接口，主要使用巴斯克语、西班牙语和瓦什奥语的数据。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_MORPHOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "syntax",
+    "morphology",
+    "phonology",
+    "semantics",
+    "basque",
+    "spanish",
+    "washo",
+    "word formation",
+    "agreement",
+    "ellipsis"
+   ]
+  },
+  {
+   "name": "Melissa Baese-Berk",
+   "summary": "Studies spoken language understanding, production, and second-language acquisition through experimental and corpus-based methods.",
+   "summary_zh": "研究口头语言的理解、产生和第二语言习得，采用实验和语料库方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_CLINICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "spoken language",
+    "second-language acquisition",
+    "experimental methods",
+    "corpus-based methods",
+    "health-care providers",
+    "aging patients",
+    "perception",
+    "production",
+    "neural activity",
+    "speech perception"
+   ]
+  },
+  {
+   "name": "Canaan Breiss",
+   "summary": "Studies phonological processes through computational and experimental methods.",
+   "summary_zh": "研究音系过程，采用计算和实验方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "phonology",
+    "computational phonology",
+    "experimental phonology",
+    "phonological processes",
+    "corpus methods",
+    "behavioral experiments"
+   ]
+  },
+  {
+   "name": "Diane K Brentari",
+   "summary": "Studies sign language grammars of Deaf communities, focusing on structure and modality effects.",
+   "summary_zh": "研究聋人社区的手语语法，关注结构和模态效应。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SIGN_GESTURE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_FIELD_ARCHIVES",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_DEAF_SIGNING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SIGN",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "sign language",
+    "deaf communities",
+    "grammars",
+    "modality",
+    "deafblind"
+   ]
+  },
+  {
+   "name": "Itamar Francez",
+   "summary": "Studies semantics, pragmatics, and lexical, contextual factors influencing complex inferential behaviors, with a focus on Hebrew.",
+   "summary_zh": "研究语义学、语用学以及词汇、语境因素如何影响复杂的推理行为，特别是以希伯来语为例。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PRAGMATICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_MIDDLE_EAST",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "semantics",
+    "pragmatics",
+    "complex inferential behaviors",
+    "hebrew",
+    "lexical",
+    "contextual"
+   ]
+  },
+  {
+   "name": "Susan Gal",
+   "summary": "Studies language and culture through linguistic anthropology.",
+   "summary_zh": "研究语言和文化通过语言人类学。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_LING_ANTHRO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "linguistic anthropology",
+    "language",
+    "culture",
+    "anthropology",
+    "ethnography"
+   ]
+  },
+  {
+   "name": "Anastasia Giannakidou",
+   "summary": "Studies linguistic meaning, form-meaning relation, and language use for subjectivity across various languages including Greek, German, Dutch, Spanish, Basque, Korean, and Mandarin.",
+   "summary_zh": "研究语言意义、形式与意义的关系以及语言在表达主观性方面的使用，涉及多种语言如希腊语、德语、荷兰语、西班牙语、巴斯克语、韩语和汉语。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_GERMANIC",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_CHINESE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_JAPANESE_KOREAN",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "linguistic meaning",
+    "form-meaning relation",
+    "subjectivity",
+    "modern greek",
+    "german",
+    "dutch",
+    "spanish",
+    "basque",
+    "mandarin chinese",
+    "diachronic syntax"
+   ]
+  },
+  {
+   "name": "Lenore Grenoble",
+   "summary": "Studies language contact and shift in Arctic Indigenous settings through fieldwork and documentation.",
+   "summary_zh": "研究北极土著语言接触和转移现象，通过实地工作和文献记录。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_CONTACT_CREOLES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FIELDWORK",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_FIELD_ARCHIVES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "language contact",
+    "shift",
+    "indigenous settings",
+    "arctic",
+    "fieldwork",
+    "documentation",
+    "multilingual settings",
+    "language revitalization"
+   ]
+  },
+  {
+   "name": "Christopher Kennedy",
+   "summary": "Studies the mapping of linguistic forms to meanings through comparison, amount and degree, and engages with syntax-semantics interface.",
+   "summary_zh": "研究语言形式与意义之间的映射，特别是比较、数量和程度，以及句法学与语义学的接口。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "comparison",
+    "amount and degree",
+    "syntax-semantics interface",
+    "ellipsis",
+    "anaphora",
+    "quantification"
+   ]
+  },
+  {
+   "name": "Sharese King",
+   "summary": "Studies African American speech and its racialization through phonetic, ethnographic, and experimental methods.",
+   "summary_zh": "研究非洲裔美国人语言及其种族化现象，采用音系学、民族志和实验方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONETICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AFRICA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "african american language",
+    "racialization",
+    "phonetic",
+    "ethnographic",
+    "experimental",
+    "judicial system",
+    "linguistic bias"
+   ]
+  },
+  {
+   "name": "Alexandra Krauska",
+   "summary": "Studies language production and comprehension using psycho- and neuro-linguistic models, experimental methods, and computational modeling.",
+   "summary_zh": "研究语言产生和理解的神经语言学模型、实验方法和计算建模。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "language production",
+    "comprehension",
+    "psycho-linguistic",
+    "neuro-linguistic",
+    "bilingualism",
+    "acquired language disorders",
+    "theoretical approaches",
+    "experimental methods",
+    "computational modeling"
+   ]
+  },
+  {
+   "name": "Fidele Mpiranya",
+   "summary": "Studies African languages through descriptive and comparative methods.",
+   "summary_zh": "研究非洲语言通过描述性和比较性方法。",
+   "confidence": "low",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_LING_ANTHRO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_DEVELOPMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_HISTORICAL_TEXTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AFRICA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "african languages",
+    "descriptive methods",
+    "comparative methods"
+   ]
+  },
+  {
+   "name": "Salikoko S Mufwene",
+   "summary": "Studies the evolution of language through an ecological lens, focusing on the impact of colonization and globalization.",
+   "summary_zh": "研究语言的进化通过生态视角，重点关注殖民化和全球化的影响。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_LING_ANTHRO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AFRICA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "evolutionary linguistics",
+    "ecological perspective",
+    "colonization",
+    "globalization",
+    "language contact",
+    "creolistics",
+    "phylogenetic emergence",
+    "indigenization",
+    "african linguistics"
+   ]
+  },
+  {
+   "name": "David J. E. Reinhart",
+   "summary": "Studies American Sign Language pedagogy, curriculum development, and Deaf culture through teaching and collaboration.",
+   "summary_zh": "研究美国手语教学法、课程开发和聋人文化，通过教学和合作进行。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_LING_ANTHRO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SIGN_GESTURE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_DEAF_SIGNING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SIGN",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "american sign language",
+    "asl pedagogy",
+    "curriculum development",
+    "deaf culture",
+    "language assessment"
+   ]
+  },
+  {
+   "name": "Jason Riggle",
+   "summary": "Studies phonology, learnability, and computational linguistics to predict linguistic typology through model interactions.",
+   "summary_zh": "研究音系学、习得性和计算语言学，通过模型交互预测语言类型学。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_LING_ANTHRO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": [
+     {
+      "code": "R_CROSSLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "phonology",
+    "learnability",
+    "computational linguistics",
+    "linguistic typology",
+    "grammar",
+    "learning",
+    "communication",
+    "models",
+    "corpus linguistics"
+   ]
+  },
+  {
+   "name": "Craig Thorburn",
+   "summary": "Studies speech sound categories learning through computational modeling, behavioral experiments, and neuroimaging.",
+   "summary_zh": "研究语音类别学习通过计算建模、行为实验和神经影像学方法。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "speech sound categories",
+    "computational modeling",
+    "behavioral experiments",
+    "neuroimaging",
+    "second language learning",
+    "reinforcement learning"
+   ]
+  },
+  {
+   "name": "Ming Xiang",
+   "summary": "Studies sentence processing, syntax, semantics, and discourse comprehension with a focus on neural mechanisms.",
+   "summary_zh": "研究句子处理、句法、语义和话语理解，关注神经机制的作用。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONETICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_NEURO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_NEURAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "sentence processing",
+    "syntax",
+    "semantics",
+    "discourse comprehension",
+    "neural mechanisms"
+   ]
+  },
+  {
+   "name": "Erik Zyman",
+   "summary": "Studies syntactic structures and operations like Merge and constituency across languages including English, Latin, and P’urhepecha.",
+   "summary_zh": "研究句法结构和操作，如合并和成分性，涉及英语、拉丁语和P’urhepecha等语言。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CHILDREN",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ENGLISH",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_CROSSLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_CLASSICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "syntax",
+    "merge",
+    "constituency",
+    "projection",
+    "p'urhepecha",
+    "english",
+    "latin",
+    "phases",
+    "locality",
+    "argument/adjunct"
+   ]
+  }
+ ]
+}

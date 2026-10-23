@@ -1,0 +1,857 @@
+{
+ "slug": "university-of-kansas",
+ "labeled_at": "2026-10-22",
+ "faculty": [
+  {
+   "name": "Philip Travis Duncan",
+   "summary": "Studies syntax and indigenous languages in the context of language and culture.",
+   "summary_zh": "研究句法学和土著语言在语言与文化背景下的特征。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FIELDWORK",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "syntax",
+    "indigenous languages",
+    "language and culture",
+    "teaching professor"
+   ]
+  },
+  {
+   "name": "Robert Fiorentino",
+   "summary": "Studies the neural basis and cognitive processes of language through neurolinguistics and psycholinguistics.",
+   "summary_zh": "研究语言的神经基础和认知过程，通过神经语言学和心理语言学。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_NEUROLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_NEURO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_NEURAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "neurolinguistics",
+    "psycholinguistics",
+    "cognitive processes",
+    "language",
+    "neural basis"
+   ]
+  },
+  {
+   "name": "Alison Gabriele",
+   "summary": "Studies second language acquisition through various methods.",
+   "summary_zh": "研究第二语言习得的各种方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FIELDWORK",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "second language acquisition",
+    "methods"
+   ]
+  },
+  {
+   "name": "John Gluckman",
+   "summary": "Studies syntax through theoretical and empirical approaches.",
+   "summary_zh": "研究句法学，采用理论和实证方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "syntax",
+    "theoretical",
+    "empirical",
+    "undergraduate",
+    "studies"
+   ]
+  },
+  {
+   "name": "Jeff Holliday",
+   "summary": "Studies phonetics, second language acquisition, and sociolinguistics through various methods.",
+   "summary_zh": "研究音系学、二语习得和社会语言学。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "phonetics",
+    "second language acquisition",
+    "sociolinguistics",
+    "methods",
+    "linguistics"
+   ]
+  },
+  {
+   "name": "Allard Jongman",
+   "summary": "Studies phonetics through acoustic analysis and fieldwork.",
+   "summary_zh": "研究音系学通过声学分析和田野调查。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FIELDWORK",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_INSTRUMENTAL_PHON",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_ARTICULATORY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "phonetics",
+    "acoustic analysis",
+    "fieldwork"
+   ]
+  },
+  {
+   "name": "Andrew McKenzie",
+   "summary": "Studies semantics of Native American languages through linguistic analysis.",
+   "summary_zh": "研究北美原住民语言的语义学。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "semantics",
+    "native american languages",
+    "linguistic analysis"
+   ]
+  },
+  {
+   "name": "Utako Minai",
+   "summary": "Studies first language acquisition and child language processing through advising and directing honors programs.",
+   "summary_zh": "研究第一语言习得和儿童语言处理，指导荣誉项目。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_DEVELOPMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CHILDREN",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "first language acquisition",
+    "child language processing",
+    "honors programs",
+    "advising",
+    "linguistics"
+   ]
+  },
+  {
+   "name": "Stephen Politzer-Ahles",
+   "summary": "Studies phonological alternations and pragmatic aspects of meaning using EEG, eye-tracking, and behavioural techniques.",
+   "summary_zh": "研究音系交替和语用意义方面的研究使用脑电图、眼动追踪和行为技术。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_NEURO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EYE_TRACKING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_NEURAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "phonological alternations",
+    "pragmatic aspects",
+    "eeg",
+    "eye-tracking",
+    "behavioural techniques",
+    "cognitive neuroscience",
+    "linguistic processes",
+    "representations"
+   ]
+  },
+  {
+   "name": "Joan A. Sereno",
+   "summary": "Studies the relationship between language and the brain through psycholinguistics, phonetics, and neurolinguistics.",
+   "summary_zh": "研究语言与大脑之间的关系，涉及心理语言学、音系学和神经语言学。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONETICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_NEURAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "psycholinguistics",
+    "phonetics",
+    "neurolinguistics",
+    "language",
+    "brain",
+    "relationship"
+   ]
+  },
+  {
+   "name": "Lacey Wade",
+   "summary": "Studies sociolinguistics, phonetics, and psycholinguistics through various methods.",
+   "summary_zh": "研究社会语言学、音系学和心理语言学，采用多种方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONETICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "sociolinguistics",
+    "phonetics",
+    "psycholinguistics",
+    "methods",
+    "various"
+   ]
+  },
+  {
+   "name": "Jie Zhang",
+   "summary": "Studies tone and phonological alternation in Chinese languages through phonology, phonetics, and neurolinguistics.",
+   "summary_zh": "研究汉语中的声调和音位交替现象，涉及音系学、语音学和神经语言学。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_CHINESE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "tone",
+    "phonological alternation",
+    "chinese languages",
+    "phonology",
+    "neurolinguistics",
+    "phonetics",
+    "tone sandhi",
+    "neuroscience",
+    "speech production",
+    "perception"
+   ]
+  }
+ ]
+}

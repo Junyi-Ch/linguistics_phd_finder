@@ -1,0 +1,1526 @@
+{
+ "slug": "university-of-south-carolina",
+ "labeled_at": "2026-10-23",
+ "faculty": [
+  {
+   "name": "Amit Almor",
+   "summary": "Studies language processing, anaphoric expressions, sentence production, and memory in aging and Alzheimer's patients using neuroimaging.",
+   "summary_zh": "研究语言处理、指代表达、句子生产和记忆在老年和阿尔茨海默病患者中的神经成像.",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_NEURO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_NEURAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "psycholinguistics",
+    "neuroimaging",
+    "anaphoric expressions",
+    "sentence production",
+    "memory",
+    "aging",
+    "alzheimer's disease"
+   ]
+  },
+  {
+   "name": "Anne Bezuidenhout",
+   "summary": "Studies presuppositions and conversational implicatures using formal and experimental methods, focusing on the processing of non-restrictive relative clauses.",
+   "summary_zh": "研究预设和会话含意，使用形式和实验方法，关注非限制性定语从句的处理。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PRAGMATICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "presuppositions",
+    "conversational implicatures",
+    "formal methods",
+    "experimental methods",
+    "non-restrictive relative clauses",
+    "anaphoric pronoun resolution",
+    "pragmatics",
+    "semantics",
+    "discourse-level information",
+    "joint reference"
+   ]
+  },
+  {
+   "name": "Elaine Chun",
+   "summary": "Studies language and racism in U.S. public space and language in transnational social media contexts.",
+   "summary_zh": "研究美国公共空间中的语言和种族主义以及跨国社交媒体中的语言。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_LING_ANTHRO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_SE_ASIA_PACIFIC",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_ENGLISH",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "语言",
+    "种族主义",
+    "社会媒体",
+    "跨文化交际",
+    "性别",
+    "性取向",
+    "韩流",
+    "youtube",
+    "反种族主义策略",
+    "语言接触现象"
+   ]
+  },
+  {
+   "name": "Stanley Dubinsky",
+   "summary": "Studies syntax and semantics, focusing on syntactic theory and the syntax-semantics interface across various languages.",
+   "summary_zh": "研究句法学和语义学，专注于句法理论及其与语义学的接口，涉及多种语言。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_JAPANESE_KOREAN",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_ENGLISH",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_MIDDLE_EAST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "syntax",
+    "semantics",
+    "syntactic theory",
+    "syntax-semantics interface",
+    "bantu languages",
+    "english",
+    "japanese",
+    "korean",
+    "hebrew",
+    "chichewa"
+   ]
+  },
+  {
+   "name": "Lewis Esposito",
+   "summary": "Studies language variation and change, particularly in relation to gender and sexuality, through sociophonetics and style.",
+   "summary_zh": "研究语言变异与变化，特别是在性别和性取向上，通过社会音系学和风格研究。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_VARIATIONIST",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ENGLISH",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "language variation",
+    "gender",
+    "sociophonetics",
+    "style",
+    "sexuality",
+    "sociolinguistics",
+    "prosody",
+    "change"
+   ]
+  },
+  {
+   "name": "Kurt Goblirsch",
+   "summary": "Studies sound change, word forms, and word origins in Germanic languages through comparative analysis.",
+   "summary_zh": "研究日耳曼语系语言中的音变、词形和词源通过比较分析。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_HISTORICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": [
+     {
+      "code": "R_GERMANIC",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "sound change",
+    "word forms",
+    "word origins",
+    "germanic languages",
+    "comparative analysis"
+   ]
+  },
+  {
+   "name": "D. Eric Holt",
+   "summary": "Studies Spanish phonology and language acquisition, particularly connected speech phenomena in English-speaking learners of Spanish.",
+   "summary_zh": "研究西班牙语音系学和语言习得，尤其是英语母语者学习西班牙语时的连读现象。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_ENGLISH",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "spanish phonology",
+    "language acquisition",
+    "connected speech",
+    "optimality theory",
+    "historical linguistics",
+    "dialect variation",
+    "phonological theory",
+    "english-speaking learners",
+    "pronunciation"
+   ]
+  },
+  {
+   "name": "Alan Ke",
+   "summary": "Studies syntax, language acquisition, and sentence processing through experimental and computational methods.",
+   "summary_zh": "研究句法学、语言获得和句子处理，采用实验和计算方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CHILDREN",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_CLINICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "syntax",
+    "language acquisition",
+    "sentence processing",
+    "computational linguistics",
+    "psycholinguistics",
+    "minimal search",
+    "form sequence",
+    "ellipsis",
+    "agree",
+    "labeling"
+   ]
+  },
+  {
+   "name": "Jiang Liu",
+   "summary": "Studies phonetics-phonology and second language acquisition, focusing on speech perception and production in bilinguals.",
+   "summary_zh": "研究音系学和二语习得，重点关注双语者的语音感知和产生。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ENGLISH",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_CHINESE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "phonetics-phonology",
+    "second language acquisition",
+    "speech perception",
+    "bilingualism",
+    "psycholinguistics",
+    "tone sandhi",
+    "speech production",
+    "learner's speech perception",
+    "video game",
+    "chinese characters"
+   ]
+  },
+  {
+   "name": "Paul Malovrh",
+   "summary": "Studies advanced interlanguage development and psycholinguistic processing strategies in second-language learning through cognitive frameworks and instructional interventions.",
+   "summary_zh": "研究第二语言学习中的高级中介语发展和心理语言学处理策略，通过认知框架和教学干预进行探究。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_CLINICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "advanced interlanguage development",
+    "psycholinguistic processing strategies",
+    "task-induced variation",
+    "second-language production",
+    "instructional intervention",
+    "deductive and inductive instruction",
+    "online processing",
+    "multilingualism",
+    "curricular design",
+    "explicit knowledge"
+   ]
+  },
+  {
+   "name": "Emily Manetta",
+   "summary": "Studies the syntax of Indic languages, focusing on wh-questions, verb-second word orders, and ellipsis phenomena.",
+   "summary_zh": "研究印地语系语言的句法学，重点关注疑问句、动词第二位和省略现象。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_CROSSLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_SLAVIC_E_EUROPE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_SOUTH_ASIA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "indic languages",
+    "hindi-urdu",
+    "kashmiri",
+    "romani",
+    "wh-questions",
+    "verb-second",
+    "ellipsis",
+    "syntax",
+    "displacement",
+    "romani language"
+   ]
+  },
+  {
+   "name": "Nina Moreno",
+   "summary": "Studies the impact of feedback types on second language acquisition through computer-assisted language learning and investigates attentional frameworks in language learning.",
+   "summary_zh": "研究不同类型反馈对第二语言习得的影响以及语言学习中的注意框架。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "computer-assisted language learning",
+    "second language acquisition",
+    "feedback types",
+    "attentional framework",
+    "heritage speakers",
+    "spanish"
+   ]
+  },
+  {
+   "name": "Jennifer F. Reynolds",
+   "summary": "Studies the relationship between discourse practices and social and linguistic transformation among rural communities in Guatemala, Mexico, and the U.S. through ethnographic methods.",
+   "summary_zh": "研究农村社区（包括危地马拉、墨西哥和美国）日常话语实践与社会和语言转变之间的关系，采用民族志方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_DISCOURSE_INTERACTION",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_ROMANCE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "discourse practices",
+    "social and linguistic transformation",
+    "rural communities",
+    "guatemala",
+    "mexico",
+    "u.s.",
+    "ethnographic methods",
+    "visual analysis",
+    "multimedia",
+    "language revitalization"
+   ]
+  },
+  {
+   "name": "Brandon Waldon",
+   "summary": "Studies the interaction of context, linguistic meaning, and social cognition in communication, using formal analysis, psycholinguistic experiments, and computational modeling.",
+   "summary_zh": "研究语境、语言意义和社会认知在交流中的互动，使用形式分析、心理语言学实验和计算建模方法。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INSTITUTIONS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "context",
+    "linguistic meaning",
+    "social cognition",
+    "formal linguistic analysis",
+    "psycholinguistic experimentation",
+    "computational modeling",
+    "legal interpretation",
+    "modality",
+    "vagueness",
+    "implicature"
+   ]
+  },
+  {
+   "name": "Tracey L. Weldon",
+   "summary": "Studies language variation, particularly African American English and Gullah, using sociolinguistic methods.",
+   "summary_zh": "研究语言变异，尤其是非裔美国人英语和古拉语，使用社会语言学方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_VARIATIONIST",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_ENGLISH",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_AFRICA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "african american english",
+    "gullah",
+    "sociolinguistics",
+    "language variation",
+    "middle class",
+    "linguistic camouflage"
+   ]
+  },
+  {
+   "name": "Olesya Kisselev",
+   "summary": "Studies phonology and syntax in multiple languages through comparative analysis.",
+   "summary_zh": "研究多个语言的音系学和句法学。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": [
+     {
+      "code": "R_CROSSLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "phonology",
+    "syntax",
+    "comparative analysis",
+    "languages",
+    "structure"
+   ]
+  }
+ ]
+}

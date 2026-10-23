@@ -1,0 +1,914 @@
+{
+ "slug": "university-of-oregon",
+ "labeled_at": "2026-10-22",
+ "faculty": [
+  {
+   "name": "Guillem Belmar Viernes",
+   "summary": "Studies language revitalization, maintenance, and documentation in minority multilingual contexts through social media and indigenous diaspora research.",
+   "summary_zh": "研究少数语言的复兴、维持和记录，特别是在少数民族多语环境中的社会媒体和土著 diaspora 研究。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_LING_ANTHRO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_DOCUMENTATION",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FIELDWORK",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_ROMANCE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "language revitalization",
+    "language maintenance",
+    "language documentation",
+    "minority multilingualism",
+    "indigenous diaspora",
+    "social media",
+    "mixtec",
+    "p'urhépecha",
+    "basque",
+    "catalan"
+   ]
+  },
+  {
+   "name": "Don Daniels",
+   "summary": "Studies language change, comparative reconstruction, and morphosyntax in Papuan languages through fieldwork and historical analysis.",
+   "summary_zh": "研究语言变化、比较重建和形态句法的音系学和历史语言学。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_HISTORICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FIELDWORK",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_CROSSLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_SE_ASIA_PACIFIC",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "language change",
+    "comparative reconstruction",
+    "morphosyntax",
+    "papuan languages",
+    "fieldwork",
+    "historical analysis"
+   ]
+  },
+  {
+   "name": "Spike Gildea",
+   "summary": "Studies Amazonian languages, particularly Werikyana, through descriptive and documentary fieldwork, and historical syntax and phonology.",
+   "summary_zh": "研究亚马逊地区的语言，尤其是Werikyana语言，通过描述性和文献性的田野工作，以及历史句法学和音系学。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_DOCUMENTATION",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FIELDWORK",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_FIELD_ARCHIVES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_SE_ASIA_PACIFIC",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "werikyana",
+    "cariban",
+    "amazonian",
+    "historical syntax",
+    "phonology",
+    "documentary fieldwork",
+    "tamanaku",
+    "akawaio",
+    "tiriyó"
+   ]
+  },
+  {
+   "name": "Nika Jurov",
+   "summary": "Studies speech and its cognitive and neurological aspects through computational methods.",
+   "summary_zh": "研究语音及其认知和神经方面的特征，采用计算方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "speech",
+    "computational cognitive science",
+    "psycholinguistics",
+    "neuroscience"
+   ]
+  },
+  {
+   "name": "Vsevolod Kapatsinski",
+   "summary": "Studies language change and speech errors using computational models and inferential statistics.",
+   "summary_zh": "研究语言变化和语音错误，使用计算模型和推断统计方法。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "computational learning theory",
+    "neural networks",
+    "prediction error",
+    "particle filter models",
+    "rescorla-wagner",
+    "exemplar models",
+    "language change",
+    "speech errors",
+    "logistic regression",
+    "inferential statistics"
+   ]
+  },
+  {
+   "name": "Kris Kyle",
+   "summary": "Studies language teaching methods through various pedagogical approaches.",
+   "summary_zh": "研究语言教学方法，采用多种教学策略。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INSTITUTIONS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "language teaching",
+    "pedagogical approaches",
+    "professor",
+    "linguistics"
+   ]
+  },
+  {
+   "name": "Gabriela Pérez Báez",
+   "summary": "Studies linguistic diversity, multi/plurilingualism, and Indigenous language revitalization.",
+   "summary_zh": "研究语言多样性、多语现象以及土著语言的复兴。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_DOCUMENTATION",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FIELDWORK",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_FIELD_ARCHIVES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "linguistic diversity",
+    "multi/plurilingualism",
+    "indigenous languages",
+    "language revitalization",
+    "linguistic rights"
+   ]
+  },
+  {
+   "name": "Melissa Redford",
+   "summary": "Studies spoken language production in children, focusing on speech sound representations and their development.",
+   "summary_zh": "研究儿童口语生成，关注语音表征及其发展。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_DEVELOPMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CHILDREN",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "speech production",
+    "speech sound representations",
+    "child language acquisition",
+    "developmental perspective",
+    "speech planning & production"
+   ]
+  },
+  {
+   "name": "Nathaniel Sims",
+   "summary": "Studies tone and vowel harmony in Rma through diachronic and phonological analysis.",
+   "summary_zh": "研究藏缅语系语言（如Rma）的音系学和音节和谐现象。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": [
+     {
+      "code": "R_SE_ASIA_PACIFIC",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "R_CROSSLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "rma",
+    "tone",
+    "vowel harmony",
+    "diachronic",
+    "phonological"
+   ]
+  },
+  {
+   "name": "Julie Sykes",
+   "summary": "Studies language teaching methods and second language acquisition.",
+   "summary_zh": "研究语言教学方法和第二语言习得。",
+   "confidence": "low",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FIELDWORK",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_DEVELOPMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "language teaching",
+    "second language acquisition",
+    "applied linguistics"
+   ]
+  },
+  {
+   "name": "Rachel Weissler",
+   "summary": "Studies how linguistic experiences shape behavior, perception, and ideology through EEG, psycholinguistic surveys, and media analysis, focusing on African American English and raciolinguistic emotion.",
+   "summary_zh": "研究语言经验如何塑造行为、感知和意识形态，通过EEG、语义学调查和媒体分析，重点关注非裔美国英语和种族语言情感感知。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_NEURO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_NEURAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AFRICA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "linguistic experiences",
+    "eeg",
+    "psycholinguistic surveys",
+    "media analysis",
+    "african american english",
+    "raciolinguistic emotion perception"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,579 @@
+{
+ "slug": "university-of-texas-at-arlington",
+ "labeled_at": "2026-10-23",
+ "faculty": [
+  {
+   "name": "Marie Bissell",
+   "summary": "Studies phonological variation and change through laboratory methods.",
+   "summary_zh": "研究音系变异和社会音变的实验室方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "phonology",
+    "variation",
+    "change",
+    "laboratory",
+    "methods"
+   ]
+  },
+  {
+   "name": "Ivy Hauser",
+   "summary": "Studies phonetics, phonology, and their interface through phonological contrast and variation.",
+   "summary_zh": "研究音系学和音位学及其界面，以及音位对比和音变。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "phonetics",
+    "phonology",
+    "phonetics-phonology interface",
+    "phonological contrast",
+    "phonetic variation"
+   ]
+  },
+  {
+   "name": "Andrew Hippisley",
+   "summary": "Studies phonology and syntax in African languages through comparative analysis.",
+   "summary_zh": "研究非洲语言的音系学和句法学。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": [
+     {
+      "code": "R_AFRICA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "phonology",
+    "syntax",
+    "african languages",
+    "comparative analysis"
+   ]
+  },
+  {
+   "name": "Madeleine Oakley",
+   "summary": "Studies acoustic and articulatory phonetics through speech anatomy.",
+   "summary_zh": "研究语音声学和发音解剖学。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_INSTRUMENTAL_PHON",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_ARTICULATORY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "acoustic phonetics",
+    "articulatory phonetics",
+    "speech anatomy"
+   ]
+  },
+  {
+   "name": "Joseph Sabbagh",
+   "summary": "Studies syntax, morphology, and clause structure in Austronesian languages through typological analysis.",
+   "summary_zh": "研究南岛语系的语言句法学、形态学及子句结构，通过类型学分析进行研究。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_MORPHOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_TYPOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_HISTORICAL_TEXTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": [
+     {
+      "code": "R_SE_ASIA_PACIFIC",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "syntax",
+    "morphology",
+    "austronesian languages",
+    "tagalog",
+    "clause structure",
+    "typology",
+    "coordination",
+    "constituent sharing"
+   ]
+  },
+  {
+   "name": "Peggy Semingson",
+   "summary": "Studies digital pedagogies, online learning, literacy teacher education, bilingualism, and ESL.",
+   "summary_zh": "研究数字教学法、在线学习、读写教师教育、双语教育和英语作为第二语言。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [],
+    "data": [],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "digital pedagogies",
+    "online learning",
+    "literacy teacher education",
+    "bilingualism",
+    "esl"
+   ]
+  },
+  {
+   "name": "Laurel Smith Stvan",
+   "summary": "Studies semantics, pragmatics, and corpus linguistics through analysis of vocabulary acquisition and health discourse.",
+   "summary_zh": "研究语义学、语用学和语料库语言学，通过分析词汇习得和健康话语。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PRAGMATICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_CORPUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "semantics",
+    "pragmatics",
+    "corpus linguistics",
+    "vocabulary acquisition",
+    "health discourse"
+   ]
+  },
+  {
+   "name": "Jeffrey Witzel",
+   "summary": "Studies psycholinguistics and neurolinguistics, focusing on second language acquisition and teaching methods.",
+   "summary_zh": "研究心理语言学和神经语言学，关注第二语言习得和教学方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "psycholinguistics",
+    "neurolinguistics",
+    "second language acquisition",
+    "teaching",
+    "research methods"
+   ]
+  },
+  {
+   "name": "Naoko Ouchi Witzel",
+   "summary": "Studies bilingualism, second language processing, psycholinguistics, and language acquisition through various methods.",
+   "summary_zh": "研究双语主义、第二语言处理、心理语言学和语言习得的各种方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_L2_BILINGUALISM",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_CHILDREN",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "bilingualism",
+    "second language processing",
+    "psycholinguistics",
+    "language acquisition",
+    "methods"
+   ]
+  }
+ ]
+}

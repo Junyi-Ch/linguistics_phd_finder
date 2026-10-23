@@ -1,0 +1,2142 @@
+{
+ "slug": "carnegie-mellon-university",
+ "labeled_at": "2026-10-22",
+ "faculty": [
+  {
+   "name": "Yonatan Bisk",
+   "summary": "Studies embodied AI, language grounding, and language-conditioned robotics to enable machines to interpret and act upon language in physical and social environments.",
+   "summary_zh": "研究具身人工智能、语言接地和语言条件化机器人学，以使机器能够理解和在物理和社会环境中执行语言。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SIGN_GESTURE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_AI_SYSTEMS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_INSTITUTIONS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "embodied ai",
+    "language grounding",
+    "language-conditioned robotics",
+    "machine learning",
+    "vision-language",
+    "robotics",
+    "multimodal",
+    "computer vision",
+    "natural language processing"
+   ]
+  },
+  {
+   "name": "Ralf Brown",
+   "summary": "Develops machine translation and computational linguistics tools, focusing on example-based machine translation and low-resource languages.",
+   "summary_zh": "开发机器翻译和计算语言学工具，专注于基于例句的机器翻译和低资源语言。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_MORPHOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "machine translation",
+    "example-based machine translation",
+    "computational linguistics",
+    "low-resource languages",
+    "corpus linguistics",
+    "language identification",
+    "text mining",
+    "information extraction"
+   ]
+  },
+  {
+   "name": "Mona Diab",
+   "summary": "Studies trustworthy NLP and responsible AI, particularly in low-resource and multilingual contexts, through controllable natural language generation and cross-lingual processing.",
+   "summary_zh": "研究可信赖的自然语言处理和负责任的人工智能，特别是在低资源和多语言环境中的可控自然语言生成和跨语言处理。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "trustworthy nlp",
+    "responsible ai",
+    "controllable natural language generation",
+    "cross-lingual processing",
+    "low-resource",
+    "multilingual",
+    "machine translation",
+    "bias",
+    "compliance"
+   ]
+  },
+  {
+   "name": "Robert Frederking",
+   "summary": "Develops machine translation and multilingual information processing techniques, integrating resources and deploying speech-to-speech translation systems.",
+   "summary_zh": "开发机器翻译和多语言信息处理技术，整合资源并部署语音到语音的翻译系统。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_CORPUS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_MIDDLE_EAST",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "machine translation",
+    "multilingual information processing",
+    "speech-to-speech translation",
+    "diplomat",
+    "tongues",
+    "translingual information retrieval",
+    "dependency parsing",
+    "spoken dialogue system"
+   ]
+  },
+  {
+   "name": "Daniel Fried",
+   "summary": "Studies conversational AI and code generation to enable better human-computer interaction through pragmatic and multimodal approaches.",
+   "summary_zh": "研究会话人工智能和代码生成，通过语用和多模态方法增强人机交互。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_DISCOURSE_INTERACTION",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_AI_SYSTEMS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_CROSSLING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "conversational ai",
+    "code generation",
+    "pragmatics",
+    "multimodal",
+    "llm agents"
+   ]
+  },
+  {
+   "name": "Daphne Ippolito",
+   "summary": "Studies the limitations and privacy/security issues of large language models in text generation.",
+   "summary_zh": "研究大型语言模型在文本生成中的局限性和隐私/安全问题。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_AI_SYSTEMS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "large language models",
+    "text generation",
+    "privacy",
+    "security",
+    "training data",
+    "evaluation",
+    "reasoning",
+    "benchmarks",
+    "multilingual",
+    "bias"
+   ]
+  },
+  {
+   "name": "Alon Lavie",
+   "summary": "Studies multilingual NLP, machine translation, and speech translation with a focus on evaluation, fairness, and ethics.",
+   "summary_zh": "研究多语言自然语言处理、机器翻译和语音翻译，并关注评估、公平性和伦理问题。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "multilingual nlp",
+    "machine translation",
+    "speech translation",
+    "evaluation",
+    "fairness",
+    "ethics"
+   ]
+  },
+  {
+   "name": "Lei Li",
+   "summary": "Develops scalable multilingual machine translation systems and AI for drug discovery and protein design.",
+   "summary_zh": "开发可扩展的多语言机器翻译系统和药物发现及蛋白质设计的AI。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SIGN_GESTURE",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_ML_LLM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INSTITUTIONS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "multilingual translation",
+    "large language models",
+    "drug discovery",
+    "protein design",
+    "machine translation",
+    "ai security"
+   ]
+  },
+  {
+   "name": "Louis-Philippe Morency",
+   "summary": "Studies human communication dynamics and multimodal machine learning to build computational models for social interaction analysis.",
+   "summary_zh": "研究人类交际动力学和多模态机器学习，构建社会互动分析的计算模型。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_VIDEO_MULTIMODAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "human communication dynamics",
+    "multimodal machine learning",
+    "computational models",
+    "social interaction",
+    "machine learning",
+    "dialogue processing",
+    "nonverbal communication",
+    "clinical interviews",
+    "depression assessment",
+    "video understanding"
+   ]
+  },
+  {
+   "name": "Graham Neubig",
+   "summary": "Develops natural language processing technologies, focusing on core NLP, multimodal language models, and unsupervised learning.",
+   "summary_zh": "开发自然语言处理技术，重点关注核心自然语言处理、多模态语言模型和无监督学习。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_ML_LLM",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_ONLINE",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "natural language processing",
+    "core nlp",
+    "multimodal",
+    "unsupervised learning",
+    "machine translation",
+    "language understanding",
+    "speech",
+    "data-driven",
+    "learning",
+    "ai agents"
+   ]
+  },
+  {
+   "name": "Eric Nyberg",
+   "summary": "Develops natural language processing systems for education and information retrieval through question answering and text mining.",
+   "summary_zh": "开发自然语言处理系统，用于教育和信息检索，包括问题回答和文本挖掘。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_ML_LLM",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "natural language processing",
+    "information retrieval",
+    "question answering",
+    "text mining",
+    "education"
+   ]
+  },
+  {
+   "name": "Bhiksha Raj",
+   "summary": "Studies machine learning, speech processing, and multimodal computing with applications in audio analysis and privacy-preserving models.",
+   "summary_zh": "研究机器学习、语音处理和多模态计算，应用于音频分析和隐私保护模型。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_ML_LLM",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_ONLINE",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_AI_SYSTEMS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "machine learning",
+    "speech processing",
+    "multimodal computing",
+    "privacy",
+    "robust speech recognition",
+    "neural network architectures"
+   ]
+  },
+  {
+   "name": "Carolyn P. Rosé",
+   "summary": "Studies the social and pragmatic nature of conversation to build computational systems that enhance conversation efficacy between people and computers.",
+   "summary_zh": "研究会话的社会和语用性质，以构建提高人与计算机之间会话有效性的计算系统。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ENGLISH",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "conversation",
+    "computational systems",
+    "machine learning",
+    "multimodal",
+    "collaborative learning",
+    "ai education",
+    "sociolinguistics",
+    "discourse analysis",
+    "llms",
+    "code"
+   ]
+  },
+  {
+   "name": "Maarten Sap",
+   "summary": "Studies social biases and ethical implications in language technology through conversational AI and narrative analysis.",
+   "summary_zh": "研究语言技术中的社会偏见和伦理影响，通过对话式人工智能和叙事分析。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_ONLINE",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_CLINICAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "social biases",
+    "conversational ai",
+    "narrative analysis",
+    "ethics",
+    "ai moderation",
+    "toxic language",
+    "fairness",
+    "ai agents",
+    "social intelligence",
+    "ai explanations"
+   ]
+  },
+  {
+   "name": "Emma Strubell",
+   "summary": "Studies natural language processing for efficient and equitable AI through machine annotation and model assessment.",
+   "summary_zh": "研究高效和公平的自然语言处理（NLP），通过机器注释和模型评估。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_ML_LLM",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_INSTITUTIONS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "natural language processing",
+    "machine annotation",
+    "model assessment",
+    "equitable ai",
+    "spreadsheet"
+   ]
+  },
+  {
+   "name": "Alexander Waibel",
+   "summary": "Studies machine learning, speech processing, and spoken language translation through neural networks and multimodal computing.",
+   "summary_zh": "研究机器学习、语音处理和口语翻译，通过神经网络和多模态计算。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_NEUROLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_NEURO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_ONLINE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INSTITUTIONS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "machine learning",
+    "speech processing",
+    "spoken language translation",
+    "neural networks",
+    "multimodal computing"
+   ]
+  },
+  {
+   "name": "Shinji Watanabe",
+   "summary": "Studies speech processing, including speech recognition, translation, and enhancement through neural models and open-source toolkits.",
+   "summary_zh": "研究语音处理，包括语音识别、翻译和增强，通过神经模型和开源工具包。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "speech processing",
+    "speech recognition",
+    "speech translation",
+    "neural models",
+    "espnet",
+    "speech enhancement",
+    "conversational ai",
+    "open-source toolkit"
+   ]
+  },
+  {
+   "name": "Sean Welleck",
+   "summary": "Develops learning, inference, and evaluation algorithms for large language models, focusing on mathematical reasoning and code generation.",
+   "summary_zh": "开发大型语言模型的学习、推理和评估算法，特别是在数学推理和代码生成方面的应用。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_ML_LLM",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_AI_SYSTEMS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "large language models",
+    "learning",
+    "inference",
+    "evaluation algorithms",
+    "mathematical reasoning",
+    "code generation",
+    "neural text generation",
+    "formal theorem proving",
+    "ai agents"
+   ]
+  },
+  {
+   "name": "Chenyan Xiong",
+   "summary": "Studies large language models, information retrieval, and healthcare AI through data-centric approaches and efficient pretraining methods.",
+   "summary_zh": "研究大规模语言模型、信息检索和医疗AI，通过数据导向的方法和高效的预训练技术。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_ML_LLM",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "large language models",
+    "information retrieval",
+    "healthcare ai",
+    "pretraining",
+    "data-centric"
+   ]
+  },
+  {
+   "name": "Yiming Yang",
+   "summary": "Studies machine learning, natural language processing, and large language models through self-alignment, self-refinement, and inference-time reasoning.",
+   "summary_zh": "研究机器学习、自然语言处理和大型语言模型，通过自我对齐、自我完善和推理时的推理进行提升。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_ML_LLM",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "machine learning",
+    "natural language processing",
+    "large language models",
+    "self-alignment",
+    "self-refinement",
+    "inference-time reasoning",
+    "transformer",
+    "neural network",
+    "graph neural networks",
+    "extreme multi-label text classification"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,898 @@
+{
+ "slug": "boston-university",
+ "labeled_at": "2026-10-22",
+ "faculty": [
+  {
+   "name": "Jonathan Barnes",
+   "summary": "Studies the dynamic mappings between acoustic signals and linguistic categories in speech, focusing on prosody and intonation.",
+   "summary_zh": "研究语音信号与语言范畴之间的动态映射，尤其是语调和语调方面的内容。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_GERMANIC",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "prosody",
+    "intonation",
+    "phonetics",
+    "phonology",
+    "acoustic signal",
+    "speech production",
+    "speech perception",
+    "perceptual integration",
+    "prosodic categories",
+    "cross-language typology"
+   ]
+  },
+  {
+   "name": "Elizabeth Coppock",
+   "summary": "Studies semantics of natural language through phenomena like superlatives, object agreement, and cross-linguistic variation in quantity superlatives.",
+   "summary_zh": "研究自然语言语义，包括超级形容词、对象一致性和数量超级形容词的跨语言变体。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PHONETICS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_GERMANIC",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "R_ROMANCE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "R_SLAVIC_E_EUROPE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "semantics",
+    "superlative",
+    "object agreement",
+    "quantity superlatives",
+    "cross-linguistic variation",
+    "hungarian",
+    "definiteness-marking",
+    "ratio",
+    "multiplication",
+    "division"
+   ]
+  },
+  {
+   "name": "Daniel Erker",
+   "summary": "Studies Spanish in Boston, focusing on sociolinguistic behavior and contact-induced language change through fieldwork and analysis.",
+   "summary_zh": "研究波士顿西班牙语的社会语言学行为和接触引起的语言变化，通过实地工作和分析进行研究。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SOCIOLING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_CONTACT_CREOLES",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FIELDWORK",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ROMANCE",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "sociolinguistic behavior",
+    "boston spanish",
+    "contact-induced language change",
+    "fieldwork",
+    "linguistic variation"
+   ]
+  },
+  {
+   "name": "Paul Hagstrom",
+   "summary": "Studies syntax, semantics, and language acquisition through questions and interrogatives.",
+   "summary_zh": "研究句法、语义和语言习得，特别是疑问句和疑问形式。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ENGLISH",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "syntax",
+    "semantics",
+    "language acquisition",
+    "questions",
+    "interrogatives",
+    "definiteness",
+    "negative existentials",
+    "wh-movement"
+   ]
+  },
+  {
+   "name": "Sophie Hao",
+   "summary": "Studies interpretability in NLP through probing, feature attribution, and linguistic evaluation.",
+   "summary_zh": "研究自然语言处理的可解释性，通过探针、特征归因和语言评估方法。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_APPLIED_PEDAGOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "interpretability",
+    "nlp",
+    "probing",
+    "feature attribution",
+    "linguistic evaluation",
+    "neural architectures",
+    "bias",
+    "fairness",
+    "generative linguistics",
+    "syntax"
+   ]
+  },
+  {
+   "name": "Najoung Kim",
+   "summary": "Studies computational semantics/pragmatics and generalization in humans and machine learning models using computational and experimental linguistic methodologies.",
+   "summary_zh": "研究计算语义学/语用学和人类与机器学习模型的一般化，采用计算和实验语言学方法。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "computational semantics",
+    "pragmatics",
+    "generalization",
+    "machine learning",
+    "computational methods",
+    "experimental linguistics",
+    "language models",
+    "feedback",
+    "adjective-noun pairs"
+   ]
+  },
+  {
+   "name": "Kate Lynn Lindsey",
+   "summary": "Studies under-researched languages, particularly the Pahoturi River family, through documentation, phonological analysis, and corpus research.",
+   "summary_zh": "研究巴霍图河语言家族等未充分研究的语言，通过语言记录、音系分析和语料库研究。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_DOCUMENTATION",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_CORPUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_FIELDWORK",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SE_ASIA_PACIFIC",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "pahoturi river language family",
+    "ende",
+    "chuvash",
+    "phonological variation",
+    "corpus-based research",
+    "grammars",
+    "dictionaries",
+    "speaker communities"
+   ]
+  },
+  {
+   "name": "Neil Myler",
+   "summary": "Studies the architecture of grammar, focusing on morphophonology, semantics, and syntax in Quechua and isiXhosa through fieldwork.",
+   "summary_zh": "研究语法结构，主要关注Quechua和isiXhosa中的形态音系学、语义学和句法学，通过田野工作进行探究。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_MORPHOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SYNTAX",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FIELDWORK",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "R_AFRICA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "morphology",
+    "morphophonology",
+    "semantics",
+    "syntax",
+    "quechua",
+    "isixhosa",
+    "fieldwork",
+    "dialects",
+    "exponence",
+    "allomorphy"
+   ]
+  },
+  {
+   "name": "Anthony Yacovone",
+   "summary": "Studies language development and sentence processing using neuroimaging, eye-tracking, and computational modeling.",
+   "summary_zh": "使用神经成像、眼动追踪和计算建模研究语言发展和句子处理。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_L1_ACQUISITION",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_DISCOURSE_INTERACTION",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_NEURO",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EYE_TRACKING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_NEURAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CHILDREN",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "neuroimaging",
+    "eye-tracking",
+    "computational modeling",
+    "language development",
+    "sentence processing",
+    "children",
+    "linguistic forms",
+    "semantic",
+    "predictive coding"
+   ]
+  }
+ ]
+}

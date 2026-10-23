@@ -1,0 +1,1349 @@
+{
+ "slug": "cornell-university",
+ "labeled_at": "2026-10-22",
+ "faculty": [
+  {
+   "name": "Dorit Abusch",
+   "summary": "Studies the semantics and pragmatics of natural language, focusing on tense, presupposition, and visual narratives.",
+   "summary_zh": "研究自然语言的语义和语用学，重点关注时态、预设以及视觉叙事。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PRAGMATICS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_DISCOURSE_INTERACTION",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_ONLINE",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_INSTITUTIONS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "semantics",
+    "pragmatics",
+    "tense",
+    "presupposition",
+    "visual narratives",
+    "film",
+    "possible world semantics",
+    "discourse representation",
+    "co-indexing",
+    "aspect"
+   ]
+  },
+  {
+   "name": "Helena Aparicio",
+   "summary": "Studies how linguistic meaning is processed and understood through experimental and computational methods.",
+   "summary_zh": "研究语言意义的处理和理解，采用实验和计算方法。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": []
+   },
+   "keywords": [
+    "semantics",
+    "pragmatics",
+    "psycholinguistics",
+    "computational models",
+    "visual world paradigm"
+   ]
+  },
+  {
+   "name": "Abigail C Cohn",
+   "summary": "Studies the interaction between phonology and phonetics in Austronesian languages through laboratory phonology, focusing on language use and language shift in Indonesia.",
+   "summary_zh": "研究音系学和音法学之间的互动，特别是在印度尼西亚的澳大利亚语系语言中的实验室音法学，关注语言使用和语言转移问题。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_VARIATIONIST",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_JUDGMENTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SE_ASIA_PACIFIC",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "R_ROMANCE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "R_ENGLISH",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "phonology",
+    "phonetics",
+    "laboratory phonology",
+    "language use",
+    "language shift",
+    "indonesian languages",
+    "austronesian languages",
+    "social factors",
+    "metaphonological judgments",
+    "speech motor control"
+   ]
+  },
+  {
+   "name": "Miloje Despic",
+   "summary": "Studies theoretical syntax, morphology, and semantics, focusing on cross-linguistic variation and the syntax-morphology interface.",
+   "summary_zh": "研究理论句法学、形态学和语义学，关注跨语言变异和句法-形态学界面。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_MORPHOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CHILDREN",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SLAVIC_E_EUROPE",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "syntax",
+    "morphology",
+    "semantics",
+    "cross-linguistic variation",
+    "functional elements",
+    "hybrid agreement",
+    "cheyenne",
+    "serbian",
+    "khalkha mongolian"
+   ]
+  },
+  {
+   "name": "Molly Diesing",
+   "summary": "Studies syntax and the interface between syntax and semantics, focusing on Germanic languages, particularly German and Yiddish, and word order phenomena.",
+   "summary_zh": "研究句法学和句法与语义学的接口，特别是德语和雅利安语，以及词序现象。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_SEMANTICS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_GERMANIC",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "syntax",
+    "semantics",
+    "germanic languages",
+    "yiddish",
+    "word order",
+    "argument structure",
+    "clause structure",
+    "aspect",
+    "extraction phenomena"
+   ]
+  },
+  {
+   "name": "Jennifer Kuo",
+   "summary": "Studies the learning and representation of phonological paradigms, focusing on Austronesian languages through experimental and corpus methods.",
+   "summary_zh": "研究音系学中的模式学习和表示，重点关注通过实验和语料库方法的奥斯特尼语系语言。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONOLOGY",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_CORPUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_SPOKEN_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_SPEECH_COMMUNITIES",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SE_ASIA_PACIFIC",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "R_CHINESE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "phonology",
+    "austronesian languages",
+    "experimental methods",
+    "corpus methods",
+    "cantonese tones",
+    "phonological reanalysis",
+    "markedness",
+    "vowel alternations"
+   ]
+  },
+  {
+   "name": "Sarah Murray",
+   "summary": "Studies the semantics and pragmatics of natural language, focusing on formal representations needed for diverse linguistic structures across grammatically diverse languages.",
+   "summary_zh": "研究自然语言的语义和语用学，关注不同语言结构所需的正式表示形式。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_PRAGMATICS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_COGNITION_PHILOSOPHY",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMP_MODELING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_LEARNER_CHILD",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "semantics",
+    "pragmatics",
+    "evidentiality",
+    "modality",
+    "cheyenne",
+    "algonquian languages",
+    "dynamic semantics",
+    "language documentation",
+    "semantic elicitation",
+    "community-based language work"
+   ]
+  },
+  {
+   "name": "Matilda Prestano",
+   "summary": "Studies ASL linguistics and De'VIA through direct instruction and community building.",
+   "summary_zh": "研究美国手语语言学和De'VIA，通过直接教学和社区建设。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SIGN_GESTURE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "T_SOCIOLING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_ETHNOGRAPHY",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "D_VIDEO_MULTIMODAL",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     },
+     {
+      "code": "S_DEAF_SIGNING",
+      "primary": false,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_SIGN",
+      "primary": true,
+      "sources": [
+       "department_profile"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "asl",
+    "de'via",
+    "linguistics",
+    "community building",
+    "direct instruction"
+   ]
+  },
+  {
+   "name": "Mats Rooth",
+   "summary": "Studies the semantics of focus, ellipsis, and presupposition using computational and probabilistic models.",
+   "summary_zh": "研究焦点、省略和预设的语义，使用计算和概率模型。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SEMANTICS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": [
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "focus",
+    "ellipsis",
+    "presupposition",
+    "computational linguistics",
+    "semantics",
+    "phonology",
+    "phonetics",
+    "finite state models",
+    "prosody",
+    "picture descriptions"
+   ]
+  },
+  {
+   "name": "Samuel Tilsen",
+   "summary": "Studies speech production and phonological change through perception and articulation analysis.",
+   "summary_zh": "研究语音产生和音系变化，通过感知和发音分析进行探索。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PHONETICS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_INSTRUMENTAL_PHON",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_SPEECH_AUDIO",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_ARTICULATORY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": []
+   },
+   "keywords": [
+    "speech production",
+    "phonological change",
+    "perception",
+    "articulation",
+    "accented speech",
+    "speech rhythm",
+    "articulation dynamics"
+   ]
+  },
+  {
+   "name": "Marten van Schijndel",
+   "summary": "Studies linguistic processing using computational models and psycholinguistic methodologies, comparing human and neural network responses.",
+   "summary_zh": "研究语言处理的语言学表示，使用计算建模和心理语言学方法，比较人类和神经网络的反应。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_PSYCHOLING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_COMPUTATIONAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_COMP_MODELING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_NEURO",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_NEURAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_EXPERIMENTAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_CLINICAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_ONLINE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ENGLISH",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "computational modelling",
+    "psycholinguistics",
+    "linguistic processing",
+    "neural network",
+    "semantic proto-role",
+    "code-switching",
+    "speaker design",
+    "cognitive representations",
+    "sentence processing",
+    "word order"
+   ]
+  },
+  {
+   "name": "Michael L Weiss",
+   "summary": "Studies the historical phonology and morphology of Greek, Latin, and Sabellic languages, as well as Tocharian and Old Irish.",
+   "summary_zh": "研究希腊语、拉丁语和萨贝利克语言的历史音系和形态学，以及吐火罗语和古爱尔兰语。",
+   "confidence": "high",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_HISTORICAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PHONOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_MORPHOLOGY",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_FORMAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_HISTORICAL_TEXTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [],
+    "region": [
+     {
+      "code": "R_CROSSLING",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "R_CLASSICAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "indoeuropean linguistics",
+    "historical phonology",
+    "morphology",
+    "greek",
+    "latin",
+    "sabellic languages",
+    "tocharian",
+    "old irish"
+   ]
+  },
+  {
+   "name": "John B. Whitman",
+   "summary": "Studies the limits and predictors of language variation, focusing on syntax and historical linguistics of East Asian languages.",
+   "summary_zh": "研究语言变异的限度和预测因素，重点关注东亚语言的句法学和历史语言学。",
+   "confidence": "medium",
+   "labels": {
+    "topic": [
+     {
+      "code": "T_SYNTAX",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "T_PSYCHOLING",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "approach": [
+     {
+      "code": "A_EXPERIMENTAL",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_FORMAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "A_COMPARATIVE_HISTORICAL",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "data": [
+     {
+      "code": "D_JUDGMENTS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_MODEL_OUTPUTS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "D_TEXT_CORPORA",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "setting": [
+     {
+      "code": "S_L2_LEARNERS",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "S_BILINGUAL_HERITAGE",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ],
+    "region": [
+     {
+      "code": "R_ENGLISH",
+      "primary": true,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     },
+     {
+      "code": "R_AMERICAS_INDIGENOUS",
+      "primary": false,
+      "sources": [
+       "department_profile",
+       "publications"
+      ]
+     }
+    ]
+   },
+   "keywords": [
+    "语言变异",
+    "句法学",
+    "历史语言学",
+    "日本语",
+    "韩国语",
+    "语法结构",
+    "语言获得",
+    "语义学"
+   ]
+  }
+ ]
+}
