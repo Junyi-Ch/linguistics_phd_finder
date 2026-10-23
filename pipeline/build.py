@@ -16,7 +16,24 @@ from pathlib import Path
 from datetime import date
 
 ROOT = Path(__file__).resolve().parents[1]
-JUNK_AREA = re.compile(r"^(links?|about\b.*|contact.*|cv|curriculum vitae|e-?mail.*|website|home ?page|publications?|news|courses?|teaching|bio(graphy)?|profile|more|read more|office hours?|education|selected publications|research|lab|phone\b.*|google scholar)$|@|https?:", re.I)
+JUNK_AREA = re.compile(
+    r"^(links?|about\b.*|contact.*|cv|curriculum vitae|e-?mail.*|website|home ?page|publications?|news|courses?|teaching|"
+    r"bio(graphy)?|profile|more|read more|more information|office hours?|education|selected publications|recent publications|"
+    r"research|research (description|statement|interests?)|lab|phone\b.*|google scholar|academic programs|class times|"
+    r"faculty bookshelf|upcoming events|third floor|board certifications?|graduate linguistics|"
+    r"(assistant|associate|full|visiting|adjunct)?\s*professor.*)$"
+    r"|@|https?:|\d{3}[-.]\d{3,4}"
+    r"|\b(ph\.?\s?d|m\.?a|m\.?s|b\.?a|b\.?s|b\.?e|mba|m\.?phil|ed\.?d|bachelor|master'?s|doctorate|dissertation|residency|honou?rs|fellow)\b"
+    r"|\b(universit\w*|college|institute|school|academy|seminary|department|dept)\b"
+    r"|\b(spring|fall|summer|winter)\s+(19|20)\d\d|\b(19|20)\d\d\b"
+    r"|(?<![Ll])\d|^\W|\b(areas?|courses?|offered|office|contact|credits?|level|building|room|conference|semester|syllabus|cv|interests?|teaching)\b", re.I)
+
+def clean_areas(items):
+    """Department 'research areas' sometimes come from the wrong part of a page (degrees, dates, menus):
+    drop junk items, and drop the whole list when much of it is junk."""
+    items = [x.strip(" .;:()") for x in items or [] if x and x.strip()]
+    good = [x for x in items if not JUNK_AREA.search(x) and 2 < len(x) < 60]
+    return good if items and len(good) >= 0.6 * len(items) else []
 # evidence that a person's own research is about language (checked on the label summary + keywords)
 LANG_RESEARCH = re.compile(r"lingu|languag|speech|spoken|phonet|phonolog|morpholog|syntax|syntactic|semantic|pragmatic|grammar|"
                            r"lexic|\bwords?\b|sentence|bilingual|multilingual|acquisition|literacy|\bl2\b|\besl\b|tesol|"
@@ -138,7 +155,7 @@ def main():
                 "rank": f["rank"], "title": f.get("title") or f["rank"],
                 "profile": f.get("profile_url"), "site": f.get("personal_url") or None,
                 "scholar": f.get("google_scholar_url") or None,
-                "areas": [x for x in (f.get("research_areas") or []) if x and not JUNK_AREA.search(x.strip())][:8],
+                "areas": clean_areas(f.get("research_areas"))[:8],
                 "summary": (lab or {}).get("summary") or "", "summary_zh": (lab or {}).get("summary_zh") or "",
                 "conf": (lab or {}).get("confidence") or "low", "labels": lab_out,
                 "kw": [k.lower() for k in ((lab or {}).get("keywords") or [])][:12],
