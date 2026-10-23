@@ -4,12 +4,14 @@ import faculty from '../../data/faculty.json';
 import programs from '../../data/programs.json';
 import tax from '../../data/taxonomy.json';
 import { REPO_URL } from '../../lib/site';
+import { relatedFor } from '../../lib/network';
 import { DIMS, initials, type Faculty, type Program, type Taxonomy, avatar } from '../../lib/data';
 export function getStaticPaths() { return (faculty as Faculty[]).map((f) => ({ params: { slug: f.id }, props: { f } })); }
 const { f } = Astro.props as { f: Faculty };
 const base = import.meta.env.BASE_URL;
 const T = tax as unknown as Taxonomy;
 const p = (programs as Program[]).find((x) => x.slug === f.u);
+const rel = relatedFor(f.id).slice(0, 6);
 const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correction: ' + f.name + ' (' + (p?.short || f.u) + ')')}&body=${encodeURIComponent('Page: ' + base + 'faculty/' + f.id + '/\n\nWhat is wrong:\n')}`;
 ---
 <Base title={f.name} description={`${f.name}, ${f.rank}, ${f.dept}, ${p?.name || ''}. ${f.summary}`}>
@@ -32,6 +34,16 @@ const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correctio
     <div>
       {f.summary && <p class="lede" style="font-size:1.1rem"><span data-lang-only="en">{f.summary}</span><span data-lang-only="zh">{f.summary_zh || f.summary}</span></p>}
       {f.areas.length > 0 && <section style="margin-top:22px"><h2 class="sec-h" data-i18n="research_areas">Research areas (from the department)</h2><div class="chips" style="margin-top:8px">{f.areas.map((a) => <span class="chip">{a}</span>)}</div></section>}
+      {rel.length > 0 && <section class="related">
+        <h2 class="sec-h" data-i18n="related_h">Similar research</h2>
+        <p class="small muted" data-i18n="related_lede">Faculty at any university whose research profile is closest to this one.</p>
+        <ul class="rel-list">{rel.map((r) => (
+          <li><a href={`${base}faculty/${r.f.id}/`}>{r.f.name}</a> <span class="muted">· {r.p?.short || r.f.u}</span>
+            {r.shared.length > 0 && <div class="small muted"><span data-i18n="related_both">Both:</span> {r.shared.slice(0, 3).map((c, k) => <>{k > 0 && ' · '}<span data-lang-only="en">{T.dimensions.topic.labels_short[c]}</span><span data-lang-only="zh">{T.dimensions.topic.labels_short_zh[c]}</span></>)}</div>}
+          </li>))}
+        </ul>
+        <p class="small" style="margin-top:10px"><a href={`${base}network/?p=${f.id}`} data-i18n="related_map">See on the network map</a> →</p>
+      </section>}
     </div>
     <aside class="panel" style="align-self:start">
       <h2 class="sec-h" data-i18n="labels_title">Research labels</h2>
@@ -46,6 +58,10 @@ const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correctio
   <style is:global>
     .fgrid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; margin-top: 26px; align-items: start; }
     @media (max-width: 860px) { .fgrid { grid-template-columns: 1fr; } }
+    .related { margin-top: 28px; }
+    .rel-list { list-style: none; margin: 10px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px 20px; }
+    .rel-list a { font-weight: 600; color: var(--ink); text-decoration: none; }
+    .rel-list a:hover { color: var(--action-text); }
   </style>
   <script>
     import { bindSaveButtons } from '../../lib/ui';

@@ -14,10 +14,12 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
-    "astro": "^5.18.2",
-    "leaflet": "^1.9.4",
     "@fontsource-variable/geist": "^5.3.0",
     "@fontsource-variable/geist-mono": "^5.3.0",
-    "@fontsource/noto-sans": "^5.3.0"
+    "@fontsource/noto-sans": "^5.3.0",
+    "astro": "^5.18.2",
+    "d3-force": "^3.0.0",
+    "leaflet": "^1.9.4",
+    "umap-js": "^1.4.0"
   }
 }

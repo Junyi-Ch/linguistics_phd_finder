@@ -74,7 +74,8 @@ def short_name(u):
          "University of Tennessee, Knoxville": "Tennessee", "Texas A&M University": "Texas A&M",
          "North Carolina State University": "NC State", "University of Colorado Boulder": "CU Boulder",
          "Louisiana State University": "LSU", "Georgia State University": "Georgia State",
-         "University of Hawaii at Manoa": "Hawaiʻi", "University of Nebraska–Lincoln": "Nebraska"}
+         "University of Hawaii at Manoa": "Hawaiʻi", "University of Nebraska–Lincoln": "Nebraska",
+         "University of California, Berkeley": "UC Berkeley", "University of California, Santa Cruz": "UC Santa Cruz", "University of California, Irvine": "UC Irvine", "New York University": "NYU", "City University of New York Graduate Center": "CUNY Graduate Center", "Indiana University Bloomington": "Indiana", "Boston University": "Boston University", "University of Texas at Arlington": "UT Arlington", "University of Washington": "U of Washington"}
     if u in m: return m[u]
     u2 = re.sub(r"^(The )?University of ", "", u)
     u2 = re.sub(r"^(.*?) University$", r"\1", u2)

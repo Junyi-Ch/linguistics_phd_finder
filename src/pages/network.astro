@@ -1,0 +1,365 @@
+---
+import Base from '../layouts/Base.astro';
+import programs from '../data/programs.json';
+import { GROUPS, type Program } from '../lib/data';
+const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name })).sort((a, b) => a.name.localeCompare(b.name));
+---
+<Base title="Faculty network" description="Browse linguistics faculty as a map: people whose research is similar sit close together.">
+  <section class="net-head">
+    <p class="tag-ipa" aria-hidden="true">/ˈnɛtwɝk/</p>
+    <h1 data-i18n="net_h1">Faculty network</h1>
+    <p class="lede" data-i18n="net_lede">Each dot is a faculty member. People whose research is similar sit close together and are linked. Click someone to see who works on related questions, at any university.</p>
+  </section>
+
+  <div class="net-tools">
+    <div class="net-find">
+      <input class="input" id="net-q" type="search" list="net-names" autocomplete="off" placeholder="Find a person" data-i18n="net_find" data-i18n-attr="placeholder" aria-label="Find a person" />
+      <datalist id="net-names"></datalist>
+    </div>
+    <select class="input" id="net-u" aria-label="University">
+      <option value="" data-i18n="net_all_unis">All universities</option>
+      {progs.map((p) => <option value={p.slug}>{p.name}</option>)}
+    </select>
+    <span class="small muted" id="net-count"></span>
+  </div>
+  <div class="net-legend" id="net-legend" role="group" aria-label="Main subfield">
+    <span class="small muted" data-i18n="net_color">Colour = main subfield</span>
+    {GROUPS.map((g, i) => (
+      <button type="button" class="lg" data-g={i} aria-pressed="true"><i style={`background:var(--g${i})`}></i><span data-lang-only="en">{g.en}</span><span data-lang-only="zh">{g.zh}</span></button>
+    ))}
+  </div>
+
+  <div class="net-wrap">
+    <div class="net-stage" id="stage">
+      <canvas id="cv" aria-label="Map of faculty by research similarity" role="img"></canvas>
+      <div class="net-tip" id="tip" hidden></div>
+      <div class="net-zoom">
+        <button type="button" id="zin" aria-label="Zoom in">+</button>
+        <button type="button" id="zout" aria-label="Zoom out">−</button>
+        <button type="button" id="zfit" aria-label="Show everyone" data-i18n="net_fit" data-i18n-attr="aria-label">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+        </button>
+      </div>
+      <p class="net-status small muted" id="net-status" data-i18n="net_loading">Loading the map…</p>
+    </div>
+    <aside class="panel net-panel" id="panel" aria-live="polite">
+      <div id="panel-empty">
+        <h2 class="sec-h" data-i18n="net_how_h">How to read the map</h2>
+        <ul class="net-howto">
+          <li data-i18n="net_how1">Click a dot to see that person and the eight researchers whose work is closest to theirs.</li>
+          <li data-i18n="net_how2">Drag to move, scroll or pinch to zoom. Pick a university to highlight its faculty.</li>
+          <li data-i18n="net_how3">Distance shows research similarity, read from public profiles. It is not a list of collaborators.</li>
+        </ul>
+      </div>
+      <div id="panel-person" hidden></div>
+    </aside>
+  </div>
+</Base>
+
+<style is:global>
+  :root {
+    --g0: #2a78d6; --g1: #eb6834; --g2: #1baf7a; --g3: #eda100; --g4: #e87ba4; --g5: #008300; --g6: #6250d6; --g7: #e34948; --g8: #a3a39b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --g0: #3987e5; --g1: #d95926; --g2: #199e70; --g3: #c98500; --g4: #d55181; --g5: #008300; --g6: #9085e9; --g7: #e66767; --g8: #6b6b65; }
+  }
+  :root[data-theme="dark"] { --g0: #3987e5; --g1: #d95926; --g2: #199e70; --g3: #c98500; --g4: #d55181; --g5: #008300; --g6: #9085e9; --g7: #e66767; --g8: #6b6b65; }
+
+  .net-head { display: grid; gap: 14px; justify-items: start; padding: 20px 0 22px; }
+  .net-head .lede { max-width: 62ch; }
+  .net-tools { display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center; }
+  .net-find { flex: 1 1 260px; max-width: 380px; }
+  .net-find .input { width: 100%; }
+  #net-u { flex: 0 1 300px; min-width: 0; }
+  .net-legend { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 14px 0 16px; }
+  .net-legend > .small { margin-right: 4px; }
+  .net-legend .lg { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line); background: var(--bg-2); color: var(--ink-2); border-radius: 999px; padding: 5px 11px 5px 9px; font-size: 0.8125rem; min-height: 32px; cursor: pointer; }
+  .net-legend .lg i { width: 10px; height: 10px; border-radius: 999px; flex: none; }
+  .net-legend .lg[aria-pressed="false"] { color: var(--ink-3); background: transparent; border-style: dashed; }
+  .net-legend .lg[aria-pressed="false"] i { opacity: 0.25; }
+  .net-wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 20px; align-items: start; }
+  .net-stage { position: relative; height: min(72vh, 760px); min-height: 420px; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-xl); overflow: hidden; }
+  .net-stage canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+  .net-stage canvas.dragging { cursor: grabbing; }
+  .net-stage canvas.pointing { cursor: pointer; }
+  .net-tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg-2); font-size: 0.8125rem; padding: 6px 9px; border-radius: 8px; max-width: 260px; line-height: 1.35; transform: translate(12px, -50%); }
+  .net-tip b { font-weight: 600; }
+  .net-zoom { position: absolute; right: 12px; bottom: 12px; display: grid; gap: 4px; }
+  .net-zoom button { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--line); background: var(--bg-2); color: var(--ink-2); border-radius: 10px; font-size: 1.1rem; cursor: pointer; }
+  .net-zoom button:hover { border-color: var(--line-2); color: var(--ink); }
+  .net-status { position: absolute; left: 14px; top: 12px; margin: 0; }
+  .net-panel { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow: auto; }
+  .net-howto { margin: 10px 0 0; padding-left: 18px; display: grid; gap: 8px; color: var(--ink-2); font-size: 0.92rem; }
+  .np-meta { font-size: 0.8125rem; color: var(--ink-3); }
+  .np-name { font-size: 1.25rem; margin-top: 4px; }
+  .np-name a { color: var(--ink); text-decoration: none; }
+  .np-name a:hover { color: var(--action-text); }
+  .np-sum { margin-top: 10px; color: var(--ink-2); font-size: 0.92rem; }
+  .np-actions { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .np-sub { margin-top: 20px; }
+  .nb { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 2px; }
+  .nb button { width: 100%; text-align: left; display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 4px 10px; align-items: baseline; padding: 8px 8px; border: 0; background: transparent; border-radius: 10px; color: var(--ink); cursor: pointer; font: inherit; }
+  .nb button:hover, .nb button:focus-visible { background: var(--bg-3); }
+  .nb i { width: 9px; height: 9px; border-radius: 999px; transform: translateY(-1px); }
+  .nb .nm { font-weight: 600; font-size: 0.92rem; }
+  .nb .sub { grid-column: 2; font-size: 0.8125rem; color: var(--ink-3); }
+  @media (max-width: 900px) {
+    .net-wrap { grid-template-columns: 1fr; }
+    .net-panel { position: static; max-height: none; }
+    .net-stage { height: 64vh; min-height: 360px; }
+  }
+</style>
+
+<script>
+  import { getLang, t } from '../lib/i18n';
+  import { bindSaveButtons } from '../lib/ui';
+  import { has } from '../lib/shortlist';
+  import { esc, GROUPS } from '../lib/data';
+  import tax from '../data/taxonomy.json';
+
+  type Node = { id: string; n: string; u: string; us: string; r: string; fld: string; g: number; x: number; y: number; s: string; sz: string; k: [number, string[]][] };
+  const base = (import.meta.env.BASE_URL as string).replace(/\/+$/, '') + '/';
+  const TOP = (tax as any).dimensions.topic;
+  const topicName = (c: string) => (getLang() === 'zh' ? TOP.labels_short_zh?.[c] : TOP.labels_short?.[c]) || c;
+
+  const stage = document.getElementById('stage')!;
+  const cv = document.getElementById('cv') as HTMLCanvasElement;
+  const ctx = cv.getContext('2d')!;
+  const tip = document.getElementById('tip')!;
+  const status = document.getElementById('net-status')!;
+  const qIn = document.getElementById('net-q') as HTMLInputElement;
+  const uSel = document.getElementById('net-u') as HTMLSelectElement;
+  const countEl = document.getElementById('net-count')!;
+  const pEmpty = document.getElementById('panel-empty')!;
+  const pPerson = document.getElementById('panel-person')!;
+
+  let N: Node[] = [], E: [number, number][] = [];
+  let W = 0, H = 0, dpr = 1, scale = 1, tx = 0, ty = 0;
+  let sel = -1, hover = -1, uni = '';
+  const groupOn = new Set<number>([-1, ...GROUPS.map((_, i) => i)]);
+  let col: string[] = [], C = { line: '', ink: '', ink3: '', bg: '' };
+
+  const cssv = (n: string) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  function readColors() {
+    col = Array.from({ length: 9 }, (_, i) => cssv('--g' + i));
+    C = { line: cssv('--line-2'), ink: cssv('--ink'), ink3: cssv('--ink-3'), bg: cssv('--bg-2') };
+  }
+  const colorOf = (g: number) => col[g < 0 ? 8 : g];
+  const active = (i: number) => groupOn.has(N[i].g) && (!uni || N[i].u === uni);
+  const neigh = () => (sel >= 0 ? new Set(N[sel].k.map((k) => k[0])) : new Set<number>());
+
+  function resize() {
+    const r = stage.getBoundingClientRect();
+    W = r.width; H = r.height; dpr = window.devicePixelRatio || 1;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    draw();
+  }
+
+  function fit(only?: number[], animate = false) {
+    const idx = only && only.length ? only : N.map((_, i) => i);
+    if (!idx.length) return;
+    let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+    for (const i of idx) { const p = N[i]; x0 = Math.min(x0, p.x); x1 = Math.max(x1, p.x); y0 = Math.min(y0, p.y); y1 = Math.max(y1, p.y); }
+    const pad = 40;
+    const s = Math.min(6, Math.min((W - pad * 2) / Math.max(x1 - x0, 1), (H - pad * 2) / Math.max(y1 - y0, 1)));
+    go(s, W / 2 - ((x0 + x1) / 2) * s, H / 2 - ((y0 + y1) / 2) * s, animate);
+  }
+
+  let anim = 0;
+  function go(s: number, x: number, y: number, animate: boolean) {
+    cancelAnimationFrame(anim);
+    if (!animate || matchMedia('(prefers-reduced-motion: reduce)').matches) { scale = s; tx = x; ty = y; draw(); return; }
+    const s0 = scale, x0 = tx, y0 = ty, t0 = performance.now();
+    const step = (now: number) => {
+      const k = Math.min(1, (now - t0) / 380), e = 1 - Math.pow(1 - k, 3);
+      scale = s0 + (s - s0) * e; tx = x0 + (x - x0) * e; ty = y0 + (y - y0) * e; draw();
+      if (k < 1) anim = requestAnimationFrame(step);
+    };
+    anim = requestAnimationFrame(step);
+  }
+  function zoomAt(px: number, py: number, f: number) {
+    const s = Math.max(0.3, Math.min(14, scale * f));
+    tx = px - ((px - tx) * s) / scale; ty = py - ((py - ty) * s) / scale; scale = s; draw();
+  }
+
+  function label(text: string, x: number, y: number, bold = false) {
+    ctx.font = `${bold ? 600 : 500} 12px "Geist Variable", system-ui, sans-serif`;
+    ctx.lineWidth = 3; ctx.strokeStyle = C.bg; ctx.lineJoin = 'round';
+    ctx.strokeText(text, x, y); ctx.fillStyle = C.ink; ctx.fillText(text, x, y);
+  }
+
+  function draw() {
+    if (!N.length) return;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    const X = (i: number) => N[i].x * scale + tx, Y = (i: number) => N[i].y * scale + ty;
+    const nb = neigh();
+    // links
+    ctx.lineWidth = 1; ctx.strokeStyle = C.line; ctx.globalAlpha = sel >= 0 ? 0.35 : 0.7;
+    ctx.beginPath();
+    for (const [a, b] of E) { if (!active(a) || !active(b)) continue; ctx.moveTo(X(a), Y(a)); ctx.lineTo(X(b), Y(b)); }
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+    if (sel >= 0) {
+      ctx.lineWidth = 1.5; ctx.strokeStyle = C.ink3; ctx.beginPath();
+      for (const j of nb) { ctx.moveTo(X(sel), Y(sel)); ctx.lineTo(X(j), Y(j)); }
+      ctx.stroke();
+    }
+    // dots
+    const r = Math.max(2.4, Math.min(7, 2.6 * Math.sqrt(scale)));
+    for (let i = 0; i < N.length; i++) {
+      const on = active(i), focus = sel < 0 || i === sel || nb.has(i);
+      ctx.globalAlpha = !on ? 0.14 : focus ? 1 : 0.28;
+      ctx.fillStyle = on ? colorOf(N[i].g) : C.ink3;
+      const rr = i === sel ? r + 3 : nb.has(i) ? r + 1.5 : r;
+      ctx.beginPath(); ctx.arc(X(i), Y(i), rr, 0, Math.PI * 2); ctx.fill();
+      if (on && (i === sel || nb.has(i) || i === hover)) { ctx.globalAlpha = 1; ctx.lineWidth = 2; ctx.strokeStyle = i === sel || i === hover ? C.ink : C.bg; ctx.stroke(); }
+    }
+    ctx.globalAlpha = 1;
+    // names: the selected person and their neighbours; a highlighted university; everyone on screen when zoomed in far
+    const named = new Set<number>();
+    if (sel >= 0) { named.add(sel); nb.forEach((j) => named.add(j)); }
+    if (uni) N.forEach((p, i) => { if (active(i)) named.add(i); });
+    if (sel < 0 && scale > 3.2) N.forEach((_, i) => { if (active(i) && X(i) > -20 && X(i) < W + 20 && Y(i) > -20 && Y(i) < H + 20) named.add(i); });
+    if (named.size <= 90) {
+      ctx.textBaseline = 'middle';
+      for (const i of named) if (i !== sel) label(N[i].n, X(i) + r + 4, Y(i));
+      if (sel >= 0) label(N[sel].n, X(sel) + r + 6, Y(sel), true);
+    }
+  }
+
+  function pick(px: number, py: number) {
+    let best = -1, bd = 12 * 12;
+    for (let i = 0; i < N.length; i++) {
+      if (!active(i)) continue;
+      const dx = N[i].x * scale + tx - px, dy = N[i].y * scale + ty - py, d = dx * dx + dy * dy;
+      if (d < bd) { bd = d; best = i; }
+    }
+    return best;
+  }
+
+  function renderPanel() {
+    if (sel < 0) { pEmpty.hidden = false; pPerson.hidden = true; return; }
+    const p = N[sel], zh = getLang() === 'zh';
+    const rank = p.r === 'Faculty' ? t('rank_fac') : p.r;
+    const nbHtml = p.k.map(([j, shared]) => {
+      const q = N[j];
+      const why = shared.length ? (zh ? '都做：' : 'Both: ') + shared.slice(0, 3).map(topicName).map(esc).join(' · ') : '';
+      return `<li><button type="button" data-i="${j}"><i style="background:${colorOf(q.g)}"></i><span class="nm">${esc(q.n)}</span><span class="sub">${esc(q.us)}${why ? ' · ' + why : ''}</span></button></li>`;
+    }).join('');
+    const on = has(p.id);
+    pPerson.innerHTML = `
+      <div class="np-meta">${esc(rank)} · ${esc(p.us)}</div>
+      <h2 class="np-name"><a href="${base}faculty/${p.id}/">${esc(p.n)}</a></h2>
+      ${p.s ? `<p class="np-sum">${esc(zh ? p.sz || p.s : p.s)}</p>` : ''}
+      <div class="np-actions">
+        <a class="btn" href="${base}faculty/${p.id}/">${esc(t('net_open'))}</a>
+        <button type="button" class="btn save-btn" data-save="${p.id}" aria-pressed="${on}">${esc(on ? t('saved') : t('save'))}</button>
+      </div>
+      <div class="np-sub"><h3 class="sec-h">${esc(t('related_h'))}</h3><ol class="nb">${nbHtml}</ol></div>`;
+    pEmpty.hidden = true; pPerson.hidden = false;
+    bindSaveButtons(pPerson);
+  }
+
+  function select(i: number, center = true) {
+    sel = i; hover = -1; tip.hidden = true;
+    renderPanel();
+    const u = new URL(location.href);
+    if (i >= 0) u.searchParams.set('p', N[i].id); else u.searchParams.delete('p');
+    history.replaceState(null, '', u);
+    if (i >= 0 && center) {
+      const idx = [i, ...N[i].k.map((k) => k[0])];
+      fit(idx, true);
+    } else draw();
+  }
+
+  pPerson.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-i]');
+    if (b) select(Number(b.dataset.i));
+  });
+
+  // pointer: drag to pan, pinch / wheel to zoom, tap to select
+  const pts = new Map<number, { x: number; y: number }>();
+  let moved = 0, pinch = 0;
+  const pos = (e: PointerEvent | WheelEvent) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
+  cv.addEventListener('pointerdown', (e) => { cv.setPointerCapture(e.pointerId); pts.set(e.pointerId, pos(e)); moved = 0; if (pts.size === 2) { const [a, b] = [...pts.values()]; pinch = Math.hypot(a.x - b.x, a.y - b.y); } });
+  cv.addEventListener('pointermove', (e) => {
+    const p = pos(e);
+    if (pts.has(e.pointerId)) {
+      const prev = pts.get(e.pointerId)!;
+      if (pts.size === 1) {
+        tx += p.x - prev.x; ty += p.y - prev.y; moved += Math.abs(p.x - prev.x) + Math.abs(p.y - prev.y);
+        if (moved > 4) cv.classList.add('dragging');
+        pts.set(e.pointerId, p); tip.hidden = true; draw(); return;
+      }
+      pts.set(e.pointerId, p);
+      const [a, b] = [...pts.values()], d = Math.hypot(a.x - b.x, a.y - b.y);
+      if (pinch) zoomAt((a.x + b.x) / 2, (a.y + b.y) / 2, d / pinch);
+      pinch = d; moved = 99; return;
+    }
+    if (e.pointerType !== 'mouse') return;
+    const h = pick(p.x, p.y);
+    cv.classList.toggle('pointing', h >= 0);
+    if (h !== hover) { hover = h; draw(); }
+    if (h >= 0) { tip.innerHTML = `<b>${esc(N[h].n)}</b><br>${esc(N[h].us)}`; tip.style.left = p.x + 'px'; tip.style.top = p.y + 'px'; tip.hidden = false; }
+    else tip.hidden = true;
+  });
+  const up = (e: PointerEvent) => {
+    if (!pts.has(e.pointerId)) return;
+    pts.delete(e.pointerId); pinch = 0; cv.classList.remove('dragging');
+    if (pts.size === 0 && moved <= 4) { const p = pos(e); const h = pick(p.x, p.y); select(h, h >= 0); }
+  };
+  cv.addEventListener('pointerup', up);
+  cv.addEventListener('pointercancel', (e) => { pts.delete(e.pointerId); pinch = 0; });
+  cv.addEventListener('pointerleave', () => { if (hover >= 0) { hover = -1; draw(); } tip.hidden = true; });
+  cv.addEventListener('wheel', (e) => { e.preventDefault(); const p = pos(e); zoomAt(p.x, p.y, Math.exp(-e.deltaY * 0.0016)); }, { passive: false });
+  document.getElementById('zin')!.addEventListener('click', () => zoomAt(W / 2, H / 2, 1.5));
+  document.getElementById('zout')!.addEventListener('click', () => zoomAt(W / 2, H / 2, 1 / 1.5));
+  document.getElementById('zfit')!.addEventListener('click', () => fit(undefined, true));
+  cv.tabIndex = 0;
+  cv.addEventListener('keydown', (e) => { if (e.key === 'Escape') select(-1); });
+
+  // controls
+  const visible = () => N.reduce((n, _, i) => n + (active(i) ? 1 : 0), 0);
+  function updateCount() { countEl.textContent = t('net_count', { n: visible(), m: N.length }); }
+  function refilter() {
+    if (sel >= 0 && !active(sel)) select(-1, false);
+    updateCount();
+    if (uni) fit(N.map((_, i) => i).filter(active), true); else draw();
+  }
+  document.getElementById('net-legend')!.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest<HTMLButtonElement>('.lg'); if (!b) return;
+    const g = Number(b.dataset.g), on = !groupOn.has(g);
+    on ? groupOn.add(g) : groupOn.delete(g);
+    b.setAttribute('aria-pressed', String(on));
+    refilter();
+  });
+  uSel.addEventListener('change', () => { uni = uSel.value; if (!uni) fit(undefined, true); refilter(); });
+  const findPerson = () => {
+    const v = qIn.value.trim().toLowerCase(); if (!v) return;
+    const exact = N.findIndex((p) => `${p.n} · ${p.us}`.toLowerCase() === v || p.n.toLowerCase() === v);
+    const i = exact >= 0 ? exact : N.findIndex((p) => p.n.toLowerCase().includes(v));
+    if (i < 0) return;
+    if (!active(i)) { groupOn.add(N[i].g); document.querySelector(`.lg[data-g="${N[i].g}"]`)?.setAttribute('aria-pressed', 'true'); if (uni && N[i].u !== uni) { uni = ''; uSel.value = ''; } updateCount(); }
+    select(i);
+  };
+  qIn.addEventListener('change', findPerson);
+  qIn.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); findPerson(); } });
+
+  document.addEventListener('themechange', () => requestAnimationFrame(() => { readColors(); draw(); }));
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { readColors(); draw(); });
+  document.addEventListener('langchange', () => { renderPanel(); updateCount(); });
+  new ResizeObserver(() => resize()).observe(stage);
+
+  fetch(base + 'network.json').then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); }).then((d) => {
+    N = d.nodes; E = d.edges;
+    readColors(); resize(); fit();
+    status.hidden = true;
+    const dl = document.getElementById('net-names')!;
+    dl.innerHTML = N.map((p) => `<option value="${esc(p.n + ' · ' + p.us)}"></option>`).join('');
+    updateCount();
+    const want = new URLSearchParams(location.search).get('p');
+    const i = want ? N.findIndex((p) => p.id === want) : -1;
+    if (i >= 0) select(i);
+  }).catch(() => { status.textContent = t('net_error'); });
+</script>

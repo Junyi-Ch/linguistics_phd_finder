@@ -80,3 +80,15 @@ function hash(s: string) { let h = 0; for (let i = 0; i < s.length; i++) h = (h 
 // Person tiles were removed: they carried no information. Kept as a no-op so callers stay simple.
 export function avatar(_f: Faculty, _lg = false) { return ''; }
 
+
+// Subfields folded into eight families, used to colour the Network map (fixed order = fixed colour).
+export const GROUPS = [
+  { k: 'sound', en: 'Sound', zh: '语音', topics: ['T_PHONETICS', 'T_PHONOLOGY'] },
+  { k: 'structure', en: 'Words & sentences', zh: '词与句', topics: ['T_MORPHOLOGY', 'T_SYNTAX'] },
+  { k: 'meaning', en: 'Meaning', zh: '意义', topics: ['T_SEMANTICS', 'T_PRAGMATICS', 'T_COGNITION_PHILOSOPHY'] },
+  { k: 'mind', en: 'Mind & brain', zh: '心理与脑', topics: ['T_PSYCHOLING', 'T_NEUROLING'] },
+  { k: 'learning', en: 'Acquisition & learning', zh: '习得与学习', topics: ['T_L1_ACQUISITION', 'T_L2_BILINGUALISM', 'T_APPLIED_PEDAGOGY'] },
+  { k: 'society', en: 'Language in society', zh: '语言与社会', topics: ['T_SOCIOLING', 'T_LING_ANTHRO', 'T_DISCOURSE_INTERACTION', 'T_CONTACT_CREOLES'] },
+  { k: 'field', en: 'Typology, history & fieldwork', zh: '类型、历史与田野', topics: ['T_TYPOLOGY', 'T_HISTORICAL', 'T_DOCUMENTATION', 'T_SIGN_GESTURE'] },
+  { k: 'comp', en: 'Computational', zh: '计算', topics: ['T_COMPUTATIONAL'] },
+] as const;
