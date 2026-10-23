@@ -13,11 +13,11 @@ const p = (programs as Program[]).find((x) => x.slug === f.u);
 const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correction: ' + f.name + ' (' + (p?.short || f.u) + ')')}&body=${encodeURIComponent('Page: ' + base + 'faculty/' + f.id + '/\n\nWhat is wrong:\n')}`;
 ---
 <Base title={f.name} description={`${f.name}, ${f.rank}, ${f.dept}, ${p?.name || ''}. ${f.summary}`}>
-  <p class="small"><a href={`${base}faculty/`} data-i18n="dir_h1">Faculty directory</a> › {p && <a href={`${base}programs/${p.slug}/`}>{p.name}</a>}</p>
+  <p class="small"><a href={`${base}faculty/`} data-i18n="dir_h1">Faculty</a> › {p && <a href={`${base}programs/${p.slug}/`}>{p.name}</a>}</p>
   <div class="identity" style="display:flex;gap:20px;align-items:flex-start;margin-top:14px">
     <Fragment set:html={avatar(f as any, true)} />
     <div>
-      <div class="small muted">{f.title}</div>
+      <div class="small muted">{f.rank === "Faculty" ? "Rank not listed" : f.title}</div>
       <h1 style="font-size:clamp(1.7rem,1.2rem+1.6vw,2.4rem)">{f.name}</h1>
       <div class="muted" style="margin-top:6px">{p && <a href={`${base}programs/${p.slug}/`}>{p.name}</a>} · {f.dept}</div>
       <div class="toolbar" style="margin-top:12px">
@@ -31,7 +31,7 @@ const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correctio
   <div class="fgrid">
     <div>
       {f.summary && <p class="lede" style="font-size:1.1rem"><span data-lang-only="en">{f.summary}</span><span data-lang-only="zh">{f.summary_zh || f.summary}</span></p>}
-      {f.areas.length > 0 && <section style="margin-top:22px"><h2 class="sec-h" data-i18n="research_areas">Research areas (as listed by the department)</h2><div class="chips" style="margin-top:8px">{f.areas.map((a) => <span class="chip">{a}</span>)}</div></section>}
+      {f.areas.length > 0 && <section style="margin-top:22px"><h2 class="sec-h" data-i18n="research_areas">Research areas (from the department)</h2><div class="chips" style="margin-top:8px">{f.areas.map((a) => <span class="chip">{a}</span>)}</div></section>}
     </div>
     <aside class="panel" style="align-self:start">
       <h2 class="sec-h" data-i18n="labels_title">Research labels</h2>
@@ -39,12 +39,7 @@ const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correctio
         <div style="margin-top:12px"><div class="small" style="font-weight:600;margin-bottom:6px"><span data-lang-only="en">{T.dimensions[d].label}</span><span data-lang-only="zh">{T.dimensions[d].label_zh}</span></div>
           <div class="chips">{(f.labels[d] || []).map((l) => <span class={`chip${l.p ? ' primary' : ''}`} data-dim={d} title={T.dimensions[d].labels[l.c]}><span data-lang-only="en">{T.dimensions[d].labels_short[l.c]}</span><span data-lang-only="zh">{T.dimensions[d].labels_short_zh[l.c]}</span>{l.p ? ' ★' : ''}</span>)}</div></div>
       ))}
-      <p class="small muted" style="margin-top:14px" data-i18n="labels_note">Labels are generated from public profiles and are interpretive aids, not a complete account of anyone’s work. ★ marks a primary emphasis.</p>
-      <dl class="kv small" style="margin-top:14px">
-        <dt data-i18n="confidence">Label confidence</dt><dd>{f.conf}</dd>
-        <dt data-i18n="sources">Sources</dt><dd>{f.src.join(', ')}</dd>
-        {f.scraped && <><dt data-i18n="scraped">Directory read on</dt><dd>{f.scraped}</dd></>}
-      </dl>
+      <p class="small muted" style="margin-top:14px" data-i18n="labels_note">Labels are generated automatically from public profiles and may be incomplete. ★ marks a main focus.</p>
       <p class="small" style="margin-top:12px"><a href={issue} target="_blank" rel="noreferrer" data-i18n="report">Report an error</a></p>
     </aside>
   </div>

@@ -15,7 +15,7 @@ const initialCount = t('showing', { a: first.length, b: F.length });
 ---
 <Base title="Faculty directory">
   <div class="page-head">
-    <div><h1 data-i18n="dir_h1">Faculty directory</h1><p class="lede" data-i18n="dir_lede">Every tenure-line faculty member in the collected programs, by subfield, method, data, population and language. Filters combine; counts update as you narrow.</p></div>
+    <div><h1 data-i18n="dir_h1">Faculty</h1><p class="lede" data-i18n="dir_lede">Browse every faculty member, or narrow the list with the filters.</p></div>
   </div>
   <div class="dir">
     <aside class="dir-side" id="dir-side">
@@ -25,8 +25,8 @@ const initialCount = t('showing', { a: first.length, b: F.length });
           <input type="search" class="input" id="search" data-i18n="search_ph" data-i18n-attr="placeholder" placeholder="Search names, universities, summaries, keywords" />
           <select class="select" id="univ"><option value="" data-i18n="all_universities">All universities</option></select>
           <div class="toolbar"><label class="check"><input type="checkbox" class="rank" value="Professor" checked><span data-i18n="rank_prof">Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Associate Professor" checked><span data-i18n="rank_assoc">Associate Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Assistant Professor" checked><span data-i18n="rank_asst">Assistant Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Faculty" checked><span data-i18n="rank_fac">Rank not listed</span></label></div>
-          <div class="fld-checks"><span class="small muted" data-i18n="opt_field">Units</span>{FIELDS.map((k) => <label class="check"><input type="checkbox" class="fldc" value={k} checked /><span data-i18n={`field_${k}`}>{FIELD_LABELS[k].en}</span></label>)}</div>
-          <label class="check"><input type="checkbox" id="primary"><span data-i18n="primary_only">Primary labels only</span></label>
+          <div class="fld-checks"><span class="small muted" data-i18n="opt_field">Departments</span>{FIELDS.map((k) => <label class="check"><input type="checkbox" class="fldc" value={k} checked /><span data-i18n={`field_${k}`}>{FIELD_LABELS[k].en}</span></label>)}</div>
+          <label class="check"><input type="checkbox" id="primary"><span data-i18n="primary_only">Main focus only (★)</span></label>
           <button type="button" class="btn sm quiet" id="clear" data-i18n="clear">Clear filters</button>
         </div>
         <div class="facets" id="facets"></div>

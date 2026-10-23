@@ -39,7 +39,7 @@ export function personRow(f: Faculty, p: Program | undefined, tax: Taxonomy, opt
     ${avatar(f)}
     <div class="who">
       <div class="name"><button type="button" class="open-person" data-id="${esc(f.id)}">${esc(f.name)}</button></div>
-      <div class="meta">${p ? `<a href="${withBase('programs/' + p.slug + '/')}">${esc(p.name)}</a> · ` : ''}${esc(f.dept)} · ${esc(f.rank)}${f.fld && f.fld !== 'LING' ? ` · <span class="fld">${esc(fieldLabel(f.fld, getLang()))}</span>` : ''}</div>
+      <div class="meta">${p ? `<a href="${withBase('programs/' + p.slug + '/')}">${esc(p.name)}</a> · ` : ''}${esc(f.dept)} · ${esc(f.rank === 'Faculty' ? t('rank_fac') : f.rank)}${f.fld && f.fld !== 'LING' ? ` · <span class="fld">${esc(fieldLabel(f.fld, getLang()))}</span>` : ''}</div>
       ${summary ? `<p class="sum">${summary}</p>` : ''}
       ${chips.length ? `<div class="chips">${chips.join('')}</div>` : ''}
       ${opts.why ? `<div class="why">${opts.why}</div>` : ''}
@@ -63,13 +63,13 @@ export function drawerHtml(f: Faculty, p: Program | undefined, tax: Taxonomy) {
     f.scholar ? `<a class="btn sm" href="${esc(f.scholar)}" target="_blank" rel="noreferrer">${t('scholar')}</a>` : '',
   ].join('');
   return `<button type="button" class="icon-btn close" aria-label="${t('close')}" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-  <div class="identity">${avatar(f, true)}<div><div class="small muted">${esc(f.title)}</div><h2>${esc(f.name)}</h2><div class="muted" style="margin-top:4px">${p ? `<a href="${withBase('programs/' + p.slug + '/')}">${esc(p.name)}</a> · ` : ''}${esc(f.dept)}</div></div></div>
+  <div class="identity">${avatar(f, true)}<div><div class="small muted">${esc(f.rank === 'Faculty' ? t('rank_fac') : f.title)}</div><h2>${esc(f.name)}</h2><div class="muted" style="margin-top:4px">${p ? `<a href="${withBase('programs/' + p.slug + '/')}">${esc(p.name)}</a> · ` : ''}${esc(f.dept)}</div></div></div>
   ${f.summary ? `<p class="sum" style="margin-top:16px;color:var(--ink-2)">${esc(lang === 'zh' && f.summary_zh ? f.summary_zh : f.summary)}</p>` : ''}
   ${f.areas.length ? `<div class="section"><h3>${t('research_areas')}</h3><div class="chips">${f.areas.map((a) => `<span class="chip">${esc(a)}</span>`).join('')}</div></div>` : ''}
   ${groups}
   <p class="small muted" style="margin-top:14px">${t('labels_note')}</p>
   <div class="section"><div class="links">${saveBtn(f.id)}${links}<a class="btn sm" href="${withBase('faculty/' + f.id + '/')}">${t('open_page')}</a></div></div>
-  <div class="section small muted">${t('sources')}: ${esc(f.src.join(', '))}${f.scraped ? ` · ${t('scraped')} ${esc(f.scraped)}` : ''} · ${t('confidence')}: ${esc(f.conf)}</div>`;
+`;
 }
 export function setupDrawer(getPerson: (id: string) => { f: Faculty; p?: Program } | undefined, tax: Taxonomy) {
   let backdrop = document.querySelector<HTMLElement>('.drawer-backdrop');

@@ -3,10 +3,10 @@ import Wordmark from './Wordmark.astro';
 const base = (import.meta.env.BASE_URL as string).replace(/\/+$/, '') + '/';
 const path = Astro.url.pathname.replace(/\/+$/, '') + '/';
 const links = [
-  { href: base, key: 'nav_match', label: 'Match' },
+  { href: base, key: 'nav_match', label: 'Find matches' },
   { href: base + 'programs/', key: 'nav_programs', label: 'Programs' },
   { href: base + 'faculty/', key: 'nav_faculty', label: 'Faculty' },
-  { href: base + 'shortlist/', key: 'nav_shortlist', label: 'Shortlist', count: true },
+  { href: base + 'shortlist/', key: 'nav_shortlist', label: 'Saved', count: true },
   { href: base + 'about/', key: 'nav_about', label: 'About' },
 ];
 const isCurrent = (href: string) => (href === base ? path === base : path.startsWith(href));

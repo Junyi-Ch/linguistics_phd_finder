@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import buildInfo from '../data/meta.json';
 import { FIELDS } from '../lib/data';
 const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computational', APPLIED: 'Applied / SLA', LANG: 'Language depts', SPEECH: 'Speech & cognition' };
 ---
@@ -9,7 +8,7 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
     <div class="hero-text">
       <p class="tag-ipa" aria-hidden="true">/ˈlɪŋɡwɪsts/</p>
       <h1><span data-i18n="match_h1a">Find the linguists and programs that fit</span> <span class="hl" data-i18n="match_h1b">your research</span><span data-i18n="match_h1c"></span><span data-lang-only="en">.</span></h1>
-      <p class="lede" data-i18n="match_lede2">Describe what you want to study. We read it for subfield, method, data and language, and match it with faculty in US linguistics PhD programs and the departments around them. Matching runs in your browser; nothing is uploaded.</p>
+      <p class="lede" data-i18n="match_lede2">Describe what you want to study: your questions, methods and the languages you work on. We suggest faculty and programs whose research is closest to yours.</p>
     </div>
     <div class="stickers" aria-hidden="true">
       <span style="left:20px;top:30px;width:100px;height:100px;border-radius:26px;background:var(--p-peach);color:var(--i-peach);font-size:58px;transform:rotate(-10deg)">ʃ</span>
@@ -24,14 +23,14 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
   <section class="search">
     <div class="search-box">
       <label for="q" class="search-label" data-i18n="match_label">Your research interests</label>
-      <textarea id="q" rows="4" data-i18n="match_placeholder" data-i18n-attr="placeholder" placeholder="Example: I study how Mandarin tone is processed during spoken word recognition, using eye-tracking in the visual world paradigm with native listeners and second language learners."></textarea>
+      <textarea id="q" rows="4" data-i18n="match_placeholder" data-i18n-attr="placeholder" placeholder="Example: I study how Mandarin tone is processed during spoken word recognition, using eye-tracking in the visual world paradigm with native listeners and second language learners.">Example: I study how Mandarin tone is processed during spoken word recognition, using eye-tracking in the visual world paradigm with native listeners and second language learners. I am also interested in computational models of speech perception.</textarea>
       <div id="hints" class="hints" hidden>
         <span class="small muted" data-i18n="match_hint_title2">We read this as</span>
         <span class="chips" id="hint-chips"></span>
-        <span class="small muted hint-help" data-i18n="match_hint_help">Click a chip to boost it; click again to require it.</span>
+        <span class="small muted hint-help" data-i18n="match_hint_help">Click a term to require it. Click again to ignore it.</span>
       </div>
       <div class="search-foot">
-        <div class="units" role="group" data-i18n="opt_field" data-i18n-attr="aria-label" aria-label="Units">
+        <div class="unit-pills" role="group" data-i18n="opt_field" data-i18n-attr="aria-label" aria-label="Units">
           {FIELDS.map((k) => <label class="pill-check"><input type="checkbox" class="fldc" value={k} checked /><span data-i18n={`fshort_${k}`}>{SHORT[k]}</span></label>)}
         </div>
         <button type="button" class="btn primary lg" id="go"><span data-i18n="match_button">Find matches</span> <span aria-hidden="true">→</span></button>
@@ -48,29 +47,19 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
       <span class="status" id="status"><span class="loadbar" id="loadbar" data-n="0" hidden><i></i><i></i><i></i><i></i><i></i><i></i></span><span id="status-text"></span></span>
     </div>
     <div id="err" class="notice error" hidden></div>
-    <div id="cjk" class="notice" hidden data-i18n="cjk_notice"></div>
+    <div id="cjk" class="notice" hidden data-i18n="cjk_notice">Chinese text is translated to English on your device before matching (the browser’s own translator when available, otherwise a one-time 110 MB model). The translation is shown with the results so you can correct it.</div>
     <div id="translated" class="notice" hidden></div>
     <details class="opts">
-      <summary data-i18n="match_opts">Options</summary>
+      <summary data-i18n="match_opts">More filters</summary>
       <div class="opts-grid">
-        <label class="field"><span><span data-i18n="opt_threshold">Minimum fit</span> <output id="thr-out">35</output></span><input type="range" id="thr" min="10" max="80" value="35"></label>
-        <label class="field"><span><span data-i18n="opt_lex">Keyword weight</span> <output id="lex-out">15%</output></span><input type="range" id="lex" min="0" max="50" value="15"></label>
+        <label class="field"><span><span data-i18n="opt_threshold">Minimum fit score</span> <output id="thr-out">35</output></span><input type="range" id="thr" min="10" max="80" value="35"></label>
+        <input type="hidden" id="lex" value="15">
         <div class="field"><span data-i18n="opt_rank">Rank</span><div class="toolbar"><label class="check"><input type="checkbox" class="rank" value="Professor" checked><span data-i18n="rank_prof">Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Associate Professor" checked><span data-i18n="rank_assoc">Associate Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Assistant Professor" checked><span data-i18n="rank_asst">Assistant Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Faculty" checked><span data-i18n="rank_fac">Rank not listed</span></label></div></div>
       </div>
     </details>
   </section>
 
-  <section class="match-results" id="results">
-    <div class="how" id="how">
-      <h2 data-i18n="how_title">How matching works</h2>
-      <ol>
-        <li><span class="how-n ipa" style="background:var(--p-butter);color:var(--i-butter)">1</span><span data-i18n="how_1">Your text is embedded on your device with an open retrieval model (Snowflake arctic-embed-m, about 110 MB, downloaded once) and compared with each faculty member’s research profile.</span></li>
-        <li><span class="how-n ipa" style="background:var(--p-mint);color:var(--i-mint)">2</span><span data-i18n="how_2">A keyword score adds a second signal, then a small cross-encoder re-reads the top 30 against each profile. Every match shows why it was ranked.</span></li>
-        <li><span class="how-n ipa" style="background:var(--p-lav);color:var(--i-lav)">3</span><span data-i18n="how_3">Switch to Programs to see which departments have several plausible advisors, not just one.</span></li>
-      </ol>
-      <p class="small muted" id="counts" data-p={buildInfo.programs} data-f={buildInfo.faculty} data-d={buildInfo.built}>{buildInfo.programs} programs · {buildInfo.faculty} tenure-line faculty · built {buildInfo.built}</p>
-    </div>
-  </section>
+  <section class="match-results" id="results"></section>
 </Base>
 <style is:global>
   .hero { display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between; padding: 24px 0 28px; }
@@ -86,7 +75,7 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
   .hints .chips { display: contents; }
   .hint-help { flex-basis: 100%; }
   .search-foot { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--line); }
-  .units { display: flex; flex-wrap: wrap; gap: 6px; }
+  .unit-pills { display: flex; flex-wrap: wrap; gap: 6px; }
   .below-box { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: space-between; }
   .examples { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
   .examples .ex { border: 1px solid var(--line); background: var(--bg-2); color: var(--ink-2); border-radius: 999px; padding: 7px 13px; font-size: 0.875rem; min-height: 36px; }
@@ -95,11 +84,6 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
   .opts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 24px; padding: 14px 0 4px; }
   .opts-grid input[type=range] { width: 100%; }
   .match-results { margin-top: 48px; }
-  .how h2 { margin-bottom: 16px; }
-  .how ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
-  .how li { display: grid; gap: 12px; align-content: start; padding: 20px; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-lg); color: var(--ink-2); font-size: 0.95rem; }
-  .how-n { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; font-weight: 600; font-size: 1.1rem; transform: rotate(-5deg); }
-  .how p { margin-top: 16px; }
   .results-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
   .results-head .left { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
   .results-head h2 { font-size: 1.5rem; }
@@ -222,10 +206,10 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
 
   function why(s: Scored) {
     const lang = getLang();
-    const parts = [`${t('why_sem')} <b>${Math.round(s.sem * 100)}</b>`, `${t('why_kw')} <b>${Math.round(s.lex * 100)}</b>`];
+    const parts: string[] = [];
+    if (s.labels.length) parts.push(`${t('matched_on')}: ${s.labels.map((l) => esc(labelText(T, l.dim, l.code, lang))).join(', ')}`);
     if ((s.moved ?? 0) > 0) parts.push(t('why_reread'));
-    if (s.labels.length) parts.push(`${t('why_labels')}: ${s.labels.map((l) => esc(labelText(T, l.dim, l.code, lang))).join(', ')}`);
-    return `${t('why')} · ${parts.join(' · ')}`;
+    return parts.join(' · ');
   }
   function render() {
     if (!last) return;
@@ -235,7 +219,7 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
     if (!last.length) body = `<div class="empty"><b>${t('no_results')}</b>${t('no_results_help')}</div>`;
     else if (view === 'faculty') {
       const terms = Array.from(new Set(last.slice(0, shown).flatMap((s) => s.terms)));
-      body = `<div class="rows tree">${last.slice(0, shown).map((s) => personRow(s.f, byProg.get(s.f.u), T, { score: s.score, why: why(s), summaryHtml: mark(lang === 'zh' && s.f.summary_zh ? s.f.summary_zh : s.f.summary, s.terms) })).join('')}</div>`;
+      body = `<div class="rows tree">${last.slice(0, shown).map((s) => personRow(s.f, byProg.get(s.f.u), T, { score: s.score, why: why(s) || undefined, summaryHtml: mark(lang === 'zh' && s.f.summary_zh ? s.f.summary_zh : s.f.summary, s.terms) })).join('')}</div>`;
       if (shown < last.length) body += `<div style="text-align:center;margin-top:14px"><button type="button" class="btn" id="more">${t('load_more', { n: Math.min(30, last.length - shown) })}</button></div>`;
     } else {
       const rows = programFit(last, P);

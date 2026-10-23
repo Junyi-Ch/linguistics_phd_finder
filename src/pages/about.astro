@@ -8,48 +8,140 @@ import { SITE_NAME, OWNER, REPO_URL, SIBLING } from '../lib/site';
 const T = tax as unknown as Taxonomy;
 const P = (programs as Program[]).slice().sort((a, b) => a.name.localeCompare(b.name));
 const base = import.meta.env.BASE_URL;
+const sections = [
+  ['what', 'What this site is'],
+  ['use', 'How to use it'],
+  ['matching', 'How matching works'],
+  ['data', 'What data is included'],
+  ['labels', 'Research labels'],
+  ['privacy', 'Privacy'],
+  ['limits', 'Limits'],
+  ['contact', 'Corrections and contact'],
+  ['universities', 'Universities included'],
+];
 ---
-<Base title="About" description={`How the ${SITE_NAME} collects programs and faculty, labels research, and matches your statement in the browser.`}>
-  <article class="prose">
-    <h1>About this explorer</h1>
-    <p class="lede" style="margin-top:12px">A free tool for people applying to US doctoral programs in Linguistics and the fields around it: computational linguistics, applied linguistics and second language acquisition, the linguistics of particular languages, and speech, hearing and language science. It is built on the code of the <a href={SIBLING.url} rel="noreferrer">{SIBLING.name}</a> by Junyu Jiang and works the same way: program-level results, explainable matching, a shortlist and a bilingual interface. Built by <a href={OWNER.url} rel="noreferrer">{OWNER.name}</a>.</p>
+<Base title="About" description={`What the ${SITE_NAME} is, how to use it, how matching works and where the data comes from.`}>
+  <div class="about">
+    <nav class="toc" aria-label="On this page">
+      <p class="toc-h">On this page</p>
+      <ol>{sections.map(([id, label]) => <li><a href={`#${id}`}>{label}</a></li>)}</ol>
+    </nav>
+    <article class="prose">
+      <h1>About</h1>
 
-    <h2>What is in the data</h2>
-    <p>{buildInfo.programs} universities and {buildInfo.faculty} tenure-line faculty (assistant, associate and full professors) from the units that grant a research PhD in linguistics or a closely related field. Lecturers, teaching and clinical faculty, professors of practice, emeriti, visiting and affiliated faculty are not included, because the tool is about who can supervise a dissertation. Data was read from official department directories on {buildInfo.built}.</p>
-    <h3>How the programs were chosen</h3>
-    <p>Every US university with a research PhD in Linguistics was a candidate, starting from the <a href="https://www.linguisticsociety.org/" rel="noreferrer">Linguistic Society of America</a>’s directory of programs and checked against each university’s official pages. Adjacent units were added where they grant a research doctorate and their faculty work on language: computational linguistics and NLP groups, applied linguistics and SLA programs, linguistics PhDs inside language departments (Spanish, East Asian, Slavic and others), and speech, hearing and language science. Each unit is marked as a core Linguistics department or an adjacent unit, so you can tell them apart. The site shows no rankings.</p>
-    <h3>What is published about each person</h3>
-    <p>A one-sentence research summary written for this site, the research areas the department lists, the research labels below, and links to the official department profile and, where the department links them, a personal site or Google Scholar. No photos are stored or shown, and profile text from department pages is not republished: it is read once, at build time, to compute the matching vectors, and only those vectors are published.</p>
-    <h3>Research labels</h3>
-    <p>Every faculty member carries labels in five dimensions, assigned by a language model from the public profile text (department profile, personal site when linked, listed research areas). A ★ marks a primary emphasis. Labels are interpretive aids: they describe documented emphases, not the whole of anyone’s work, and they can be wrong. Each record states its sources and a confidence level.</p>
-    <div class="rows" style="margin:12px 0">
-      {DIMS.map((d) => <div class="panel"><b>{T.dimensions[d].label}</b> <span class="muted">— {T.dimensions[d].description}</span><div class="chips" style="margin-top:8px">{Object.entries(T.dimensions[d].labels_short).map(([c, l]) => <span class="chip" data-dim={d} title={T.dimensions[d].labels[c]}>{l}</span>)}</div></div>)}
-    </div>
+      <section id="what">
+        <h2>What this site is</h2>
+        <p>A free tool for people applying to US PhD programs in linguistics. You describe your research interests, and it suggests faculty and programs whose work is closest to yours.</p>
+        <p>It covers {buildInfo.faculty} faculty at {buildInfo.programs} universities: linguistics departments, plus related departments where linguists also supervise PhDs (computational linguistics, applied linguistics and second language acquisition, language departments, and speech, hearing and cognitive science).</p>
+      </section>
 
-    <h2>How matching works</h2>
-    <ol>
-      <li><b>Semantic score.</b> Each faculty member is represented by one 768-dimensional <code>snowflake-arctic-embed-m-v1.5</code> vector, the average of three views: the one-sentence research summary with keywords, the department profile text (used only to compute this vector, never published), and the published summary, research areas and labels. Faculty vectors are precomputed and stored as 8-bit integers; your text is embedded in your browser with <a href="https://huggingface.co/docs/transformers.js" rel="noreferrer">Transformers.js</a> (a one-time download of about 110 MB, cached by the browser).</li>
-      <li><b>Keyword score.</b> BM25 over the published text of each profile. This matters in linguistics, where a language name or a technical term (Bantu tone, visual world, scalar implicature) often says more than the sentence around it.</li>
-      <li><b>Fusion.</b> Both scores are turned into z-scores within your query and combined 85% semantic, 15% keyword (adjustable). Languages, methods and subfields named in your text become chips; a chip adds a small bonus to faculty who carry that label, a second click makes it a requirement, a third switches it off.</li>
-      <li><b>Re-reading.</b> A small cross-encoder (<code>ms-marco-MiniLM-L-6</code>, 23 MB) reads your text against each of the top 30 profiles and the two orders are blended evenly. Results it moved up are marked.</li>
-      <li><b>Chinese.</b> Text in Chinese is translated to English on your device, with your browser's built-in translator when it has one and otherwise a 110 MB translation model. Linguistic terms and language names (声调, 视觉情景范式, 粤语 …) are added from a glossary as English keywords, and the translation is shown with the results so you can correct it.</li>
-      <li><b>Fit</b> (0–100) is calibrated on 32 realistic probe descriptions spanning the field: the median person for a typical query scores 0, the top 0.5% score 85, and the curve flattens above that. <b>Program fit</b> = 50% of the best match + 30% of the second + 20% of the third, so departments with several plausible advisors rank above departments with one star.</li>
-    </ol>
-    <p><b>How this was chosen.</b> This setup was selected on a graded test set for the Communication explorer. It is being re-checked on a Linguistics test set; the scripts are in <a href={`${REPO_URL}/tree/main/pipeline/eval`} rel="noreferrer">pipeline/eval</a>.</p>
-    <p>Nothing you type leaves your device. There are no accounts and no analytics on this site.</p>
+      <section id="use">
+        <h2>How to use it</h2>
+        <dl class="uses">
+          <dt><a href={base}>Find matches</a></dt><dd>Describe what you want to study in a few sentences or a paragraph. Mention your questions, methods, and the languages or populations you work with. Results can be shown by person or by program.</dd>
+          <dt><a href={`${base}programs/`}>Programs</a></dt><dd>Browse universities on a map or in a list, and see each one’s departments and faculty.</dd>
+          <dt><a href={`${base}faculty/`}>Faculty</a></dt><dd>Search and filter everyone by subfield, method, data, population and language.</dd>
+          <dt><a href={`${base}shortlist/`}>Saved</a></dt><dd>Faculty you saved, with your notes. You can download the list as a CSV file.</dd>
+        </dl>
+        <p><b>Tips.</b> Specific descriptions match better than general ones: “tone sandhi in Wu Chinese using acoustic analysis” works better than “phonology”. You can write in English or Chinese. Under the search box, “We read this as” shows the subfields, methods and languages picked up from your text; click one to require it, and click again to ignore it.</p>
+      </section>
 
-    <h2>Limits</h2>
-    <ul>
-      <li>Matching is done in English. Chinese text is machine-translated first; check the translation shown with your results, and edit it if a term came out wrong.</li>
-      <li>A short profile gives a short embedding: faculty with sparse public pages are under-matched, not absent.</li>
-      <li>Directories change. Hires, departures and title changes after {buildInfo.built} are not reflected until the next build.</li>
-      <li>Adjacent units (computer science, education, psychology, speech and hearing) admit through their own PhD programs, with their own requirements. A linguist housed in one of them may not be able to supervise a Linguistics PhD; check each unit’s admission page.</li>
-    </ul>
+      <section id="matching">
+        <h2>How matching works</h2>
+        <ol>
+          <li><b>Meaning.</b> Your text is turned into a numeric representation (an “embedding”) on your own device and compared with a representation of each faculty member’s research.</li>
+          <li><b>Keywords.</b> Exact terms, such as language names or technical terms, are matched as well, since they often matter most in linguistics.</li>
+          <li><b>Your priorities.</b> Subfields, methods and languages found in your text give a small boost to faculty who work on them, or become requirements if you click them.</li>
+          <li><b>Second check.</b> The top 30 results are re-read against your text by a second model and re-ordered.</li>
+          <li><b>Fit score.</b> Each person gets a score from 0 to 100. A program’s score combines its three best matches, so departments with several good fits rank above departments with one.</li>
+        </ol>
+        <details class="tech">
+          <summary>Technical details</summary>
+          <ul>
+            <li>Embeddings: <code>snowflake-arctic-embed-m-v1.5</code> (768 dimensions), run in the browser with Transformers.js. Faculty vectors are precomputed and stored as 8-bit integers. The model is downloaded once (about 110 MB) and cached.</li>
+            <li>Each faculty vector averages three views: the research summary with keywords, the department profile text, and the published summary, research areas and labels. Profile text is used only to compute the vector and is never published.</li>
+            <li>Keyword score: BM25 over each person’s published text. Semantic and keyword scores are standardised per query and combined 85% / 15%.</li>
+            <li>Re-ranking: <code>ms-marco-MiniLM-L-6</code> cross-encoder over the top 30, blended evenly with the first-pass order.</li>
+            <li>Chinese input is translated to English on your device (the browser’s built-in translator when available, otherwise a 110 MB model), with a glossary of linguistic terms and language names. The translation is shown with the results so you can correct it.</li>
+            <li>Scores are calibrated on 32 example descriptions across the field: the median person for a typical query scores 0 and the top 0.5% score 85. Program score = 50% best match + 30% second + 20% third.</li>
+            <li>Evaluation scripts: <a href={`${REPO_URL}/tree/main/pipeline/eval`} rel="noreferrer">pipeline/eval</a>.</li>
+          </ul>
+        </details>
+      </section>
 
-    <h2>Corrections</h2>
-    <p>Every faculty page has a “Report an error” link that opens a GitHub issue; corrections are folded into the next build. Faculty who would like their information changed or removed can <a href={`${REPO_URL}/issues/new?template=data-correction.yml`} rel="noreferrer">open an issue</a> or email <a href={`mailto:${OWNER.email}`}>{OWNER.email}</a>, and the record will be updated or taken down. The code and the data pipeline are public at <a href={REPO_URL} rel="noreferrer">{REPO_URL.replace('https://', '')}</a>.</p>
+      <section id="data">
+        <h2>What data is included</h2>
+        <h3>Programs</h3>
+        <p>Every US university with a research PhD in linguistics, starting from the <a href="https://www.linguisticsociety.org/" rel="noreferrer">Linguistic Society of America</a>’s program directory and checked against each university’s own pages. Related departments are included when they grant a research PhD and some of their faculty work on language. Every department is labelled as either a linguistics department or a related department. There are no rankings.</p>
+        <h3>Faculty</h3>
+        <p>Assistant, associate and full professors, the people who can usually supervise a dissertation. Lecturers, teaching and clinical faculty, emeriti, visiting and affiliated faculty are not included. In related departments, only faculty whose research involves language are kept. Some departments do not list job titles; their faculty appear as “Rank not listed”.</p>
+        <h3>What is shown about each person</h3>
+        <p>A one-sentence research summary written for this site, the research areas the department lists, research labels, and links to the department profile and, when available, a personal site or Google Scholar. No photos are shown.</p>
+        <p>The data was collected from official department websites on {buildInfo.built}.</p>
+      </section>
 
-    <h2>Universities included</h2>
-    <ul style="columns: 2; column-gap: 24px">{P.map((p) => <li><a href={`${base}programs/${p.slug}/`}>{p.name}</a> <span class="muted small">({p.n})</span></li>)}</ul>
-  </article>
+      <section id="labels">
+        <h2>Research labels</h2>
+        <p>Each person has labels in five groups, assigned automatically by a language model from their public profile. A ★ marks their main focus. Labels are a guide, not a full account of anyone’s work, and they can be wrong.</p>
+        <div class="label-groups">
+          {DIMS.map((d) => <div class="panel"><b>{T.dimensions[d].label}</b><div class="chips" style="margin-top:10px">{Object.entries(T.dimensions[d].labels_short).map(([c, l]) => <span class="chip" data-dim={d} title={T.dimensions[d].labels[c]}>{l}</span>)}</div></div>)}
+        </div>
+      </section>
+
+      <section id="privacy">
+        <h2>Privacy</h2>
+        <p>Matching runs entirely in your browser. Nothing you type is sent anywhere. Saved faculty and notes stay in your browser. There are no accounts and no analytics.</p>
+      </section>
+
+      <section id="limits">
+        <h2>Limits</h2>
+        <ul>
+          <li>People with short public profiles are harder to match, so they may rank lower than they should.</li>
+          <li>Departments change. Hires, departures and title changes after {buildInfo.built} are not reflected yet.</li>
+          <li>Related departments (for example computer science, education, psychology, speech and hearing) admit students through their own PhD programs. Someone there may not be able to supervise a linguistics PhD, so check each department’s admissions page.</li>
+          <li>Matching works in English. Chinese is translated first, so check the translation shown with your results.</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Corrections and contact</h2>
+        <p>Each faculty page has a “Report an error” link. Faculty who want their information changed or removed can <a href={`${REPO_URL}/issues/new`} rel="noreferrer">open an issue</a> or email <a href={`mailto:${OWNER.email}`}>{OWNER.email}</a>.</p>
+        <p>Made by <a href={OWNER.url} rel="noreferrer">{OWNER.name}</a>, based on the <a href={SIBLING.url} rel="noreferrer">{SIBLING.name}</a>. The code and data pipeline are public on <a href={REPO_URL} rel="noreferrer">GitHub</a>.</p>
+      </section>
+
+      <section id="universities">
+        <h2>Universities included</h2>
+        <ul class="unis">{P.map((p) => <li><a href={`${base}programs/${p.slug}/`}>{p.name}</a> <span class="muted small">{p.n}</span></li>)}</ul>
+      </section>
+    </article>
+  </div>
 </Base>
+<style is:global>
+  .about { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; align-items: start; }
+  .toc { position: sticky; top: calc(var(--header-h) + 24px); }
+  .toc-h { font-size: 0.8125rem; font-weight: 600; color: var(--ink-3); margin-bottom: 8px; }
+  .toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; border-left: 2px solid var(--line); }
+  .toc a { display: block; padding: 6px 12px; margin-left: -2px; border-left: 2px solid transparent; color: var(--ink-3); text-decoration: none; font-size: 0.92rem; }
+  .toc a:hover { color: var(--ink); }
+  .toc a[aria-current="true"] { color: var(--action-text); border-left-color: var(--action); font-weight: 600; }
+  .about .prose { max-width: 72ch; }
+  .about .prose section { scroll-margin-top: calc(var(--header-h) + 16px); padding-top: 8px; }
+  .about .prose section + section { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 28px; }
+  .about .prose h2 { margin-top: 0; }
+  .uses { display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px; margin: 12px 0 14px; }
+  .uses dt { font-weight: 600; } .uses dd { margin: 0; color: var(--ink-2); }
+  .tech { margin-top: 14px; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-2); }
+  .tech summary { cursor: pointer; font-weight: 600; color: var(--ink-2); }
+  .tech ul { margin-top: 10px; }
+  .label-groups { display: grid; gap: 10px; margin-top: 12px; }
+  .unis { columns: 2; column-gap: 24px; list-style: none; padding: 0 !important; }
+  .unis li { break-inside: avoid; padding: 3px 0; }
+  @media (max-width: 860px) { .about { grid-template-columns: 1fr; gap: 20px; } .toc { position: static; } .toc ol { display: flex; flex-wrap: wrap; gap: 6px; border: 0; } .toc a { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; margin: 0; } .uses { grid-template-columns: 1fr; gap: 2px 0; } .uses dd { margin-bottom: 10px; } .unis { columns: 1; } }
+</style>
+<script>
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('.toc a'));
+  const obs = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) links.forEach((a) => a.setAttribute('aria-current', String(a.hash === '#' + e.target.id)));
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('.about section[id]').forEach((s) => obs.observe(s));
+</script>

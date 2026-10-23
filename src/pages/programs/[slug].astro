@@ -13,26 +13,23 @@ const roster = (faculty as Faculty[]).filter((f) => f.u === p.slug).sort((a, b) 
 <Base title={p.name} description={`${p.name}: ${p.n} tenure-line faculty, PhD units and links.`}>
   <p class="small"><a href={`${base}programs/#${p.slug}`} data-i18n="nav_programs">Programs</a> › {p.city}, {p.state}</p>
   <h1 style="margin-top:8px">{p.name}</h1>
-  <dl class="kv" style="margin-top:16px">
-    <dt data-i18n="tenure_line">Tenure-line faculty</dt><dd><span data-lang-only="en">{p.n} — {p.ranks['Professor'] || 0} professors · {p.ranks['Associate Professor'] || 0} associate · {p.ranks['Assistant Professor'] || 0} assistant</span><span data-lang-only="zh">{p.n} 位 — 教授 {p.ranks['Professor'] || 0} · 副教授 {p.ranks['Associate Professor'] || 0} · 助理教授 {p.ranks['Assistant Professor'] || 0}</span></dd>
-    {p.guide.length > 0 && <><dt data-i18n="guide_areas">Listed in the LSA directory as</dt><dd>{p.guide.join('; ')}</dd></>}
-  </dl>
-  <h2 style="margin-top:28px" data-i18n="units">Units granting the PhD</h2>
+  <p class="muted" style="margin-top:8px"><span data-lang-only="en">{p.n} faculty</span><span data-lang-only="zh">{p.n} 位教师</span></p>
+  <h2 style="margin-top:28px" data-i18n="units">Departments that grant the PhD</h2>
   <div class="rows" style="margin-top:10px">
     {p.units.map((u) => (
       <div class="panel"><b>{u.name}</b> <span class="fld-tag" data-field={u.field} data-i18n={`field_${u.field}`}>{FIELD_LABELS[u.field]?.en}</span>{u.school && <div class="small muted">{u.school}</div>}{u.phd && <div class="small" style="margin-top:4px">{u.phd}</div>}
-        <div class="toolbar" style="margin-top:8px">{u.phd_url && <a class="btn sm" href={u.phd_url} target="_blank" rel="noreferrer" data-i18n="phd_page">PhD program page</a>}{u.directory && <a class="btn sm" href={u.directory} target="_blank" rel="noreferrer" data-i18n="directory_link">Faculty directory</a>}{u.url && <a class="btn sm quiet" href={u.url} target="_blank" rel="noreferrer" data-i18n="unit_site">Unit website</a>}</div>
+        <div class="toolbar" style="margin-top:8px">{u.phd_url && <a class="btn sm" href={u.phd_url} target="_blank" rel="noreferrer" data-i18n="phd_page">PhD program page</a>}{u.url && <a class="btn sm quiet" href={u.url} target="_blank" rel="noreferrer" data-i18n="unit_site">Department website</a>}</div>
       </div>
     ))}
   </div>
-  <h2 style="margin-top:28px" data-i18n="roster">Faculty roster</h2>
+  <h2 style="margin-top:28px" data-i18n="roster">Faculty</h2>
   <div class="rows" style="margin-top:10px">
     {roster.map((f) => (
       <article class="row">
         <Fragment set:html={avatar(f as any)} />
         <div class="who">
           <div class="name"><a href={`${base}faculty/${f.id}/`} style="text-decoration:none;color:inherit">{f.name}</a></div>
-          <div class="meta">{f.rank} · {f.dept}</div>
+          <div class="meta">{f.rank === 'Faculty' ? 'Rank not listed' : f.rank}{p.units.length > 1 && ` · ${f.dept}`}</div>
           {f.summary && <p class="sum">{f.summary}</p>}
           {(f.labels.topic || []).length > 0 && <div class="chips">{(f.labels.topic || []).slice(0, 3).map((l) => <span class={`chip${l.p ? ' primary' : ''}`} data-dim="topic" title={T.dimensions.topic.labels[l.c]}>{T.dimensions.topic.labels_short[l.c]}{l.p ? ' ★' : ''}</span>)}</div>}
         </div>

@@ -38,8 +38,8 @@ const fullTitle = title === SITE_NAME ? title : `${title} · ${SITE_NAME}`;
     </main>
     <footer class="site-footer">
       <div class="shell">
-        <span>{SITE_NAME} · data built {buildInfo.built} · <a href={`${base}about/`}>methods, sources and limits</a></span>
-        <span>Made by <a href={OWNER.url} rel="noreferrer">{OWNER.name}</a> · <a href={REPO_URL} rel="noreferrer">source</a> · based on the <a href={SIBLING.url} rel="noreferrer">{SIBLING.name}</a></span>
+        <span><span data-i18n="footer_by">Made by</span> <a href={OWNER.url} rel="noreferrer">{OWNER.name}</a></span>
+        <span><a href={`${base}about/`} data-i18n="footer_about">How it works</a> · <a href={REPO_URL} rel="noreferrer" data-i18n="footer_source">Source code</a></span>
       </div>
     </footer>
   </body>

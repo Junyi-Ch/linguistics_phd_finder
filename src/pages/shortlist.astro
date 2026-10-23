@@ -3,8 +3,8 @@ import Base from '../layouts/Base.astro';
 ---
 <Base title="Shortlist">
   <div class="page-head">
-    <div><h1 data-i18n="sl_h1">Shortlist</h1><p class="lede" data-i18n="sl_lede">Faculty you saved, kept in this browser only. Add notes, then export to your application tracker.</p></div>
-    <div class="toolbar"><button type="button" class="btn" id="csv" data-i18n="sl_export_csv">Export CSV</button><button type="button" class="btn" id="md" data-i18n="sl_export_md">Copy as Markdown</button><button type="button" class="btn quiet" id="clear" data-i18n="sl_clear">Remove all</button></div>
+    <div><h1 data-i18n="sl_h1">Saved faculty</h1><p class="lede" data-i18n="sl_lede">Saved in this browser only. Add notes, then download your list.</p></div>
+    <div class="toolbar"><button type="button" class="btn" id="csv" data-i18n="sl_export_csv">Download CSV</button><button type="button" class="btn" id="md" data-i18n="sl_export_md">Copy list</button><button type="button" class="btn quiet" id="clear" data-i18n="sl_clear">Remove all</button></div>
   </div>
   <div id="list" class="rows"></div>
   <style is:global>

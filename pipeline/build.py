@@ -16,6 +16,7 @@ from pathlib import Path
 from datetime import date
 
 ROOT = Path(__file__).resolve().parents[1]
+JUNK_AREA = re.compile(r"^(links?|about\\b.*|contact.*|cv|curriculum vitae|e-?mail.*|website|home ?page|publications?|news|courses?|teaching|bio(graphy)?|profile|more|read more|office hours?|education|selected publications|research|lab|phone.*|google scholar)$|@|https?:", re.I)
 # evidence that a person's own research is about language (checked on the label summary + keywords)
 LANG_RESEARCH = re.compile(r"lingu|languag|speech|spoken|phonet|phonolog|morpholog|syntax|syntactic|semantic|pragmatic|grammar|"
                            r"lexic|\bwords?\b|sentence|bilingual|multilingual|acquisition|literacy|\bl2\b|\besl\b|tesol|"
@@ -137,7 +138,7 @@ def main():
                 "rank": f["rank"], "title": f.get("title") or f["rank"],
                 "profile": f.get("profile_url"), "site": f.get("personal_url") or None,
                 "scholar": f.get("google_scholar_url") or None,
-                "areas": [x for x in (f.get("research_areas") or []) if x][:8],
+                "areas": [x for x in (f.get("research_areas") or []) if x and not JUNK_AREA.search(x.strip())][:8],
                 "summary": (lab or {}).get("summary") or "", "summary_zh": (lab or {}).get("summary_zh") or "",
                 "conf": (lab or {}).get("confidence") or "low", "labels": lab_out,
                 "kw": [k.lower() for k in ((lab or {}).get("keywords") or [])][:12],
