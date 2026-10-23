@@ -23,8 +23,8 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     </button>
     <button type="button" role="tab" data-m="adv" aria-selected="false">
       <span class="nm-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5l-5 5M12 11.5l5 5"/></svg></span>
-      <span class="nm-t" data-i18n="net_mode_adv">Advisors &amp; students</span>
-      <span class="nm-d" data-i18n="net_mode_adv_d">PhD advisor and student, where known</span>
+      <span class="nm-t" data-i18n="net_mode_adv">Academic tree</span>
+      <span class="nm-d" data-i18n="net_mode_adv_d">Advisors, students and shared advisors</span>
     </button>
   </div>
   <p class="net-explain small" id="net-explain"></p>
@@ -37,9 +37,6 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     <select class="input" id="net-u" aria-label="Works at">
       <option value="" data-i18n="net_all_unis2">Works at: any university</option>
       {progs.map((p) => <option value={p.slug}>{p.name}</option>)}
-    </select>
-    <select class="input" id="net-phd" aria-label="PhD from" hidden>
-      <option value="" data-i18n="net_any_phd">PhD from: any school</option>
     </select>
     <span class="small muted" id="net-count"></span>
   </div>
@@ -155,7 +152,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   import { esc, GROUPS } from '../lib/data';
   import tax from '../data/taxonomy.json';
 
-  type Node = { id: string; n: string; u: string; us: string; r: string; fld: string; g: number; x: number; y: number; s: string; sz: string; k: [number, string[]][]; c: [number, number, number][]; ph: [string, number | null] | null; av: (number | string)[]; st: (number | string)[] };
+  type Node = { id: string; n: string; u: string; us: string; r: string; fld: string; g: number; x: number; y: number; s: string; sz: string; k: [number, string[]][]; c: [number, number, number][]; ph: [string, number | null] | null; av: (number | string)[]; st: (number | string)[]; sb: [number, string][] };
   const base = (import.meta.env.BASE_URL as string).replace(/\/+$/, '') + '/';
   const TOP = (tax as any).dimensions.topic;
   const topicName = (c: string) => (getLang() === 'zh' ? TOP.labels_short_zh?.[c] : TOP.labels_short?.[c]) || c;
@@ -188,7 +185,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   }
   const colorOf = (g: number) => col[g < 0 ? 8 : g];
   const active = (i: number) => groupOn.has(N[i].g) && (!uni || N[i].u === uni) && (!phdSel || N[i].ph?.[0] === phdSel);
-  const famOf = (i: number) => [...N[i].av, ...N[i].st].filter((x): x is number => typeof x === 'number');
+  const famOf = (i: number) => [...N[i].av, ...N[i].st, ...N[i].sb.map((x) => x[0])].filter((x): x is number => typeof x === 'number');
   const neigh = () => (sel < 0 ? new Set<number>() : new Set(mode === 'adv' ? famOf(sel) : (mode === 'co' ? N[sel].c : N[sel].k).map((k) => k[0])));
 
   function resize() {
@@ -272,6 +269,9 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     if (sel >= 0 && mode === 'adv') {
       for (const j of N[sel].av) if (typeof j === 'number') arrow(X(j), Y(j), X(sel), Y(sel), C.ink, 2);
       for (const j of N[sel].st) if (typeof j === 'number') arrow(X(sel), Y(sel), X(j), Y(j), C.ink, 2);
+      ctx.strokeStyle = C.ink3; ctx.lineWidth = 1.5; ctx.setLineDash([1.5, 3.5]); ctx.lineCap = 'round'; ctx.beginPath();
+      for (const [j] of N[sel].sb) { ctx.moveTo(X(sel), Y(sel)); ctx.lineTo(X(j), Y(j)); }
+      ctx.stroke(); ctx.setLineDash([]); ctx.lineCap = 'butt';
     }
     // dots
     const r = Math.max(2.4, Math.min(7, 2.6 * Math.sqrt(scale)));
@@ -327,7 +327,8 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     const person = (x: number | string) => typeof x === 'number'
       ? `<li><button type="button" data-i="${x}"><i style="background:${colorOf(N[x].g)}"></i><span class="nm">${esc(N[x].n)}</span><span class="sub">${esc(N[x].us)}</span></button></li>`
       : `<li><span class="nb-off"><i></i><span class="nm">${esc(x)}</span><span class="sub">${esc(t('fam_not_listed'))}</span></span></li>`;
-    const famSec = !(p.av.length || p.st.length) ? (mode === 'adv' ? `<div class="np-sub"><h3 class="sec-h">${esc(t('fam_h'))}</h3><p class="small muted" style="margin-top:6px">${esc(t('fam_none'))}</p></div>` : '') : (p.av.length || p.st.length) ? `<div class="np-sub">${p.av.length ? `<h3 class="sec-h">${esc(t('fam_advisor'))}</h3><ol class="nb">${p.av.map(person).join('')}</ol>` : ''}${p.st.length ? `<h3 class="sec-h" style="margin-top:12px">${esc(t('fam_students'))}</h3><ol class="nb">${p.st.map(person).join('')}</ol>` : ''}</div>` : '';
+    const sibHtml = p.sb.map(([j, via]) => `<li><button type="button" data-i="${j}"><i style="background:${colorOf(N[j].g)}"></i><span class="nm">${esc(N[j].n)}</span><span class="sub">${esc(N[j].us)} · ${esc(t('tree_via'))} ${esc(via)}</span></button></li>`).join('');
+    const famSec = !(p.av.length || p.st.length || p.sb.length) ? (mode === 'adv' ? `<div class="np-sub"><h3 class="sec-h">${esc(t('fam_h'))}</h3><p class="small muted" style="margin-top:6px">${esc(t('fam_none'))}</p></div>` : '') : (p.av.length || p.st.length || p.sb.length) ? `<div class="np-sub">${p.av.length ? `<h3 class="sec-h">${esc(t('fam_advisor'))}</h3><ol class="nb">${p.av.map(person).join('')}</ol>` : ''}${p.st.length ? `<h3 class="sec-h" style="margin-top:12px">${esc(t('tree_students'))}</h3><ol class="nb">${p.st.map(person).join('')}</ol>` : ''}${p.sb.length ? `<h3 class="sec-h" style="margin-top:12px">${esc(t('tree_siblings'))}</h3><ol class="nb">${sibHtml}</ol>` : ''}</div>` : '';
     const phdLine = p.ph ? `<div class="np-meta" style="margin-top:6px">${esc(t('fam_phd'))} ${esc(p.ph[0])}${p.ph[1] ? ', ' + p.ph[1] : ''}</div>` : '';
     const on = has(p.id);
     pPerson.innerHTML = `
@@ -348,7 +349,10 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     let html = '';
     if (mode === 'adv') {
       const rows = ADV.filter(([a, b]) => active(a) && active(b)).map(([a, b]) => `<li><button type="button" data-i="${b}"><span><b>${esc(N[a].n)}</b><span class="arrow">→</span><b>${esc(N[b].n)}</b></span><span class="sub">${esc(N[a].us)} → ${esc(N[b].us)}</span></button></li>`).join('');
-      html = `<h2 class="sec-h">${esc(t('adv_pairs_h', { n: ADV.length }))}</h2><ul class="pairs">${rows}</ul><p class="small muted" style="margin-top:12px">${esc(t('adv_pairs_note'))}</p>`;
+      const fam = new Map<string, Set<number>>();
+      N.forEach((p, i) => p.sb.forEach(([, via]) => { if (!fam.has(via)) fam.set(via, new Set()); fam.get(via)!.add(i); }));
+      const sibRows = [...fam].filter(([, kids]) => [...kids].some(active)).sort((x, y) => y[1].size - x[1].size).map(([via, kids]) => `<li><button type="button" data-i="${[...kids][0]}"><span>${[...kids].map((k) => `<b>${esc(N[k].n)}</b>`).join(', ')}</span><span class="sub">${esc(t('tree_via'))} ${esc(via)}</span></button></li>`).join('');
+      html = `<h2 class="sec-h">${esc(t('adv_pairs_h', { n: ADV.length }))}</h2><ul class="pairs">${rows}</ul>${sibRows ? `<h2 class="sec-h" style="margin-top:18px">${esc(t('sib_groups_h'))}</h2><ul class="pairs">${sibRows}</ul>` : ''}<p class="small muted" style="margin-top:12px">${esc(t('adv_pairs_note'))}</p>`;
     } else if (mode === 'co') {
       const top = CO.filter(([a, b]) => active(a) && active(b)).slice().sort((x, y) => y[2] - x[2]).slice(0, 12);
       const rows = top.map(([a, b, n]) => `<li><button type="button" data-i="${a}"><span><b>${esc(N[a].n)}</b> &amp; <b>${esc(N[b].n)}</b></span><span class="sub">${esc(N[a].us)} · ${esc(N[b].us)} · ${zh ? n + ' 篇合著' : n + ' papers'}</span></button></li>`).join('');
@@ -440,10 +444,11 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   const solid = '<svg width="26" height="8" aria-hidden="true"><path d="M1 4h24" stroke="currentColor" stroke-width="1.6"/></svg>';
   const thick = '<svg width="26" height="8" aria-hidden="true"><path d="M1 4h24" stroke="currentColor" stroke-width="3"/></svg>';
   const dashed = '<svg width="30" height="10" aria-hidden="true"><path d="M1 5h20" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M21 1l7 4-7 4z" fill="currentColor"/></svg>';
+  const dotted = '<svg width="26" height="8" aria-hidden="true"><path d="M2 4h22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.5 4"/></svg>';
   function explain() {
     const key = (svg: string, k: string) => `<span class="key">${svg}${esc(t(k))}</span>`;
     explainEl.innerHTML = mode === 'adv'
-      ? `<span>${esc(t('net_exp_adv'))}</span>${key(dashed, 'net_key_adv')}`
+      ? `<span>${esc(t('net_exp_adv'))}</span>${key(dashed, 'net_key_adv')}${key(dotted, 'net_key_sib')}`
       : mode === 'co'
       ? `<span>${esc(t('net_exp_co'))}</span>${key(solid, 'net_key_co1')}${key(thick, 'net_key_co2')}`
       : `<span>${esc(t('net_exp_sim'))}</span>${key(solid, 'net_key_sim')}`;
@@ -458,15 +463,13 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     else draw();
   }
   modeEl.addEventListener('click', (e) => { const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-m]'); if (b && !b.disabled) setMode(b.dataset.m as Mode); });
-  const phdEl = document.getElementById('net-phd') as HTMLSelectElement;
-  phdEl.addEventListener('change', () => { phdSel = phdEl.value; if (!phdSel && !uni) fit(undefined, true); refilter(); });
   uSel.addEventListener('change', () => { uni = uSel.value; if (!uni) fit(undefined, true); refilter(); });
   const findPerson = () => {
     const v = qIn.value.trim().toLowerCase(); if (!v) return;
     const exact = N.findIndex((p) => `${p.n} · ${p.us}`.toLowerCase() === v || p.n.toLowerCase() === v);
     const i = exact >= 0 ? exact : N.findIndex((p) => p.n.toLowerCase().includes(v));
     if (i < 0) return;
-    if (!active(i)) { groupOn.add(N[i].g); document.querySelector(`.lg[data-g="${N[i].g}"]`)?.setAttribute('aria-pressed', 'true'); if (uni && N[i].u !== uni) { uni = ''; uSel.value = ''; } if (phdSel && N[i].ph?.[0] !== phdSel) { phdSel = ''; phdEl.value = ''; } updateCount(); }
+    if (!active(i)) { groupOn.add(N[i].g); document.querySelector(`.lg[data-g="${N[i].g}"]`)?.setAttribute('aria-pressed', 'true'); if (uni && N[i].u !== uni) { uni = ''; uSel.value = ''; } updateCount(); }
     select(i);
   };
   qIn.addEventListener('change', findPerson);
@@ -479,16 +482,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
 
   fetch(base + 'network.json').then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); }).then((d) => {
     N = d.nodes; E = d.edges; CO = d.co || [];
-    const phdCount = new Map<string, number>();
-    N.forEach((p) => { if (p.ph) phdCount.set(p.ph[0], (phdCount.get(p.ph[0]) || 0) + 1); });
-    const phdOpts = [...phdCount].filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-    if (phdOpts.length) {
-      phdEl.insertAdjacentHTML('beforeend', phdOpts.map(([k, n]) => `<option value="${esc(k)}">${esc(k)} (${n})</option>`).join(''));
-      phdEl.hidden = false;
-    }
-    const wantPhd = new URLSearchParams(location.search).get('phd');
-    if (wantPhd && phdCount.has(wantPhd)) { phdEl.value = wantPhd; phdSel = wantPhd; }
-    N.forEach((p, i) => p.av.forEach((a) => { if (typeof a === 'number') { ADV.push([a, i]); inAdv.add(a); inAdv.add(i); } }));
+    N.forEach((p, i) => { p.av.forEach((a) => { if (typeof a === 'number') { ADV.push([a, i]); inAdv.add(a); inAdv.add(i); } }); if (p.sb.length) inAdv.add(i); });
     if (!CO.length) { const cb = modeEl.querySelector<HTMLButtonElement>('[data-m="co"]')!; cb.disabled = true; document.getElementById('co-desc')!.textContent = t('net_mode_co_soon'); }
     const lines = new URLSearchParams(location.search).get('lines');
     explain();

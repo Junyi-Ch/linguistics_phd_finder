@@ -39,17 +39,25 @@ const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correctio
     <div>
       {f.summary && <p class="lede" style="font-size:1.1rem"><span data-lang-only="en">{f.summary}</span><span data-lang-only="zh">{f.summary_zh || f.summary}</span></p>}
       {f.areas.length > 0 && <section style="margin-top:22px"><h2 class="sec-h" data-i18n="research_areas">Research areas (from the department)</h2><div class="chips" style="margin-top:8px">{f.areas.map((a) => <span class="chip">{a}</span>)}</div></section>}
-      {fam && (fam.advisors.length > 0 || fam.students.length > 0 || fam.same.length > 0) && <section class="related">
-        <h2 class="sec-h" data-i18n="fam_h">Academic family</h2>
-        {fam.advisors.length > 0 && <p style="margin-top:8px"><span class="muted" data-i18n="fam_advisor">PhD advisor</span>: {fam.advisors.map((a, k) => <>{k > 0 && ', '}{'f' in a && a.f ? <a href={`${base}faculty/${a.f.id}/`}>{a.f.name}</a> : (a as any).name}</>)}</p>}
-        {fam.students.length > 0 && <p style="margin-top:6px"><span class="muted" data-i18n="fam_students">PhD students on this site</span>: {fam.students.map((a, k) => <>{k > 0 && ', '}{'f' in a && a.f ? <a href={`${base}faculty/${a.f.id}/`}>{a.f.name}</a> : (a as any).name}</>)}</p>}
-        {fam.same.length > 0 && <>
-          <p class="small muted" style="margin-top:12px"><span data-lang-only="en">Also did their PhD at {fam.phd!.inst}</span><span data-lang-only="zh">同样在 {fam.phd!.inst} 获得博士学位</span></p>
-          <ul class="rel-list">{fam.same.slice(0, 9).map((c) => (
-            <li><a href={`${base}faculty/${c.f.id}/`}>{c.f.name}</a> <span class="muted">· {c.p?.short || c.f.u}</span>{c.year && <div class="small muted">PhD {c.year}</div>}</li>))}
-          </ul>
-          {fam.same.length > 9 && <p class="small" style="margin-top:8px"><a href={`${base}network/?phd=${encodeURIComponent(fam.phd!.inst)}`}><span data-lang-only="en">All {fam.same.length + 1} on the network map</span><span data-lang-only="zh">在研究网络中查看全部 {fam.same.length + 1} 位</span></a> →</p>}
-        </>}
+      {rel.length > 0 && <section class="related">
+        <h2 class="sec-h" data-i18n="related_h">Similar research</h2>
+        <p class="small muted" data-i18n="related_lede">Faculty at any university whose research profile is closest to this one.</p>
+        <ul class="rel-list">{rel.map((r) => (
+          <li><a href={`${base}faculty/${r.f.id}/`}>{r.f.name}</a> <span class="muted">· {r.p?.short || r.f.u}</span>
+            {r.shared.length > 0 && <div class="small muted"><span data-i18n="related_both">Both:</span> {r.shared.slice(0, 3).map((c, k) => <>{k > 0 && ' · '}<span data-lang-only="en">{T.dimensions.topic.labels_short[c]}</span><span data-lang-only="zh">{T.dimensions.topic.labels_short_zh[c]}</span></>)}</div>}
+          </li>))}
+        </ul>
+        <p class="small" style="margin-top:10px"><a href={`${base}network/?p=${f.id}`} data-i18n="related_map">See on the network map</a> →</p>
+      </section>}
+      {fam && (fam.advisors.length + fam.students.length + fam.siblings.length) > 0 && <section class="related">
+        <h2 class="sec-h" data-i18n="tree_h">Academic tree</h2>
+        <p class="small muted" data-i18n="tree_lede">PhD advisors, PhD students, and faculty on this site who share an advisor. From department profiles and Wikidata, so it may be incomplete.</p>
+        <div class="tree-grid">
+          {fam.advisors.length > 0 && <div><h3 class="tree-h" data-i18n="fam_advisor">PhD advisor</h3><ul class="tree-list">{fam.advisors.map((a) => <li>{'f' in a && a.f ? <><a href={`${base}faculty/${a.f.id}/`}>{a.f.name}</a> <span class="muted">· {a.p?.short || a.f.u}</span></> : <>{(a as any).name} <span class="small muted" data-i18n="fam_not_listed">not on this site</span></>}</li>)}</ul></div>}
+          {fam.students.length > 0 && <div><h3 class="tree-h" data-i18n="tree_students">PhD students</h3><ul class="tree-list">{fam.students.map((a) => <li>{'f' in a && a.f ? <><a href={`${base}faculty/${a.f.id}/`}>{a.f.name}</a> <span class="muted">· {a.p?.short || a.f.u}</span></> : <>{(a as any).name} <span class="small muted" data-i18n="fam_not_listed">not on this site</span></>}</li>)}</ul></div>}
+          {fam.siblings.length > 0 && <div><h3 class="tree-h" data-i18n="tree_siblings">Share an advisor</h3><ul class="tree-list">{fam.siblings.map((c) => <li><a href={`${base}faculty/${c.f.id}/`}>{c.f.name}</a> <span class="muted">· {c.p?.short || c.f.u}</span><div class="small muted"><span data-i18n="tree_via">Advisor:</span> {c.via}</div></li>)}</ul></div>}
+        </div>
+        <p class="small" style="margin-top:10px"><a href={`${base}network/?p=${f.id}&lines=adv`} data-i18n="tree_map">See the academic tree on the network map</a> →</p>
       </section>}
       {co.length > 0 && <section class="related">
         <h2 class="sec-h" data-i18n="co_h">Has published with</h2>
@@ -62,16 +70,6 @@ const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correctio
         </ul>
         {co.length > 12 && <p class="small muted" style="margin-top:8px"><span data-lang-only="en">and {co.length - 12} more</span><span data-lang-only="zh">另有 {co.length - 12} 位</span></p>}
         <p class="small" style="margin-top:10px"><a href={`${base}network/?p=${f.id}&lines=co`} data-i18n="co_map">See co-authors on the network map</a> →</p>
-      </section>}
-      {rel.length > 0 && <section class="related">
-        <h2 class="sec-h" data-i18n="related_h">Similar research</h2>
-        <p class="small muted" data-i18n="related_lede">Faculty at any university whose research profile is closest to this one.</p>
-        <ul class="rel-list">{rel.map((r) => (
-          <li><a href={`${base}faculty/${r.f.id}/`}>{r.f.name}</a> <span class="muted">· {r.p?.short || r.f.u}</span>
-            {r.shared.length > 0 && <div class="small muted"><span data-i18n="related_both">Both:</span> {r.shared.slice(0, 3).map((c, k) => <>{k > 0 && ' · '}<span data-lang-only="en">{T.dimensions.topic.labels_short[c]}</span><span data-lang-only="zh">{T.dimensions.topic.labels_short_zh[c]}</span></>)}</div>}
-          </li>))}
-        </ul>
-        <p class="small" style="margin-top:10px"><a href={`${base}network/?p=${f.id}`} data-i18n="related_map">See on the network map</a> →</p>
       </section>}
     </div>
     <aside class="panel" style="align-self:start">
@@ -91,6 +89,11 @@ const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correctio
     .rel-list { list-style: none; margin: 10px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px 20px; }
     .rel-list a { font-weight: 600; color: var(--ink); text-decoration: none; }
     .rel-list a:hover { color: var(--action-text); }
+    .tree-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px 24px; margin-top: 12px; }
+    .tree-h { font-size: 0.8125rem; font-weight: 600; color: var(--ink-3); margin: 0 0 6px; }
+    .tree-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+    .tree-list a { font-weight: 600; color: var(--ink); text-decoration: none; }
+    .tree-list a:hover { color: var(--action-text); }
     .co-title { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-style: italic; margin-top: 2px; }
   </style>
   <script>

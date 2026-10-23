@@ -10,11 +10,20 @@ import { GROUPS, type Faculty, type Program } from './data';
 
 export type Related = { i: number; id: string; s: number; shared: string[] };
 export type Co = { i: number; id: string; n: number; y: number; t: string };
-type Net = { F: Faculty[]; related: Related[][]; edges: [number, number][]; xy: [number, number][]; groups: number[]; co: Co[][]; coEdges: [number, number, number][]; oa: Record<string, string[]>; coBuilt: string | null; phd: Record<string, { inst: string; year: number | null }>; adv: (number | string)[][]; stu: (number | string)[][]; wd: Record<string, string> };
+type Net = { F: Faculty[]; related: Related[][]; edges: [number, number][]; xy: [number, number][]; groups: number[]; co: Co[][]; coEdges: [number, number, number][]; oa: Record<string, string[]>; coBuilt: string | null; phd: Record<string, { inst: string; year: number | null }>; adv: (number | string)[][]; stu: (number | string)[][]; sib: [number, string][][]; wd: Record<string, string> };
 
 const K = 8;   // neighbours kept per person
 const EK = 4;  // neighbours drawn as links on the map
 let cache: Net | null = null;
+
+/** OpenAlex sometimes has garbled titles from bad scans; only show ones that read like text */
+function readable(t: string) {
+  if (!t || /[$\\{}<>|^~]/.test(t)) return false;
+  const letters = t.replace(/[^A-Za-z]/g, '');
+  if (letters.length < 4) return /\p{L}/u.test(t);
+  const vowels = letters.replace(/[^aeiouyAEIOUY]/g, '').length;
+  return vowels / letters.length > 0.25;
+}
 
 export function groupOf(f: Faculty): number {
   const t = f.labels?.topic || [];
@@ -90,7 +99,8 @@ export function network(): Net {
     for (const [a, b, n, y, t] of d.pairs as [string, string, number, number, string][]) {
       const ia = at.get(a), ib = at.get(b);
       if (ia == null || ib == null) continue;
-      co[ia].push({ i: ib, id: b, n, y, t }); co[ib].push({ i: ia, id: a, n, y, t });
+      const tt = readable(t) ? t : '';
+      co[ia].push({ i: ib, id: b, n, y, t: tt }); co[ib].push({ i: ia, id: a, n, y, t: tt });
       coEdges.push([ia, ib, n]);
     }
     co.forEach((l) => l.sort((x, y) => y.n - x.n || y.y - x.y));
@@ -98,6 +108,8 @@ export function network(): Net {
   // academic family (pipeline/tree.py): PhD school and year, advisor -> student links; optional
   let phd: Record<string, { inst: string; year: number | null }> = {}, wd: Record<string, string> = {};
   const adv: (number | string)[][] = F.map(() => []), stu: (number | string)[][] = F.map(() => []);
+  const sib: [number, string][][] = F.map(() => []);
+  const nkey = (n: string) => { const t = n.normalize('NFKD').replace(/[^\x00-\x7f]/g, '').toLowerCase().replace(/[^a-z ]/g, ' ').split(/\s+/).filter(Boolean); return t.length >= 2 ? t[0] + ' ' + t[t.length - 1] : n; };
   const tp = path.join(root, 'src/data/tree.json');
   if (fs.existsSync(tp)) {
     const d = JSON.parse(fs.readFileSync(tp, 'utf8'));
@@ -108,8 +120,17 @@ export function network(): Net {
       if (is != null) adv[is].push(ia != null ? ia : (an || ''));
       if (ia != null) stu[ia].push(is != null ? is : (sn || ''));
     }
+    // academic siblings: people on the site who share an advisor (on the site or not)
+    const groups = new Map<string, { label: string; kids: Set<number> }>();
+    F.forEach((_, i) => adv[i].forEach((a) => {
+      const k = typeof a === 'number' ? 'id:' + a : 'n:' + nkey(a);
+      const label = typeof a === 'number' ? F[a].name : a;
+      if (!groups.has(k)) groups.set(k, { label, kids: new Set() });
+      groups.get(k)!.kids.add(i);
+    }));
+    for (const { label, kids } of groups.values()) for (const i of kids) for (const j of kids) if (i !== j && !sib[i].some(([x]) => x === j)) sib[i].push([j, label]);
   }
-  cache = { F, related, edges, xy, groups: F.map(groupOf), co, coEdges, oa, coBuilt, phd, adv, stu, wd };
+  cache = { F, related, edges, xy, groups: F.map(groupOf), co, coEdges, oa, coBuilt, phd, adv, stu, sib, wd };
   return cache;
 }
 
@@ -139,10 +160,7 @@ export function familyFor(id: string) {
   const P = programs as Program[];
   const who = (x: number | string) => (typeof x === 'number' ? { f: net.F[x], p: P.find((p) => p.slug === net.F[x].u) } : { name: x });
   const phd = net.phd[id] || null;
-  const same = phd ? net.F.filter((g) => g.id !== id && net.phd[g.id]?.inst === phd.inst)
-    .map((g) => ({ f: g, p: P.find((p) => p.slug === g.u), year: net.phd[g.id].year }))
-    .sort((a, b) => (phd.year && a.year ? Math.abs(a.year - phd.year) : 99) - (phd.year && b.year ? Math.abs(b.year - phd.year) : 99) || a.f.name.localeCompare(b.f.name)) : [];
-  return { phd, phdProgram: phd ? P.find((p) => p.name === phd.inst) : undefined, advisors: net.adv[i].map(who), students: net.stu[i].map(who), same, wd: net.wd[id] || null };
+  return { phd, phdProgram: phd ? P.find((p) => p.name === phd.inst) : undefined, advisors: net.adv[i].map(who), students: net.stu[i].map(who), siblings: net.sib[i].map(([j, via]) => ({ f: net.F[j], p: P.find((p) => p.slug === net.F[j].u), via })), wd: net.wd[id] || null };
 }
 
 /** compact JSON for the Network page */
@@ -156,7 +174,7 @@ export function networkJson() {
       k: net.related[i].map((r) => [r.i, r.shared]),
       c: net.co[i].map((c) => [c.i, c.n, c.y]),
       ph: net.phd[f.id] ? [net.phd[f.id].inst, net.phd[f.id].year] : null,
-      av: net.adv[i], st: net.stu[i],
+      av: net.adv[i], st: net.stu[i], sb: net.sib[i],
     })),
     edges: net.edges,
     co: net.coEdges,
