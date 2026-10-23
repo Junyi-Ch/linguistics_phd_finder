@@ -20,6 +20,9 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
       <option value="" data-i18n="net_all_unis">All universities</option>
       {progs.map((p) => <option value={p.slug}>{p.name}</option>)}
     </select>
+    <select class="input" id="net-phd" aria-label="PhD from" hidden>
+      <option value="" data-i18n="net_any_phd">PhD from: any school</option>
+    </select>
     <div class="seg" id="net-mode" role="group" aria-label="Lines show" hidden>
       <button type="button" data-m="sim" aria-pressed="true" data-i18n="net_mode_sim">Similar research</button>
       <button type="button" data-m="co" aria-pressed="false" data-i18n="net_mode_co">Co-authors</button>
@@ -53,6 +56,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
           <li data-i18n="net_how1">Click a dot to see that person and the eight researchers whose work is closest to theirs.</li>
           <li data-i18n="net_how2">Drag to move, scroll or pinch to zoom. Pick a university to highlight its faculty.</li>
           <li data-i18n="net_how4" id="how-co" hidden>Switch the lines to Co-authors to see who has published papers together (from OpenAlex). Dots stay where research similarity puts them.</li>
+          <li data-i18n="net_how5">Pick a school under “PhD from” to see where people trained. When a profile names a PhD advisor, a dashed line links advisor and student.</li>
           <li data-i18n="net_how3">Distance shows research similarity, read from public profiles. It is not a list of collaborators.</li>
         </ul>
       </div>
@@ -76,6 +80,11 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   .net-find { flex: 1 1 260px; max-width: 380px; }
   .net-find .input { width: 100%; }
   #net-mode { flex: none; }
+  #net-phd { flex: 0 1 260px; min-width: 0; }
+  .nb-off { display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 4px 10px; align-items: baseline; padding: 8px; }
+  .nb-off i { width: 9px; height: 9px; border-radius: 999px; border: 1.5px solid var(--ink-3); }
+  .nb-off .nm { font-weight: 600; font-size: 0.92rem; color: var(--ink-2); }
+  .nb-off .sub { grid-column: 2; font-size: 0.8125rem; color: var(--ink-3); }
   #net-u { flex: 0 1 300px; min-width: 0; }
   .net-legend { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 14px 0 16px; }
   .net-legend > .small { margin-right: 4px; }
@@ -123,7 +132,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   import { esc, GROUPS } from '../lib/data';
   import tax from '../data/taxonomy.json';
 
-  type Node = { id: string; n: string; u: string; us: string; r: string; fld: string; g: number; x: number; y: number; s: string; sz: string; k: [number, string[]][]; c: [number, number, number][] };
+  type Node = { id: string; n: string; u: string; us: string; r: string; fld: string; g: number; x: number; y: number; s: string; sz: string; k: [number, string[]][]; c: [number, number, number][]; ph: [string, number | null] | null; av: (number | string)[]; st: (number | string)[] };
   const base = (import.meta.env.BASE_URL as string).replace(/\/+$/, '') + '/';
   const TOP = (tax as any).dimensions.topic;
   const topicName = (c: string) => (getLang() === 'zh' ? TOP.labels_short_zh?.[c] : TOP.labels_short?.[c]) || c;
@@ -142,7 +151,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   let N: Node[] = [], E: [number, number][] = [], CO: [number, number, number][] = [];
   let mode: 'sim' | 'co' = 'sim';
   let W = 0, H = 0, dpr = 1, scale = 1, tx = 0, ty = 0;
-  let sel = -1, hover = -1, uni = '';
+  let sel = -1, hover = -1, uni = '', phdSel = '';
   const groupOn = new Set<number>([-1, ...GROUPS.map((_, i) => i)]);
   let col: string[] = [], C = { line: '', ink: '', ink3: '', bg: '' };
 
@@ -152,7 +161,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     C = { line: cssv('--line-2'), ink: cssv('--ink'), ink3: cssv('--ink-3'), bg: cssv('--bg-2') };
   }
   const colorOf = (g: number) => col[g < 0 ? 8 : g];
-  const active = (i: number) => groupOn.has(N[i].g) && (!uni || N[i].u === uni);
+  const active = (i: number) => groupOn.has(N[i].g) && (!uni || N[i].u === uni) && (!phdSel || N[i].ph?.[0] === phdSel);
   const neigh = () => (sel >= 0 ? new Set((mode === 'co' ? N[sel].c : N[sel].k).map((k) => k[0])) : new Set<number>());
 
   function resize() {
@@ -220,6 +229,12 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
       ctx.lineWidth = 1.5; ctx.strokeStyle = C.ink3; ctx.beginPath();
       for (const j of nb) { ctx.moveTo(X(sel), Y(sel)); ctx.lineTo(X(j), Y(j)); }
       ctx.stroke();
+      const fam = [...N[sel].av, ...N[sel].st].filter((x): x is number => typeof x === 'number');
+      if (fam.length) {
+        ctx.setLineDash([5, 4]); ctx.lineWidth = 1.8; ctx.strokeStyle = C.ink; ctx.beginPath();
+        for (const j of fam) { ctx.moveTo(X(sel), Y(sel)); ctx.lineTo(X(j), Y(j)); }
+        ctx.stroke(); ctx.setLineDash([]);
+      }
     }
     // dots
     const r = Math.max(2.4, Math.min(7, 2.6 * Math.sqrt(scale)));
@@ -234,8 +249,8 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     ctx.globalAlpha = 1;
     // names: the selected person and their neighbours; a highlighted university; everyone on screen when zoomed in far
     const named = new Set<number>();
-    if (sel >= 0) { named.add(sel); nb.forEach((j) => named.add(j)); }
-    if (uni) N.forEach((p, i) => { if (active(i)) named.add(i); });
+    if (sel >= 0) { named.add(sel); nb.forEach((j) => named.add(j)); [...N[sel].av, ...N[sel].st].forEach((x) => { if (typeof x === 'number') named.add(x); }); }
+    if (uni || phdSel) N.forEach((p, i) => { if (active(i)) named.add(i); });
     if (sel < 0 && scale > 3.2) N.forEach((_, i) => { if (active(i) && X(i) > -20 && X(i) < W + 20 && Y(i) > -20 && Y(i) < H + 20) named.add(i); });
     if (named.size <= 90) {
       ctx.textBaseline = 'middle';
@@ -271,16 +286,21 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     }).join('');
     const coSec = CO.length ? `<div class="np-sub"><h3 class="sec-h">${esc(t('co_h'))}</h3>${p.c.length ? `<ol class="nb">${coHtml}</ol>` : `<p class="small muted" style="margin-top:6px">${esc(t('co_none'))}</p>`}</div>` : '';
     const simSec = `<div class="np-sub"><h3 class="sec-h">${esc(t('related_h'))}</h3><ol class="nb">${nbHtml}</ol></div>`;
+    const person = (x: number | string) => typeof x === 'number'
+      ? `<li><button type="button" data-i="${x}"><i style="background:${colorOf(N[x].g)}"></i><span class="nm">${esc(N[x].n)}</span><span class="sub">${esc(N[x].us)}</span></button></li>`
+      : `<li><span class="nb-off"><i></i><span class="nm">${esc(x)}</span><span class="sub">${esc(t('fam_not_listed'))}</span></span></li>`;
+    const famSec = (p.av.length || p.st.length) ? `<div class="np-sub">${p.av.length ? `<h3 class="sec-h">${esc(t('fam_advisor'))}</h3><ol class="nb">${p.av.map(person).join('')}</ol>` : ''}${p.st.length ? `<h3 class="sec-h" style="margin-top:12px">${esc(t('fam_students'))}</h3><ol class="nb">${p.st.map(person).join('')}</ol>` : ''}</div>` : '';
+    const phdLine = p.ph ? `<div class="np-meta" style="margin-top:6px">${esc(t('fam_phd'))} ${esc(p.ph[0])}${p.ph[1] ? ', ' + p.ph[1] : ''}</div>` : '';
     const on = has(p.id);
     pPerson.innerHTML = `
       <div class="np-meta">${esc(rank)} · ${esc(p.us)}</div>
-      <h2 class="np-name"><a href="${base}faculty/${p.id}/">${esc(p.n)}</a></h2>
+      <h2 class="np-name"><a href="${base}faculty/${p.id}/">${esc(p.n)}</a></h2>${phdLine}
       ${p.s ? `<p class="np-sum">${esc(zh ? p.sz || p.s : p.s)}</p>` : ''}
       <div class="np-actions">
         <a class="btn" href="${base}faculty/${p.id}/">${esc(t('net_open'))}</a>
         <button type="button" class="btn save-btn" data-save="${p.id}" aria-pressed="${on}">${esc(on ? t('saved') : t('save'))}</button>
       </div>
-      ${mode === 'co' ? coSec + simSec : simSec + coSec}`;
+      ${famSec}${mode === 'co' ? coSec + simSec : simSec + coSec}`;
     pEmpty.hidden = true; pPerson.hidden = false;
     bindSaveButtons(pPerson);
   }
@@ -349,7 +369,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   function refilter() {
     if (sel >= 0 && !active(sel)) select(-1, false);
     updateCount();
-    if (uni) fit(N.map((_, i) => i).filter(active), true); else draw();
+    if (uni || phdSel) fit(N.map((_, i) => i).filter(active), true); else draw();
   }
   document.getElementById('net-legend')!.addEventListener('click', (e) => {
     const b = (e.target as HTMLElement).closest<HTMLButtonElement>('.lg'); if (!b) return;
@@ -367,13 +387,15 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     if (sel >= 0) select(sel); else draw();
   }
   modeEl.addEventListener('click', (e) => { const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-m]'); if (b) setMode(b.dataset.m as 'sim' | 'co'); });
+  const phdEl = document.getElementById('net-phd') as HTMLSelectElement;
+  phdEl.addEventListener('change', () => { phdSel = phdEl.value; if (!phdSel && !uni) fit(undefined, true); refilter(); });
   uSel.addEventListener('change', () => { uni = uSel.value; if (!uni) fit(undefined, true); refilter(); });
   const findPerson = () => {
     const v = qIn.value.trim().toLowerCase(); if (!v) return;
     const exact = N.findIndex((p) => `${p.n} · ${p.us}`.toLowerCase() === v || p.n.toLowerCase() === v);
     const i = exact >= 0 ? exact : N.findIndex((p) => p.n.toLowerCase().includes(v));
     if (i < 0) return;
-    if (!active(i)) { groupOn.add(N[i].g); document.querySelector(`.lg[data-g="${N[i].g}"]`)?.setAttribute('aria-pressed', 'true'); if (uni && N[i].u !== uni) { uni = ''; uSel.value = ''; } updateCount(); }
+    if (!active(i)) { groupOn.add(N[i].g); document.querySelector(`.lg[data-g="${N[i].g}"]`)?.setAttribute('aria-pressed', 'true'); if (uni && N[i].u !== uni) { uni = ''; uSel.value = ''; } if (phdSel && N[i].ph?.[0] !== phdSel) { phdSel = ''; phdEl.value = ''; } updateCount(); }
     select(i);
   };
   qIn.addEventListener('change', findPerson);
@@ -386,6 +408,15 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
 
   fetch(base + 'network.json').then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); }).then((d) => {
     N = d.nodes; E = d.edges; CO = d.co || [];
+    const phdCount = new Map<string, number>();
+    N.forEach((p) => { if (p.ph) phdCount.set(p.ph[0], (phdCount.get(p.ph[0]) || 0) + 1); });
+    const phdOpts = [...phdCount].filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+    if (phdOpts.length) {
+      phdEl.insertAdjacentHTML('beforeend', phdOpts.map(([k, n]) => `<option value="${esc(k)}">${esc(k)} (${n})</option>`).join(''));
+      phdEl.hidden = false;
+    }
+    const wantPhd = new URLSearchParams(location.search).get('phd');
+    if (wantPhd && phdCount.has(wantPhd)) { phdEl.value = wantPhd; phdSel = wantPhd; }
     if (CO.length) { modeEl.hidden = false; document.getElementById('how-co')!.hidden = false; if (new URLSearchParams(location.search).get('lines') === 'co') setMode('co'); }
     readColors(); resize(); fit();
     status.hidden = true;

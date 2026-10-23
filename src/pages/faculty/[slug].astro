@@ -4,7 +4,7 @@ import faculty from '../../data/faculty.json';
 import programs from '../../data/programs.json';
 import tax from '../../data/taxonomy.json';
 import { REPO_URL } from '../../lib/site';
-import { relatedFor, coauthorsFor, openalexFor } from '../../lib/network';
+import { relatedFor, coauthorsFor, openalexFor, familyFor } from '../../lib/network';
 import { DIMS, initials, type Faculty, type Program, type Taxonomy, avatar } from '../../lib/data';
 export function getStaticPaths() { return (faculty as Faculty[]).map((f) => ({ params: { slug: f.id }, props: { f } })); }
 const { f } = Astro.props as { f: Faculty };
@@ -14,6 +14,7 @@ const p = (programs as Program[]).find((x) => x.slug === f.u);
 const rel = relatedFor(f.id).slice(0, 6);
 const co = coauthorsFor(f.id);
 const oa = openalexFor(f.id);
+const fam = familyFor(f.id);
 const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correction: ' + f.name + ' (' + (p?.short || f.u) + ')')}&body=${encodeURIComponent('Page: ' + base + 'faculty/' + f.id + '/\n\nWhat is wrong:\n')}`;
 ---
 <Base title={f.name} description={`${f.name}, ${f.rank}, ${f.dept}, ${p?.name || ''}. ${f.summary}`}>
@@ -24,6 +25,7 @@ const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correctio
       <div class="small muted">{f.rank === "Faculty" ? "Rank not listed" : f.title}</div>
       <h1 style="font-size:clamp(1.7rem,1.2rem+1.6vw,2.4rem)">{f.name}</h1>
       <div class="muted" style="margin-top:6px">{p && <a href={`${base}programs/${p.slug}/`}>{p.name}</a>} · {f.dept}</div>
+      {fam?.phd && <div class="small muted" style="margin-top:6px"><span data-i18n="fam_phd">PhD:</span> {fam.phdProgram ? <a href={`${base}programs/${fam.phdProgram.slug}/`}>{fam.phd.inst}</a> : fam.phd.inst}{fam.phd.year ? `, ${fam.phd.year}` : ''}</div>}
       <div class="toolbar" style="margin-top:12px">
         <button type="button" class="btn save-btn" data-save={f.id} data-i18n="save">Save</button>
         {f.profile && <a class="btn" href={f.profile} target="_blank" rel="noreferrer" data-i18n="profile">Department profile</a>}
@@ -37,6 +39,18 @@ const issue = `${REPO_URL}/issues/new?title=${encodeURIComponent('Data correctio
     <div>
       {f.summary && <p class="lede" style="font-size:1.1rem"><span data-lang-only="en">{f.summary}</span><span data-lang-only="zh">{f.summary_zh || f.summary}</span></p>}
       {f.areas.length > 0 && <section style="margin-top:22px"><h2 class="sec-h" data-i18n="research_areas">Research areas (from the department)</h2><div class="chips" style="margin-top:8px">{f.areas.map((a) => <span class="chip">{a}</span>)}</div></section>}
+      {fam && (fam.advisors.length > 0 || fam.students.length > 0 || fam.same.length > 0) && <section class="related">
+        <h2 class="sec-h" data-i18n="fam_h">Academic family</h2>
+        {fam.advisors.length > 0 && <p style="margin-top:8px"><span class="muted" data-i18n="fam_advisor">PhD advisor</span>: {fam.advisors.map((a, k) => <>{k > 0 && ', '}{'f' in a && a.f ? <a href={`${base}faculty/${a.f.id}/`}>{a.f.name}</a> : (a as any).name}</>)}</p>}
+        {fam.students.length > 0 && <p style="margin-top:6px"><span class="muted" data-i18n="fam_students">PhD students on this site</span>: {fam.students.map((a, k) => <>{k > 0 && ', '}{'f' in a && a.f ? <a href={`${base}faculty/${a.f.id}/`}>{a.f.name}</a> : (a as any).name}</>)}</p>}
+        {fam.same.length > 0 && <>
+          <p class="small muted" style="margin-top:12px"><span data-lang-only="en">Also did their PhD at {fam.phd!.inst}</span><span data-lang-only="zh">同样在 {fam.phd!.inst} 获得博士学位</span></p>
+          <ul class="rel-list">{fam.same.slice(0, 9).map((c) => (
+            <li><a href={`${base}faculty/${c.f.id}/`}>{c.f.name}</a> <span class="muted">· {c.p?.short || c.f.u}</span>{c.year && <div class="small muted">PhD {c.year}</div>}</li>))}
+          </ul>
+          {fam.same.length > 9 && <p class="small" style="margin-top:8px"><a href={`${base}network/?phd=${encodeURIComponent(fam.phd!.inst)}`}><span data-lang-only="en">All {fam.same.length + 1} on the network map</span><span data-lang-only="zh">在研究网络中查看全部 {fam.same.length + 1} 位</span></a> →</p>}
+        </>}
+      </section>}
       {co.length > 0 && <section class="related">
         <h2 class="sec-h" data-i18n="co_h">Has published with</h2>
         <p class="small muted" data-i18n="co_lede">Faculty on this site who share papers with this person, from OpenAlex.</p>

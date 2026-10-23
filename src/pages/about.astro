@@ -13,6 +13,7 @@ const sections = [
   ['use', 'How to use it'],
   ['matching', 'How matching works'],
   ['network', 'Faculty network'],
+  ['family', 'Academic family'],
   ['data', 'What data is included'],
   ['labels', 'Research labels'],
   ['rankings', 'Rankings'],
@@ -76,6 +77,10 @@ const sections = [
         <p>The <a href={`${base}network/`}>Network</a> page and the “Similar research” list on each faculty page compare every faculty member’s research profile with everyone else’s, using the same profile vectors as matching. People are placed close together when their profiles are similar, and each person is linked to their nearest neighbours. Colour shows the main subfield label.</p>
         <p>Co-author links come from <a href="https://openalex.org" target="_blank" rel="noreferrer">OpenAlex</a>, an open database of scholarly publications. Each faculty member is matched to their OpenAlex author profile by name and university, and two people are linked when they appear together on a paper. Papers with more than 25 authors are left out, because sharing one of those does not mean two people worked together. Matching by name can miss people or, rarely, pick the wrong profile; corrections are welcome.</p>
         <p>Similarity is read from public profile text only. Two people being close does not mean they work together, and people with short profiles can land in odd places.</p>
+      </section>
+      <section id="family">
+        <h2>Academic family</h2>
+        <p>Where a faculty member did their PhD, and the year, is read from their department profile when the profile states it. PhD advisors come from profiles that name them and from <a href="https://www.wikidata.org" target="_blank" rel="noreferrer">Wikidata</a> (“doctoral advisor” and “doctoral student”). Coverage is partial: many profiles do not mention a PhD school, and most do not name an advisor. For a much fuller advisor tree, see <a href="https://academictree.org/linguistics/" target="_blank" rel="noreferrer">Academic Family Tree</a>.</p>
       </section>
       <section id="data">
         <h2>What data is included</h2>

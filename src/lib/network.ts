@@ -10,7 +10,7 @@ import { GROUPS, type Faculty, type Program } from './data';
 
 export type Related = { i: number; id: string; s: number; shared: string[] };
 export type Co = { i: number; id: string; n: number; y: number; t: string };
-type Net = { F: Faculty[]; related: Related[][]; edges: [number, number][]; xy: [number, number][]; groups: number[]; co: Co[][]; coEdges: [number, number, number][]; oa: Record<string, string[]>; coBuilt: string | null };
+type Net = { F: Faculty[]; related: Related[][]; edges: [number, number][]; xy: [number, number][]; groups: number[]; co: Co[][]; coEdges: [number, number, number][]; oa: Record<string, string[]>; coBuilt: string | null; phd: Record<string, { inst: string; year: number | null }>; adv: (number | string)[][]; stu: (number | string)[][]; wd: Record<string, string> };
 
 const K = 8;   // neighbours kept per person
 const EK = 4;  // neighbours drawn as links on the map
@@ -95,7 +95,21 @@ export function network(): Net {
     }
     co.forEach((l) => l.sort((x, y) => y.n - x.n || y.y - x.y));
   }
-  cache = { F, related, edges, xy, groups: F.map(groupOf), co, coEdges, oa, coBuilt };
+  // academic family (pipeline/tree.py): PhD school and year, advisor -> student links; optional
+  let phd: Record<string, { inst: string; year: number | null }> = {}, wd: Record<string, string> = {};
+  const adv: (number | string)[][] = F.map(() => []), stu: (number | string)[][] = F.map(() => []);
+  const tp = path.join(root, 'src/data/tree.json');
+  if (fs.existsSync(tp)) {
+    const d = JSON.parse(fs.readFileSync(tp, 'utf8'));
+    const at = new Map(F.map((f, i) => [f.id, i]));
+    phd = d.phd || {}; wd = d.wikidata || {};
+    for (const [s, sn, a, an] of d.advising as [string | null, string | null, string | null, string | null][]) {
+      const is = s ? at.get(s) : undefined, ia = a ? at.get(a) : undefined;
+      if (is != null) adv[is].push(ia != null ? ia : (an || ''));
+      if (ia != null) stu[ia].push(is != null ? is : (sn || ''));
+    }
+  }
+  cache = { F, related, edges, xy, groups: F.map(groupOf), co, coEdges, oa, coBuilt, phd, adv, stu, wd };
   return cache;
 }
 
@@ -117,6 +131,20 @@ export function coauthorsFor(id: string): (Co & { f: Faculty; p?: Program })[] {
 export const openalexFor = (id: string) => network().oa[id]?.[0] || null;
 export const coauthorsBuilt = () => network().coBuilt;
 
+/** PhD school + year, advisors and students (people on the site come with their record), and others with the same PhD school */
+export function familyFor(id: string) {
+  const net = network();
+  const i = net.F.findIndex((f) => f.id === id);
+  if (i < 0) return null;
+  const P = programs as Program[];
+  const who = (x: number | string) => (typeof x === 'number' ? { f: net.F[x], p: P.find((p) => p.slug === net.F[x].u) } : { name: x });
+  const phd = net.phd[id] || null;
+  const same = phd ? net.F.filter((g) => g.id !== id && net.phd[g.id]?.inst === phd.inst)
+    .map((g) => ({ f: g, p: P.find((p) => p.slug === g.u), year: net.phd[g.id].year }))
+    .sort((a, b) => (phd.year && a.year ? Math.abs(a.year - phd.year) : 99) - (phd.year && b.year ? Math.abs(b.year - phd.year) : 99) || a.f.name.localeCompare(b.f.name)) : [];
+  return { phd, phdProgram: phd ? P.find((p) => p.name === phd.inst) : undefined, advisors: net.adv[i].map(who), students: net.stu[i].map(who), same, wd: net.wd[id] || null };
+}
+
 /** compact JSON for the Network page */
 export function networkJson() {
   const net = network();
@@ -127,6 +155,8 @@ export function networkJson() {
       g: net.groups[i], x: net.xy[i][0], y: net.xy[i][1], s: f.summary, sz: f.summary_zh || '',
       k: net.related[i].map((r) => [r.i, r.shared]),
       c: net.co[i].map((c) => [c.i, c.n, c.y]),
+      ph: net.phd[f.id] ? [net.phd[f.id].inst, net.phd[f.id].year] : null,
+      av: net.adv[i], st: net.stu[i],
     })),
     edges: net.edges,
     co: net.coEdges,
