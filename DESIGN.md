@@ -16,10 +16,10 @@ Everything else stays calm and legible. Light by default, dark honoured.
 - **Consistency:** pills for every button and chip; one radius scale; one shadow pair.
 
 ## Tokens (src/styles/global.css)
-- Neutrals `--bg #FAF9F7`, cards `#FFF`; ink espresso `#2B1D1C`.
-- Action teal `--action #357070`; highlight coral `--accent-2 #D4562F`.
-- Solid decoration colours (`--s-*`): coral, teal, deep teal, cream, espresso — stickers and person tiles only.
-- Soft tints (`--p-*`/`--i-*`) for labels; lenses: subfield = cream, method = teal, data = espresso, population = coral, language = deep teal.
+- Neutrals `--bg #FAFAF8`, cards `#FFF`; ink soft charcoal `#1F2326`.
+- Action teal `--action #2A7D7A`; highlight coral `--accent-2 #E05A33`.
+- Solid decoration colours (`--s-*`): coral, teal, deep teal, sand, aqua — stickers and person tiles only.
+- Soft tints (`--p-*`/`--i-*`) for labels; lenses: subfield = cream, method = teal, data = grey, population = coral, language = deep teal.
 - Type: Geist (UI and headings), Geist Mono (bracket labels), Noto Sans (IPA glyphs).
 
 ## Rules

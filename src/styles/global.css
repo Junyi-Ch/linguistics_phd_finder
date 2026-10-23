@@ -6,48 +6,48 @@
 :root {
   color-scheme: light;
   /* neutrals (60%) */
-  --bg: #faf9f7;
+  --bg: #fafaf8;
   --bg-2: #ffffff;
-  --bg-3: #f2f0ec;
-  --bg-4: #e7e3dd;
-  --line: #ece8e2;
-  --line-2: #ddd6cc;
-  /* ink (30%): espresso brown, not pure black */
-  --ink: #2b1d1c;
-  --ink-2: #4a3634;
-  --ink-3: #6b5a57;
+  --bg-3: #f1f1ee;
+  --bg-4: #e6e6e1;
+  --line: #eaeae6;
+  --line-2: #d9d9d2;
+  /* ink (30%): soft charcoal */
+  --ink: #1f2326;
+  --ink-2: #3a3f44;
+  --ink-3: #5e646a;
   /* action (primary buttons, links, fit scores) */
-  --action: #357070;
-  --action-hover: #2b5d5d;
+  --action: #2a7d7a;
+  --action-hover: #22696a;
   --action-ink: #ffffff;
-  --action-soft: #e3eeee;
-  --action-text: #2b5d5d;
+  --action-soft: #e0f2f0;
+  --action-text: #22696a;
   /* highlight: warm counterpoint to the cool action colour, used sparingly */
-  --accent-2: #d4562f;
-  --accent-2-soft: #fbe6de;
-  --accent-2-text: #a8421f;
-  --danger: #a8421f;
-  --ok: #2b5d5d;
+  --accent-2: #e05a33;
+  --accent-2-soft: #fde7de;
+  --accent-2-text: #b4431f;
+  --danger: #b4431f;
+  --ok: #22696a;
   /* solid decoration colours: IPA stickers and person tiles */
-  --s-coral: #e0603a; --si-coral: #ffffff;
-  --s-teal: #43918f; --si-teal: #ffffff;
-  --s-deep: #357070; --si-deep: #ffffff;
-  --s-cream: #f3dfbd; --si-cream: #522d2c;
-  --s-espresso: #522d2c; --si-espresso: #f3dfbd;
+  --s-coral: #ef6c45; --si-coral: #ffffff;
+  --s-teal: #4fb0ab; --si-teal: #ffffff;
+  --s-deep: #2a7d7a; --si-deep: #ffffff;
+  --s-cream: #fde3b8; --si-cream: #7a4a16;
+  --s-espresso: #a8ded8; --si-espresso: #1f5c5a;
   /* soft tints (labels, notices, tags) */
-  --p-lav: #e3eeee; --i-lav: #2b5d5d;
-  --p-peach: #fbe6de; --i-peach: #a8421f;
-  --p-mint: #e2f0ef; --i-mint: #2a6664;
-  --p-butter: #f7ecda; --i-butter: #6b4a12;
-  --p-sky: #f0e8e6; --i-sky: #522d2c;
+  --p-lav: #e0f2f0; --i-lav: #22696a;
+  --p-peach: #fde7de; --i-peach: #b4431f;
+  --p-mint: #e3f4f2; --i-mint: #1f6b67;
+  --p-butter: #fdf0d6; --i-butter: #7a5208;
+  --p-sky: #eceff1; --i-sky: #3a3f44;
   /* lenses: subfield, method, data, population, language */
   --lens-topic: var(--i-butter); --lens-topic-bg: var(--p-butter);
   --lens-approach: var(--i-mint); --lens-approach-bg: var(--p-mint);
   --lens-data: var(--i-sky); --lens-data-bg: var(--p-sky);
   --lens-setting: var(--i-peach); --lens-setting-bg: var(--p-peach);
   --lens-region: var(--i-lav); --lens-region-bg: var(--p-lav);
-  --shadow: 0 1px 2px rgba(43, 29, 28, 0.04), 0 16px 40px -16px rgba(43, 29, 28, 0.16);
-  --shadow-sm: 0 1px 2px rgba(43, 29, 28, 0.05), 0 6px 16px -8px rgba(43, 29, 28, 0.12);
+  --shadow: 0 1px 2px rgba(31, 35, 38, 0.04), 0 16px 40px -16px rgba(31, 35, 38, 0.16);
+  --shadow-sm: 0 1px 2px rgba(31, 35, 38, 0.05), 0 6px 16px -8px rgba(31, 35, 38, 0.12);
   --radius: 12px;
   --radius-lg: 18px;
   --radius-xl: 22px;
@@ -62,29 +62,29 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: #171413; --bg-2: #1f1b1a; --bg-3: #282322; --bg-4: #332c2b;
-    --line: #2f2928; --line-2: #403735;
-    --ink: #f1ebe8; --ink-2: #d2c7c3; --ink-3: #a99b97;
-    --action: #6fb8b5; --action-hover: #8ccac7; --action-ink: #0f1c1c; --action-soft: #1e3433; --action-text: #8ccac7;
-    --accent-2: #f08a68; --accent-2-soft: #3a2420; --accent-2-text: #f4a487;
-    --danger: #f4a487; --ok: #8ccac7;
-    --s-coral: #e26c48; --s-teal: #4e9c9a; --s-deep: #3f7d7d; --s-cream: #e9d4b0; --s-espresso: #6a3b39; --si-espresso: #f3dfbd;
-    --p-lav: #1e3433; --i-lav: #9fd0cd; --p-peach: #3a2420; --i-peach: #f4a487;
-    --p-mint: #1f3534; --i-mint: #a3d6d3; --p-butter: #352c1d; --i-butter: #e6cf9f; --p-sky: #2d2322; --i-sky: #e6cfc9;
+    --bg: #151718; --bg-2: #1c1f21; --bg-3: #24282a; --bg-4: #2e3335;
+    --line: #2a2e31; --line-2: #3a3f43;
+    --ink: #eef0f1; --ink-2: #c9cdd0; --ink-3: #9ba1a6;
+    --action: #6cc4bf; --action-hover: #8ad2ce; --action-ink: #0d1c1c; --action-soft: #1b3533; --action-text: #8ad2ce;
+    --accent-2: #f5895f; --accent-2-soft: #3a241d; --accent-2-text: #f8a280;
+    --danger: #f8a280; --ok: #8ad2ce;
+    --s-coral: #ef7650; --s-teal: #4fa9a4; --s-deep: #2f8682; --s-cream: #f3d9ae; --s-espresso: #8fcfc8; --si-espresso: #133f3d;
+    --p-lav: #1b3533; --i-lav: #9fd8d3; --p-peach: #3a241d; --i-peach: #f8a280;
+    --p-mint: #1c3634; --i-mint: #a6dcd7; --p-butter: #352c1a; --i-butter: #edd39d; --p-sky: #262b2e; --i-sky: #d0d5d8;
     --shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.6); --shadow-sm: 0 6px 16px -8px rgba(0, 0, 0, 0.5);
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #171413; --bg-2: #1f1b1a; --bg-3: #282322; --bg-4: #332c2b;
-  --line: #2f2928; --line-2: #403735;
-  --ink: #f1ebe8; --ink-2: #d2c7c3; --ink-3: #a99b97;
-  --action: #6fb8b5; --action-hover: #8ccac7; --action-ink: #0f1c1c; --action-soft: #1e3433; --action-text: #8ccac7;
-  --accent-2: #f08a68; --accent-2-soft: #3a2420; --accent-2-text: #f4a487;
-  --danger: #f4a487; --ok: #8ccac7;
-  --s-coral: #e26c48; --s-teal: #4e9c9a; --s-deep: #3f7d7d; --s-cream: #e9d4b0; --s-espresso: #6a3b39; --si-espresso: #f3dfbd;
-  --p-lav: #1e3433; --i-lav: #9fd0cd; --p-peach: #3a2420; --i-peach: #f4a487;
-  --p-mint: #1f3534; --i-mint: #a3d6d3; --p-butter: #352c1d; --i-butter: #e6cf9f; --p-sky: #2d2322; --i-sky: #e6cfc9;
+  --bg: #151718; --bg-2: #1c1f21; --bg-3: #24282a; --bg-4: #2e3335;
+  --line: #2a2e31; --line-2: #3a3f43;
+  --ink: #eef0f1; --ink-2: #c9cdd0; --ink-3: #9ba1a6;
+  --action: #6cc4bf; --action-hover: #8ad2ce; --action-ink: #0d1c1c; --action-soft: #1b3533; --action-text: #8ad2ce;
+  --accent-2: #f5895f; --accent-2-soft: #3a241d; --accent-2-text: #f8a280;
+  --danger: #f8a280; --ok: #8ad2ce;
+  --s-coral: #ef7650; --s-teal: #4fa9a4; --s-deep: #2f8682; --s-cream: #f3d9ae; --s-espresso: #8fcfc8; --si-espresso: #133f3d;
+  --p-lav: #1b3533; --i-lav: #9fd8d3; --p-peach: #3a241d; --i-peach: #f8a280;
+  --p-mint: #1c3634; --i-mint: #a6dcd7; --p-butter: #352c1a; --i-butter: #edd39d; --p-sky: #262b2e; --i-sky: #d0d5d8;
   --shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.6); --shadow-sm: 0 6px 16px -8px rgba(0, 0, 0, 0.5);
 }
 
