@@ -1,17 +1,14 @@
-import { DIMS, esc, initials, labelText, labelFull, withBase, fieldLabel, type Faculty, type Program, type Taxonomy, type Dim } from './data';
+import { DIMS, esc, initials, avatar, labelText, labelFull, withBase, fieldLabel, type Faculty, type Program, type Taxonomy, type Dim } from './data';
 import { t, getLang } from './i18n';
 import * as shortlist from './shortlist';
+export { avatar };
 
 export function sig(score: number) {
-  const n = Math.max(0, Math.min(5, Math.round(score * 5)));
-  return `<span class="sig" data-n="${n}" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>`;
+  const w = Math.max(0, Math.min(100, Math.round(score * 100)));
+  return `<span class="sig" aria-hidden="true"><i style="--w:${w}%"></i></span>`;
 }
 export function scoreHtml(score: number) {
   return `<span class="score" title="${t('fit')}">${sig(score)}<b class="num">${Math.round(score * 100)}</b></span>`;
-}
-export function avatar(f: Faculty, lg = false) {
-  const cls = `avatar${lg ? ' lg' : ''}`;
-  return `<span class="${cls}" aria-hidden="true">${esc(initials(f.name))}</span>`;
 }
 export function chip(tax: Taxonomy, dim: Dim, c: string, primary = false, extra = '') {
   const lang = getLang();

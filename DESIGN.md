@@ -1,19 +1,23 @@
-# DESIGN.md — Linguistics PhD Program Explorer
+# DESIGN.md — Linguistics PhD Explorer
 
-Visual world: **broadcast test-card bars on a quiet studio ground**, shared with the sister Communication explorer. One loud signature (the six colour bars) carries identity;
-everything else is dense, legible, and operable. Light by default (people use this at a desk next to a document), dark honoured.
+Visual world: **light, modern and a little playful**. A near-white ground, one sage accent, and IPA symbols as the
+signature: tilted pastel "stickers" in the hero, a pastel glyph tile for each person (keyed to their main subfield),
+a /transcription/ tag, `[S your query]` / `[NP you]` bracket labels, and results that hang off one tree line.
+Everything else stays calm and legible. Light by default, dark honoured.
 
 ## Tokens (src/styles/global.css)
-- Ground: `--bg #F6F6F3` / dark `#14161A`; panels `--bg-2`; insets `--bg-3`; ink `#16181D` / chalk `#E9EAE6`; three ink steps.
-- Action: `--action #1F5FD6` (dark `#6EA4FF`). Used for primary buttons, links, focus rings, active map pins, filled signal bars.
-- Lenses (semantic, never decorative): subfield (`topic`) `#D9A800`, method (`approach`) `#0A95A8`, data `#2C9657`, population (`setting`) `#BF3A9A`, language (`region`) `#3A68D8`; plus `--bar-red` for the sixth bar and errors.
-- Radii: 10px controls, 14px panels. Elevation: one 1px border on resting surfaces; one offset soft shadow (`--shadow`) on floating surfaces (drawer, mobile nav). Never both.
-- Motion: `--ease-out cubic-bezier(.16,1,.3,1)`; one authored moment (`.rise` on the results header). Reduced motion respected.
+- Ground `--bg #FAFAF7`, cards `--bg-2 #FFF`, insets `--bg-3`; ink `#1E2421` with two quieter steps; hairlines `--line #ECEAE3`.
+- Accent (sage): `--action #3F7A5A`, soft `--action-soft #E3F0E7`, text `--action-text #2F6A4B`.
+- Pastel pairs (ground / ink): lavender, peach, mint, butter, sky (`--p-*` / `--i-*`).
+  Lenses: subfield = butter, method = mint, data = sky, population = peach, language = lavender.
+- Radii 12 / 18 / 22px; pills (999px) for buttons, chips, nav. Shadows: soft, low.
+- Type: Geist (UI and headings, 700, tight tracking), Geist Mono (bracket labels, "We read this as" chips),
+  Noto Sans for IPA glyphs. Self-hosted through @fontsource packages. Chinese falls back to the system CJK stack.
 
-## Type
-- Display: Bricolage Grotesque (variable; width 92% on h1), 600, tracking −0.02em, line-height 1.08.
-- UI/body: Schibsted Grotesk 16px/1.55, tabular numerals on. Chinese UI falls back to the system CJK stack.
-- Self-hosted woff2 in `public/fonts` (latin + latin-ext). No Google Fonts at runtime.
+## Rules
+- No eyebrows or all-caps labels, no emoji, no gradients.
+- Fit = slim bar + number in the accent colour. Saved = peach.
+- Playful bits are decoration (`aria-hidden`), never carry meaning on their own.
 
 ## Components
 - `.brand` six-bar wordmark · `.sig` five-bar signal glyph next to every fit number · `.loadbar` six bars that light during model download.

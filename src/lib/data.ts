@@ -44,3 +44,20 @@ export function dimLabel(tax: Taxonomy, dim: Dim, lang: string) {
 }
 export const RANK_ORDER: Record<string, number> = { 'Professor': 0, 'Associate Professor': 1, 'Assistant Professor': 2, 'Faculty': 3 };
 export const esc = (s: string) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+
+// an IPA-flavoured glyph for each person's main subfield, on a pastel tile (no photos are published)
+const GLYPH: Record<string, string> = {
+  T_PHONETICS: 'ʃ', T_PHONOLOGY: 'ŋ', T_MORPHOLOGY: '-s', T_SYNTAX: 'XP', T_SEMANTICS: 'λ', T_PRAGMATICS: '⊨',
+  T_PSYCHOLING: 'ψ', T_NEUROLING: '∿', T_L1_ACQUISITION: 'ə', T_L2_BILINGUALISM: 'L2', T_APPLIED_PEDAGOGY: 'Aa',
+  T_SOCIOLING: 'ɹ', T_LING_ANTHRO: 'ʔ', T_DISCOURSE_INTERACTION: '…', T_HISTORICAL: '*', T_TYPOLOGY: '∀',
+  T_DOCUMENTATION: 'ɣ', T_CONTACT_CREOLES: 'θ', T_COMPUTATIONAL: '{ }', T_SIGN_GESTURE: 'ʘ', T_COGNITION_PHILOSOPHY: '∴',
+};
+function hash(s: string) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return Math.abs(h); }
+export function avatar(f: Faculty, lg = false) {
+  const top = (f.labels?.topic ?? []).find((l) => l.p)?.c ?? f.labels?.topic?.[0]?.c;
+  const glyph = (top && GLYPH[top]) || initials(f.name);
+  const h = hash(f.id || f.name);
+  const rot = ((h % 13) - 6) + 'deg';
+  return `<span class="avatar${lg ? ' lg' : ''}" data-t="${(h % 5) + 1}" style="--av-rot:${rot}" aria-hidden="true">${esc(glyph)}</span>`;
+}
+

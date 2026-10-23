@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import programs from '../../data/programs.json';
 import faculty from '../../data/faculty.json';
 import tax from '../../data/taxonomy.json';
-import { RANK_ORDER, lastName, initials, FIELD_LABELS, type Program, type Faculty, type Taxonomy } from '../../lib/data';
+import { RANK_ORDER, lastName, initials, FIELD_LABELS, type Program, type Faculty, type Taxonomy, avatar } from '../../lib/data';
 export function getStaticPaths() { return (programs as Program[]).map((p) => ({ params: { slug: p.slug }, props: { p } })); }
 const { p } = Astro.props as { p: Program };
 const base = import.meta.env.BASE_URL;
@@ -29,7 +29,7 @@ const roster = (faculty as Faculty[]).filter((f) => f.u === p.slug).sort((a, b) 
   <div class="rows" style="margin-top:10px">
     {roster.map((f) => (
       <article class="row">
-        <span class="avatar" aria-hidden="true">{initials(f.name)}</span>
+        <Fragment set:html={avatar(f as any)} />
         <div class="who">
           <div class="name"><a href={`${base}faculty/${f.id}/`} style="text-decoration:none;color:inherit">{f.name}</a></div>
           <div class="meta">{f.rank} · {f.dept}</div>

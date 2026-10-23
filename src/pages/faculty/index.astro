@@ -67,7 +67,7 @@ const initialCount = t('showing', { a: first.length, b: F.length });
   setupDrawer((id) => { const f = byId.get(id); return f ? { f, p: byProg.get(f.u) } : undefined; }, T);
   const $ = <T extends HTMLElement>(s: string) => document.querySelector<T>(s)!;
   const search = $<HTMLInputElement>('#search'), univ = $<HTMLSelectElement>('#univ'), primary = $<HTMLInputElement>('#primary'), sort = $<HTMLSelectElement>('#sort');
-  const state = { q: '', u: '', primary: false, ranks: new Set(['Professor', 'Associate Professor', 'Assistant Professor']), fields: new Set<string>(FIELDS), sel: {} as Record<Dim, Set<string>>, sort: 'name', shown: 60 };
+  const state = { q: '', u: '', primary: false, ranks: new Set(['Professor', 'Associate Professor', 'Assistant Professor', 'Faculty']), fields: new Set<string>(FIELDS), sel: {} as Record<Dim, Set<string>>, sort: 'name', shown: 60 };
   for (const d of DIMS) state.sel[d] = new Set();
   // URL state
   const params = new URLSearchParams(location.search);

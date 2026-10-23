@@ -55,4 +55,7 @@ const isCurrent = (href: string) => (href === base ? path === base : path.starts
   const updateCount = () => { const el = document.getElementById('shortlist-count'); if (el) el.textContent = count() ? String(count()) : ''; };
   updateCount();
   document.addEventListener('shortlistchange', updateCount);
+  const header = document.querySelector<HTMLElement>('.site-header')!;
+  const onScroll = () => { header.dataset.scrolled = String(window.scrollY > 4); };
+  onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
 </script>

@@ -37,9 +37,9 @@ import Base from '../../layouts/Base.astro';
   .roster-head { display: flex; justify-content: space-between; align-items: center; margin: 22px 0 10px; }
   .roster { display: grid; gap: 6px; }
   .rrow { display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 8px 10px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--bg-2); }
-  .rrow .avatar { width: 36px; height: 36px; border-radius: 8px; font-size: 0.75rem; }
+  .rrow .avatar { width: 36px; height: 36px; border-radius: 11px; font-size: 1rem; }
   .rrow b button { border: 0; background: none; padding: 0; font: inherit; font-weight: 700; color: inherit; cursor: pointer; text-align: left; }
-  .rrow b button:hover { color: var(--action); }
+  .rrow b button:hover { color: var(--action-text); }
   .rrow small { color: var(--ink-3); display: block; }
   @media (max-width: 960px) { .prog-grid { grid-template-columns: 1fr; } .prog-left { position: static; height: 460px; } .prog-right { max-height: none; } }
 </style>
