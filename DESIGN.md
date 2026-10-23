@@ -38,3 +38,9 @@ Everything else stays calm and legible. Light by default, dark honoured.
 - Numbers align (tabular); scores always show the glyph + number together.
 - Copy names the action ("Find matches", "Save", "Export CSV"); errors name the fix.
 - Unit field: `.fld-tag` pill on program units (Linguistics departments outlined in the action colour); `.fld` italic note on person rows in adjacent units.
+
+## Current theme (Oct 2026): Journal + spectrogram palette
+
+- Layout: editorial "Journal" style — serif headlines (Newsreader), results as a list separated by rules, no card shadows, square-ish corners (8–12 px).
+- Type: Newsreader for headlines, names and summaries; Geist for interface text; Geist Mono for small technical labels.
+- Colour (src/styles/theme.css): white ground, near-black ink; buttons are ink-black; links violet (#4a2fb8); one magenta highlight (#c2335f) for the headline phrase; research-label tints from a light spectrogram ramp (lavender, pink, peach, lilac, sky). Dark mode mirrors this with light buttons, a lighter violet and pink.

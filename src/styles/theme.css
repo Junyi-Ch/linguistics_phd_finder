@@ -1,0 +1,78 @@
+/* Site theme: "Journal" layout (serif headlines, rules instead of boxes) with the spectrogram palette.
+   Loaded after global.css; these tokens replace the earlier teal/coral ones.
+   Colour roles: ink-black buttons, violet links, one magenta highlight, label tints from a light spectrogram ramp. */
+:root {
+  --bg: #ffffff; --bg-2: #ffffff; --bg-3: #f4f3f9; --bg-4: #e9e7f3; --line: #e8e7ef; --line-2: #d6d4e4;
+  --ink: #16151f; --ink-2: #34324a; --ink-3: #64627a;
+  --action: #16151f; --action-hover: #000000; --action-ink: #ffffff; --action-soft: #f4f3f9; --action-text: #4a2fb8;
+  --accent-2: #c2335f; --accent-2-soft: #fdedf2; --accent-2-text: #a3264f;
+  --danger: #a3264f; --ok: #4a2fb8;
+  --s-coral: #da5b85; --si-coral: #ffffff; --s-teal: #9a77e0; --si-teal: #ffffff; --s-deep: #5b3fd1; --si-deep: #ffffff;
+  --s-cream: #fde3cf; --si-cream: #8f3f0e; --s-espresso: #d3c3f7; --si-espresso: #3b2591; --s-gold: #f7ad4a; --si-gold: #4a2600; --s-blue: #b79eee; --si-blue: #2a1a6e;
+  --p-lav: #f1edfd; --i-lav: #4a2fb8; --p-peach: #fdedf2; --i-peach: #a3264f; --p-mint: #f7ecfb; --i-mint: #6e2a8a;
+  --p-butter: #fef2e8; --i-butter: #8f3f0e; --p-sky: #ebf4fb; --i-sky: #1f5d86; --p-sand: #fef2e8; --i-sand: #8f3f0e;
+  --lens-topic: #4a2fb8; --lens-topic-bg: #f1edfd; --lens-approach: #a3264f; --lens-approach-bg: #fdedf2;
+  --lens-data: #8f3f0e; --lens-data-bg: #fef2e8; --lens-setting: #6e2a8a; --lens-setting-bg: #f7ecfb;
+  --lens-region: #1f5d86; --lens-region-bg: #ebf4fb;
+  --radius: 8px; --radius-lg: 10px; --radius-xl: 12px;
+  --shadow: none; --shadow-sm: none;
+  --serif: 'Newsreader Variable', 'Newsreader', Georgia, 'Songti SC', 'STSong', serif;
+  --font-display: var(--serif);
+  --rule: var(--ink);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #111017; --bg-2: #18171f; --bg-3: #211f2b; --bg-4: #2b2937; --line: #2a2836; --line-2: #3a3748;
+    --ink: #efeef5; --ink-2: #cac8d8; --ink-3: #9d9bb0;
+    --action: #efeef5; --action-hover: #ffffff; --action-ink: #111017; --action-soft: #2a2640; --action-text: #b9a8ff;
+    --accent-2: #f2789c; --accent-2-soft: #3a1d29; --accent-2-text: #f59ab5;
+    --danger: #f59ab5; --ok: #b9a8ff;
+    --s-coral: #d9608a; --s-teal: #9a77e0; --s-deep: #6d52e0; --s-cream: #4a3020; --si-cream: #ffd2b0; --s-espresso: #3b2f66; --si-espresso: #d9ccff; --s-gold: #e9a13f; --s-blue: #8f78d8;
+    --p-lav: #2a2445; --i-lav: #c9bcff; --p-peach: #3a1d29; --i-peach: #ffb3c8; --p-mint: #33223f; --i-mint: #e2b8f5;
+    --p-butter: #3a2a1c; --i-butter: #ffc9a0; --p-sky: #1c2c3a; --i-sky: #a8d1f0; --p-sand: #3a2a1c; --i-sand: #ffc9a0;
+    --lens-topic: #c9bcff; --lens-topic-bg: #2a2445; --lens-approach: #ffb3c8; --lens-approach-bg: #3a1d29;
+    --lens-data: #ffc9a0; --lens-data-bg: #3a2a1c; --lens-setting: #e2b8f5; --lens-setting-bg: #33223f;
+    --lens-region: #a8d1f0; --lens-region-bg: #1c2c3a;
+    --shadow: none; --shadow-sm: none;
+    --rule: var(--line-2);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111017; --bg-2: #18171f; --bg-3: #211f2b; --bg-4: #2b2937; --line: #2a2836; --line-2: #3a3748;
+  --ink: #efeef5; --ink-2: #cac8d8; --ink-3: #9d9bb0;
+  --action: #efeef5; --action-hover: #ffffff; --action-ink: #111017; --action-soft: #2a2640; --action-text: #b9a8ff;
+  --accent-2: #f2789c; --accent-2-soft: #3a1d29; --accent-2-text: #f59ab5;
+  --danger: #f59ab5; --ok: #b9a8ff;
+  --s-coral: #d9608a; --s-teal: #9a77e0; --s-deep: #6d52e0; --s-cream: #4a3020; --si-cream: #ffd2b0; --s-espresso: #3b2f66; --si-espresso: #d9ccff; --s-gold: #e9a13f; --s-blue: #8f78d8;
+  --p-lav: #2a2445; --i-lav: #c9bcff; --p-peach: #3a1d29; --i-peach: #ffb3c8; --p-mint: #33223f; --i-mint: #e2b8f5;
+  --p-butter: #3a2a1c; --i-butter: #ffc9a0; --p-sky: #1c2c3a; --i-sky: #a8d1f0; --p-sand: #3a2a1c; --i-sand: #ffc9a0;
+  --lens-topic: #c9bcff; --lens-topic-bg: #2a2445; --lens-approach: #ffb3c8; --lens-approach-bg: #3a1d29;
+  --lens-data: #ffc9a0; --lens-data-bg: #3a2a1c; --lens-setting: #e2b8f5; --lens-setting-bg: #33223f;
+  --lens-region: #a8d1f0; --lens-region-bg: #1c2c3a;
+  --shadow: none; --shadow-sm: none;
+  --rule: var(--line-2);
+}
+
+/* serif for headlines, names and summaries; Geist stays for interface text */
+h1, h2, .row .name, .browse-tabs, .np-name, .drawer h2, .prog .prog-title, .p-summary, .net-modes .nm-t { font-family: var(--serif); font-weight: 500; letter-spacing: -0.015em; }
+h3 { letter-spacing: -0.01em; }
+.row .name { font-size: 1.35rem; font-weight: 600; }
+.row .sum { font-family: var(--serif); font-size: 1.08rem; }
+.rows { gap: 0; }
+.row { background: transparent; border: 0; border-top: 1px solid var(--line-2); border-radius: 0; padding-left: 0; padding-right: 0; }
+.row:hover { box-shadow: none; }
+.site-header { border-bottom: 1px solid var(--rule); }
+.search-box { border-color: var(--rule); }
+.search-box textarea { font-family: var(--serif); font-size: 1.5rem; }
+
+/* Find matches headline */
+.hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 48px; align-items: end; padding: 40px 0 32px; border-bottom: 1px solid var(--line-2); margin-bottom: 28px; }
+.hero h1 { font-size: clamp(2.5rem, 1.6rem + 3.2vw, 4.3rem); line-height: 1; max-width: 13ch; }
+.hero h1 .hl { font-style: italic; color: var(--accent-2); }
+.hero .side { border-left: 1px solid var(--line-2); padding-left: 24px; font-family: var(--serif); font-size: 1.25rem; line-height: 1.4; color: var(--ink-2); }
+html[lang="zh"] .hero h1 .hl { font-style: normal; }
+@media (max-width: 760px) { .hero { grid-template-columns: 1fr; gap: 16px; } .hero .side { border-left: 0; padding-left: 0; } }
+
+html[lang="zh"] .hero h1 { max-width: 16em; font-size: clamp(2.1rem, 1.4rem + 2.4vw, 3.4rem); line-height: 1.2; }
