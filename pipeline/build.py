@@ -137,14 +137,16 @@ def main():
                           if (u.get("field") or "LING") in ("COMP", "LANG", "SPEECH") or u.get("filter_language")}
         for f in raw["faculty"]:
             key = norm_name(f["name"])
-            if key in seen or f.get("rank") not in ranks: continue
+            toks = [t for t in re.sub(r"\(.*?\)", " ", f["name"]).split() if t]
+            first_last = norm_name(toks[0] + toks[-1]) if len(toks) >= 2 else key
+            if key in seen or first_last in seen or f.get("rank") not in ranks: continue  # "Thomas G. Bever" listed again as "Thomas Bever"
             lab = labels.get(key)
             # adjacent units: drop people whose own summary shows no language research (literature, hearing-only, ...)
             if lab and norm_name(f.get("unit") or f.get("department")) in filtered_units and \
                     not LANG_RESEARCH.search(" ".join([lab.get("summary") or ""] + list(lab.get("keywords") or [])).lower()):
                 stats.setdefault("dropped_not_language", []).append(f"{slug}: {f['name']}")
                 continue
-            seen.add(key)
+            seen.add(key); seen.add(first_last)
             fid = slugify(f"{sn}-{f['name']}")
             if lab: stats["with_labels"] += 1
             lab_out = {}

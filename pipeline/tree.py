@@ -128,7 +128,34 @@ def from_profile(bio):
     for m in PHD.finditer(bio or ""):
         after = bio[m.end():m.end() + 160]
         before = bio[max(0, m.start() - 120):m.start()]
-        im = INST.search(after)
+        around = bio[max(0, m.start() - 60):m.end() + 60]
+        if re.search(r"honou?ris|honorary", around, re.I):
+            continue  # an honorary doctorate, not their PhD
+        if re.search(r"\b(supervis(e|ed|es|ing)|advis(ed|es|ing)|mentor(ed|ing|s)|chaired|directed|directs|directing|trained|trains|training)\s+([\w-]+ ){0,3}$", before, re.I) or \
+           re.match(r"\s*(students?|programs?|candidates?|level|applicants?|admissions?|dissertations? (committee|advis|supervis))", after, re.I):
+            continue  # about someone else's PhD ("supervised PhD dissertations", "PhD students")
+        if re.search(r",\s*$", before) and re.match(r"\.?\s*(/|\n|$|,\s*(CCC|[a-z]))", after):
+            card = re.search(r"\n(?:[A-Z][a-z]+ )?Linguistics\n(?:Pronouns:[^\n]*\n)?(" + INST.pattern[1:-1] + r")", bio[m.end():m.end() + 200])
+            if card and canon(card.group(1)):
+                return {"inst": canon(card.group(1)), "year": None}, from_profile_advisors(bio)
+            continue  # "Jane Doe, PhD, CCC-SLP" or "Jane Doe, PhD, holds...": a title after a name
+        # only look in the same sentence / line after the degree
+        cut = re.search(r"\b(M\.?A\.?|B\.?A\.?|M\.?S\.?c?|B\.?S\.?c?|MSt|M\.?Phil\.?|Postdoc|Post-doc|J\.?D\.?|M\.?Ed\.?)(?=[\s,.;:)]|$)|,\s+(I|she|he|they|we)\b|\bwhere\b|\bthen\b|\bafter\b", after)
+        if cut and cut.start() < 8 and re.match(r"\s*(and|&)", after):
+            cut = None  # "Ph.D. and M.S. in Language Technologies from Carnegie Mellon"
+        after = after[: cut.start() if cut else 120]
+        im = None
+        near = INST.search(after)
+        if re.search(r"\(\s*$", before):
+            inside = after.split(")")[0]
+            near = INST.search(inside)  # "(PhD, UCLA, 2014)" names the school inside the bracket
+        if near and near.start() < 25:
+            im = near  # "Ph.D., Yale University"
+        elif re.search(r"\(\s*$", before):
+            # "degrees from Stanford University (PhD, MA) and Cornell (BA)": the school is just before the bracket
+            ims = list(INST.finditer(before))
+            im = ims[-1] if ims else None
+        im = im or near
         if not im:
             # "University of X, PhD" written just before the degree
             ims = [x for x in INST.finditer(before) if len(before) - x.end() <= 25 and "\n" not in before[x.end():]]
@@ -144,13 +171,15 @@ def from_profile(bio):
         if pre:
             y = pre
         else:
-            stop = NEXT_DEGREE.search(after)
-            y = YEAR.search(after[: stop.start() if stop else 120])
+            y = YEAR.search(after)  # "after" already stops at the next degree
         year = int(y.group(1)) if y else None
         if year and year > 2026:
             year = None
         phd = {"inst": name, "year": year}
         break
+    return phd, from_profile_advisors(bio)
+
+def from_profile_advisors(bio):
     advisors = []
     for m in ADV.finditer(bio or ""):
         ctx = bio[max(0, m.start() - 220):m.end()]
@@ -161,11 +190,12 @@ def from_profile(bio):
             if len(part.split()) >= 2 and part not in advisors:
                 advisors.append(part)
         break
-    return phd, advisors
+    return advisors
+
 
 # ---------- 2. Wikidata ----------
 SPARQL = "https://query.wikidata.org/sparql"
-LANGY = re.compile(r"lingu|language|speech|phon|psycholog|cognitive|computer scien|philosoph|anthropolog|professor|researcher|academic|scholar", re.I)
+LANGY = re.compile(r"lingu|language|speech|phonet|phonolog|psycholog|cognitive|computer scien|philosoph|anthropolog|natural language|semantic|syntax", re.I)
 
 def sparql(q, cache_name):
     cp = os.path.join(CACHE, cache_name + ".json")
@@ -186,7 +216,7 @@ def sparql(q, cache_name):
             time.sleep(3 * (attempt + 1))
     raise last
 
-def wikidata(fac):
+def wikidata(fac, phd=None):
     """for each faculty member: Wikidata item (if a confident match) with doctoral advisors and students"""
     out = {}
     names = {}
@@ -231,6 +261,11 @@ def wikidata(fac):
             emp_ok = any(norm(uni).split()[-1:] and set(norm(uni).split()) & set(norm(e).split()) - {"university", "of", "the", "at", "college"} for e in it["emp"])
             desc_ok = bool(LANGY.search(it["desc"]))
             if not (emp_ok or desc_ok):
+                continue
+            # "researcher; Ph.D. University of Michigan 2005" when our person did their PhD elsewhere: a different person
+            dp = from_profile(it["desc"])[0]
+            mine = (phd or {}).get(f["id"])
+            if dp and mine and dp["inst"] != mine["inst"]:
                 continue
             prev = out.get(f["id"])
             if prev and prev["qid"] != qid:
@@ -286,9 +321,10 @@ def at_name(r):
     last = r.get("lname") or r.get("lastname") or r.get("last") or ""
     return f"{first} {last}".strip()
 
+UNRELATED = re.compile(r"physics|chem|theolog|geo|fly|ecolog|evol|plant|microbio|cancer|immun|astro|marine|vet|pharm|nursing|econ|histor|polisci|law|music|art|agri|forest|ocean|material|nutrition", re.I)
 AT_AREAS = re.compile(r"ling|psych|neuro|cogsci|computerscience|anthro|education|philosophy|speech|commsci|hearing|language", re.I)
 
-def academictree(fac):
+def academictree(fac, phd=None):
     """advisor (grad-student mentor) links for faculty on the site, from the Academic Family Tree export"""
     if not at_download():
         raise RuntimeError("export files missing")
@@ -297,29 +333,30 @@ def academictree(fac):
     for f in fac:
         want.setdefault(key(f["name"]), []).append(f)
     # people whose first+last name matches someone on the site
-    people, cand = {}, {}
+    people, cand, places = {}, {}, {}
     for r in at_rows("people.csv.gz"):
         pid = r.get("pid")
         if not pid:
             continue
         nm = at_name(r)
         people[pid] = (nm, r.get("majorarea", ""))
+        if r.get("locid"):
+            places.setdefault(pid, set()).add(r["locid"])  # where the person is now
         k = key(nm)
         if k in want:
             cand.setdefault(k, []).append(pid)
     locs = {}
     for r in at_rows("locations.csv.gz"):
         locs[r.get("locid")] = r.get("location") or r.get("name") or r.get("locname") or ""
-    conns, places = [], {}
+    conns, phd_places = [], {}
     for r in at_rows("connect.csv.gz"):
         p1, p2, rel, loc = r.get("pid1"), r.get("pid2"), r.get("relation"), r.get("locid")
-        places.setdefault(p1, set()).add(loc)
-        if p2 and p2 != "0":
-            places.setdefault(p2, set()).add(loc)
+        places.setdefault(p1, set()).add(loc)  # only places the person was at themselves (not where their students were)
         if rel == "1" and p2 and p2 != "0":
             conns.append((p1, p2))
+            phd_places.setdefault(p1, set()).add(loc)
     def uni_words(s):
-        return set(norm(s).split()) - {"university", "of", "the", "at", "college", "state", "institute", "and", "school", "department", "linguistics"}
+        return set(norm(s).split()) - {"university", "of", "the", "at", "college", "institute", "and", "school", "department", "linguistics"}
     # choose one Academic Family Tree person per faculty member
     match = {}
     for k, fs in want.items():
@@ -327,12 +364,18 @@ def academictree(fac):
         for f in fs:
             uw = uni_words(progs.get(f["u"], {}).get("name", ""))
             scored = []
+            my_phd = (phd or {}).get(f["id"], {}).get("inst")
             for pid in pids:
                 area = people[pid][1]
                 at_uni = any(uw and uw <= uni_words(locs.get(l, "")) for l in places.get(pid, ()))
-                score = (2 if at_uni else 0) + (1 if AT_AREAS.search(area) else 0)
-                if score:
-                    scored.append((score, pid))
+                phd_ok = bool(my_phd) and any(uni_words(my_phd) & uni_words(locs.get(l, "")) for l in phd_places.get(pid, ()))
+                parts = [a for a in area.split(",") if a.strip()]
+                if parts and all(UNRELATED.search(a) for a in parts):
+                    continue  # same name at the same university, but a physicist, theologian, geologist...
+                if not at_uni and not (re.search(r"\bling", area) or phd_ok):
+                    continue  # can't confirm by university, linguistics or PhD school: probably someone else with the same name
+                score = (2 if at_uni else 0) + (1 if phd_ok else 0) + (1 if re.search(r"\bling", area) else 0)
+                scored.append((score, pid))
             scored.sort(reverse=True)
             if scored and (len(scored) == 1 or scored[0][0] > scored[1][0]):
                 match[f["id"]] = scored[0][1]
@@ -370,7 +413,7 @@ def main():
     # 2. Wikidata
     wd = {}
     try:
-        wd = wikidata(fac)
+        wd = wikidata(fac, phd)
         print(f"Wikidata: {len(wd)} faculty matched with advisor/student information")
     except Exception as e:
         print("Wikidata skipped (no internet here?):", str(e)[:120])
@@ -382,7 +425,7 @@ def main():
     # 3. Academic Family Tree
     at = {}
     try:
-        at, at_edges = academictree(fac)
+        at, at_edges = academictree(fac, phd)
         adv_edges = at_edges + adv_edges   # listed first, so its spelling of names wins
     except Exception as e:
         print("Academic Family Tree skipped:", str(e)[:160])
