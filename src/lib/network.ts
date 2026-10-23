@@ -9,7 +9,8 @@ import programs from '../data/programs.json';
 import { GROUPS, type Faculty, type Program } from './data';
 
 export type Related = { i: number; id: string; s: number; shared: string[] };
-type Net = { F: Faculty[]; related: Related[][]; edges: [number, number][]; xy: [number, number][]; groups: number[] };
+export type Co = { i: number; id: string; n: number; y: number; t: string };
+type Net = { F: Faculty[]; related: Related[][]; edges: [number, number][]; xy: [number, number][]; groups: number[]; co: Co[][]; coEdges: [number, number, number][]; oa: Record<string, string[]>; coBuilt: string | null };
 
 const K = 8;   // neighbours kept per person
 const EK = 4;  // neighbours drawn as links on the map
@@ -77,7 +78,24 @@ export function network(): Net {
   const sim = forceSimulation(nodes as any).alphaDecay(0.05).velocityDecay(0.5).force('collide', forceCollide(3.2)).stop();
   for (let t = 0; t < 120; t++) sim.tick();
   const xy = nodes.map((p) => [Math.round((p.x || 0) * 10) / 10, Math.round((p.y || 0) * 10) / 10] as [number, number]);
-  cache = { F, related, edges, xy, groups: F.map(groupOf) };
+  // co-authors from OpenAlex (pipeline/coauthors.py); optional
+  const co: Co[][] = F.map(() => []);
+  const coEdges: [number, number, number][] = [];
+  let oa: Record<string, string[]> = {}, coBuilt: string | null = null;
+  const cp = path.join(root, 'src/data/coauthors.json');
+  if (fs.existsSync(cp)) {
+    const d = JSON.parse(fs.readFileSync(cp, 'utf8'));
+    const at = new Map(F.map((f, i) => [f.id, i]));
+    oa = d.authors || {}; coBuilt = d.built || null;
+    for (const [a, b, n, y, t] of d.pairs as [string, string, number, number, string][]) {
+      const ia = at.get(a), ib = at.get(b);
+      if (ia == null || ib == null) continue;
+      co[ia].push({ i: ib, id: b, n, y, t }); co[ib].push({ i: ia, id: a, n, y, t });
+      coEdges.push([ia, ib, n]);
+    }
+    co.forEach((l) => l.sort((x, y) => y.n - x.n || y.y - x.y));
+  }
+  cache = { F, related, edges, xy, groups: F.map(groupOf), co, coEdges, oa, coBuilt };
   return cache;
 }
 
@@ -89,6 +107,16 @@ export function relatedFor(id: string): (Related & { f: Faculty; p?: Program })[
   return net.related[i].map((r) => ({ ...r, f: net.F[r.i], p: P.find((p) => p.slug === net.F[r.i].u) }));
 }
 
+export function coauthorsFor(id: string): (Co & { f: Faculty; p?: Program })[] {
+  const net = network();
+  const i = net.F.findIndex((f) => f.id === id);
+  if (i < 0) return [];
+  const P = programs as Program[];
+  return net.co[i].map((c) => ({ ...c, f: net.F[c.i], p: P.find((p) => p.slug === net.F[c.i].u) }));
+}
+export const openalexFor = (id: string) => network().oa[id]?.[0] || null;
+export const coauthorsBuilt = () => network().coBuilt;
+
 /** compact JSON for the Network page */
 export function networkJson() {
   const net = network();
@@ -98,7 +126,9 @@ export function networkJson() {
       id: f.id, n: f.name, u: f.u, us: P.get(f.u)?.short || f.u, r: f.rank, fld: f.fld,
       g: net.groups[i], x: net.xy[i][0], y: net.xy[i][1], s: f.summary, sz: f.summary_zh || '',
       k: net.related[i].map((r) => [r.i, r.shared]),
+      c: net.co[i].map((c) => [c.i, c.n, c.y]),
     })),
     edges: net.edges,
+    co: net.coEdges,
   };
 }

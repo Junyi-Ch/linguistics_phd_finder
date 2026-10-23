@@ -20,6 +20,10 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
       <option value="" data-i18n="net_all_unis">All universities</option>
       {progs.map((p) => <option value={p.slug}>{p.name}</option>)}
     </select>
+    <div class="seg" id="net-mode" role="group" aria-label="Lines show" hidden>
+      <button type="button" data-m="sim" aria-pressed="true" data-i18n="net_mode_sim">Similar research</button>
+      <button type="button" data-m="co" aria-pressed="false" data-i18n="net_mode_co">Co-authors</button>
+    </div>
     <span class="small muted" id="net-count"></span>
   </div>
   <div class="net-legend" id="net-legend" role="group" aria-label="Main subfield">
@@ -48,6 +52,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
         <ul class="net-howto">
           <li data-i18n="net_how1">Click a dot to see that person and the eight researchers whose work is closest to theirs.</li>
           <li data-i18n="net_how2">Drag to move, scroll or pinch to zoom. Pick a university to highlight its faculty.</li>
+          <li data-i18n="net_how4" id="how-co" hidden>Switch the lines to Co-authors to see who has published papers together (from OpenAlex). Dots stay where research similarity puts them.</li>
           <li data-i18n="net_how3">Distance shows research similarity, read from public profiles. It is not a list of collaborators.</li>
         </ul>
       </div>
@@ -70,6 +75,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   .net-tools { display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center; }
   .net-find { flex: 1 1 260px; max-width: 380px; }
   .net-find .input { width: 100%; }
+  #net-mode { flex: none; }
   #net-u { flex: 0 1 300px; min-width: 0; }
   .net-legend { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 14px 0 16px; }
   .net-legend > .small { margin-right: 4px; }
@@ -117,7 +123,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   import { esc, GROUPS } from '../lib/data';
   import tax from '../data/taxonomy.json';
 
-  type Node = { id: string; n: string; u: string; us: string; r: string; fld: string; g: number; x: number; y: number; s: string; sz: string; k: [number, string[]][] };
+  type Node = { id: string; n: string; u: string; us: string; r: string; fld: string; g: number; x: number; y: number; s: string; sz: string; k: [number, string[]][]; c: [number, number, number][] };
   const base = (import.meta.env.BASE_URL as string).replace(/\/+$/, '') + '/';
   const TOP = (tax as any).dimensions.topic;
   const topicName = (c: string) => (getLang() === 'zh' ? TOP.labels_short_zh?.[c] : TOP.labels_short?.[c]) || c;
@@ -133,7 +139,8 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   const pEmpty = document.getElementById('panel-empty')!;
   const pPerson = document.getElementById('panel-person')!;
 
-  let N: Node[] = [], E: [number, number][] = [];
+  let N: Node[] = [], E: [number, number][] = [], CO: [number, number, number][] = [];
+  let mode: 'sim' | 'co' = 'sim';
   let W = 0, H = 0, dpr = 1, scale = 1, tx = 0, ty = 0;
   let sel = -1, hover = -1, uni = '';
   const groupOn = new Set<number>([-1, ...GROUPS.map((_, i) => i)]);
@@ -146,7 +153,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   }
   const colorOf = (g: number) => col[g < 0 ? 8 : g];
   const active = (i: number) => groupOn.has(N[i].g) && (!uni || N[i].u === uni);
-  const neigh = () => (sel >= 0 ? new Set(N[sel].k.map((k) => k[0])) : new Set<number>());
+  const neigh = () => (sel >= 0 ? new Set((mode === 'co' ? N[sel].c : N[sel].k).map((k) => k[0])) : new Set<number>());
 
   function resize() {
     const r = stage.getBoundingClientRect();
@@ -196,9 +203,18 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     const nb = neigh();
     // links
     ctx.lineWidth = 1; ctx.strokeStyle = C.line; ctx.globalAlpha = sel >= 0 ? 0.35 : 0.7;
-    ctx.beginPath();
-    for (const [a, b] of E) { if (!active(a) || !active(b)) continue; ctx.moveTo(X(a), Y(a)); ctx.lineTo(X(b), Y(b)); }
-    ctx.stroke();
+    if (mode === 'sim') {
+      ctx.beginPath();
+      for (const [a, b] of E) { if (!active(a) || !active(b)) continue; ctx.moveTo(X(a), Y(a)); ctx.lineTo(X(b), Y(b)); }
+      ctx.stroke();
+    } else {
+      ctx.strokeStyle = C.ink3; ctx.globalAlpha = sel >= 0 ? 0.12 : 0.32;
+      for (const [a, b, n] of CO) {
+        if (!active(a) || !active(b)) continue;
+        ctx.lineWidth = n >= 10 ? 2.2 : n >= 3 ? 1.4 : 0.8;
+        ctx.beginPath(); ctx.moveTo(X(a), Y(a)); ctx.lineTo(X(b), Y(b)); ctx.stroke();
+      }
+    }
     ctx.globalAlpha = 1;
     if (sel >= 0) {
       ctx.lineWidth = 1.5; ctx.strokeStyle = C.ink3; ctx.beginPath();
@@ -247,6 +263,14 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
       const why = shared.length ? (zh ? '都做：' : 'Both: ') + shared.slice(0, 3).map(topicName).map(esc).join(' · ') : '';
       return `<li><button type="button" data-i="${j}"><i style="background:${colorOf(q.g)}"></i><span class="nm">${esc(q.n)}</span><span class="sub">${esc(q.us)}${why ? ' · ' + why : ''}</span></button></li>`;
     }).join('');
+    const coHtml = p.c.map(([j, n, y]) => {
+      const q = N[j];
+      const papers = zh ? `${n} 篇合著` : `${n} paper${n === 1 ? '' : 's'}`;
+      const last = y ? (zh ? ` · 最近 ${y}` : ` · latest ${y}`) : '';
+      return `<li><button type="button" data-i="${j}"><i style="background:${colorOf(q.g)}"></i><span class="nm">${esc(q.n)}</span><span class="sub">${esc(q.us)} · ${papers}${last}</span></button></li>`;
+    }).join('');
+    const coSec = CO.length ? `<div class="np-sub"><h3 class="sec-h">${esc(t('co_h'))}</h3>${p.c.length ? `<ol class="nb">${coHtml}</ol>` : `<p class="small muted" style="margin-top:6px">${esc(t('co_none'))}</p>`}</div>` : '';
+    const simSec = `<div class="np-sub"><h3 class="sec-h">${esc(t('related_h'))}</h3><ol class="nb">${nbHtml}</ol></div>`;
     const on = has(p.id);
     pPerson.innerHTML = `
       <div class="np-meta">${esc(rank)} · ${esc(p.us)}</div>
@@ -256,7 +280,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
         <a class="btn" href="${base}faculty/${p.id}/">${esc(t('net_open'))}</a>
         <button type="button" class="btn save-btn" data-save="${p.id}" aria-pressed="${on}">${esc(on ? t('saved') : t('save'))}</button>
       </div>
-      <div class="np-sub"><h3 class="sec-h">${esc(t('related_h'))}</h3><ol class="nb">${nbHtml}</ol></div>`;
+      ${mode === 'co' ? coSec + simSec : simSec + coSec}`;
     pEmpty.hidden = true; pPerson.hidden = false;
     bindSaveButtons(pPerson);
   }
@@ -268,7 +292,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     if (i >= 0) u.searchParams.set('p', N[i].id); else u.searchParams.delete('p');
     history.replaceState(null, '', u);
     if (i >= 0 && center) {
-      const idx = [i, ...N[i].k.map((k) => k[0])];
+      const idx = [i, ...(mode === 'co' && N[i].c.length ? N[i].c : N[i].k).map((k) => k[0])];
       fit(idx, true);
     } else draw();
   }
@@ -334,6 +358,15 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     b.setAttribute('aria-pressed', String(on));
     refilter();
   });
+  const modeEl = document.getElementById('net-mode')!;
+  function setMode(m: 'sim' | 'co') {
+    mode = m;
+    modeEl.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.m === m)));
+    const u = new URL(location.href); if (m === 'co') u.searchParams.set('lines', 'co'); else u.searchParams.delete('lines'); history.replaceState(null, '', u);
+    renderPanel();
+    if (sel >= 0) select(sel); else draw();
+  }
+  modeEl.addEventListener('click', (e) => { const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-m]'); if (b) setMode(b.dataset.m as 'sim' | 'co'); });
   uSel.addEventListener('change', () => { uni = uSel.value; if (!uni) fit(undefined, true); refilter(); });
   const findPerson = () => {
     const v = qIn.value.trim().toLowerCase(); if (!v) return;
@@ -352,7 +385,8 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
   new ResizeObserver(() => resize()).observe(stage);
 
   fetch(base + 'network.json').then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); }).then((d) => {
-    N = d.nodes; E = d.edges;
+    N = d.nodes; E = d.edges; CO = d.co || [];
+    if (CO.length) { modeEl.hidden = false; document.getElementById('how-co')!.hidden = false; if (new URLSearchParams(location.search).get('lines') === 'co') setMode('co'); }
     readColors(); resize(); fit();
     status.hidden = true;
     const dl = document.getElementById('net-names')!;
