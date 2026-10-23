@@ -1,13 +1,13 @@
 # DESIGN.md — Linguistics PhD Explorer
 
-Visual world: **light, modern and a little playful**. A near-white ground, one deep-turquoise accent, and IPA symbols as the
+Visual world: **light, modern and a little playful**. A near-white ground, one deep teal-green accent, and IPA symbols as the
 signature: tilted pastel "stickers" in the hero, a pastel glyph tile for each person (keyed to their main subfield),
 a /transcription/ tag, `[S your query]` / `[NP you]` bracket labels, and results that hang off one tree line.
 Everything else stays calm and legible. Light by default, dark honoured.
 
 ## Tokens (src/styles/global.css)
 - Ground `--bg #FAFAF7`, cards `--bg-2 #FFF`, insets `--bg-3`; ink `#1E2421` with two quieter steps; hairlines `--line #ECEAE3`.
-- Accent (deep turquoise): `--action #0F6E6E`, soft `--action-soft #DCEFED`, text `--action-text #0C5F5F`.
+- Accent (deep teal green): `--action #11705E`, soft `--action-soft #DCEFE8`, text `--action-text #0E6152`.
 - Pastel pairs (ground / ink): lavender, peach, mint, butter, sky (`--p-*` / `--i-*`).
   Lenses: subfield = butter, method = mint, data = sky, population = peach, language = lavender.
 - Radii 12 / 18 / 22px; pills (999px) for buttons, chips, nav. Shadows: soft, low.
