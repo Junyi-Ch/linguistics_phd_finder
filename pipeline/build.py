@@ -16,7 +16,7 @@ from pathlib import Path
 from datetime import date
 
 ROOT = Path(__file__).resolve().parents[1]
-JUNK_AREA = re.compile(r"^(links?|about\\b.*|contact.*|cv|curriculum vitae|e-?mail.*|website|home ?page|publications?|news|courses?|teaching|bio(graphy)?|profile|more|read more|office hours?|education|selected publications|research|lab|phone.*|google scholar)$|@|https?:", re.I)
+JUNK_AREA = re.compile(r"^(links?|about\b.*|contact.*|cv|curriculum vitae|e-?mail.*|website|home ?page|publications?|news|courses?|teaching|bio(graphy)?|profile|more|read more|office hours?|education|selected publications|research|lab|phone.*|google scholar)$|@|https?:", re.I)
 # evidence that a person's own research is about language (checked on the label summary + keywords)
 LANG_RESEARCH = re.compile(r"lingu|languag|speech|spoken|phonet|phonolog|morpholog|syntax|syntactic|semantic|pragmatic|grammar|"
                            r"lexic|\bwords?\b|sentence|bilingual|multilingual|acquisition|literacy|\bl2\b|\besl\b|tesol|"
