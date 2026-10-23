@@ -385,3 +385,16 @@ label.check input { width: 16px; height: 16px; margin: 0; }
 .link-btn:hover { color: var(--action-text); text-decoration: underline; }
 .d-grp + .d-grp { margin-top: 14px; }
 .d-grp h3 { font-size: 0.8125rem; font-weight: 600; color: var(--ink-3); margin: 0 0 6px; }
+
+/* Save as a bookmark; outside links as plain text links */
+.save-mark { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--ink-2); background: none; border: 0; padding: 6px 0; min-height: 36px; cursor: pointer; }
+.save-mark:hover { color: var(--action-text); }
+.save-mark[aria-pressed="true"] { color: var(--action-text); }
+.save-mark[aria-pressed="true"] svg path { fill: currentColor; }
+.ext-links { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 14px; font-size: 0.92rem; }
+.ext { color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; display: inline-flex; gap: 3px; }
+.ext:hover { color: var(--action-text); text-decoration-color: currentColor; }
+.ext span { font-size: 0.85em; }
+.d-acts { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; margin-top: 10px; }
+.d-full { font-size: 0.9rem; font-weight: 600; color: var(--action-text); text-decoration: none; }
+.d-full:hover { text-decoration: underline; }

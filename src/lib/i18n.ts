@@ -6,6 +6,7 @@ const dict: Record<string, { en: string; zh: string }> = {
   nav_faculty: { en: 'Faculty', zh: '教师' },
   nav_shortlist: { en: 'Saved', zh: '收藏' },
   nav_about: { en: 'About', zh: '关于' },
+  open_full: { en: 'Open full profile', zh: '查看完整资料' },
   tree_full: { en: 'See the full academic tree', zh: '查看完整学术谱系' },
   tree_note: { en: 'Names in grey are not on this site. From Academic Family Tree and Wikidata.', zh: '灰色姓名不在本站。数据来自 Academic Family Tree 和 Wikidata。' },
   oa_short: { en: 'Publications', zh: '论文' },

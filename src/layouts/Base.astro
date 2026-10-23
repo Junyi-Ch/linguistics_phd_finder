@@ -10,6 +10,10 @@ import '@fontsource-variable/source-serif-4/wght-italic.css';
 import '@fontsource-variable/space-grotesk';
 import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource/instrument-serif/400.css';
+import '@fontsource/instrument-serif/400-italic.css';
+import '@fontsource-variable/fraunces/full.css';
+import '@fontsource-variable/fraunces/full-italic.css';
 import '../styles/looks.css';
 import LookSwitch from '../components/LookSwitch.astro';
 import Header from '../components/Header.astro';
@@ -37,7 +41,7 @@ const fullTitle = title === SITE_NAME ? title : `${title} · ${SITE_NAME}`;
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
     <script is:inline>
-      (function () { try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; var l = localStorage.getItem('lang'); if (l === 'zh') document.documentElement.lang = 'zh'; var q = new URLSearchParams(location.search).get('look'); if (q !== null) { if (q) localStorage.setItem('look', q); else localStorage.removeItem('look'); } var lk = localStorage.getItem('look'); if (lk) { document.documentElement.dataset.look = lk; document.documentElement.dataset.theme = 'light'; } } catch (e) {} })();
+      (function () { try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; var l = localStorage.getItem('lang'); if (l === 'zh') document.documentElement.lang = 'zh'; var q = new URLSearchParams(location.search).get('look'); if (q !== null) { if (q) localStorage.setItem('look', q); else localStorage.removeItem('look'); } var lk = localStorage.getItem('look'); if (lk && lk.charAt(0) !== 'j') { localStorage.removeItem('look'); lk = null; } if (lk) { document.documentElement.dataset.look = lk; document.documentElement.dataset.theme = 'light'; } } catch (e) {} })();
     </script>
   </head>
   <body>

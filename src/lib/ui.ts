@@ -14,17 +14,24 @@ export function chip(tax: Taxonomy, dim: Dim, c: string, primary = false, extra 
   const lang = getLang();
   return `<span class="chip${primary ? ' primary' : ''}" data-dim="${dim}" title="${esc(labelFull(tax, dim, c, lang))}" ${extra}>${esc(labelText(tax, dim, c, lang))}${primary ? ' ★' : ''}</span>`;
 }
+const BOOKMARK = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>';
 export function saveBtn(id: string, small = true) {
   const on = shortlist.has(id);
   return `<button type="button" class="btn ${small ? 'sm' : ''} save-btn" data-save="${esc(id)}" aria-pressed="${on}">${on ? t('saved') : t('save')}</button>`;
 }
+/** the bookmark-style Save used next to a person's name */
+export function saveMark(id: string) {
+  const on = shortlist.has(id);
+  return `<button type="button" class="save-mark save-btn" data-save="${esc(id)}" aria-pressed="${on}">${BOOKMARK}<span class="lbl">${on ? t('saved') : t('save')}</span></button>`;
+}
+const ext = (href: string, label: string) => `<a class="ext" href="${esc(href)}" target="_blank" rel="noreferrer">${esc(label)}<span aria-hidden="true">↗</span></a>`;
 export function bindSaveButtons(root: ParentNode) {
   root.querySelectorAll<HTMLButtonElement>('.save-btn').forEach((b) => {
     if (b.dataset.bound) return;
     b.dataset.bound = '1';
     b.addEventListener('click', () => {
       const on = shortlist.toggle(b.dataset.save!);
-      document.querySelectorAll<HTMLButtonElement>(`.save-btn[data-save="${CSS.escape(b.dataset.save!)}"]`).forEach((x) => { x.setAttribute('aria-pressed', String(on)); x.textContent = on ? t('saved') : t('save'); });
+      document.querySelectorAll<HTMLButtonElement>(`.save-btn[data-save="${CSS.escape(b.dataset.save!)}"]`).forEach((x) => { x.setAttribute('aria-pressed', String(on)); const l = x.querySelector('.lbl'); (l || x).textContent = on ? t('saved') : t('save'); });
     });
   });
 }
@@ -54,16 +61,18 @@ export function drawerHtml(f: Faculty, p: Program | undefined, tax: Taxonomy) {
   const lang = getLang();
   const focus = DIMS.flatMap((d) => (f.labels[d] ?? []).filter((l) => l.p).map((l) => chip(tax, d, l.c, false))).slice(0, 5).join('');
   const links = [
-    f.site ? `<a class="btn sm" href="${esc(f.site)}" target="_blank" rel="noreferrer">${t('personal_site')}</a>` : '',
-    f.profile ? `<a class="btn sm" href="${esc(f.profile)}" target="_blank" rel="noreferrer">${t('profile')}</a>` : '',
-  ].join('');
+    f.site ? ext(f.site, t('personal_site')) : '',
+    f.profile ? ext(f.profile, t('profile')) : '',
+    f.scholar ? ext(f.scholar, t('scholar')) : '',
+  ].filter(Boolean).join('');
   return `<button type="button" class="icon-btn close" aria-label="${t('close')}" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   <h2>${esc(f.name)}</h2>
   <div class="muted" style="margin-top:4px">${esc(f.rank === 'Faculty' ? t('rank_fac') : f.title)}</div>
   <div style="margin-top:2px">${p ? `<a href="${withBase('programs/' + p.slug + '/')}">${esc(p.name)}</a>` : ''}<span class="muted"> · ${esc(f.dept)}</span></div>
+  <div class="d-acts">${saveMark(f.id)}<a class="d-full" href="${withBase('faculty/' + f.id + '/')}">${t('open_full')} →</a></div>
   ${f.summary ? `<p class="sum" style="margin-top:16px;font-size:1.05rem">${esc(lang === 'zh' && f.summary_zh ? f.summary_zh : f.summary)}</p>` : ''}
   ${focus ? `<div class="chips" style="margin-top:12px">${focus}</div>` : ''}
-  <div class="links" style="margin-top:18px">${saveBtn(f.id)}<a class="btn sm" href="${withBase('faculty/' + f.id + '/')}">${t('open_page')}</a>${links}</div>
+  ${links ? `<div class="ext-links">${links}</div>` : ''}
   <div class="d-conn" data-for="${esc(f.id)}">
     <div class="d-tabs" role="tablist">
       <button type="button" role="tab" data-dtab="similar" aria-selected="true">${t('related_h')}</button>
