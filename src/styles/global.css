@@ -247,7 +247,7 @@ label.check input { width: 16px; height: 16px; margin: 0; }
 
 /* person rows */
 .rows { display: grid; gap: 12px; }
-.row { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: 18px 20px; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-lg); transition: border-color 0.15s, box-shadow 0.2s; }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: 18px 20px; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-lg); transition: border-color 0.15s, box-shadow 0.2s; }
 .row:hover { border-color: var(--line-2); box-shadow: var(--shadow-sm); }
 .row .who { min-width: 0; }
 .row .name { font-weight: 600; font-size: 1.08rem; letter-spacing: -0.01em; display: inline; }
@@ -263,7 +263,7 @@ label.check input { width: 16px; height: 16px; margin: 0; }
 #results { scroll-margin-top: calc(var(--header-h) + 12px); }
 .row .side { display: grid; justify-items: end; gap: 10px; }
 .row .actions { display: flex; gap: 6px; }
-@media (max-width: 640px) { .row { grid-template-columns: 44px minmax(0, 1fr); padding: 16px; } .row .side { grid-column: 1 / -1; justify-items: start; grid-auto-flow: column; justify-content: space-between; align-items: center; width: 100%; } .avatar { width: 44px; height: 44px; border-radius: 14px; font-size: 1.2rem; } }
+@media (max-width: 640px) { .row { grid-template-columns: minmax(0, 1fr); padding: 16px; } .row .side { grid-column: 1 / -1; justify-items: start; grid-auto-flow: column; justify-content: space-between; align-items: center; width: 100%; } .avatar { width: 44px; height: 44px; border-radius: 14px; font-size: 1.2rem; } }
 
 /* the tree: results hang off one line from the query node */
 .tree { position: relative; padding-left: 38px; }

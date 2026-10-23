@@ -53,11 +53,6 @@ const GLYPH: Record<string, string> = {
   T_DOCUMENTATION: 'ɣ', T_CONTACT_CREOLES: 'θ', T_COMPUTATIONAL: '{ }', T_SIGN_GESTURE: 'ʘ', T_COGNITION_PHILOSOPHY: '∴',
 };
 function hash(s: string) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return Math.abs(h); }
-export function avatar(f: Faculty, lg = false) {
-  const top = (f.labels?.topic ?? []).find((l) => l.p)?.c ?? f.labels?.topic?.[0]?.c;
-  const glyph = (top && GLYPH[top]) || initials(f.name);
-  const h = hash(f.id || f.name);
-  const rot = ((h % 13) - 6) + 'deg';
-  return `<span class="avatar${lg ? ' lg' : ''}" data-t="${(h % 7) + 1}" style="--av-rot:${rot}" aria-hidden="true">${esc(glyph)}</span>`;
-}
+// Person tiles were removed: they carried no information. Kept as a no-op so callers stay simple.
+export function avatar(_f: Faculty, _lg = false) { return ''; }
 
