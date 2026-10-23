@@ -1,31 +1,31 @@
-/* Linguistics PhD Explorer — design tokens and components ("balanced": light, modern, a little playful; cobalt accent) */
+/* Linguistics PhD Explorer — design tokens and components ("balanced": light, modern, a little playful) */
 
 :root {
   color-scheme: light;
   /* ground and ink */
-  --bg: #fbfbfd;
+  --bg: #fafaf7;
   --bg-2: #ffffff;
-  --bg-3: #f1f3f8;
-  --bg-4: #e6e9f0;
-  --ink: #171b26;
-  --ink-2: #333a4a;
-  --ink-3: #5a6172;
-  --line: #e8eaf0;
-  --line-2: #d5d9e3;
-  /* one accent (cobalt) */
-  --action: #3d63c9;
-  --action-hover: #3253ae;
+  --bg-3: #f2f1ec;
+  --bg-4: #e9e7e0;
+  --ink: #1e2421;
+  --ink-2: #38403b;
+  --ink-3: #5d6660;
+  --line: #eceae3;
+  --line-2: #dcd8cd;
+  /* one accent (sage) */
+  --action: #3f7a5a;
+  --action-hover: #33664a;
   --action-ink: #ffffff;
-  --action-soft: #e5ebfa;
-  --action-text: #3253ae;
-  --danger: #b23a2e;
-  --ok: #0e6e7a;
+  --action-soft: #e3f0e7;
+  --action-text: #2f6a4b;
+  --danger: #b4412a;
+  --ok: #2f6a4b;
   /* pastel pairs (tile ground / ink on it) */
-  --p-lav: #e4e8fc; --i-lav: #3a47ba;
-  --p-peach: #fbe3de; --i-peach: #a83d33;
-  --p-mint: #daf1f4; --i-mint: #156a75;
-  --p-butter: #fbf0d2; --i-butter: #735a0e;
-  --p-sky: #deeafb; --i-sky: #275da3;
+  --p-lav: #e9e5ff; --i-lav: #4b3fb0;
+  --p-peach: #ffe7dc; --i-peach: #a9472a;
+  --p-mint: #dcf3e4; --i-mint: #247048;
+  --p-butter: #fff2c7; --i-butter: #7f6100;
+  --p-sky: #ddeefa; --i-sky: #2a6390;
   /* lenses: subfield, method, data, population, language */
   --lens-topic: var(--i-butter); --lens-topic-bg: var(--p-butter);
   --lens-approach: var(--i-mint); --lens-approach-bg: var(--p-mint);
@@ -48,25 +48,25 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: #13151b; --bg-2: #1a1d25; --bg-3: #22262f; --bg-4: #2b303a;
-    --ink: #eceef3; --ink-2: #c3c8d2; --ink-3: #98a0ad;
-    --line: #2a2f39; --line-2: #3a404c;
-    --action: #8aa4f2; --action-hover: #a6baf6; --action-ink: #0e1428; --action-soft: #232b4c; --action-text: #a6baf6;
-    --danger: #f0a196; --ok: #8fd0d8;
-    --p-lav: #262b4a; --i-lav: #b9c2ff; --p-peach: #3a2523; --i-peach: #f2b3aa;
-    --p-mint: #1b3337; --i-mint: #98d6de; --p-butter: #34301f; --i-butter: #e3d09a; --p-sky: #1e2c42; --i-sky: #a9c8f0;
+    --bg: #141716; --bg-2: #1b1f1d; --bg-3: #232826; --bg-4: #2c322f;
+    --ink: #eceee9; --ink-2: #c3c8c2; --ink-3: #98a09a;
+    --line: #2b302e; --line-2: #3a413d;
+    --action: #7cc39b; --action-hover: #95d3b0; --action-ink: #0f1a14; --action-soft: #22352b; --action-text: #93d2ae;
+    --danger: #ff8a73; --ok: #7cc39b;
+    --p-lav: #2c2846; --i-lav: #c9c1ff; --p-peach: #3d2a22; --i-peach: #ffbfa3;
+    --p-mint: #1f3529; --i-mint: #9fe0b8; --p-butter: #383014; --i-butter: #f2d77b; --p-sky: #1d3040; --i-sky: #a8d4f5;
     --shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.6); --shadow-sm: 0 6px 16px -8px rgba(0, 0, 0, 0.5);
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #13151b; --bg-2: #1a1d25; --bg-3: #22262f; --bg-4: #2b303a;
-  --ink: #eceef3; --ink-2: #c3c8d2; --ink-3: #98a0ad;
-  --line: #2a2f39; --line-2: #3a404c;
-  --action: #8aa4f2; --action-hover: #a6baf6; --action-ink: #0e1428; --action-soft: #232b4c; --action-text: #a6baf6;
-  --danger: #f0a196; --ok: #8fd0d8;
-  --p-lav: #262b4a; --i-lav: #b9c2ff; --p-peach: #3a2523; --i-peach: #f2b3aa;
-  --p-mint: #1b3337; --i-mint: #98d6de; --p-butter: #34301f; --i-butter: #e3d09a; --p-sky: #1e2c42; --i-sky: #a9c8f0;
+  --bg: #141716; --bg-2: #1b1f1d; --bg-3: #232826; --bg-4: #2c322f;
+  --ink: #eceee9; --ink-2: #c3c8c2; --ink-3: #98a09a;
+  --line: #2b302e; --line-2: #3a413d;
+  --action: #7cc39b; --action-hover: #95d3b0; --action-ink: #0f1a14; --action-soft: #22352b; --action-text: #93d2ae;
+  --danger: #ff8a73; --ok: #7cc39b;
+  --p-lav: #2c2846; --i-lav: #c9c1ff; --p-peach: #3d2a22; --i-peach: #ffbfa3;
+  --p-mint: #1f3529; --i-mint: #9fe0b8; --p-butter: #383014; --i-butter: #f2d77b; --p-sky: #1d3040; --i-sky: #a8d4f5;
   --shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.6); --shadow-sm: 0 6px 16px -8px rgba(0, 0, 0, 0.5);
 }
 
