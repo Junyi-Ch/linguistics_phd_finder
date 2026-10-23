@@ -14,6 +14,7 @@ const sections = [
   ['matching', 'How matching works'],
   ['data', 'What data is included'],
   ['labels', 'Research labels'],
+  ['rankings', 'Rankings'],
   ['privacy', 'Privacy'],
   ['limits', 'Limits'],
   ['contact', 'Corrections and contact'],
@@ -72,7 +73,7 @@ const sections = [
       <section id="data">
         <h2>What data is included</h2>
         <h3>Programs</h3>
-        <p>Every US university with a research PhD in linguistics, starting from the <a href="https://www.linguisticsociety.org/" rel="noreferrer">Linguistic Society of America</a>’s program directory and checked against each university’s own pages. Related departments are included when they grant a research PhD and some of their faculty work on language. Every department is labelled as either a linguistics department or a related department. There are no rankings.</p>
+        <p>Every US university with a research PhD in linguistics, starting from the <a href="https://www.linguisticsociety.org/" rel="noreferrer">Linguistic Society of America</a>’s program directory and checked against each university’s own pages. Related departments are included when they grant a research PhD and some of their faculty work on language. Every department is labelled as either a linguistics department or a related department.</p>
         <h3>Faculty</h3>
         <p>Assistant, associate and full professors, the people who can usually supervise a dissertation. Lecturers, teaching and clinical faculty, emeriti, visiting and affiliated faculty are not included. In related departments, only faculty whose research involves language are kept. Some departments do not list job titles; their faculty appear as “Rank not listed”.</p>
         <h3>What is shown about each person</h3>
@@ -86,6 +87,16 @@ const sections = [
         <div class="label-groups">
           {DIMS.map((d) => <div class="panel"><b>{T.dimensions[d].label}</b><div class="chips" style="margin-top:10px">{Object.entries(T.dimensions[d].labels_short).map(([c, l]) => <span class="chip" data-dim={d} title={T.dimensions[d].labels[c]}>{l}</span>)}</div></div>)}
         </div>
+      </section>
+
+      <section id="rankings">
+        <h2>Rankings</h2>
+        <p>You can filter programs by two rankings. Both filters are off by default, and neither affects how matches are scored.</p>
+        <ul>
+          <li><b>QS Linguistics</b>: the <a href="https://www.topuniversities.com/university-subject-rankings/linguistics" rel="noreferrer">QS World University Rankings by Subject 2026: Linguistics</a> (published March 2026). It is a world ranking, so the positions are global. QS gives exact positions up to 100 and bands after that (101–150, 151–200, …). Universities outside its 350 entries are shown as “not ranked”.</li>
+          <li><b>U.S. News</b>: the <a href="https://www.usnews.com/best-colleges/rankings/national-universities" rel="noreferrer">U.S. News Best National Universities 2027</a> (published September 2026). This ranks whole universities, mostly on undergraduate measures; U.S. News does not rank linguistics PhD programs. Positions below 100 are shown as “below 100”.</li>
+        </ul>
+        <p>Rankings are a rough guide. They say little about whether a department has faculty working on what you want to study, so use them alongside the matches, not instead of them.</p>
       </section>
 
       <section id="privacy">

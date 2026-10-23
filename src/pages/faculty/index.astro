@@ -5,6 +5,7 @@ import programs from '../../data/programs.json';
 import tax from '../../data/taxonomy.json';
 import { lastName, FIELDS, FIELD_LABELS, type Faculty, type Program, type Taxonomy } from '../../lib/data';
 import { personRow } from '../../lib/ui';
+import RankFilters from '../../components/RankFilters.astro';
 import { t } from '../../lib/i18n';
 // The first page of the directory is rendered at build time, so the list shows before (or without) the script.
 const F = faculty as unknown as Faculty[];
@@ -26,6 +27,7 @@ const initialCount = t('showing', { a: first.length, b: F.length });
           <select class="select" id="univ"><option value="" data-i18n="all_universities">All universities</option></select>
           <div class="toolbar"><label class="check"><input type="checkbox" class="rank" value="Professor" checked><span data-i18n="rank_prof">Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Associate Professor" checked><span data-i18n="rank_assoc">Associate Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Assistant Professor" checked><span data-i18n="rank_asst">Assistant Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Faculty" checked><span data-i18n="rank_fac">Rank not listed</span></label></div>
           <div class="fld-checks"><span class="small muted" data-i18n="opt_field">Departments</span>{FIELDS.map((k) => <label class="check"><input type="checkbox" class="fldc" value={k} checked /><span data-i18n={`field_${k}`}>{FIELD_LABELS[k].en}</span></label>)}</div>
+          <RankFilters compact />
           <label class="check"><input type="checkbox" id="primary"><span data-i18n="primary_only">Main focus only (★)</span></label>
           <button type="button" class="btn sm quiet" id="clear" data-i18n="clear">Clear filters</button>
         </div>
@@ -57,7 +59,7 @@ const initialCount = t('showing', { a: first.length, b: F.length });
   import faculty from '../../data/faculty.json';
   import programs from '../../data/programs.json';
   import tax from '../../data/taxonomy.json';
-  import { DIMS, FIELDS, esc, lastName, RANK_ORDER, type Faculty, type Program, type Taxonomy, type Dim } from '../../lib/data';
+  import { DIMS, FIELDS, esc, lastName, RANK_ORDER, passesRank, type Faculty, type Program, type Taxonomy, type Dim } from '../../lib/data';
   import { t, getLang } from '../../lib/i18n';
   import { personRow, bindSaveButtons, setupDrawer } from '../../lib/ui';
   import { tokenize } from '../../lib/match';
@@ -69,6 +71,7 @@ const initialCount = t('showing', { a: first.length, b: F.length });
   const search = $<HTMLInputElement>('#search'), univ = $<HTMLSelectElement>('#univ'), primary = $<HTMLInputElement>('#primary'), sort = $<HTMLSelectElement>('#sort');
   const state = { q: '', u: '', primary: false, ranks: new Set(['Professor', 'Associate Professor', 'Assistant Professor', 'Faculty']), fields: new Set<string>(FIELDS), sel: {} as Record<Dim, Set<string>>, sort: 'name', shown: 60 };
   for (const d of DIMS) state.sel[d] = new Set();
+  let qsMax = 0, usMax = 0;
   // URL state
   const params = new URLSearchParams(location.search);
   state.q = params.get('q') || ''; state.u = params.get('u') || ''; state.primary = params.get('primary') === '1';
@@ -82,6 +85,7 @@ const initialCount = t('showing', { a: first.length, b: F.length });
     if (!state.ranks.has(f.rank)) return false;
     if (!state.fields.has(f.fld)) return false;
     if (state.u && f.u !== state.u) return false;
+    if ((qsMax || usMax) && !passesRank(byProg.get(f.u) ?? { qs: null, us: null }, qsMax, usMax)) return false;
     if (state.q) { const txt = docText.get(f.id)!; const ql = state.q.toLowerCase(); if (!txt.includes(ql) && !tokenize(state.q).every((tk) => txt.includes(tk))) return false; }
     for (const d of DIMS) {
       if (d === skipDim || !state.sel[d].size) continue;
@@ -131,10 +135,12 @@ const initialCount = t('showing', { a: first.length, b: F.length });
   search.addEventListener('input', () => { clearTimeout(timer); timer = window.setTimeout(() => { state.q = search.value.trim(); state.shown = 60; update(); }, 150); });
   univ.addEventListener('change', () => { state.u = univ.value; state.shown = 60; update(); });
   primary.addEventListener('change', () => { state.primary = primary.checked; update(); });
+  $<HTMLSelectElement>('#qs-max').addEventListener('change', (e) => { qsMax = Number((e.target as HTMLSelectElement).value); state.shown = 60; update(); });
+  $<HTMLSelectElement>('#us-max').addEventListener('change', (e) => { usMax = Number((e.target as HTMLSelectElement).value); state.shown = 60; update(); });
   sort.addEventListener('change', () => { state.sort = sort.value; renderList(); });
   document.querySelectorAll<HTMLInputElement>('.rank').forEach((c) => c.addEventListener('change', () => { if (c.checked) state.ranks.add(c.value); else state.ranks.delete(c.value); update(); }));
   document.querySelectorAll<HTMLInputElement>('.fldc').forEach((c) => c.addEventListener('change', () => { if (c.checked) state.fields.add(c.value); else state.fields.delete(c.value); state.shown = 60; update(); }));
-  $('#clear').addEventListener('click', () => { state.q = ''; state.u = ''; state.primary = false; for (const d of DIMS) state.sel[d].clear(); search.value = ''; univ.value = ''; primary.checked = false; document.querySelectorAll<HTMLInputElement>('.rank').forEach((c) => { c.checked = true; state.ranks.add(c.value); }); document.querySelectorAll<HTMLInputElement>('.fldc').forEach((c) => { c.checked = true; state.fields.add(c.value); }); update(); });
+  $('#clear').addEventListener('click', () => { qsMax = 0; usMax = 0; $<HTMLSelectElement>('#qs-max').value = '0'; $<HTMLSelectElement>('#us-max').value = '0'; state.q = ''; state.u = ''; state.primary = false; for (const d of DIMS) state.sel[d].clear(); search.value = ''; univ.value = ''; primary.checked = false; document.querySelectorAll<HTMLInputElement>('.rank').forEach((c) => { c.checked = true; state.ranks.add(c.value); }); document.querySelectorAll<HTMLInputElement>('.fldc').forEach((c) => { c.checked = true; state.fields.add(c.value); }); update(); });
   $('#facet-toggle').addEventListener('click', () => { const w = $('#facets-wrap'); const open = w.dataset.open !== 'true'; w.dataset.open = String(open); $('#facet-toggle').setAttribute('aria-expanded', String(open)); });
   document.addEventListener('langchange', update);
   // restored from the back/forward cache: re-read the URL state and redraw

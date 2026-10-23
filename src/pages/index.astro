@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { FIELDS } from '../lib/data';
+import RankFilters from '../components/RankFilters.astro';
 const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computational', APPLIED: 'Applied / SLA', LANG: 'Language depts', SPEECH: 'Speech & cognition' };
 ---
 <Base>
@@ -54,6 +55,7 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
       <div class="opts-grid">
         <label class="field"><span><span data-i18n="opt_threshold">Minimum fit score</span> <output id="thr-out">35</output></span><input type="range" id="thr" min="10" max="80" value="35"></label>
         <input type="hidden" id="lex" value="15">
+        <RankFilters />
         <div class="field"><span data-i18n="opt_rank">Rank</span><div class="toolbar"><label class="check"><input type="checkbox" class="rank" value="Professor" checked><span data-i18n="rank_prof">Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Associate Professor" checked><span data-i18n="rank_assoc">Associate Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Assistant Professor" checked><span data-i18n="rank_asst">Assistant Professor</span></label><label class="check"><input type="checkbox" class="rank" value="Faculty" checked><span data-i18n="rank_fac">Rank not listed</span></label></div></div>
       </div>
     </details>
@@ -82,6 +84,7 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
   .examples .ex { border: 1px solid var(--line); background: var(--bg-2); color: var(--ink-2); border-radius: 999px; padding: 7px 13px; font-size: 0.875rem; min-height: 36px; }
   .examples .ex:hover { border-color: var(--action); color: var(--action-text); }
   .opts summary { cursor: pointer; color: var(--ink-3); font-size: 0.875rem; font-weight: 600; width: max-content; }
+  .opts-grid .rank-filters { grid-column: 1 / -1; max-width: 560px; }
   .opts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 24px; padding: 14px 0 4px; }
   .opts-grid input[type=range] { width: 100%; }
   .match-results { margin-top: 48px; }
@@ -103,7 +106,7 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
   import faculty from '../data/faculty.json';
   import programs from '../data/programs.json';
   import tax from '../data/taxonomy.json';
-  import { BASE, esc, withBase, labelText, type Faculty, type Program, type Taxonomy } from '../lib/data';
+  import { BASE, esc, withBase, labelText, passesRank, type Faculty, type Program, type Taxonomy } from '../lib/data';
   import { t, getLang } from '../lib/i18n';
   import { indexFaculty, detectHints, loadIndex, loadModel, loadReranker, embed, semanticScores, score, rerank, programFit, hasCJK, translateToEnglish, type Hint, type Scored, type Manifest } from '../lib/match';
   import { personRow, bindSaveButtons, setupDrawer, scoreHtml, mark, chip } from '../lib/ui';
@@ -125,7 +128,7 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
   document.querySelectorAll<HTMLButtonElement>('.examples .ex').forEach((b) => b.addEventListener('click', () => { q.value = EXAMPLES[Number(b.dataset.ex)]; q.dispatchEvent(new Event('input')); run(true); }));
   thr.addEventListener('input', () => { $('#thr-out').textContent = thr.value; if (last) run(false); });
   lex.addEventListener('input', () => { $('#lex-out').textContent = lex.value + '%'; if (last) run(false); });
-  document.querySelectorAll<HTMLInputElement>('.rank, .fldc').forEach((c) => c.addEventListener('change', () => last && run(false)));
+  document.querySelectorAll<HTMLInputElement>('.rank, .fldc, #qs-max, #us-max').forEach((c) => c.addEventListener('change', () => last && run(false)));
 
   function renderHints() {
     const box = $('#hints'), chips = $('#hint-chips');
@@ -189,6 +192,8 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
       } catch { /* the first-pass order still stands */ }
       if (seq !== runSeq) return;
       statusText.textContent = t('match_ready');
+      const qsMax = Number($<HTMLSelectElement>('#qs-max').value), usMax = Number($<HTMLSelectElement>('#us-max').value);
+      if (qsMax || usMax) res = res.filter((s) => { const pr = byProg.get(s.f.u); return pr ? passesRank(pr, qsMax, usMax) : false; });
       last = res; lastQuery = text; shown = 30;
       showTranslation();
       render();

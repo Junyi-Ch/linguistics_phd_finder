@@ -38,7 +38,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "1",
+  "rank_usnews_national": "1"
  },
  {
   "slug": "harvard-university",
@@ -83,7 +85,9 @@
     "include": false,
     "reason": "Add later: faculty page needs manual setup"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "7",
+  "rank_usnews_national": "3"
  },
  {
   "slug": "yale-university",
@@ -112,7 +116,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "68",
+  "rank_usnews_national": "4"
  },
  {
   "slug": "stanford-university",
@@ -141,7 +147,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "8",
+  "rank_usnews_national": "5"
  },
  {
   "slug": "university-of-california-berkeley",
@@ -170,7 +178,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "9",
+  "rank_usnews_national": "20"
  },
  {
   "slug": "university-of-california-los-angeles",
@@ -214,7 +224,9 @@
     "include": false,
     "reason": "Applied Linguistics is now part of the UCLA Department of Linguistics"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "10",
+  "rank_usnews_national": "20"
  },
  {
   "slug": "university-of-california-san-diego",
@@ -254,7 +266,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "35",
+  "rank_usnews_national": "29"
  },
  {
   "slug": "university-of-california-santa-cruz",
@@ -283,7 +297,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "101-150",
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "university-of-california-santa-barbara",
@@ -312,7 +328,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "31",
+  "rank_usnews_national": "44"
  },
  {
   "slug": "university-of-california-davis",
@@ -341,7 +359,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "34"
  },
  {
   "slug": "university-of-california-irvine",
@@ -370,7 +390,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "201-250",
+  "rank_usnews_national": "34"
  },
  {
   "slug": "university-of-southern-california",
@@ -399,7 +421,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "101-150",
+  "rank_usnews_national": "27"
  },
  {
   "slug": "university-of-chicago",
@@ -428,7 +452,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "30",
+  "rank_usnews_national": "9"
  },
  {
   "slug": "northwestern-university",
@@ -468,7 +494,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "101-150",
+  "rank_usnews_national": "9"
  },
  {
   "slug": "university-of-pennsylvania",
@@ -508,7 +536,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "15",
+  "rank_usnews_national": "7"
  },
  {
   "slug": "johns-hopkins-university",
@@ -549,7 +579,9 @@
     "include": false,
     "reason": "Add later: faculty page needs manual setup"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "201-250",
+  "rank_usnews_national": "9"
  },
  {
   "slug": "university-of-maryland-college-park",
@@ -601,7 +633,9 @@
     "include": false,
     "reason": "Check whether the SLA PhD still admits"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "38",
+  "rank_usnews_national": "49"
  },
  {
   "slug": "georgetown-university",
@@ -652,7 +686,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "20",
+  "rank_usnews_national": "23"
  },
  {
   "slug": "new-york-university",
@@ -682,7 +718,9 @@
     "reason": "",
     "render": true
    }
-  ]
+  ],
+  "rank_qs_linguistics": "24",
+  "rank_usnews_national": "31"
  },
  {
   "slug": "city-university-of-new-york-graduate-center",
@@ -722,7 +760,9 @@
     "include": false,
     "reason": "Add later: faculty page needs manual setup"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "251-300",
+  "rank_usnews_national": null
  },
  {
   "slug": "stony-brook-university",
@@ -751,7 +791,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "59"
  },
  {
   "slug": "university-at-buffalo-suny",
@@ -780,7 +822,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "301-350",
+  "rank_usnews_national": "85"
  },
  {
   "slug": "rutgers-universitynew-brunswick",
@@ -809,7 +853,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "151-200",
+  "rank_usnews_national": "44"
  },
  {
   "slug": "cornell-university",
@@ -838,7 +884,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "101-150",
+  "rank_usnews_national": "14"
  },
  {
   "slug": "university-of-rochester",
@@ -878,7 +926,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "49"
  },
  {
   "slug": "brown-university",
@@ -917,7 +967,9 @@
     "reason": "",
     "filter_language": true
    }
-  ]
+  ],
+  "rank_qs_linguistics": "251-300",
+  "rank_usnews_national": "16"
  },
  {
   "slug": "boston-university",
@@ -946,7 +998,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "101-150",
+  "rank_usnews_national": "34"
  },
  {
   "slug": "tulane-university",
@@ -975,7 +1029,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "59"
  },
  {
   "slug": "carnegie-mellon-university",
@@ -1002,7 +1058,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "151-200",
+  "rank_usnews_national": "14"
  },
  {
   "slug": "university-of-massachusetts-amherst",
@@ -1031,7 +1089,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "5",
+  "rank_usnews_national": "59"
  },
  {
   "slug": "university-of-connecticut",
@@ -1071,7 +1131,9 @@
     "include": false,
     "reason": "Add later: faculty page needs manual setup"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "69",
+  "rank_usnews_national": "73"
  },
  {
   "slug": "university-of-delaware",
@@ -1101,7 +1163,9 @@
     "reason": "",
     "filter_language": true
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "85"
  },
  {
   "slug": "university-of-pittsburgh",
@@ -1130,7 +1194,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "151-200",
+  "rank_usnews_national": "59"
  },
  {
   "slug": "pennsylvania-state-university",
@@ -1168,7 +1234,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "=47",
+  "rank_usnews_national": "55"
  },
  {
   "slug": "ohio-state-university",
@@ -1219,7 +1287,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "17",
+  "rank_usnews_national": "44"
  },
  {
   "slug": "university-of-michigan",
@@ -1248,7 +1318,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "51",
+  "rank_usnews_national": "25"
  },
  {
   "slug": "michigan-state-university",
@@ -1289,7 +1361,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "=42",
+  "rank_usnews_national": "69"
  },
  {
   "slug": "indiana-university-bloomington",
@@ -1340,7 +1414,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "74",
+  "rank_usnews_national": "73"
  },
  {
   "slug": "university-of-illinois-urbana-champaign",
@@ -1391,7 +1467,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "=56",
+  "rank_usnews_national": "34"
  },
  {
   "slug": "purdue-university",
@@ -1432,7 +1510,9 @@
     "include": false,
     "reason": "Add later: faculty page needs manual setup"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "151-200",
+  "rank_usnews_national": "55"
  },
  {
   "slug": "university-of-wisconsinmadison",
@@ -1473,7 +1553,9 @@
     "include": false,
     "reason": "Add later: faculty page needs manual setup"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "151-200",
+  "rank_usnews_national": "34"
  },
  {
   "slug": "university-of-minnesota-twin-cities",
@@ -1524,7 +1606,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "201-250",
+  "rank_usnews_national": "59"
  },
  {
   "slug": "university-of-iowa",
@@ -1565,7 +1649,9 @@
     "include": false,
     "reason": "Add later: faculty page needs manual setup"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "251-300",
+  "rank_usnews_national": "100"
  },
  {
   "slug": "university-of-kansas",
@@ -1605,7 +1691,9 @@
     "include": false,
     "reason": "Add later: faculty page needs manual setup"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "101-150",
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "university-of-texas-at-austin",
@@ -1656,7 +1744,9 @@
     "include": false,
     "reason": "Add later: faculty page needs manual setup"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "=32",
+  "rank_usnews_national": "34"
  },
  {
   "slug": "rice-university",
@@ -1685,7 +1775,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "301-350",
+  "rank_usnews_national": "16"
  },
  {
   "slug": "university-of-texas-at-arlington",
@@ -1714,7 +1806,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "university-of-arizona",
@@ -1765,7 +1859,9 @@
     "include": false,
     "reason": "Add later: faculty page needs manual setup"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "40",
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "arizona-state-university",
@@ -1795,7 +1891,9 @@
     "reason": "",
     "filter_language": true
    }
-  ]
+  ],
+  "rank_qs_linguistics": "97",
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "northern-arizona-university",
@@ -1821,7 +1919,9 @@
     "directory_url": "https://nau.edu/english/programs/doctoral-degrees/phd-applied-linguistics",
     "include": true
    }
-  ]
+  ],
+  "rank_qs_linguistics": "63",
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "university-of-new-mexico",
@@ -1850,7 +1950,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "101-150",
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "university-of-colorado-boulder",
@@ -1890,7 +1992,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "101-150",
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "university-of-utah",
@@ -1919,7 +2023,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "university-of-oregon",
@@ -1948,7 +2054,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "=81",
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "university-of-washington",
@@ -1988,7 +2096,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "55",
+  "rank_usnews_national": "49"
  },
  {
   "slug": "university-of-hawaii-at-manoa",
@@ -2039,7 +2149,9 @@
     "include": false,
     "reason": "Add later: faculty page needs manual setup"
    }
-  ]
+  ],
+  "rank_qs_linguistics": "=61",
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "university-of-georgia",
@@ -2068,7 +2180,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "52"
  },
  {
   "slug": "university-of-florida",
@@ -2097,7 +2211,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "34"
  },
  {
   "slug": "university-of-south-carolina",
@@ -2127,7 +2243,9 @@
     "reason": "",
     "render": true
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "georgia-state-university",
@@ -2154,7 +2272,9 @@
     "include": true,
     "reason": ""
    }
-  ]
+  ],
+  "rank_qs_linguistics": "251-300",
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "texas-aandm-university",
@@ -2181,7 +2301,9 @@
     "include": false,
     "reason": "Add later: faculty page needs manual setup"
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "princeton-university",
@@ -2208,7 +2330,9 @@
     "include": false,
     "reason": "Undergraduate program; no Linguistics PhD"
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "university-of-north-carolina-at-chapel-hill",
@@ -2235,7 +2359,9 @@
     "include": false,
     "reason": "No Linguistics PhD"
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "duke-university",
@@ -2262,7 +2388,9 @@
     "include": false,
     "reason": "No Linguistics PhD"
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "university-of-kentucky",
@@ -2289,7 +2417,9 @@
     "include": false,
     "reason": "No Linguistics PhD"
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "101+"
  },
  {
   "slug": "columbia-university",
@@ -2316,6 +2446,8 @@
     "include": false,
     "reason": "Doctorate is an Ed.D.; out of scope"
    }
-  ]
+  ],
+  "rank_qs_linguistics": null,
+  "rank_usnews_national": "101+"
  }
 ]

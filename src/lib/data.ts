@@ -23,7 +23,31 @@ export type Program = {
   slug: string; name: string; short: string; city: string; state: string; lat: number; lng: number;
   domain: string | null; logo: string | null; guide: string[]; units: Unit[];
   n: number; ranks: Record<string, number>; notes: string;
+  qs: string | null; us: string | null;
 };
+// School rankings, shown as a rough guide only (see the About page)
+export const RANKINGS = {
+  qs: { name: 'QS World University Rankings by Subject 2026: Linguistics', short: 'QS Linguistics 2026', url: 'https://www.topuniversities.com/university-subject-rankings/linguistics', tops: [25, 50, 100, 200, 350] },
+  us: { name: 'U.S. News Best National Universities 2027', short: 'U.S. News 2027 (whole university)', url: 'https://www.usnews.com/best-colleges/rankings/national-universities', tops: [25, 50, 100] },
+} as const;
+/** worst position a rank can mean: "17" -> 17, "=32" -> 32, "101-150" -> 150, "101+" -> 999, null -> null */
+export function rankTop(r: string | null | undefined): number | null {
+  if (!r) return null;
+  if (r === '101+') return 999;
+  const m = r.match(/(\d+)(?:-(\d+))?/);
+  return m ? Number(m[2] || m[1]) : null;
+}
+export function rankText(r: string | null | undefined, lang = 'en'): string {
+  if (!r) return lang === 'zh' ? '未上榜' : 'not ranked';
+  if (r === '101+') return lang === 'zh' ? '100 名以外' : 'below 100';
+  if (r.includes('-')) return r.replace('-', '–');
+  return '#' + r.replace('=', '') + (r.startsWith('=') ? (lang === 'zh' ? '（并列）' : ' (tied)') : '');
+}
+export function passesRank(p: { qs: string | null; us: string | null }, qsMax: number, usMax: number) {
+  if (qsMax) { const v = rankTop(p.qs); if (v == null || v > qsMax) return false; }
+  if (usMax) { const v = rankTop(p.us); if (v == null || v > usMax) return false; }
+  return true;
+}
 export type Taxonomy = { dimensions: Record<Dim, { label: string; label_zh: string; description: string; description_zh: string; labels: Record<string, string>; labels_zh: Record<string, string>; labels_short: Record<string, string>; labels_short_zh: Record<string, string> }> };
 
 export const BASE = (import.meta.env.BASE_URL as string).replace(/\/+$/, '') + '/';

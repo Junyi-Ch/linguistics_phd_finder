@@ -1,0 +1,29 @@
+---
+// Two optional ranking filters. Off ("Any") by default so research fit stays the focus.
+const { compact = false } = Astro.props;
+---
+<div class={`rank-filters${compact ? ' compact' : ''}`}>
+  <label class="field"><span data-i18n="rf_qs">QS Linguistics rank</span>
+    <select class="select" id="qs-max">
+      <option value="0" data-i18n="rf_any">Any</option>
+      <option value="25" data-i18n="rf_top25">Top 25</option>
+      <option value="50" data-i18n="rf_top50">Top 50</option>
+      <option value="100" data-i18n="rf_top100">Top 100</option>
+      <option value="200" data-i18n="rf_top200">Top 200</option>
+      <option value="350" data-i18n="rf_ranked">Ranked at all</option>
+    </select>
+  </label>
+  <label class="field"><span data-i18n="rf_us">U.S. News university rank</span>
+    <select class="select" id="us-max">
+      <option value="0" data-i18n="rf_any">Any</option>
+      <option value="25" data-i18n="rf_top25">Top 25</option>
+      <option value="50" data-i18n="rf_top50">Top 50</option>
+      <option value="100" data-i18n="rf_top100">Top 100</option>
+    </select>
+  </label>
+</div>
+<style is:global>
+  .rank-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; }
+  .rank-filters.compact { grid-template-columns: 1fr; }
+  .rank-filters .select { min-height: 40px; }
+</style>

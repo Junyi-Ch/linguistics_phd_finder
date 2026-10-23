@@ -193,6 +193,7 @@ def main():
                        "phd": u.get("phd_program_name"), "phd_url": u.get("phd_program_url"),
                        "directory": u.get("directory_url")} for u in p["units"] if u.get("include")],
             "n": count, "ranks": ranks, "notes": p.get("notes") or "",
+            "qs": p.get("rank_qs_linguistics"), "us": p.get("rank_usnews_national"),
         })
         stats["programs"] += 1; stats["faculty"] += count
         print(f"{slug:45s} faculty={count:3d} labels={sum(1 for f in raw['faculty'] if norm_name(f['name']) in labels):3d}")
