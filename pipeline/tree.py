@@ -287,6 +287,8 @@ def main():
         if k in seen:
             continue
         seen.add(k)
+        if re.fullmatch(r"Q\d+", sname or "") or re.fullmatch(r"Q\d+", aname or ""):
+            continue  # Wikidata item without an English name
         if s in site or a in site:
             edges.append([s, sname if s is None else None, a, aname if a is None else None, e["src"]])
     out = {
