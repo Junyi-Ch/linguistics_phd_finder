@@ -330,16 +330,68 @@ def research_areas(text):
             return out[:8]
     return []
 
-def profile_links(html, url):
+PUBLISHER = re.compile(r"doi\.org|springer|proquest|jstor|wiley|sciencedirect|elsevier|tandfonline|sagepub|academic\.oup|cambridge\.org/core|muse\.jhu|degruyter|benjamins|frontiersin|mdpi|plos|arxiv\.org|aclanthology|semanticscholar|qualtrics|forms\.gle|docs\.google|ucop\.edu|\.pdf($|\?)", re.I)
+DIRECTORY_PATH = re.compile(r"/(person|people|profiles?|faculty|directory|staff|campus-directory|experts?)/", re.I)
+
+def clean_url(h):
+    """unwrap Google redirect links and drop tracking parameters"""
+    from urllib.parse import parse_qs, urlencode, urlunparse
+    u = urlparse(h)
+    if (u.hostname or "").endswith("google.com") and u.path == "/url":
+        q = parse_qs(u.query).get("q") or parse_qs(u.query).get("url")
+        if q:
+            return clean_url(q[0])
+    if u.query:
+        kept = [(k, v) for k, vs in parse_qs(u.query, keep_blank_values=True).items() for v in vs if not re.match(r"^(_gl|utm_|fbclid|gclid|_ga)", k)]
+        u = u._replace(query=urlencode(kept))
+    return urlunparse(u)
+
+SOCIAL = re.compile(r"twitter\.com|//x\.com|facebook\.com|instagram\.com|linkedin\.com|youtube\.com|bsky\.app|mastodon|threads\.net|orcid\.org|calendly|safelinks|zoom\.us|/search|mailto:|tel:|maps\.google|google\.com/maps|researchgate|academia\.edu|wikipedia\.org", re.I)
+SITE_TEXT = re.compile(r"personal|web\s?site|home\s?page|web\s?page|my page|my site|^site$|^lab$|^lab (web)?(site|page)$|lab website|lab site|research group website", re.I)
+PERSONAL_HOSTS = re.compile(r"sites\.google\.com|github\.io|campuspress|wordpress|wixsite|squarespace|weebly|netlify|/~", re.I)
+
+def profile_links(html, url, name=""):
+    """Personal website and Google Scholar links on a profile page.
+    A site counts when the link says so ("Personal website", "Website", "Homepage", "Lab website"), or when the link
+    is to a personal-page host (Google Sites, github.io, ~user pages...) and carries the person's last name.
+    Links back into the same department site, social media, ORCID, email and maps are ignored."""
     s = soup_of(html)
-    scholar, site = None, None
-    for a in s.find_all("a", href=True):
-        h = urljoin(url, a["href"]); t = a.get_text(" ", strip=True).lower()
-        if "scholar.google" in h and not scholar:
-            scholar = h
-        elif not site and h.startswith("http") and not same_site(h, url) and re.search(r"personal|website|homepage|lab site|home page", t):
-            site = h
-    return site, scholar
+    for t in s(["header", "nav", "footer"]):
+        t.decompose()
+    main = s.find("main") or s.find("article") or s.body or s
+    host = (urlparse(url).hostname or "").lower()
+    last = norm_last(name)
+    scholar, best, best_score = None, None, 0
+    for a in main.find_all("a", href=True):
+        h = clean_url(urljoin(url, a["href"]).strip())
+        if not h.startswith("http"):
+            continue
+        if "scholar.google" in h:
+            scholar = scholar or h
+            continue
+        if SOCIAL.search(h) or PUBLISHER.search(h):
+            continue
+        hh = (urlparse(h).hostname or "").lower()
+        path = urlparse(h).path or ""
+        if hh == host and not path.startswith("/~"):
+            continue  # another page of the same department site
+        t = " ".join([a.get_text(" ", strip=True), a.get("title") or "", a.get("aria-label") or ""]).strip()
+        score = 0
+        if DIRECTORY_PATH.search(path) and not re.search(r"personal|home\s?page", t, re.I):
+            continue  # a profile page in another department, not a personal site
+        if SITE_TEXT.search(t):
+            score = 3 if re.search(r"personal|home\s?page|my ", t, re.I) else 2
+        elif last and last in norm_last(h) and (PERSONAL_HOSTS.search(h) or re.match(r"https?://", t) or not t):
+            score = 1
+        if score > best_score:
+            best, best_score = h, score
+    return best, scholar
+
+def norm_last(s):
+    import unicodedata
+    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
+    toks = re.findall(r"[a-z]+", re.sub(r"\(.*?\)|,.*$", " ", s)) if " " in s.strip() else [re.sub(r"[^a-z]", "", s)]
+    return toks[-1] if toks else ""
 
 # ---------- per university ----------
 def scrape_university(p, dir_only=False):
@@ -418,7 +470,7 @@ def scrape_university(p, dir_only=False):
                     continue
                 if any(k != key and (k.startswith(key) or key.startswith(k)) and min(len(k), len(key)) >= 8 for k in seen):
                     continue  # "John D. E." next to "John D. E. Gabrieli"
-                site, scholar = profile_links(ph, url) if ph else (None, None)
+                site, scholar = profile_links(ph, url, name) if ph else (None, None)
                 seen.add(key); seen_urls.add(url)
                 faculty.append({"name": name, "title": title, "rank": rank, "department": u["name"], "unit": u["name"],
                                 "profile_url": url, "personal_url": site, "google_scholar_url": scholar,
