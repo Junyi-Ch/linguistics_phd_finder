@@ -12,7 +12,7 @@ const dict: Record<string, { en: string; zh: string }> = {
   // match page
   match_h1: { en: 'Find the linguists and programs that fit your research', zh: '找到与你研究方向契合的语言学教师与博士项目' },
   match_lede: { en: 'Paste a paragraph from your statement of purpose, or describe your questions, methods and cases. English works best; Chinese is translated on your device first. Matching runs in your browser; nothing is uploaded.', zh: '粘贴一段你的 SoP，或描述你的研究问题、方法与案例。英文效果最好；中文会先在本机翻译成英文。匹配在你的浏览器中完成，不会上传任何内容。' },
-  match_placeholder: { en: 'Example: I study how Mandarin tone is processed during spoken word recognition, using eye-tracking in the visual world paradigm with native listeners and second language learners. I am also interested in computational models of speech perception.', zh: '示例：我研究普通话声调在口语词汇识别中如何被加工，用视觉情景范式的眼动实验比较母语者与二语学习者，也关注言语感知的计算模型。' },
+  match_placeholder: { en: 'e.g. I study how Mandarin tone is processed during spoken word recognition, using eye-tracking in the visual world paradigm with native listeners and second language learners.', zh: '例如：我研究普通话声调在口语词汇识别中如何被加工，用视觉情景范式的眼动实验比较母语者与二语学习者。' },
   match_label: { en: 'Your research interests', zh: '你的研究兴趣' },
   match_h1a: { en: 'Find the linguists and programs that fit', zh: '找到契合' },
   match_h1b: { en: 'your research', zh: '你研究方向' },

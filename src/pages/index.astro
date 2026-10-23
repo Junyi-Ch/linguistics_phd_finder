@@ -23,7 +23,7 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
   <section class="search">
     <div class="search-box">
       <label for="q" class="search-label" data-i18n="match_label">Your research interests</label>
-      <textarea id="q" rows="4" data-i18n="match_placeholder" data-i18n-attr="placeholder" placeholder="Example: I study how Mandarin tone is processed during spoken word recognition, using eye-tracking in the visual world paradigm with native listeners and second language learners.">Example: I study how Mandarin tone is processed during spoken word recognition, using eye-tracking in the visual world paradigm with native listeners and second language learners. I am also interested in computational models of speech perception.</textarea>
+      <textarea id="q" rows="4" data-i18n="match_placeholder" data-i18n-attr="placeholder" placeholder="e.g. I study how Mandarin tone is processed during spoken word recognition, using eye-tracking in the visual world paradigm with native listeners and second language learners.">Example: I study how Mandarin tone is processed during spoken word recognition, using eye-tracking in the visual world paradigm with native listeners and second language learners. I am also interested in computational models of speech perception.</textarea>
       <div id="hints" class="hints" hidden>
         <span class="small muted" data-i18n="match_hint_title2">We read this as</span>
         <span class="chips" id="hint-chips"></span>
@@ -70,7 +70,8 @@ const SHORT: Record<string, string> = { LING: 'Linguistics', COMP: 'Computationa
   .search-box:focus-within { border-color: var(--line-2); }
   .search-label { font-weight: 600; font-size: 0.875rem; color: var(--ink-3); }
   .search-box textarea { width: 100%; border: 0; outline: none; resize: vertical; background: transparent; color: var(--ink); font-size: 1.12rem; line-height: 1.55; padding: 0; min-height: 84px; }
-  .search-box textarea::placeholder { color: var(--ink-3); opacity: 0.8; }
+  .search-box textarea::placeholder { color: var(--ink-3); opacity: 0.55; transition: opacity 0.15s; }
+  .search-box textarea:focus::placeholder { opacity: 0; }
   .hints { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
   .hints .chips { display: contents; }
   .hint-help { flex-basis: 100%; }
