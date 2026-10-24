@@ -147,7 +147,7 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
 
 <script>
   import { getLang, t } from '../lib/i18n';
-  import { bindSaveButtons } from '../lib/ui';
+  import { bindSaveButtons, saveMark } from '../lib/ui';
   import { has } from '../lib/shortlist';
   import { esc, GROUPS } from '../lib/data';
   import tax from '../data/taxonomy.json';
@@ -330,15 +330,11 @@ const progs = (programs as Program[]).map((p) => ({ slug: p.slug, name: p.name }
     const sibHtml = p.sb.map(([j, via]) => `<li><button type="button" data-i="${j}"><i style="background:${colorOf(N[j].g)}"></i><span class="nm">${esc(N[j].n)}</span><span class="sub">${esc(N[j].us)}</span></button></li>`).join('');
     const famSec = !(p.av.length || p.st.length || p.sb.length) ? (mode === 'adv' ? `<div class="np-sub"><h3 class="sec-h">${esc(t('fam_h'))}</h3><p class="small muted" style="margin-top:6px">${esc(t('fam_none'))}</p></div>` : '') : (p.av.length || p.st.length || p.sb.length) ? `<div class="np-sub">${p.av.length ? `<h3 class="sec-h">${esc(t('fam_advisor'))}</h3><ol class="nb">${p.av.map(person).join('')}</ol>` : ''}${p.st.length ? `<h3 class="sec-h" style="margin-top:12px">${esc(t('tree_students'))}</h3><ol class="nb">${p.st.map(person).join('')}</ol>` : ''}${p.sb.length ? `<h3 class="sec-h" style="margin-top:12px">${esc(t('tree_siblings'))}</h3><ol class="nb">${sibHtml}</ol>` : ''}</div>` : '';
     const phdLine = p.ph ? `<div class="np-meta" style="margin-top:6px">${esc(t('fam_phd'))} ${esc(p.ph[0])}${p.ph[1] ? ', ' + p.ph[1] : ''}</div>` : '';
-    const on = has(p.id);
     pPerson.innerHTML = `
       <div class="np-meta">${esc(rank)} · ${esc(p.us)}</div>
       <h2 class="np-name"><a href="${base}faculty/${p.id}/">${esc(p.n)}</a></h2>${phdLine}
       ${p.s ? `<p class="np-sum">${esc(zh ? p.sz || p.s : p.s)}</p>` : ''}
-      <div class="np-actions">
-        <a class="btn" href="${base}faculty/${p.id}/">${esc(t('net_open'))}</a>
-        <button type="button" class="btn save-btn" data-save="${p.id}" aria-pressed="${on}">${esc(on ? t('saved') : t('save'))}</button>
-      </div>
+      <div class="d-acts">${saveMark(p.id)}<a class="d-full" href="${base}faculty/${p.id}/">${esc(t('open_full'))} →</a></div>
       ${mode === 'adv' ? famSec + simSec + coSec : mode === 'co' ? coSec + famSec + simSec : simSec + famSec + coSec}`;
     pEmpty.hidden = true; pPerson.hidden = false;
     bindSaveButtons(pPerson);
