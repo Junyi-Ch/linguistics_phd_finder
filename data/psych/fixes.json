@@ -1,0 +1,309 @@
+{
+ "auburn-university|Department of Psychological Sciences": {
+  "directory_url": "https://cla.auburn.edu/psychological-sciences/faculty-and-staff/"
+ },
+ "brown-university|Cognitive and Psychological Sciences (CLPS)": {
+  "name": "Department of Cognitive and Psychological Sciences",
+  "unit_url": "https://copsy.brown.edu/",
+  "directory_url": "https://copsy.brown.edu/people/faculty"
+ },
+ "brown-university|Department of Neuroscience": {
+  "unit_url": "https://neuroscience.brown.edu/",
+  "directory_url": "https://neuroscience.brown.edu/people/faculty"
+ },
+ "california-institute-of-technology|Computation and Neural Systems": {
+  "unit_url": "https://www.bbe.caltech.edu/academics/cns",
+  "directory_url": "https://www.bbe.caltech.edu/academics/cns/people/faculty"
+ },
+ "california-institute-of-technology|Social and Decision Neuroscience": {
+  "directory_url": "https://www.hss.caltech.edu/graduate-studies/social-and-decision-neuroscience-phd-program/faculty"
+ },
+ "carnegie-mellon-university|Neuroscience Institute": {
+  "directory_url": "https://www.cmu.edu/ni/people/faculty-directory",
+  "render": true
+ },
+ "carnegie-mellon-university|Department of Psychology": {
+  "directory_url": "https://www.cmu.edu/dietrich/psychology/directory/index.html"
+ },
+ "case-western-reserve-university|Department of Psychological Sciences": {
+  "unit_url": "https://psychsciences.case.edu/",
+  "directory_url": "https://psychsciences.case.edu/people/"
+ },
+ "case-western-reserve-university|Department of Cognitive Science": {
+  "unit_url": "https://case.edu/artsci/cognitivescience/",
+  "directory_url": "https://case.edu/artsci/cognitivescience/about/faculty-and-staff"
+ },
+ "emory-university|Neuroscience PhD (Laney Graduate School)": {
+  "unit_url": "https://biomed.emory.edu/PROGRAM_SITES/NS/",
+  "directory_url": "https://biomed.emory.edu/PROGRAM_SITES/NS/about-us/faculty-search.html",
+  "render": true
+ },
+ "florida-international-university|Department of Psychology": {
+  "unit_url": "https://case.fiu.edu/psychology/",
+  "directory_url": "https://case.fiu.edu/psychology/faculty-staff/"
+ },
+ "florida-state-university|Department of Psychology": {
+  "unit_url": "https://psychology.fsu.edu/",
+  "directory_url": "https://psychology.fsu.edu/people/faculty"
+ },
+ "fordham-university|Department of Psychology": {
+  "directory_url": "https://www.fordham.edu/academics/departments/psychology/faculty-and-staff/"
+ },
+ "georgia-institute-of-technology|Neuroscience and Neurotechnology PhD": {
+  "directory_url": "https://neuro.gatech.edu/faculty"
+ },
+ "harvard-university|Department of Psychology": {
+  "directory_url": "https://psychology.fas.harvard.edu/faculty"
+ },
+ "howard-university|Department of Psychology": {
+  "unit_url": "https://psychology.howard.edu/",
+  "directory_url": "https://psychology.howard.edu/faculty-staff"
+ },
+ "lehigh-university|Department of Psychology": {
+  "directory_url": "https://psychology.cas.lehigh.edu/faculty-staff"
+ },
+ "new-york-university|Department of Psychology": {
+  "unit_url": "https://as.nyu.edu/psychology.html",
+  "directory_url": "https://as.nyu.edu/departments/psychology/people/faculty_list.html"
+ },
+ "northwestern-university|Northwestern University Interdepartmental Neuroscience (NUIN)": {
+  "directory_url": "https://www.nuin.northwestern.edu/faculty-and-research/faculty-directory-az.html"
+ },
+ "pennsylvania-state-university-university-park|Department of Psychology": {
+  "directory_url": "https://psych.la.psu.edu/research/faculty-research-interests/",
+  "render": true
+ },
+ "pennsylvania-state-university-university-park|Neuroscience Graduate Program": {
+  "directory_url": "https://www.huck.psu.edu/graduate-education/degree-programs/neuroscience/faculty-directory"
+ },
+ "pennsylvania-state-university-university-park|Human Development and Family Studies": {
+  "directory_url": "https://hhd.psu.edu/hdfs/contact/faculty-staff"
+ },
+ "purdue-university-main-campus|Department of Psychological Sciences": {
+  "unit_url": "https://hhs.purdue.edu/psy/",
+  "render": true,
+  "directory_url": "https://hhs.purdue.edu/about-hhs/directory/?staff_faculty_type=Faculty&hhs_department_staff=Department%20of%20Psychological%20Sciences"
+ },
+ "purdue-university-main-campus|Purdue Institute for Integrative Neuroscience": {
+  "unit_url": "https://www.purdue.edu/discoverypark/institute-for-integrative-neuroscience/",
+  "directory_url": "https://www.purdue.edu/discoverypark/institute-for-integrative-neuroscience/faculty/index.php"
+ },
+ "rensselaer-polytechnic-institute|Department of Cognitive Science": {
+  "unit_url": "https://hass.rpi.edu/cognitive-science",
+  "directory_url": "https://hass.rpi.edu/departments-cognitive-science/cognitive-science-faculty"
+ },
+ "rutgers-university-new-brunswick|Department of Psychology": {
+  "directory_url": "https://psych.rutgers.edu/people/facultyblog"
+ },
+ "rutgers-university-new-brunswick|Neuroscience Graduate Program (Brain Health Institute)": {
+  "unit_url": "https://grad.rutgers.edu/academics/graduate-programs/neuroscience",
+  "directory_url": "https://grad.rutgers.edu/academics/graduate-programs/neuroscience/NeuroscienceFaculty"
+ },
+ "rutgers-university-newark|Department of Psychology": {
+  "directory_url": "https://sasn.rutgers.edu/psychology-faculty"
+ },
+ "rutgers-university-newark|Center for Molecular and Behavioral Neuroscience": {
+  "directory_url": "https://sasn.rutgers.edu/cmbn-faculty"
+ },
+ "texas-aandm-university|Department of Psychological and Brain Sciences": {
+  "unit_url": "https://artsci.tamu.edu/psychological-brain-sciences/index.html",
+  "directory_url": "https://artsci.tamu.edu/psychological-brain-sciences/contact/faculty.html"
+ },
+ "texas-aandm-university|Texas A&M Institute for Neuroscience": {
+  "directory_url": "https://tamin.tamu.edu/research/affiliated-faculty/"
+ },
+ "texas-christian-university|Department of Psychology": {
+  "unit_url": "https://cse.tcu.edu/psychology/index.php",
+  "directory_url": "https://cse.tcu.edu/psychology/faculty-staff/index.php"
+ },
+ "the-ohio-state-university|Department of Psychology": {
+  "directory_url": "https://psychology.osu.edu/people"
+ },
+ "the-ohio-state-university|Neuroscience Graduate Program": {
+  "directory_url": "https://ngp.osu.edu/people"
+ },
+ "tulane-university-of-louisiana|Department of Psychology": {
+  "unit_url": "https://sse.tulane.edu/psyc",
+  "directory_url": "https://sse.tulane.edu/psyc/people/full-time"
+ },
+ "tulane-university-of-louisiana|Neuroscience PhD (Brain Institute)": {
+  "unit_url": "https://sse.tulane.edu/neuro",
+  "directory_url": "https://sse.tulane.edu/neuro/faculty"
+ },
+ "university-of-california-berkeley|Helen Wills Neuroscience Institute": {
+  "unit_url": "https://hwni.berkeley.edu/",
+  "directory_url": "https://hwni.berkeley.edu/people/hwni-faculty"
+ },
+ "university-of-california-davis|Center for Neuroscience / Neuroscience Graduate Group": {
+  "unit_url": "https://grad.neuroscience.ucdavis.edu/",
+  "directory_url": "https://grad.neuroscience.ucdavis.edu/people"
+ },
+ "university-of-california-davis|Human Development Graduate Group": {
+  "unit_url": "https://humandevelopment.ucdavis.edu/",
+  "directory_url": "https://humandevelopment.ucdavis.edu/person-type/faculty"
+ },
+ "university-of-california-irvine|Interdepartmental Neuroscience Program": {
+  "directory_url": "https://inp.uci.edu/faculty/",
+  "include": false,
+  "note": "participating departments are biology and the School of Medicine only; psychology-relevant neuroscience is in Cognitive Sciences and Psychological Science"
+ },
+ "university-of-california-irvine|Department of Psychological Science": {
+  "unit_url": "https://ps.soceco.uci.edu/",
+  "directory_url": "https://ps.soceco.uci.edu/pages/faculty"
+ },
+ "university-of-california-merced|Department of Psychological Sciences": {
+  "directory_url": "https://psychology.ucmerced.edu/faculty"
+ },
+ "university-of-california-merced|Department of Cognitive and Information Sciences": {
+  "directory_url": "https://cogsci.ucmerced.edu/faculty"
+ },
+ "university-of-california-riverside|Department of Psychology": {
+  "name": "Department of Psychological and Brain Sciences",
+  "unit_url": "https://psychologicalbrainsciences.ucr.edu/",
+  "directory_url": "https://profiles.ucr.edu/app/embed?groupId=70644&affiliationFilter=Faculty&viewProfilesMode=cards",
+  "render": true
+ },
+ "university-of-california-riverside|Neuroscience Graduate Program": {
+  "unit_url": "https://neuro.ucr.edu/",
+  "directory_url": "https://profiles.ucr.edu/app/embed?groupId=110928&viewProfilesMode=cards",
+  "render": true
+ },
+ "university-of-california-san-diego|Neurosciences Graduate Program": {
+  "directory_url": "https://neurograd.ucsd.edu/people/faculty-research.html"
+ },
+ "university-of-chicago|Committee on Computational Neuroscience": {
+  "unit_url": "https://cns.uchicago.edu/",
+  "directory_url": "https://cns.uchicago.edu/program/faculty"
+ },
+ "university-of-chicago|Comparative Human Development": {
+  "unit_url": "https://humdev.uchicago.edu/",
+  "directory_url": "https://humdev.uchicago.edu/people/faculty"
+ },
+ "university-of-delaware|Department of Psychological and Brain Sciences": {
+  "unit_url": "https://www.udel.edu/academics/colleges/cas/units/departments/psychological-and-brain-sciences/",
+  "directory_url": "https://www.udel.edu/academics/colleges/cas/units/departments/psychological-and-brain-sciences/our-people/"
+ },
+ "university-of-illinois-chicago|Graduate Program in Neuroscience": {
+  "unit_url": "https://gpn.uic.edu/",
+  "directory_url": "https://gpn.uic.edu/people/faculty/"
+ },
+ "university-of-maryland-college-park|Department of Psychology": {
+  "directory_url": "https://psyc.umd.edu/people/faculty"
+ },
+ "university-of-maryland-college-park|Neuroscience and Cognitive Science Program (NACS)": {
+  "directory_url": "https://nacs.umd.edu/facultystaff/um%20faculty"
+ },
+ "university-of-massachusetts-amherst|Department of Psychological and Brain Sciences": {
+  "unit_url": "https://www.umass.edu/psychological-brain-sciences/",
+  "directory_url": "https://www.umass.edu/psychological-brain-sciences/faculty"
+ },
+ "university-of-massachusetts-amherst|Neuroscience and Behavior Graduate Program": {
+  "unit_url": "https://www.umass.edu/neuroscience-behavior/",
+  "directory_url": "https://www.umass.edu/neuroscience-behavior/about/directory"
+ },
+ "university-of-miami|Department of Psychology": {
+  "unit_url": "https://www.psy.miami.edu/",
+  "directory_url": "https://www.psy.miami.edu/people/faculty/index.html"
+ },
+ "university-of-michigan-ann-arbor|Department of Psychology": {
+  "directory_url": "https://lsa.umich.edu/psych/people/faculty.directory.html"
+ },
+ "university-of-michigan-ann-arbor|Neuroscience Graduate Program": {
+  "unit_url": "https://medschool.umich.edu/interdisciplinary-programs/neuroscience-graduate-program",
+  "directory_url": "https://medschool.umich.edu/interdisciplinary-programs/neuroscience-graduate-program/faculty"
+ },
+ "university-of-pittsburgh|Department of Psychology": {
+  "directory_url": "https://www.psychology.pitt.edu/people"
+ },
+ "university-of-pittsburgh|Department of Neuroscience": {
+  "directory_url": "https://www.neuroscience.pitt.edu/people/faculty"
+ },
+ "university-of-south-florida|Department of Psychology": {
+  "directory_url": "https://www.usf.edu/arts-sciences/departments/psychology/people/faculty/",
+  "render": true
+ },
+ "university-of-southern-california|Neuroscience Graduate Program": {
+  "directory_url": "https://ngp.usc.edu/research-faculty/alphabetic-directory/"
+ },
+ "university-of-southern-california|Department of Psychology": {
+  "directory_url": "https://dornsife.usc.edu/psyc/faculty/"
+ },
+ "university-of-texas-austin|Department of Psychology": {
+  "directory_url": "https://liberalarts.utexas.edu/psychology/research-faculty/faculty.html"
+ },
+ "university-of-texas-austin|Department of Neuroscience": {
+  "directory_url": "https://inp.neuroscience.utexas.edu/faculty-directory",
+  "name": "Interdisciplinary Neuroscience Program",
+  "unit_url": "https://inp.neuroscience.utexas.edu/",
+  "home": "mixed",
+  "filter_psych": true,
+  "note": "the neuroscience PhD; draws faculty from psychology and biology"
+ },
+ "university-of-virginia|Department of Psychology": {
+  "directory_url": "https://psychology.as.virginia.edu/faculty"
+ },
+ "university-of-virginia|Neuroscience Graduate Program": {
+  "unit_url": "https://neurograd.virginia.edu/",
+  "directory_url": "https://neurograd.virginia.edu/faculty"
+ },
+ "university-of-washington|Graduate Program in Neuroscience": {
+  "unit_url": "https://gpneuro.uw.edu/",
+  "directory_url": "https://gpneuro.uw.edu/people/faculty/"
+ },
+ "vanderbilt-university|Vanderbilt Brain Institute neuroscience PhD": {
+  "unit_url": "https://medschool.vanderbilt.edu/brain-institute/",
+  "directory_url": "https://medschool.vanderbilt.edu/brain-institute/about-us/team-directories/"
+ },
+ "virginia-tech|Department of Psychology": {
+  "directory_url": "https://support.psyc.vt.edu/users"
+ },
+ "virginia-tech|School of Neuroscience": {
+  "directory_url": "https://neuroscience.vt.edu/our-people.html"
+ },
+ "washington-university-in-st-louis|Department of Psychological and Brain Sciences": {
+  "unit_url": "https://psych.washu.edu/",
+  "directory_url": "https://psych.washu.edu/people?cat=88"
+ },
+ "worcester-polytechnic-institute|Department of Psychological Science": {
+  "directory_url": "https://www.wpi.edu/academics/departments/psychological-science/faculty-staff"
+ },
+ "dartmouth-college|Department of Psychological and Brain Sciences": {
+  "directory_url": "https://pbs.dartmouth.edu/people"
+ },
+ "syracuse-university|Department of Psychology": {
+  "unit_url": "https://artsandsciences.syracuse.edu/psychology/",
+  "directory_url": "https://artsandsciences.syracuse.edu/psychology/psychology-people/"
+ },
+ "university-of-illinois-urbana-champaign|Neuroscience Program": {
+  "directory_url": "https://neuroscience.illinois.edu/directory/faculty"
+ },
+ "michigan-state-university|Department of Psychology": {
+  "directory_url": "https://psychology.msu.edu/people",
+  "render": true
+ },
+ "michigan-state-university|Neuroscience Program": {
+  "unit_url": "https://neuroscience.natsci.msu.edu/",
+  "directory_url": "https://directory.natsci.msu.edu/Directory/Directory/Department/31"
+ },
+ "baylor-university|Department of Psychology and Neuroscience": {
+  "directory_url": "https://psychologyneuroscience.artsandsciences.baylor.edu/faculty-staff/departmental-faculty-staff"
+ },
+ "northeastern-university|Department of Psychology": {
+  "directory_url": "https://cos.northeastern.edu/nucos-department/psychology/"
+ },
+ "rochester-institute-of-technology|Department of Psychology (Cognitive Science PhD)": {
+  "name": "School of Psychology and Cognitive Science",
+  "unit_url": "https://www.rit.edu/liberalarts/school-psychology-and-cognitive-science"
+ },
+ "cornell-university|Department of Psychology (College of Human Ecology; formerly Human Development)": {
+  "unit_url": "https://www.human.cornell.edu/psych",
+  "directory_url": "https://human.cornell.edu/people?department%5B0%5D=33&role%5B0%5D=24"
+ },
+ "boston-college|Department of Psychology and Neuroscience": {
+  "directory_url": "https://www.bc.edu/bc-web/schools/morrissey/departments/psychology-neuroscience/people.html"
+ },
+ "university-of-california-san-diego|Department of Psychology": {
+  "directory_url": "https://catalog.ucsd.edu/faculty/PSYC.html",
+  "cards_only": true
+ }
+}

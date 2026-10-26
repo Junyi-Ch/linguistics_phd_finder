@@ -28,6 +28,7 @@ nul
 
 # raw scrapes contain copied profile text and photo URLs: kept locally in ~/data/linguistics_phd, never committed
 data/raw
+data/*/raw
 data/manual/*.html
 
 # Academic Family Tree export (large; downloaded by pipeline/tree.py)

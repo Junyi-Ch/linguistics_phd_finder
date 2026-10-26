@@ -6,31 +6,26 @@
   python pipeline/label_local.py --only ucla          # some universities (slug prefixes)
   python pipeline/label_local.py --model qwen2.5:14b  # a bigger model if your Mac has the memory (slower, better)
   python pipeline/label_local.py --redo               # relabel people already done
+  python pipeline/label_local.py --discipline psych   # psychology: data/psych/raw -> data/psych/labels
 
 It resumes where it stopped: people already in data/labels/<slug>.json are skipped, and the file is saved after
 each person. The model sees only the public profile text, research areas and paper titles. The output is checked
 against pipeline/taxonomy.json (the label codes are given to Ollama as fixed choices, so it cannot invent codes).
 """
-import argparse, json, re, sys, time
+import argparse, json, os, re, sys, time
 from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TAX = json.load(open(ROOT / "pipeline" / "taxonomy.json", encoding="utf-8"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from disciplines import current  # noqa: E402
+DISC, CFG = current()  # --discipline psych (or DISCIPLINE=psych) switches prompts, taxonomy and folders
+TAX = json.load(open(CFG["taxonomy"], encoding="utf-8"))
 DIMS = list(TAX["dimensions"])
 OLLAMA = "http://localhost:11434/api/chat"
 NAMES = {"topic": "subfields", "approach": "methods", "data": "data", "setting": "populations", "region": "languages"}
 
-SUMMARY_SYSTEM = """You describe a university researcher's work for a website that helps PhD applicants in linguistics find advisors.
-Use ONLY the profile text given. Do not use outside knowledge about the person. If the profile says little, say little.
-
-Return JSON with:
-- summary: ONE sentence, at most 200 characters, present tense, without the person's name, saying what they study and how.
-  Example: "Studies tone and intonation in Bantu languages through fieldwork and acoustic analysis."
-- summary_zh: the same sentence in natural Chinese (use standard linguistics terms, e.g. 音系学, 句法学, 语义学, 社会语言学).
-- keywords: 5 to 10 specific lowercase terms from the profile (phenomena, languages, methods), e.g. "tone sandhi", "visual world paradigm", "quechua".
-- confidence: "high" if the profile describes their research in detail, "medium" if briefly, "low" if almost not at all.
-"""
+SUMMARY_SYSTEM = CFG["summary_system"]
 
 def codebook(dims):
     lines = []
@@ -41,25 +36,14 @@ def codebook(dims):
             lines.append(f"  {c}: {l}")
     return "\n".join(lines)
 
-LABEL_SYSTEM = f"""You tag a linguistics researcher's profile with codes from a fixed list, for a search website.
-Use ONLY what the profile, summary and keywords say. Choose the codes that clearly apply; most people get 1-3 per list.
-
-- topic: 1 to 4 subfields they work in. primary_topic: the single main one.
-- approach: methods they use. data: kinds of data they work with. setting: populations or settings they study (often none).
-- region: languages they study. Only languages actually named or clearly implied (e.g. "Quechua" -> R_AMERICAS_INDIGENOUS,
-  "Spanish" -> R_ROMANCE, "ASL" -> R_SIGN). R_ENGLISH only when English itself is studied. Leave empty if no language is named.
-
-Example: profile about "variation in Boston Spanish, sociophonetics, interviews with speakers"
--> topic [T_SOCIOLING, T_PHONETICS], primary_topic T_SOCIOLING, approach [A_VARIATIONIST], data [D_SPOKEN_CORPORA, D_SPEECH_AUDIO],
-   setting [S_SPEECH_COMMUNITIES, S_BILINGUAL_HERITAGE], region [R_ROMANCE]
-Codes:{codebook(DIMS)}
-"""
+LABEL_SYSTEM = CFG["label_intro"] + "Codes:" + codebook(DIMS) + "\n"
 
 def summary_schema():
-    return {"type": "object", "required": ["summary", "summary_zh", "keywords", "confidence"],
+    extra = CFG["extra_summary_fields"]
+    return {"type": "object", "required": ["summary", "summary_zh", "keywords", "confidence"] + list(extra),
             "properties": {"summary": {"type": "string"}, "summary_zh": {"type": "string"},
                            "keywords": {"type": "array", "items": {"type": "string"}},
-                           "confidence": {"type": "string", "enum": ["high", "medium", "low"]}}}
+                           "confidence": {"type": "string", "enum": ["high", "medium", "low"]}, **extra}}
 
 def label_schema():
     codes = lambda d: list(TAX["dimensions"][d]["labels"])
@@ -119,6 +103,8 @@ REGION_EVIDENCE = {
     "R_CLASSICAL": r"latin|ancient greek|classical|sanskrit|old chinese|old english|old norse|hittite|indo-european|homeric|biblical|akkadian|egyptian|old irish|gothic",
 }
 
+EVIDENCE = CFG["evidence"] or REGION_EVIDENCE
+
 def clean(out, f):
     srcs = ["department_profile"] + (["publications"] if f.get("works") else [])
     lab = out.get("labels") or {}
@@ -131,14 +117,14 @@ def clean(out, f):
         for c in lab.get(d) or []:
             if c not in TAX["dimensions"][d]["labels"] or c in seen:
                 continue
-            if d == "region" and not re.search(REGION_EVIDENCE.get(c, "."), evidence):
+            if d == "region" and not re.search(EVIDENCE.get(c, "."), evidence):
                 continue  # the model named a language group the profile never mentions
             seen.add(c); items.append({"code": c, "primary": False, "sources": srcs})
         labels[d] = items[:4]
     # languages named in the summary or keywords that the model left out (e.g. "isiXhosa" -> African languages)
     named = " ".join([out.get("summary") or ""] + list(out.get("keywords") or [])).lower()
-    for c, rx in REGION_EVIDENCE.items():
-        if c in ("R_CROSSLING", "R_ENGLISH") or len(labels["region"]) >= 4:
+    for c, rx in EVIDENCE.items():
+        if c in ("R_CROSSLING", "R_ENGLISH", "R_HUMANS", "R_MACHINES") or len(labels["region"]) >= 4:
             continue
         if re.search(rx, named) and not any(x["code"] == c for x in labels["region"]):
             labels["region"].append({"code": c, "primary": False, "sources": srcs})
@@ -155,25 +141,30 @@ def clean(out, f):
     kw = [k.strip().lower() for k in out.get("keywords") or [] if 1 < len(k.strip()) < 50][:10]
     return {"name": f["name"], "summary": shorten(out.get("summary")), "summary_zh": (out.get("summary_zh") or "").strip()[:120],
             "confidence": out.get("confidence") if out.get("confidence") in ("high", "medium", "low") else "low",
-            "labels": labels, "keywords": kw}
+            "labels": labels, "keywords": kw,
+            **{k: bool(out.get(k)) for k in CFG["extra_summary_fields"]}}
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="qwen2.5:7b")
     ap.add_argument("--only")
     ap.add_argument("--redo", action="store_true")
+    ap.add_argument("--discipline", default=None, help="e.g. psych: data/psych/raw -> data/psych/labels")
     a = ap.parse_args()
+    if a.discipline and a.discipline != DISC:  # restart with the env var set so the prompts and taxonomy switch too
+        os.environ["DISCIPLINE"] = a.discipline
+        os.execv(sys.executable, [sys.executable] + sys.argv)
     try:
         import requests
         requests.get("http://localhost:11434/api/tags", timeout=5).raise_for_status()
     except Exception:
         sys.exit("Ollama is not running. Open the Ollama app (or run `ollama serve`), then `ollama pull " + a.model + "`.")
-    files = sorted((ROOT / "data" / "raw").glob("*.json"))
+    files = sorted((CFG["data"] / "raw").glob("*.json"))
     if a.only:
         files = [f for f in files if any(f.stem.startswith(k) for k in a.only.split(","))]
     todo_total = sum(len(json.load(open(f, encoding="utf-8"))["faculty"]) for f in files)
     done, t0 = 0, time.time()
-    out_dir = ROOT / "data" / "labels"; out_dir.mkdir(parents=True, exist_ok=True)
+    out_dir = CFG["data"] / "labels"; out_dir.mkdir(parents=True, exist_ok=True)
     for fp in files:
         raw = json.load(open(fp, encoding="utf-8"))
         lp = out_dir / f"{raw['slug']}.json"

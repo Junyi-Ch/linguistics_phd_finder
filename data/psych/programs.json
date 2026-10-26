@@ -1,0 +1,2660 @@
+[
+ {
+  "slug": "massachusetts-institute-of-technology",
+  "university": "Massachusetts Institute of Technology",
+  "rank_usnews_national": 1,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Brain and Cognitive Sciences",
+    "field": "PSY",
+    "unit_url": "https://bcs.mit.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "MIT's psychology department; covers cognitive science and neuroscience"
+   }
+  ]
+ },
+ {
+  "slug": "princeton-university",
+  "university": "Princeton University",
+  "rank_usnews_national": 2,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.princeton.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Princeton Neuroscience Institute",
+    "field": "NEURO",
+    "unit_url": "https://pni.princeton.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "harvard-university",
+  "university": "Harvard University",
+  "rank_usnews_national": 3,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.fas.harvard.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psychology.fas.harvard.edu/faculty"
+   },
+   {
+    "name": "Program in Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://pinphd.hms.harvard.edu/",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "run by Harvard Medical School"
+   }
+  ]
+ },
+ {
+  "slug": "yale-university",
+  "university": "Yale University",
+  "rank_usnews_national": 4,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.yale.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Interdepartmental Neuroscience Program",
+    "field": "NEURO",
+    "unit_url": "https://medicine.yale.edu/inp/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "mostly School of Medicine; keep psychology-relevant main-campus people"
+   }
+  ]
+ },
+ {
+  "slug": "california-institute-of-technology",
+  "university": "California Institute of Technology",
+  "rank_usnews_national": 5,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Computation and Neural Systems",
+    "field": "NEURO",
+    "unit_url": "https://www.bbe.caltech.edu/academics/cns",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "no psychology department at Caltech",
+    "directory_url": "https://www.bbe.caltech.edu/academics/cns/people/faculty"
+   },
+   {
+    "name": "Social and Decision Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://www.hss.caltech.edu/graduate-studies/social-and-decision-neuroscience",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://www.hss.caltech.edu/graduate-studies/social-and-decision-neuroscience-phd-program/faculty"
+   },
+   {
+    "name": "Neurobiology (Biology and Biological Engineering)",
+    "field": "NEURO",
+    "unit_url": "https://www.bbe.caltech.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "neurobiology"
+   }
+  ]
+ },
+ {
+  "slug": "stanford-university",
+  "university": "Stanford University",
+  "rank_usnews_national": 5,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.stanford.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neurosciences PhD Program",
+    "field": "NEURO",
+    "unit_url": "https://med.stanford.edu/neurogradprogram.html",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "run from the School of Medicine; keep psychology-relevant main-campus people"
+   },
+   {
+    "name": "Graduate School of Education (developmental and psychological sciences)",
+    "field": "PSY",
+    "unit_url": "https://ed.stanford.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "education school"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-pennsylvania",
+  "university": "University of Pennsylvania",
+  "rank_usnews_national": 7,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.sas.upenn.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience Graduate Group",
+    "field": "NEURO",
+    "unit_url": "https://www.med.upenn.edu/ngg/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "mostly Perelman School of Medicine; keep psychology-relevant people"
+   }
+  ]
+ },
+ {
+  "slug": "duke-university",
+  "university": "Duke University",
+  "rank_usnews_national": 8,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology and Neuroscience",
+    "field": "PSY",
+    "unit_url": "https://psychandneuro.duke.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Department of Neurobiology",
+    "field": "NEURO",
+    "unit_url": "https://www.neuro.duke.edu/",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "neurobiology, School of Medicine"
+   }
+  ]
+ },
+ {
+  "slug": "johns-hopkins-university",
+  "university": "Johns Hopkins University",
+  "rank_usnews_national": 9,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://pbs.jhu.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Department of Cognitive Science",
+    "field": "COGSCI",
+    "unit_url": "https://cogsci.jhu.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience Graduate Program",
+    "field": "NEURO",
+    "unit_url": "https://neuroscience.jhu.edu/",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "School of Medicine"
+   }
+  ]
+ },
+ {
+  "slug": "northwestern-university",
+  "university": "Northwestern University",
+  "rank_usnews_national": 9,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.northwestern.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Northwestern University Interdepartmental Neuroscience (NUIN)",
+    "field": "NEURO",
+    "unit_url": "https://www.nuin.northwestern.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "Evanston and Feinberg; keep psychology-relevant people",
+    "directory_url": "https://www.nuin.northwestern.edu/faculty-and-research/faculty-directory-az.html"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-chicago",
+  "university": "University of Chicago",
+  "rank_usnews_national": 9,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.uchicago.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Committee on Computational Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://cns.uchicago.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "Biological Sciences Division; keep psychology-relevant people",
+    "directory_url": "https://cns.uchicago.edu/program/faculty"
+   },
+   {
+    "name": "Comparative Human Development",
+    "field": "PSY",
+    "unit_url": "https://humdev.uchicago.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "psychology-heavy interdisciplinary department",
+    "directory_url": "https://humdev.uchicago.edu/people/faculty"
+   }
+  ]
+ },
+ {
+  "slug": "columbia-university",
+  "university": "Columbia University",
+  "rank_usnews_national": 12,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.columbia.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neurobiology and Behavior (Zuckerman Institute)",
+    "field": "NEURO",
+    "unit_url": "https://neurosciencephd.columbia.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "doctoral program in neurobiology and behavior; keep psychology-relevant people"
+   },
+   {
+    "name": "Teachers College (Human Development, Clinical)",
+    "field": "PSY",
+    "unit_url": "https://www.tc.columbia.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "education school"
+   }
+  ]
+ },
+ {
+  "slug": "dartmouth-college",
+  "university": "Dartmouth College",
+  "rank_usnews_national": 12,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://pbs.dartmouth.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://pbs.dartmouth.edu/people"
+   }
+  ]
+ },
+ {
+  "slug": "carnegie-mellon-university",
+  "university": "Carnegie Mellon University",
+  "rank_usnews_national": 14,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.cmu.edu/dietrich/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://www.cmu.edu/dietrich/psychology/directory/index.html"
+   },
+   {
+    "name": "Neuroscience Institute",
+    "field": "NEURO",
+    "unit_url": "https://www.cmu.edu/ni/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://www.cmu.edu/ni/people/faculty-directory",
+    "render": true
+   }
+  ]
+ },
+ {
+  "slug": "cornell-university",
+  "university": "Cornell University",
+  "rank_usnews_national": 14,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.cornell.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Department of Psychology (College of Human Ecology; formerly Human Development)",
+    "field": "PSY",
+    "unit_url": "https://www.human.cornell.edu/psych",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "Cornell's second psychology department",
+    "directory_url": "https://human.cornell.edu/people?department%5B0%5D=33&role%5B0%5D=24"
+   },
+   {
+    "name": "Neurobiology and Behavior",
+    "field": "NEURO",
+    "unit_url": "https://nbb.cornell.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "neurobiology"
+   }
+  ]
+ },
+ {
+  "slug": "brown-university",
+  "university": "Brown University",
+  "rank_usnews_national": 16,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Cognitive and Psychological Sciences",
+    "field": "PSY",
+    "unit_url": "https://copsy.brown.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://copsy.brown.edu/people/faculty"
+   },
+   {
+    "name": "Department of Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://neuroscience.brown.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://neuroscience.brown.edu/people/faculty"
+   }
+  ]
+ },
+ {
+  "slug": "rice-university",
+  "university": "Rice University",
+  "rank_usnews_national": 16,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological Sciences",
+    "field": "PSY",
+    "unit_url": "https://psychology.rice.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "vanderbilt-university",
+  "university": "Vanderbilt University",
+  "rank_usnews_national": 16,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology (College of Arts and Science)",
+    "field": "PSY",
+    "unit_url": "https://www.vanderbilt.edu/psychological_sciences/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Vanderbilt Brain Institute neuroscience PhD",
+    "field": "NEURO",
+    "unit_url": "https://medschool.vanderbilt.edu/brain-institute/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://medschool.vanderbilt.edu/brain-institute/about-us/team-directories/"
+   },
+   {
+    "name": "Psychology and Human Development (Peabody College)",
+    "field": "PSY",
+    "unit_url": "https://peabody.vanderbilt.edu/departments/psych/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "education school"
+   }
+  ]
+ },
+ {
+  "slug": "washington-university-in-st-louis",
+  "university": "Washington University in St. Louis",
+  "rank_usnews_national": 16,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://psych.washu.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psych.washu.edu/people?cat=88"
+   },
+   {
+    "name": "Neurosciences PhD (DBBS)",
+    "field": "NEURO",
+    "unit_url": "https://dbbs.wustl.edu/programs/neuroscience/",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "School of Medicine"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-berkeley",
+  "university": "University of California, Berkeley",
+  "rank_usnews_national": 20,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.berkeley.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Helen Wills Neuroscience Institute",
+    "field": "NEURO",
+    "unit_url": "https://hwni.berkeley.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://hwni.berkeley.edu/people/hwni-faculty"
+   },
+   {
+    "name": "Graduate School of Education (human development)",
+    "field": "PSY",
+    "unit_url": "https://bse.berkeley.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "education school"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-los-angeles",
+  "university": "University of California, Los Angeles",
+  "rank_usnews_national": 20,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.psych.ucla.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience Interdepartmental PhD Program",
+    "field": "NEURO",
+    "unit_url": "https://www.neuroscience.ucla.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-notre-dame",
+  "university": "University of Notre Dame",
+  "rank_usnews_national": 20,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.nd.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "emory-university",
+  "university": "Emory University",
+  "rank_usnews_national": 23,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.emory.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience PhD (Laney Graduate School)",
+    "field": "NEURO",
+    "unit_url": "https://biomed.emory.edu/PROGRAM_SITES/NS/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://biomed.emory.edu/PROGRAM_SITES/NS/about-us/faculty-search.html",
+    "render": true
+   }
+  ]
+ },
+ {
+  "slug": "georgetown-university",
+  "university": "Georgetown University",
+  "rank_usnews_national": 23,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.georgetown.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Interdisciplinary Program in Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://neuroscience.georgetown.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "Medical Center campus; keep psychology-relevant people"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-michigan-ann-arbor",
+  "university": "University of Michigan–Ann Arbor",
+  "rank_usnews_national": 25,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://lsa.umich.edu/psych",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://lsa.umich.edu/psych/people/faculty.directory.html"
+   },
+   {
+    "name": "Neuroscience Graduate Program",
+    "field": "NEURO",
+    "unit_url": "https://medschool.umich.edu/interdisciplinary-programs/neuroscience-graduate-program",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://medschool.umich.edu/interdisciplinary-programs/neuroscience-graduate-program/faculty"
+   },
+   {
+    "name": "Combined Program in Education and Psychology",
+    "field": "PSY",
+    "unit_url": "https://soe.umich.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "education school"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-virginia",
+  "university": "University of Virginia",
+  "rank_usnews_national": 26,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.as.virginia.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psychology.as.virginia.edu/faculty"
+   },
+   {
+    "name": "Neuroscience Graduate Program",
+    "field": "NEURO",
+    "unit_url": "https://neurograd.virginia.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://neurograd.virginia.edu/faculty"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-north-carolina-chapel-hill",
+  "university": "University of North Carolina–Chapel Hill",
+  "rank_usnews_national": 27,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology and Neuroscience",
+    "field": "PSY",
+    "unit_url": "https://psychology.unc.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience Curriculum",
+    "field": "NEURO",
+    "unit_url": "https://www.med.unc.edu/neuroscience/",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "School of Medicine"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-southern-california",
+  "university": "University of Southern California",
+  "rank_usnews_national": 27,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://dornsife.usc.edu/psyc/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://dornsife.usc.edu/psyc/faculty/"
+   },
+   {
+    "name": "Neuroscience Graduate Program",
+    "field": "NEURO",
+    "unit_url": "https://ngp.usc.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://ngp.usc.edu/research-faculty/alphabetic-directory/"
+   }
+  ]
+ },
+ {
+  "slug": "georgia-institute-of-technology",
+  "university": "Georgia Institute of Technology",
+  "rank_usnews_national": 29,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "School of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.gatech.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience and Neurotechnology PhD",
+    "field": "NEURO",
+    "unit_url": "https://neuroscience.cos.gatech.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://neuro.gatech.edu/faculty"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-san-diego",
+  "university": "University of California San Diego",
+  "rank_usnews_national": 29,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.ucsd.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://catalog.ucsd.edu/faculty/PSYC.html",
+    "cards_only": true
+   },
+   {
+    "name": "Department of Cognitive Science",
+    "field": "COGSCI",
+    "unit_url": "https://cogsci.ucsd.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neurosciences Graduate Program",
+    "field": "NEURO",
+    "unit_url": "https://neurograd.ucsd.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://neurograd.ucsd.edu/people/faculty-research.html"
+   }
+  ]
+ },
+ {
+  "slug": "boston-college",
+  "university": "Boston College",
+  "rank_usnews_national": 31,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology and Neuroscience",
+    "field": "PSY",
+    "unit_url": "https://www.bc.edu/bc-web/schools/morrissey/departments/psychology.html",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://www.bc.edu/bc-web/schools/morrissey/departments/psychology-neuroscience/people.html"
+   }
+  ]
+ },
+ {
+  "slug": "new-york-university",
+  "university": "New York University",
+  "rank_usnews_national": 31,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://as.nyu.edu/psychology.html",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://as.nyu.edu/departments/psychology/people/faculty_list.html"
+   },
+   {
+    "name": "Center for Neural Science",
+    "field": "NEURO",
+    "unit_url": "https://as.nyu.edu/departments/cns.html",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Applied Psychology (Steinhardt)",
+    "field": "PSY",
+    "unit_url": "https://steinhardt.nyu.edu/appsych",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "education school"
+   }
+  ]
+ },
+ {
+  "slug": "tufts-university",
+  "university": "Tufts University",
+  "rank_usnews_national": 31,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://as.tufts.edu/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience PhD (Graduate School of Biomedical Sciences)",
+    "field": "NEURO",
+    "unit_url": "https://gsbs.tufts.edu/academics/neuroscience",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "medical campus"
+   }
+  ]
+ },
+ {
+  "slug": "boston-university",
+  "university": "Boston University",
+  "rank_usnews_national": 34,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://www.bu.edu/psych/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Graduate Program for Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://www.bu.edu/neuro/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-davis",
+  "university": "University of California, Davis",
+  "rank_usnews_national": 34,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.ucdavis.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Center for Neuroscience / Neuroscience Graduate Group",
+    "field": "NEURO",
+    "unit_url": "https://grad.neuroscience.ucdavis.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://grad.neuroscience.ucdavis.edu/people"
+   },
+   {
+    "name": "Human Development Graduate Group",
+    "field": "PSY",
+    "unit_url": "https://humandevelopment.ucdavis.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "developmental psychology heavy; included",
+    "directory_url": "https://humandevelopment.ucdavis.edu/person-type/faculty"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-irvine",
+  "university": "University of California, Irvine",
+  "rank_usnews_national": 34,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Cognitive Sciences",
+    "field": "COGSCI",
+    "unit_url": "https://www.cogsci.uci.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Department of Psychological Science",
+    "field": "PSY",
+    "unit_url": "https://ps.soceco.uci.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://ps.soceco.uci.edu/pages/faculty"
+   },
+   {
+    "name": "Interdepartmental Neuroscience Program",
+    "field": "NEURO",
+    "unit_url": "https://inp.uci.edu/",
+    "home": "mixed",
+    "include": false,
+    "filter_psych": true,
+    "note": "participating departments are biology and the School of Medicine only; psychology-relevant neuroscience is in Cognitive Sciences and Psychological Science",
+    "directory_url": "https://inp.uci.edu/faculty/"
+   },
+   {
+    "name": "Neurobiology and Behavior",
+    "field": "NEURO",
+    "unit_url": "https://nb.bio.uci.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "neurobiology"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-florida",
+  "university": "University of Florida",
+  "rank_usnews_national": 34,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psych.ufl.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Clinical and Health Psychology",
+    "field": "PSY",
+    "unit_url": "https://chp.phhp.ufl.edu/",
+    "home": "med",
+    "include": false,
+    "filter_psych": false,
+    "note": "clinical"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-illinois-urbana-champaign",
+  "university": "University of Illinois Urbana-Champaign",
+  "rank_usnews_national": 34,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.illinois.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience Program",
+    "field": "NEURO",
+    "unit_url": "https://neuroscience.illinois.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://neuroscience.illinois.edu/directory/faculty"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-texas-austin",
+  "university": "University of Texas–Austin",
+  "rank_usnews_national": 34,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://liberalarts.utexas.edu/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://liberalarts.utexas.edu/psychology/research-faculty/faculty.html"
+   },
+   {
+    "name": "Interdisciplinary Neuroscience Program",
+    "field": "NEURO",
+    "unit_url": "https://inp.neuroscience.utexas.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "the neuroscience PhD; draws faculty from psychology and biology",
+    "directory_url": "https://inp.neuroscience.utexas.edu/faculty-directory"
+   },
+   {
+    "name": "Educational Psychology",
+    "field": "PSY",
+    "unit_url": "https://education.utexas.edu/departments/educational-psychology/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "education school"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-wisconsin-madison",
+  "university": "University of Wisconsin–Madison",
+  "rank_usnews_national": 34,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psych.wisc.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience Training Program",
+    "field": "NEURO",
+    "unit_url": "https://ntp.neuroscience.wisc.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people"
+   },
+   {
+    "name": "Educational Psychology",
+    "field": "PSY",
+    "unit_url": "https://edpsych.education.wisc.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "education school"
+   }
+  ]
+ },
+ {
+  "slug": "wake-forest-university",
+  "university": "Wake Forest University",
+  "rank_usnews_national": 34,
+  "no_phd_units": true,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.wfu.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "master's only, no PhD"
+   },
+   {
+    "name": "Neuroscience PhD",
+    "field": "NEURO",
+    "unit_url": "https://school.wakehealth.edu/education-and-training/graduate-programs/neuroscience",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "School of Medicine"
+   }
+  ]
+ },
+ {
+  "slug": "northeastern-university",
+  "university": "Northeastern University",
+  "rank_usnews_national": 42,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://cos.northeastern.edu/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://cos.northeastern.edu/nucos-department/psychology/"
+   }
+  ]
+ },
+ {
+  "slug": "villanova-university",
+  "university": "Villanova University",
+  "rank_usnews_national": 42,
+  "no_phd_units": true,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://www1.villanova.edu/university/liberal-arts-sciences/programs/psychology.html",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "master's only, no PhD"
+   }
+  ]
+ },
+ {
+  "slug": "case-western-reserve-university",
+  "university": "Case Western Reserve University",
+  "rank_usnews_national": 44,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological Sciences",
+    "field": "PSY",
+    "unit_url": "https://psychsciences.case.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psychsciences.case.edu/people/"
+   },
+   {
+    "name": "Department of Cognitive Science",
+    "field": "COGSCI",
+    "unit_url": "https://case.edu/artsci/cognitivescience/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://case.edu/artsci/cognitivescience/about/faculty-and-staff"
+   },
+   {
+    "name": "Department of Neurosciences",
+    "field": "NEURO",
+    "unit_url": "https://case.edu/medicine/neurosciences/",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "School of Medicine"
+   }
+  ]
+ },
+ {
+  "slug": "lehigh-university",
+  "university": "Lehigh University",
+  "rank_usnews_national": 44,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.cas.lehigh.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psychology.cas.lehigh.edu/faculty-staff"
+   }
+  ]
+ },
+ {
+  "slug": "the-ohio-state-university",
+  "university": "The Ohio State University",
+  "rank_usnews_national": 44,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.osu.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psychology.osu.edu/people"
+   },
+   {
+    "name": "Neuroscience Graduate Program",
+    "field": "NEURO",
+    "unit_url": "https://ngp.osu.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://ngp.osu.edu/people"
+   }
+  ]
+ },
+ {
+  "slug": "rutgers-university-new-brunswick",
+  "university": "Rutgers University–New Brunswick",
+  "rank_usnews_national": 44,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psych.rutgers.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psych.rutgers.edu/people/facultyblog"
+   },
+   {
+    "name": "Rutgers Center for Cognitive Science",
+    "field": "COGSCI",
+    "unit_url": "https://ruccs.rutgers.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience Graduate Program (Brain Health Institute)",
+    "field": "NEURO",
+    "unit_url": "https://grad.rutgers.edu/academics/graduate-programs/neuroscience",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://grad.rutgers.edu/academics/graduate-programs/neuroscience/NeuroscienceFaculty"
+   },
+   {
+    "name": "GSAPP (clinical and school psychology)",
+    "field": "PSY",
+    "unit_url": "https://gsapp.rutgers.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "clinical"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-santa-barbara",
+  "university": "University of California, Santa Barbara",
+  "rank_usnews_national": 44,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://www.psych.ucsb.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Dynamical Neuroscience PhD",
+    "field": "NEURO",
+    "unit_url": "https://www.dyns.ucsb.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Counseling, Clinical and School Psychology",
+    "field": "PSY",
+    "unit_url": "https://ccsp.education.ucsb.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "education school, clinical"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-maryland-college-park",
+  "university": "University of Maryland, College Park",
+  "rank_usnews_national": 49,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psyc.umd.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psyc.umd.edu/people/faculty"
+   },
+   {
+    "name": "Neuroscience and Cognitive Science Program (NACS)",
+    "field": "NEURO",
+    "unit_url": "https://nacs.umd.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://nacs.umd.edu/facultystaff/um%20faculty"
+   },
+   {
+    "name": "Human Development and Quantitative Methodology",
+    "field": "PSY",
+    "unit_url": "https://education.umd.edu/hdqm",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "education school"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-rochester",
+  "university": "University of Rochester",
+  "rank_usnews_national": 49,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Brain and Cognitive Sciences",
+    "field": "PSY",
+    "unit_url": "https://www.sas.rochester.edu/bcs/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.sas.rochester.edu/psy/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience Graduate Program",
+    "field": "NEURO",
+    "unit_url": "https://www.urmc.rochester.edu/neuroscience/",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "Medical Center"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-washington",
+  "university": "University of Washington",
+  "rank_usnews_national": 49,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psych.uw.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Graduate Program in Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://gpneuro.uw.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://gpneuro.uw.edu/people/faculty/"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-georgia",
+  "university": "University of Georgia",
+  "rank_usnews_national": 52,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.uga.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience PhD (Biomedical and Health Sciences Institute)",
+    "field": "NEURO",
+    "unit_url": "https://neuroscience.uga.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "virginia-tech",
+  "university": "Virginia Tech",
+  "rank_usnews_national": 52,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psyc.vt.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://support.psyc.vt.edu/users"
+   },
+   {
+    "name": "School of Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://neuroscience.vt.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://neuroscience.vt.edu/our-people.html"
+   }
+  ]
+ },
+ {
+  "slug": "william-and-mary",
+  "university": "William & Mary",
+  "rank_usnews_national": 52,
+  "no_phd_units": true,
+  "units": [
+   {
+    "name": "Department of Psychological Sciences",
+    "field": "PSY",
+    "unit_url": "https://www.wm.edu/as/psychologicalsciences/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "no research PhD"
+   }
+  ]
+ },
+ {
+  "slug": "pennsylvania-state-university-university-park",
+  "university": "Pennsylvania State University–University Park",
+  "rank_usnews_national": 55,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psych.la.psu.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psych.la.psu.edu/research/faculty-research-interests/",
+    "render": true
+   },
+   {
+    "name": "Neuroscience Graduate Program",
+    "field": "NEURO",
+    "unit_url": "https://neuroscience.psu.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://www.huck.psu.edu/graduate-education/degree-programs/neuroscience/faculty-directory"
+   },
+   {
+    "name": "Human Development and Family Studies",
+    "field": "PSY",
+    "unit_url": "https://hhd.psu.edu/hdfs",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "developmental psychology heavy; included",
+    "directory_url": "https://hhd.psu.edu/hdfs/contact/faculty-staff"
+   }
+  ]
+ },
+ {
+  "slug": "purdue-university-main-campus",
+  "university": "Purdue University–Main Campus",
+  "rank_usnews_national": 55,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological Sciences",
+    "field": "PSY",
+    "unit_url": "https://hhs.purdue.edu/psy/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "render": true,
+    "directory_url": "https://hhs.purdue.edu/about-hhs/directory/?staff_faculty_type=Faculty&hhs_department_staff=Department%20of%20Psychological%20Sciences"
+   },
+   {
+    "name": "Purdue Institute for Integrative Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://www.purdue.edu/discoverypark/institute-for-integrative-neuroscience/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "university neuroscience institute; keep psychology-relevant people",
+    "directory_url": "https://www.purdue.edu/discoverypark/institute-for-integrative-neuroscience/faculty/index.php"
+   }
+  ]
+ },
+ {
+  "slug": "santa-clara-university",
+  "university": "Santa Clara University",
+  "rank_usnews_national": 55,
+  "no_phd_units": true,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.scu.edu/cas/psychology/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "no PhD"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-miami",
+  "university": "University of Miami",
+  "rank_usnews_national": 55,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.psy.miami.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://www.psy.miami.edu/people/faculty/index.html"
+   },
+   {
+    "name": "Neuroscience PhD",
+    "field": "NEURO",
+    "unit_url": "https://med.miami.edu/programs/neuroscience-phd",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "Miller School of Medicine"
+   }
+  ]
+ },
+ {
+  "slug": "brandeis-university",
+  "university": "Brandeis University",
+  "rank_usnews_national": 59,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.brandeis.edu/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience PhD",
+    "field": "NEURO",
+    "unit_url": "https://www.brandeis.edu/neuroscience/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "florida-state-university",
+  "university": "Florida State University",
+  "rank_usnews_national": 59,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.fsu.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psychology.fsu.edu/people/faculty"
+   },
+   {
+    "name": "Program in Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://neuro.fsu.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people"
+   }
+  ]
+ },
+ {
+  "slug": "george-washington-university",
+  "university": "George Washington University",
+  "rank_usnews_national": 59,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://psychology.columbian.gwu.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "stevens-institute-of-technology",
+  "university": "Stevens Institute of Technology",
+  "rank_usnews_national": 59,
+  "no_phd_units": true,
+  "units": []
+ },
+ {
+  "slug": "stony-brook-university-suny",
+  "university": "Stony Brook University–SUNY",
+  "rank_usnews_national": 59,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.stonybrook.edu/commcms/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience Graduate Program",
+    "field": "NEURO",
+    "unit_url": "https://neuro.stonybrookmedicine.edu/",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "Renaissance School of Medicine"
+   }
+  ]
+ },
+ {
+  "slug": "texas-aandm-university",
+  "university": "Texas A&M University",
+  "rank_usnews_national": 59,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://artsci.tamu.edu/psychological-brain-sciences/index.html",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://artsci.tamu.edu/psychological-brain-sciences/contact/faculty.html"
+   },
+   {
+    "name": "Texas A&M Institute for Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://tamin.tamu.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://tamin.tamu.edu/research/affiliated-faculty/"
+   }
+  ]
+ },
+ {
+  "slug": "tulane-university-of-louisiana",
+  "university": "Tulane University of Louisiana",
+  "rank_usnews_national": 59,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://sse.tulane.edu/psyc",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://sse.tulane.edu/psyc/people/full-time"
+   },
+   {
+    "name": "Neuroscience PhD (Brain Institute)",
+    "field": "NEURO",
+    "unit_url": "https://sse.tulane.edu/neuro",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://sse.tulane.edu/neuro/faculty"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-massachusetts-amherst",
+  "university": "University of Massachusetts–Amherst",
+  "rank_usnews_national": 59,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://www.umass.edu/psychological-brain-sciences/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://www.umass.edu/psychological-brain-sciences/faculty"
+   },
+   {
+    "name": "Neuroscience and Behavior Graduate Program",
+    "field": "NEURO",
+    "unit_url": "https://www.umass.edu/neuroscience-behavior/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://www.umass.edu/neuroscience-behavior/about/directory"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-minnesota-twin-cities",
+  "university": "University of Minnesota–Twin Cities",
+  "rank_usnews_national": 59,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://cla.umn.edu/psychology",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Graduate Program in Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://med.umn.edu/neuroscience",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "Medical School"
+   },
+   {
+    "name": "Institute of Child Development",
+    "field": "PSY",
+    "unit_url": "https://cehd.umn.edu/icd/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "education school (CEHD)"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-pittsburgh",
+  "university": "University of Pittsburgh",
+  "rank_usnews_national": 59,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.psychology.pitt.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://www.psychology.pitt.edu/people"
+   },
+   {
+    "name": "Department of Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://www.neuroscience.pitt.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://www.neuroscience.pitt.edu/people/faculty"
+   }
+  ]
+ },
+ {
+  "slug": "michigan-state-university",
+  "university": "Michigan State University",
+  "rank_usnews_national": 69,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.msu.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psychology.msu.edu/people",
+    "render": true
+   },
+   {
+    "name": "Neuroscience Program",
+    "field": "NEURO",
+    "unit_url": "https://neuroscience.natsci.msu.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://directory.natsci.msu.edu/Directory/Directory/Department/31"
+   }
+  ]
+ },
+ {
+  "slug": "rensselaer-polytechnic-institute",
+  "university": "Rensselaer Polytechnic Institute",
+  "rank_usnews_national": 69,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Cognitive Science",
+    "field": "COGSCI",
+    "unit_url": "https://hass.rpi.edu/cognitive-science",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://hass.rpi.edu/departments-cognitive-science/cognitive-science-faculty"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-merced",
+  "university": "University of California, Merced",
+  "rank_usnews_national": 69,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological Sciences",
+    "field": "PSY",
+    "unit_url": "https://psychology.ucmerced.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psychology.ucmerced.edu/faculty"
+   },
+   {
+    "name": "Department of Cognitive and Information Sciences",
+    "field": "COGSCI",
+    "unit_url": "https://cogsci.ucmerced.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://cogsci.ucmerced.edu/faculty"
+   }
+  ]
+ },
+ {
+  "slug": "syracuse-university",
+  "university": "Syracuse University",
+  "rank_usnews_national": 72,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://artsandsciences.syracuse.edu/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://artsandsciences.syracuse.edu/psychology/psychology-people/"
+   }
+  ]
+ },
+ {
+  "slug": "binghamton-university-suny",
+  "university": "Binghamton University–SUNY",
+  "rank_usnews_national": 73,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.binghamton.edu/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "howard-university",
+  "university": "Howard University",
+  "rank_usnews_national": 73,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.howard.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psychology.howard.edu/faculty-staff"
+   }
+  ]
+ },
+ {
+  "slug": "indiana-university-bloomington",
+  "university": "Indiana University–Bloomington",
+  "rank_usnews_national": 73,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://psych.indiana.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Cognitive Science Program",
+    "field": "COGSCI",
+    "unit_url": "https://cogs.indiana.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Program in Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://neuroscience.indiana.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "north-carolina-state-university",
+  "university": "North Carolina State University",
+  "rank_usnews_national": 73,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.chass.ncsu.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "rutgers-university-newark",
+  "university": "Rutgers University–Newark",
+  "rank_usnews_national": 73,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://sasn.rutgers.edu/academics-admissions/academic-departments/psychology",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://sasn.rutgers.edu/psychology-faculty"
+   },
+   {
+    "name": "Center for Molecular and Behavioral Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://cmbn.rutgers.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://sasn.rutgers.edu/cmbn-faculty"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-connecticut",
+  "university": "University of Connecticut",
+  "rank_usnews_national": 73,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological Sciences",
+    "field": "PSY",
+    "unit_url": "https://psychology.uconn.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "worcester-polytechnic-institute",
+  "university": "Worcester Polytechnic Institute",
+  "rank_usnews_national": 73,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological Science",
+    "field": "PSY",
+    "unit_url": "https://www.wpi.edu/academics/departments/psychological-science",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "small department; included",
+    "directory_url": "https://www.wpi.edu/academics/departments/psychological-science/faculty-staff"
+   }
+  ]
+ },
+ {
+  "slug": "clemson-university",
+  "university": "Clemson University",
+  "rank_usnews_national": 80,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.clemson.edu/cbshs/departments/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "colorado-school-of-mines",
+  "university": "Colorado School of Mines",
+  "rank_usnews_national": 80,
+  "no_phd_units": true,
+  "units": []
+ },
+ {
+  "slug": "drexel-university",
+  "university": "Drexel University",
+  "rank_usnews_national": 80,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://drexel.edu/coas/academics/departments-centers/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "pepperdine-university",
+  "university": "Pepperdine University",
+  "rank_usnews_national": 80,
+  "no_phd_units": true,
+  "units": [
+   {
+    "name": "Graduate School of Education and Psychology",
+    "field": "PSY",
+    "unit_url": "https://gsep.pepperdine.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "education school, clinical PsyD only"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-california-riverside",
+  "university": "University of California, Riverside",
+  "rank_usnews_national": 80,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://psychologicalbrainsciences.ucr.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://profiles.ucr.edu/app/embed?groupId=70644&affiliationFilter=Faculty&viewProfilesMode=cards",
+    "render": true
+   },
+   {
+    "name": "Neuroscience Graduate Program",
+    "field": "NEURO",
+    "unit_url": "https://neuro.ucr.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://profiles.ucr.edu/app/embed?groupId=110928&viewProfilesMode=cards",
+    "render": true
+   }
+  ]
+ },
+ {
+  "slug": "fordham-university",
+  "university": "Fordham University",
+  "rank_usnews_national": 85,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.fordham.edu/academics/departments/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://www.fordham.edu/academics/departments/psychology/faculty-and-staff/"
+   }
+  ]
+ },
+ {
+  "slug": "new-jersey-institute-of-technology",
+  "university": "New Jersey Institute of Technology",
+  "rank_usnews_national": 85,
+  "no_phd_units": true,
+  "units": []
+ },
+ {
+  "slug": "southern-methodist-university",
+  "university": "Southern Methodist University",
+  "rank_usnews_national": 85,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.smu.edu/dedman/academics/departments/psychology",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-at-buffalo-suny",
+  "university": "University at Buffalo–SUNY",
+  "rank_usnews_national": 85,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://arts-sciences.buffalo.edu/psychology.html",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Neuroscience Program",
+    "field": "NEURO",
+    "unit_url": "https://medicine.buffalo.edu/departments/physiology_and_biophysics/education/neuroscience.html",
+    "home": "med",
+    "include": false,
+    "filter_psych": true,
+    "note": "Jacobs School of Medicine"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-delaware",
+  "university": "University of Delaware",
+  "rank_usnews_national": 85,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://www.udel.edu/academics/colleges/cas/units/departments/psychological-and-brain-sciences/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://www.udel.edu/academics/colleges/cas/units/departments/psychological-and-brain-sciences/our-people/"
+   }
+  ]
+ },
+ {
+  "slug": "baylor-university",
+  "university": "Baylor University",
+  "rank_usnews_national": 90,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology and Neuroscience",
+    "field": "PSY",
+    "unit_url": "https://psychologyneuroscience.artsandsciences.baylor.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://psychologyneuroscience.artsandsciences.baylor.edu/faculty-staff/departmental-faculty-staff"
+   }
+  ]
+ },
+ {
+  "slug": "gonzaga-university",
+  "university": "Gonzaga University",
+  "rank_usnews_national": 90,
+  "no_phd_units": true,
+  "units": []
+ },
+ {
+  "slug": "marquette-university",
+  "university": "Marquette University",
+  "rank_usnews_national": 90,
+  "no_phd_units": true,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.marquette.edu/psychology/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "clinical PhD only"
+   }
+  ]
+ },
+ {
+  "slug": "texas-christian-university",
+  "university": "Texas Christian University",
+  "rank_usnews_national": 90,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://cse.tcu.edu/psychology/index.php",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://cse.tcu.edu/psychology/faculty-staff/index.php"
+   }
+  ]
+ },
+ {
+  "slug": "yeshiva-university",
+  "university": "Yeshiva University",
+  "rank_usnews_national": 90,
+  "no_phd_units": true,
+  "units": [
+   {
+    "name": "Ferkauf Graduate School of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.yu.edu/ferkauf",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "clinical and school psychology only"
+   }
+  ]
+ },
+ {
+  "slug": "american-university",
+  "university": "American University",
+  "rank_usnews_national": 95,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.american.edu/cas/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "rochester-institute-of-technology",
+  "university": "Rochester Institute of Technology",
+  "rank_usnews_national": 95,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "School of Psychology and Cognitive Science",
+    "field": "COGSCI",
+    "unit_url": "https://www.rit.edu/liberalarts/school-psychology-and-cognitive-science",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "rutgers-university-camden",
+  "university": "Rutgers University–Camden",
+  "rank_usnews_national": 95,
+  "no_phd_units": true,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psychology.camden.rutgers.edu/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "no psychology PhD"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-illinois-chicago",
+  "university": "University of Illinois Chicago",
+  "rank_usnews_national": 95,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://psch.uic.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Graduate Program in Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://gpn.uic.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people",
+    "directory_url": "https://gpn.uic.edu/people/faculty/"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-missouri",
+  "university": "University of Missouri",
+  "rank_usnews_national": 95,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological Sciences",
+    "field": "PSY",
+    "unit_url": "https://psychology.missouri.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "auburn-university",
+  "university": "Auburn University",
+  "rank_usnews_national": 100,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological Sciences",
+    "field": "PSY",
+    "unit_url": "https://cla.auburn.edu/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://cla.auburn.edu/psychological-sciences/faculty-and-staff/"
+   }
+  ]
+ },
+ {
+  "slug": "chapman-university",
+  "university": "Chapman University",
+  "rank_usnews_national": 100,
+  "no_phd_units": true,
+  "units": [
+   {
+    "name": "Department of Psychology (Crean College)",
+    "field": "PSY",
+    "unit_url": "https://www.chapman.edu/crean/",
+    "home": "main",
+    "include": false,
+    "filter_psych": false,
+    "note": "verify: no psychology PhD found"
+   }
+  ]
+ },
+ {
+  "slug": "creighton-university",
+  "university": "Creighton University",
+  "rank_usnews_national": 100,
+  "no_phd_units": true,
+  "units": []
+ },
+ {
+  "slug": "elon-university",
+  "university": "Elon University",
+  "rank_usnews_national": 100,
+  "no_phd_units": true,
+  "units": []
+ },
+ {
+  "slug": "florida-international-university",
+  "university": "Florida International University",
+  "rank_usnews_national": 100,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://case.fiu.edu/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://case.fiu.edu/psychology/faculty-staff/"
+   }
+  ]
+ },
+ {
+  "slug": "saint-louis-university",
+  "university": "Saint Louis University",
+  "rank_usnews_national": 100,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.slu.edu/arts-and-sciences/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "slug": "university-of-iowa",
+  "university": "University of Iowa",
+  "rank_usnews_national": 100,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychological and Brain Sciences",
+    "field": "PSY",
+    "unit_url": "https://psychology.uiowa.edu/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": ""
+   },
+   {
+    "name": "Interdisciplinary Graduate Program in Neuroscience",
+    "field": "NEURO",
+    "unit_url": "https://neuroscience.grad.uiowa.edu/",
+    "home": "mixed",
+    "include": true,
+    "filter_psych": true,
+    "note": "keep psychology-relevant people"
+   }
+  ]
+ },
+ {
+  "slug": "university-of-san-diego",
+  "university": "University of San Diego",
+  "rank_usnews_national": 100,
+  "no_phd_units": true,
+  "units": []
+ },
+ {
+  "slug": "university-of-south-florida",
+  "university": "University of South Florida",
+  "rank_usnews_national": 100,
+  "no_phd_units": false,
+  "units": [
+   {
+    "name": "Department of Psychology",
+    "field": "PSY",
+    "unit_url": "https://www.usf.edu/arts-sciences/departments/psychology/",
+    "home": "main",
+    "include": true,
+    "filter_psych": false,
+    "note": "",
+    "directory_url": "https://www.usf.edu/arts-sciences/departments/psychology/people/faculty/",
+    "render": true
+   }
+  ]
+ }
+]

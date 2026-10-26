@@ -15,7 +15,7 @@ profile is about language.
 Pages are cached under data/cache/, so re-runs are quick and only fetch what changed in programs.json.
 A summary is written to data/cache/scrape_report.csv; anything marked CHECK needs a look.
 """
-import argparse, csv, json, re, sys, time
+import argparse, csv, json, os, re, sys, time
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from datetime import date
 from pathlib import Path
@@ -25,8 +25,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fetch  # noqa: E402  (cached static fetch with headless-Chromium fallback)
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "data" / "raw"
-REPORT = ROOT / "data" / "cache" / "scrape_report.csv"
+# --discipline psych (or DISCIPLINE=psych) reads data/psych/programs.json and writes data/psych/raw/
+DISC = os.environ.get("DISCIPLINE", "linguistics")
+DATA = ROOT / "data" if DISC == "linguistics" else ROOT / "data" / DISC
+RAW = DATA / "raw"
+REPORT = ROOT / "data" / "cache" / ("scrape_report.csv" if DISC == "linguistics" else f"scrape_report_{DISC}.csv")
 
 # ---------- titles ----------
 # titles that are not tenure-line even when they contain "professor"
@@ -495,9 +498,14 @@ def main():
     ap.add_argument("--only", help="comma-separated slugs or slug prefixes")
     ap.add_argument("--dir-only", action="store_true", help="only find directories and count tenure-line people")
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--discipline", default=None, help="e.g. psych: use data/psych/programs.json")
     ap.add_argument("--recheck", action="store_true", help="only universities marked CHECK in the last report")
     a = ap.parse_args()
-    programs = [p for p in json.load(open(ROOT / "data" / "programs.json", encoding="utf-8")) if any(u.get("include") for u in p["units"])]
+    global DISC, DATA, RAW, REPORT
+    if a.discipline and a.discipline != DISC:  # re-run with the env var set, so worker processes see it too
+        os.environ["DISCIPLINE"] = a.discipline
+        os.execv(sys.executable, [sys.executable] + sys.argv)
+    programs = [p for p in json.load(open(DATA / "programs.json", encoding="utf-8")) if any(u.get("include") for u in p["units"])]
     if a.only:
         keys = a.only.split(",")
         programs = [p for p in programs if any(p["slug"].startswith(k) for k in keys)]
