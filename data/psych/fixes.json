@@ -16,14 +16,16 @@
   "directory_url": "https://www.bbe.caltech.edu/academics/cns/people/faculty"
  },
  "california-institute-of-technology|Social and Decision Neuroscience": {
-  "directory_url": "https://www.hss.caltech.edu/graduate-studies/social-and-decision-neuroscience-phd-program/faculty"
+  "directory_url": "https://www.hss.caltech.edu/graduate-studies/social-and-decision-neuroscience-phd-program/faculty",
+  "trust_page": true
  },
  "carnegie-mellon-university|Neuroscience Institute": {
   "directory_url": "https://www.cmu.edu/ni/people/faculty-directory",
   "render": true
  },
  "carnegie-mellon-university|Department of Psychology": {
-  "directory_url": "https://www.cmu.edu/dietrich/psychology/directory/index.html"
+  "directory_url": "https://www.cmu.edu/dietrich/psychology/directory/index.html",
+  "trust_page": true
  },
  "case-western-reserve-university|Department of Psychological Sciences": {
   "unit_url": "https://psychsciences.case.edu/",
@@ -57,10 +59,12 @@
  },
  "howard-university|Department of Psychology": {
   "unit_url": "https://psychology.howard.edu/",
-  "directory_url": "https://psychology.howard.edu/faculty-staff"
+  "directory_url": "https://psychology.howard.edu/faculty-staff",
+  "trust_page": true
  },
  "lehigh-university|Department of Psychology": {
-  "directory_url": "https://psychology.cas.lehigh.edu/faculty-staff"
+  "directory_url": "https://psychology.cas.lehigh.edu/faculty-staff",
+  "roster": "data/psych/rosters/lehigh-psychology.json"
  },
  "new-york-university|Department of Psychology": {
   "unit_url": "https://as.nyu.edu/psychology.html",
@@ -86,7 +90,8 @@
  },
  "purdue-university-main-campus|Purdue Institute for Integrative Neuroscience": {
   "unit_url": "https://www.purdue.edu/discoverypark/institute-for-integrative-neuroscience/",
-  "directory_url": "https://www.purdue.edu/discoverypark/institute-for-integrative-neuroscience/faculty/index.php"
+  "directory_url": "https://www.purdue.edu/discoverypark/institute-for-integrative-neuroscience/faculty/index.php",
+  "filter_psych": true
  },
  "rensselaer-polytechnic-institute|Department of Cognitive Science": {
   "unit_url": "https://hass.rpi.edu/cognitive-science",
@@ -110,7 +115,8 @@
   "directory_url": "https://artsci.tamu.edu/psychological-brain-sciences/contact/faculty.html"
  },
  "texas-aandm-university|Texas A&M Institute for Neuroscience": {
-  "directory_url": "https://tamin.tamu.edu/research/affiliated-faculty/"
+  "directory_url": "https://tamin.tamu.edu/research/affiliated-faculty/",
+  "trust_page": true
  },
  "texas-christian-university|Department of Psychology": {
   "unit_url": "https://cse.tcu.edu/psychology/index.php",
@@ -152,10 +158,12 @@
   "directory_url": "https://ps.soceco.uci.edu/pages/faculty"
  },
  "university-of-california-merced|Department of Psychological Sciences": {
-  "directory_url": "https://psychology.ucmerced.edu/faculty"
+  "directory_url": "https://psychology.ucmerced.edu/faculty",
+  "roster": "data/psych/rosters/ucmerced-psychology.json"
  },
  "university-of-california-merced|Department of Cognitive and Information Sciences": {
-  "directory_url": "https://cogsci.ucmerced.edu/faculty"
+  "directory_url": "https://cogsci.ucmerced.edu/faculty",
+  "roster": "data/psych/rosters/ucmerced-cogsci.json"
  },
  "university-of-california-riverside|Department of Psychology": {
   "name": "Department of Psychological and Brain Sciences",
@@ -203,17 +211,20 @@
  },
  "university-of-miami|Department of Psychology": {
   "unit_url": "https://www.psy.miami.edu/",
-  "directory_url": "https://www.psy.miami.edu/people/faculty/index.html"
+  "directory_url": "https://www.psy.miami.edu/people/faculty/index.html",
+  "trust_page": true
  },
  "university-of-michigan-ann-arbor|Department of Psychology": {
   "directory_url": "https://lsa.umich.edu/psych/people/faculty.directory.html"
  },
  "university-of-michigan-ann-arbor|Neuroscience Graduate Program": {
   "unit_url": "https://medschool.umich.edu/interdisciplinary-programs/neuroscience-graduate-program",
-  "directory_url": "https://medschool.umich.edu/interdisciplinary-programs/neuroscience-graduate-program/faculty"
+  "directory_url": "https://medschool.umich.edu/interdisciplinary-programs/neuroscience-graduate-program/faculty",
+  "roster": "data/psych/rosters/umich-ngp.json"
  },
  "university-of-pittsburgh|Department of Psychology": {
-  "directory_url": "https://www.psychology.pitt.edu/people"
+  "directory_url": "https://www.psychology.pitt.edu/people",
+  "roster": "data/psych/rosters/pitt-psychology.json"
  },
  "university-of-pittsburgh|Department of Neuroscience": {
   "directory_url": "https://www.neuroscience.pitt.edu/people/faculty"
@@ -237,7 +248,8 @@
   "unit_url": "https://inp.neuroscience.utexas.edu/",
   "home": "mixed",
   "filter_psych": true,
-  "note": "the neuroscience PhD; draws faculty from psychology and biology"
+  "note": "the neuroscience PhD; draws faculty from psychology and biology",
+  "roster": "data/psych/rosters/utexas-inp.json"
  },
  "university-of-virginia|Department of Psychology": {
   "directory_url": "https://psychology.as.virginia.edu/faculty"
@@ -255,14 +267,17 @@
   "directory_url": "https://medschool.vanderbilt.edu/brain-institute/about-us/team-directories/"
  },
  "virginia-tech|Department of Psychology": {
-  "directory_url": "https://support.psyc.vt.edu/users"
+  "directory_url": "https://support.psyc.vt.edu/users",
+  "roster": "data/psych/rosters/vt-psychology.json"
  },
  "virginia-tech|School of Neuroscience": {
-  "directory_url": "https://neuroscience.vt.edu/our-people.html"
+  "directory_url": "https://neuroscience.vt.edu/our-people.html",
+  "roster": "data/psych/rosters/vt-neuroscience.json"
  },
  "washington-university-in-st-louis|Department of Psychological and Brain Sciences": {
   "unit_url": "https://psych.washu.edu/",
-  "directory_url": "https://psych.washu.edu/people?cat=88"
+  "directory_url": "https://psych.washu.edu/people?cat=88",
+  "roster": "data/psych/rosters/washu-pbs.json"
  },
  "worcester-polytechnic-institute|Department of Psychological Science": {
   "directory_url": "https://www.wpi.edu/academics/departments/psychological-science/faculty-staff"
@@ -283,13 +298,15 @@
  },
  "michigan-state-university|Neuroscience Program": {
   "unit_url": "https://neuroscience.natsci.msu.edu/",
-  "directory_url": "https://directory.natsci.msu.edu/Directory/Directory/Department/31"
+  "directory_url": "https://directory.natsci.msu.edu/Directory/Directory/Department/31",
+  "trust_page": true
  },
  "baylor-university|Department of Psychology and Neuroscience": {
   "directory_url": "https://psychologyneuroscience.artsandsciences.baylor.edu/faculty-staff/departmental-faculty-staff"
  },
  "northeastern-university|Department of Psychology": {
-  "directory_url": "https://cos.northeastern.edu/nucos-department/psychology/"
+  "directory_url": "https://cos.northeastern.edu/nucos-department/psychology/",
+  "roster": "data/psych/rosters/northeastern-psychology.json"
  },
  "rochester-institute-of-technology|Department of Psychology (Cognitive Science PhD)": {
   "name": "School of Psychology and Cognitive Science",
@@ -297,13 +314,38 @@
  },
  "cornell-university|Department of Psychology (College of Human Ecology; formerly Human Development)": {
   "unit_url": "https://www.human.cornell.edu/psych",
-  "directory_url": "https://human.cornell.edu/people?department%5B0%5D=33&role%5B0%5D=24"
+  "directory_url": "https://human.cornell.edu/people?department%5B0%5D=33&role%5B0%5D=24",
+  "trust_page": true
  },
  "boston-college|Department of Psychology and Neuroscience": {
   "directory_url": "https://www.bc.edu/bc-web/schools/morrissey/departments/psychology-neuroscience/people.html"
  },
  "university-of-california-san-diego|Department of Psychology": {
-  "directory_url": "https://catalog.ucsd.edu/faculty/PSYC.html",
-  "cards_only": true
+  "directory_url": "https://psychology.ucsd.edu/people/faculty.html",
+  "trust_page": true
+ },
+ "indiana-university-bloomington|Program in Neuroscience": {
+  "trust_page": true
+ },
+ "university-of-illinois-chicago|Department of Psychology": {
+  "trust_page": true
+ },
+ "stony-brook-university-suny|Department of Psychology": {
+  "trust_page": true
+ },
+ "florida-state-university|Program in Neuroscience": {
+  "trust_page": true
+ },
+ "university-of-california-santa-barbara|Dynamical Neuroscience PhD": {
+  "trust_page": true
+ },
+ "johns-hopkins-university|Department of Cognitive Science": {
+  "trust_page": true
+ },
+ "princeton-university|Princeton Neuroscience Institute": {
+  "trust_page": true
+ },
+ "indiana-university-bloomington|Cognitive Science Program": {
+  "trust_page": true
  }
 }

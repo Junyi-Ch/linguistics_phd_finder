@@ -218,6 +218,10 @@ def person_cards(html, page_url):
 SECTION_BAD = re.compile(r"emerit|retired|in memoriam|former|affiliat|courtesy|adjunct|lecturer|instructor|\bstaff\b|student|contributing|"
                          r"postdoc|post-doc|visiting|non-tenure|\bntl\b|part-time|research scientist|alumni|administrat|clinical|"
                          r"teaching faculty|professional|associated faculty|additional faculty|by courtesy", re.I)
+# for trusted lists: words in a person's own card that still mean "not tenure-line faculty"
+TRUST_BAD = re.compile(r"emerit|retired|lecturer|instructor|adjunct|visiting|postdoc|post-doc|graduate student|ph\.?d\.? (student|candidate)|"
+                       r"\bstaff\b|coordinator|manager|administrator|teaching (assistant |associate )?professor|professor (of|in) (the )?(practice|teaching)|"
+                       r"research (assistant |associate )?professor|research scientist|affiliate", re.I)
 SECTION_GOOD = re.compile(r"faculty|professors|core|tenure|ladder", re.I)
 
 def faculty_only_url(u):
@@ -411,9 +415,13 @@ def scrape_university(p, dir_only=False):
             row["directory"] = d
             pages, cards = [d], []
             saved = sorted(f for g in u.get("saved_pages") or [] for f in ROOT.glob(g))
+            roster = u.get("roster")  # names and profile links read off the page by hand: [[name, url, title], ...]
             if u.get("saved_pages") and not saved:
                 raise RuntimeError("save the faculty page(s) from your browser as " + ", ".join(u["saved_pages"]))
-            if saved:  # sites that block scripts: the list pages saved by hand from a normal browser
+            if roster:
+                for name, url, title in json.load(open(ROOT / roster, encoding="utf-8")):
+                    cards.append((name, url or d, title or "", "Faculty"))
+            elif saved:  # sites that block scripts: the list pages saved by hand from a normal browser
                 for x in saved:
                     cards += person_cards(x.read_text(encoding="utf-8", errors="ignore"), d)
             else:
@@ -422,7 +430,7 @@ def scrape_university(p, dir_only=False):
                 for nxt in next_pages(html, d):
                     if nxt not in pages:
                         pages.append(nxt); cards += person_cards(fetch.get(nxt), nxt)
-            if not saved and (u.get("render") or len(cards) < 5):  # maybe a JS-built list: try rendering
+            if not saved and not roster and (u.get("render") or len(cards) < 5):  # maybe a JS-built list: try rendering
                 rcards = person_cards(fetch.get(d, render=True), d)
                 if len(rcards) > len(cards):
                     cards = rcards
@@ -433,11 +441,16 @@ def scrape_university(p, dir_only=False):
                 key = re.sub(r"[^a-z]", "", name.lower())
                 if key in seen:
                     continue
-                if SECTION_BAD.search(section) and not re.search(r"core|tenure|ladder", section, re.I):
+                trust = u.get("trust_page") or roster  # every card on this list is faculty unless its own text says otherwise
+                if trust and TRUST_BAD.search(ctx[:300]):
+                    row["excluded_titles"] += 1; continue
+                if not trust and SECTION_BAD.search(section) and not re.search(r"core|tenure|ladder", section, re.I):
                     row["excluded_titles"] += 1; continue
                 rank, title = classify_title(ctx)
                 if re.search(r"(^|\n)\s*(affiliated?|courtesy|associated) faculty", ctx, re.I):
                     rank = "EXCLUDED"  # the list card itself says they are affiliated, whatever their home title
+                if rank == "EXCLUDED" and trust and not TRUST_BAD.search(title or ""):
+                    rank = "Faculty"  # e.g. "Professor of Clinical Psychology": decided later, at labelling
                 if rank == "EXCLUDED":
                     row["excluded_titles"] += 1; continue
                 if dir_only and rank:
@@ -459,7 +472,7 @@ def scrape_university(p, dir_only=False):
                         rank, title = rank_from_sentence(text)
                     real_page = url not in (d, *pages) and (name_in_url(name, url) or PROFILE_PATH.search(urlparse(url).path))
                     contact = re.search(r"@|\(\d{3}\)|\d{3}[-.\s]\d{3}[-.]\d{4}|send email|e-?mail", ctx, re.I)
-                    if rank is None and (SECTION_GOOD.search(section) or faculty_only_url(d)) and (real_page or contact):
+                    if rank is None and (trust or (SECTION_GOOD.search(section) or faculty_only_url(d)) and (real_page or contact)):
                         rank, title = "Faculty", ""  # a faculty list that prints no titles: keep, rank unknown
                         row["no_title"] += 1
                     if rank in (None, "EXCLUDED"):

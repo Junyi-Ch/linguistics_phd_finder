@@ -38,7 +38,8 @@
     "home": "main",
     "include": true,
     "filter_psych": false,
-    "note": ""
+    "note": "",
+    "trust_page": true
    }
   ]
  },
@@ -119,7 +120,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://www.hss.caltech.edu/graduate-studies/social-and-decision-neuroscience-phd-program/faculty"
+    "directory_url": "https://www.hss.caltech.edu/graduate-studies/social-and-decision-neuroscience-phd-program/faculty",
+    "trust_page": true
    },
    {
     "name": "Neurobiology (Biology and Biological Engineering)",
@@ -241,7 +243,8 @@
     "home": "main",
     "include": true,
     "filter_psych": false,
-    "note": ""
+    "note": "",
+    "trust_page": true
    },
    {
     "name": "Neuroscience Graduate Program",
@@ -385,7 +388,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://www.cmu.edu/dietrich/psychology/directory/index.html"
+    "directory_url": "https://www.cmu.edu/dietrich/psychology/directory/index.html",
+    "trust_page": true
    },
    {
     "name": "Neuroscience Institute",
@@ -423,7 +427,8 @@
     "include": true,
     "filter_psych": false,
     "note": "Cornell's second psychology department",
-    "directory_url": "https://human.cornell.edu/people?department%5B0%5D=33&role%5B0%5D=24"
+    "directory_url": "https://human.cornell.edu/people?department%5B0%5D=33&role%5B0%5D=24",
+    "trust_page": true
    },
    {
     "name": "Neurobiology and Behavior",
@@ -531,7 +536,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://psych.washu.edu/people?cat=88"
+    "directory_url": "https://psych.washu.edu/people?cat=88",
+    "roster": "data/psych/rosters/washu-pbs.json"
    },
    {
     "name": "Neurosciences PhD (DBBS)",
@@ -701,7 +707,8 @@
     "include": true,
     "filter_psych": true,
     "note": "keep psychology-relevant people",
-    "directory_url": "https://medschool.umich.edu/interdisciplinary-programs/neuroscience-graduate-program/faculty"
+    "directory_url": "https://medschool.umich.edu/interdisciplinary-programs/neuroscience-graduate-program/faculty",
+    "roster": "data/psych/rosters/umich-ngp.json"
    },
    {
     "name": "Combined Program in Education and Psychology",
@@ -837,8 +844,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://catalog.ucsd.edu/faculty/PSYC.html",
-    "cards_only": true
+    "directory_url": "https://psychology.ucsd.edu/people/faculty.html",
+    "trust_page": true
    },
    {
     "name": "Department of Cognitive Science",
@@ -1127,7 +1134,8 @@
     "include": true,
     "filter_psych": true,
     "note": "the neuroscience PhD; draws faculty from psychology and biology",
-    "directory_url": "https://inp.neuroscience.utexas.edu/faculty-directory"
+    "directory_url": "https://inp.neuroscience.utexas.edu/faculty-directory",
+    "roster": "data/psych/rosters/utexas-inp.json"
    },
    {
     "name": "Educational Psychology",
@@ -1215,7 +1223,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://cos.northeastern.edu/nucos-department/psychology/"
+    "directory_url": "https://cos.northeastern.edu/nucos-department/psychology/",
+    "roster": "data/psych/rosters/northeastern-psychology.json"
    }
   ]
  },
@@ -1287,7 +1296,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://psychology.cas.lehigh.edu/faculty-staff"
+    "directory_url": "https://psychology.cas.lehigh.edu/faculty-staff",
+    "roster": "data/psych/rosters/lehigh-psychology.json"
    }
   ]
  },
@@ -1387,7 +1397,8 @@
     "home": "main",
     "include": true,
     "filter_psych": false,
-    "note": ""
+    "note": "",
+    "trust_page": true
    },
    {
     "name": "Counseling, Clinical and School Psychology",
@@ -1539,7 +1550,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://support.psyc.vt.edu/users"
+    "directory_url": "https://support.psyc.vt.edu/users",
+    "roster": "data/psych/rosters/vt-psychology.json"
    },
    {
     "name": "School of Neuroscience",
@@ -1549,7 +1561,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://neuroscience.vt.edu/our-people.html"
+    "directory_url": "https://neuroscience.vt.edu/our-people.html",
+    "roster": "data/psych/rosters/vt-neuroscience.json"
    }
   ]
  },
@@ -1632,7 +1645,7 @@
     "unit_url": "https://www.purdue.edu/discoverypark/institute-for-integrative-neuroscience/",
     "home": "main",
     "include": true,
-    "filter_psych": false,
+    "filter_psych": true,
     "note": "university neuroscience institute; keep psychology-relevant people",
     "directory_url": "https://www.purdue.edu/discoverypark/institute-for-integrative-neuroscience/faculty/index.php"
    }
@@ -1669,7 +1682,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://www.psy.miami.edu/people/faculty/index.html"
+    "directory_url": "https://www.psy.miami.edu/people/faculty/index.html",
+    "trust_page": true
    },
    {
     "name": "Neuroscience PhD",
@@ -1731,7 +1745,8 @@
     "home": "mixed",
     "include": true,
     "filter_psych": true,
-    "note": "keep psychology-relevant people"
+    "note": "keep psychology-relevant people",
+    "trust_page": true
    }
   ]
  },
@@ -1772,7 +1787,8 @@
     "home": "main",
     "include": true,
     "filter_psych": false,
-    "note": ""
+    "note": "",
+    "trust_page": true
    },
    {
     "name": "Neuroscience Graduate Program",
@@ -1809,7 +1825,8 @@
     "include": true,
     "filter_psych": true,
     "note": "keep psychology-relevant people",
-    "directory_url": "https://tamin.tamu.edu/research/affiliated-faculty/"
+    "directory_url": "https://tamin.tamu.edu/research/affiliated-faculty/",
+    "trust_page": true
    }
   ]
  },
@@ -1918,7 +1935,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://www.psychology.pitt.edu/people"
+    "directory_url": "https://www.psychology.pitt.edu/people",
+    "roster": "data/psych/rosters/pitt-psychology.json"
    },
    {
     "name": "Department of Neuroscience",
@@ -1957,7 +1975,8 @@
     "include": true,
     "filter_psych": true,
     "note": "keep psychology-relevant people",
-    "directory_url": "https://directory.natsci.msu.edu/Directory/Directory/Department/31"
+    "directory_url": "https://directory.natsci.msu.edu/Directory/Directory/Department/31",
+    "trust_page": true
    }
   ]
  },
@@ -1993,7 +2012,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://psychology.ucmerced.edu/faculty"
+    "directory_url": "https://psychology.ucmerced.edu/faculty",
+    "roster": "data/psych/rosters/ucmerced-psychology.json"
    },
    {
     "name": "Department of Cognitive and Information Sciences",
@@ -2003,7 +2023,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://cogsci.ucmerced.edu/faculty"
+    "directory_url": "https://cogsci.ucmerced.edu/faculty",
+    "roster": "data/psych/rosters/ucmerced-cogsci.json"
    }
   ]
  },
@@ -2056,7 +2077,8 @@
     "include": true,
     "filter_psych": false,
     "note": "",
-    "directory_url": "https://psychology.howard.edu/faculty-staff"
+    "directory_url": "https://psychology.howard.edu/faculty-staff",
+    "trust_page": true
    }
   ]
  },
@@ -2082,7 +2104,8 @@
     "home": "main",
     "include": true,
     "filter_psych": false,
-    "note": ""
+    "note": "",
+    "trust_page": true
    },
    {
     "name": "Program in Neuroscience",
@@ -2091,7 +2114,8 @@
     "home": "main",
     "include": true,
     "filter_psych": false,
-    "note": ""
+    "note": "",
+    "trust_page": true
    }
   ]
  },
@@ -2490,7 +2514,8 @@
     "home": "main",
     "include": true,
     "filter_psych": false,
-    "note": ""
+    "note": "",
+    "trust_page": true
    },
    {
     "name": "Graduate Program in Neuroscience",
