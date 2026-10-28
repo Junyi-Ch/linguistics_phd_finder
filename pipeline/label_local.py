@@ -170,9 +170,13 @@ def main():
         lp = out_dir / f"{raw['slug']}.json"
         have = json.load(open(lp, encoding="utf-8")) if lp.exists() and not a.redo else {"faculty": []}
         by_name = {x["name"]: x for x in have["faculty"]}
+        # psychology: people the pre-filter (pipeline/psych_filter.py) already dropped are not labelled
+        rel = json.load(open(CFG["data"] / "relevance.json", encoding="utf-8")).get(raw["slug"], {}) if (CFG["data"] / "relevance.json").exists() and DISC != "linguistics" else {}
         result = {"slug": raw["slug"], "labeled_at": date.today().isoformat(), "faculty": []}
         for f in raw["faculty"]:
             done += 1
+            if rel.get(f["name"], {}).get("keep") is False:
+                continue
             if f["name"] in by_name:
                 result["faculty"].append(by_name[f["name"]]); continue
             rec = None

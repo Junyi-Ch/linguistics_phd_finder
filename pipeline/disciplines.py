@@ -44,7 +44,8 @@ Return JSON with:
 - confidence: "high" if the profile describes their research in detail, "medium" if briefly, "low" if almost not at all.
 - psych_relevant: true if the research is about mind, brain or behavior in a way a psychology, cognitive science or neuroscience
   PhD applicant would study (perception, cognition, emotion, social behavior, development, brain systems for behavior, animal behavior).
-  false for work only on molecules, cells, genes or disease biology with no link to behavior or cognition, and for work outside these fields.
+  false when the main focus is molecules, cells, genes, disease mechanisms or medical treatment, even if behavior is mentioned
+  in passing, and for work outside these fields.
 - clinical_role: true if the person's research and training role is clinical psychology (therapy, assessment, treatment trials,
   clinical supervision, a clinical psychology program). false otherwise, including people who study mental health mechanisms
   without a clinical training role.
