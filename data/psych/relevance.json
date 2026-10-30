@@ -26431,6 +26431,840 @@
    "why": "psychology or cognitive science department",
    "unit": "Department of Psychology",
    "field": "PSY"
+  },
+  "Alison Affinati": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Mohammed Akaaboune": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Huda Akil": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Ravi Allada": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Richard Altschuler": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Anuska Andjelkovic-Zochowska": {
+   "keep": null,
+   "why": "unclear (4 psych vs 4 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Anthony Antonellis": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "David Antonetti": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Pierre Apostolides": {
+   "keep": true,
+   "why": "behavior/cognition research (19 psych vs 3 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Sara Aton": {
+   "keep": null,
+   "why": "unclear (4 psych vs 2 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Sami Barmada": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Scott Barolo": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Stephanie Bielas": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "William Birdsong": {
+   "keep": false,
+   "why": "mainly cell/molecular or medical (0 psych vs 6 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Victoria Booth": {
+   "keep": true,
+   "why": "behavior/cognition research (7 psych vs 2 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Steven Broglio": {
+   "keep": null,
+   "why": "unclear (1 psych vs 3 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Tim Bruns": {
+   "keep": null,
+   "why": "unclear (0 psych vs 1 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Christian Burgess": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Dawen Cai": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Maria Castro": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Soo-Eun Chang": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Kevin Chen": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Cindy Chestek": {
+   "keep": null,
+   "why": "unclear (0 psych vs 5 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Josie Clowney": {
+   "keep": null,
+   "why": "unclear (10 psych vs 7 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Gabriel Corfas": {
+   "keep": null,
+   "why": "unclear (19 psych vs 19 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Louis Dang": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Hala Darwish": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Kamran Diba": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Ivo Dinov": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Anne Draelos": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Bo Duan": {
+   "keep": null,
+   "why": "unclear (2 psych vs 4 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Cunming Duan": {
+   "keep": false,
+   "why": "mainly cell/molecular or medical (2 psych vs 17 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "R. Keith Duncan": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Monica Dus": {
+   "keep": false,
+   "why": "mainly cell/molecular or medical (5 psych vs 13 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Elizabeth Duval": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Carol Elias": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Joshua Emrick": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Xing Fan": {
+   "keep": false,
+   "why": "mainly cell/molecular or medical (2 psych vs 6 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Eva Feldman": {
+   "keep": null,
+   "why": "unclear (2 psych vs 2 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Carrie Ferrario": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Shelly Flagel": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Patrice Fort": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Roman Giger": {
+   "keep": false,
+   "why": "mainly cell/molecular or medical (0 psych vs 24 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Daniel Goldman": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Colin Greineder": {
+   "keep": null,
+   "why": "unclear (0 psych vs 3 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Toshiro Hara": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Jillian Hardee": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Steve Harte": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Ansel Hillmer": {
+   "keep": null,
+   "why": "unclear (0 psych vs 0 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Thanh Hoang": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Zirui Huang": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Anthony Hudetz": {
+   "keep": null,
+   "why": "unclear (1 psych vs 1 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Jane Huggins": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Lori Isom": {
+   "keep": false,
+   "why": "mainly cell/molecular or medical (9 psych vs 45 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Shigeki Iwase": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Paul Jenkins": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Catherine Kaczorowski": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Sarah Kargbo-Hill": {
+   "keep": false,
+   "why": "mainly cell/molecular or medical (4 psych vs 14 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Stephen Kemp": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Robert Kennedy": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Jun Hee Kim": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Paul Kramer": {
+   "keep": false,
+   "why": "mainly cell/molecular or medical (6 psych vs 18 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Chandramouli Krishnan": {
+   "keep": null,
+   "why": "unclear (1 psych vs 2 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Kenneth Kwan": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "UnCheol Lee": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Scott Leiser": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Daniel Leventhal": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Erica Levitt": {
+   "keep": false,
+   "why": "mainly cell/molecular or medical (5 psych vs 14 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Peng Li": {
+   "keep": null,
+   "why": "unclear (2 psych vs 2 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Andrew Lieberman": {
+   "keep": null,
+   "why": "unclear (4 psych vs 4 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Jonathan Lifshitz": {
+   "keep": null,
+   "why": "unclear (7 psych vs 5 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Changyang Linghu": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Zhongming Liu": {
+   "keep": null,
+   "why": "unclear (0 psych vs 0 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Pedro Lowenstein": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Ross Maddox": {
+   "keep": null,
+   "why": "unclear (4 psych vs 0 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Donna Martin": {
+   "keep": null,
+   "why": "unclear (7 psych vs 8 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "George Mashour": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Joanna Mattis": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Brett McCray": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Hayley McLoughlin": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Anahita Mehta": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Miriam Meisler": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Sue Moenter": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Stephanie Moon": {
+   "keep": false,
+   "why": "mainly cell/molecular or medical (1 psych vs 6 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Jonathan Morrow": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Martin Myers": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Xander Nuttle": {
+   "keep": null,
+   "why": "unclear (1 psych vs 5 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Enrico Opri": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Dinesh Pal": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Jack Parent": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Henry Paulson": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Jillian Pearring": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Mark Peterson": {
+   "keep": null,
+   "why": "unclear (0 psych vs 2 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Scott Pletcher": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Manoj Puthenveedu": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Michael Roberts": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Anthony Rosenzweig": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Jorge Ruas": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Liangyou Rui": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Thomas Sanderson": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Les Satin": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Elise Savier": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Audrey Seasholtz": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Randy Seeley": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Srijan Sen": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Lonnie Shea": {
+   "keep": false,
+   "why": "mainly cell/molecular or medical (0 psych vs 11 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Benjamin Singer": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Sharan Srinivasan": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "William Stacey": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Yujuan Su": {
+   "keep": null,
+   "why": "unclear (1 psych vs 4 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Michael Sutton": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Gregory Tall": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Stephan Taylor": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Andrew Tidball": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Peter Todd": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "John Traynor": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Matthias Truttmann": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Giancarlo Vanini": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Sriram Venneti": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Michael Vesia": {
+   "keep": true,
+   "why": "behavior/cognition research (20 psych vs 0 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Daniel Wahl": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Joerg Waldhaus": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Michael Wang": {
+   "keep": null,
+   "why": "unclear (0 psych vs 4 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Wenjing Wang": {
+   "keep": false,
+   "why": "mainly cell/molecular or medical (1 psych vs 15 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Yu Wang": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Brendon Watson": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Stan J. Watson": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Joshua Welch": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Alexander Weigard": {
+   "keep": true,
+   "why": "behavior/cognition research (16 psych vs 0 bio terms)",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Lois Weisman": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Sebastian Werneburg": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Joseph Wider": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "David Williams": {
+   "keep": null,
+   "why": "unclear (0 psych vs 0 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Kelly Whiteford": {
+   "keep": true,
+   "why": "psychology appointment",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Kwoon Wong": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Yang Xiao": {
+   "keep": null,
+   "why": "unclear (2 psych vs 5 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Swathi Yadlapalli": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Yunlu Zhu": {
+   "keep": false,
+   "why": "no usable profile",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
+  },
+  "Michal Zochowski": {
+   "keep": null,
+   "why": "unclear (5 psych vs 8 bio terms): the labeller decides",
+   "unit": "Neuroscience Graduate Program",
+   "field": "NEURO"
   }
  },
  "university-of-minnesota-twin-cities": {
